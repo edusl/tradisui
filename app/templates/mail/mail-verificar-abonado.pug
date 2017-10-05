@@ -1,0 +1,21 @@
+extends includes/_mail-base.pug
+
+block title
+  title Confirmación solicitud
+
+block content  
+
+    include includes/_mail-header.pug
+    
+    tr
+      td(style="padding-top: 24px;")
+        p(style="padding-bottom: 20px;", class="text-content") Verifique su cuenta
+        p(style="padding-bottom: 20px;", class="text-content") Para verificar su email y activar su cuenta pulse el siguiente botón para finalizar su proceso de alta:     
+    tr
+      td
+        table(style="margin-bottom: 10px;")
+          tr
+            td
+              a.btn-red(href='#') Activar cuenta
+
+    include includes/_mail-footer.pug

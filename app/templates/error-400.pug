@@ -1,0 +1,34 @@
+extends includes/_tpl-base.pug
+
+block title
+  title Error 404
+
+block body
+
+  - var headerMenu = false
+  - var footer = 'footer'
+
+
+  body
+
+    .main-global
+      .main-wrap
+        include includes/_tpl-header.pug
+
+
+        main.main-content
+
+
+          .main-content__wrap
+
+            .confirm-head
+
+              h1.title-confirm.secondary <em>404</em> Lo sentimos, no hemos encontrado la página que busca.
+
+              .confirm-head__text
+
+                p La página que busca no se encuentra disponible. Compruebe que la dirección esté bien escrita.
+
+              a.btn.btn--secondary.btn--medium(href='#') Página principal
+
+      include includes/_tpl-footer.pug

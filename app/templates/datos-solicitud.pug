@@ -1,0 +1,186 @@
+extends includes/_tpl-base.pug
+
+block title
+  title Datos del solicitante
+
+block body
+
+  - var headerMenu = true
+  - var footer = 'footer-online'
+
+  body.tpl-col42.tpl-resume
+
+    .main-global
+
+      include includes/_tpl-header.pug
+
+      include includes/_tpl-breadcrumb.pug
+
+      main.main-content
+
+        .main-content__wrap
+
+          h1.title-page Identificación
+
+
+          .panel-row
+            .panel-col--left
+
+              .text-box
+                h2.title-mod Datos del solicitante
+
+
+
+                .row
+                  .form-box.grid-a-12.grid-c-6
+                    label.label(for='idnombre') Nombre
+                    input.input#idnombre(type='text',placeholder='Introduzca el nombre', autofocus)
+                .row
+                  .form-box.grid-a-12.grid-c-6
+                    label.label(for='idapellido') Primer apellido
+                    input.input#idapellido(type='text',placeholder='Introduzca el primer apellido')
+                .row
+                  .form-box.grid-a-12.grid-c-6
+                    label.label(for='idnif') NIF
+                    input.input#idnif(type='text',placeholder='Introduzca el NIF')
+                .row
+                  .form-box.grid-a-12.grid-c-6
+                    label.label(for='idemail') Email de contacto
+                    input.input#idemail(type='text',placeholder='Introduzca el email')
+                    .form-text Te enviaremos la información de su solicitud a este mail
+                .row
+                  .form-box.grid-a-12.grid-c-6
+                    label.label(for='idtel') Teléfono (Opcional)
+                    input.input#idtel(type='text',placeholder='Introduzca un teléfono')
+                    .form-text No lo usaremos para fines comerciales
+
+              .text-box
+                h2.title-mod Datos de facturación
+
+                .rb-group.rb-group--horizontal.rb-group--line
+                  fieldset
+                    legend.invisible Seleccione datos de facturación
+                    .rb-option
+                      label.rb-label(for='radioh1')
+                        input#radioh1.invisible.radiobutton(type='radio',name='radioh',checked)
+                        span.rb-pick
+                        span.rb-text Soy Persona física
+                        span.rb-line
+
+                    .rb-option
+                      label.rb-label(for='radioh2')
+                        input#radioh2.invisible.radiobutton(type='radio',name='radioh')
+                        span.rb-pick
+                        span.rb-text Soy Persona jurídica
+                        span.rb-line
+
+                .cb-option
+                  label.cb-label(for='cbMTit')
+                    input#cbMTit.invisible.checkbox(type='checkbox')
+                    span.cb-pick
+                    span.cb-text Mismo titular de facturación que solicitaste
+
+                .row
+                  .form-box.grid-a-12.grid-c-6
+                    label.label(for='taDir') Dirección completa
+                    textarea.textarea#taDir(name='textarea',rows=3, placeholder='Introduzca la dirección completa y número')
+
+                .row
+                  .form-box.grid-a-12.grid-c-3
+                    label.label(for='iCP') CP
+                    input.input#iCP(type='text',placeholder='Código postal')
+                    .form-text 5 números
+
+                .row
+                  .form-box.grid-a-12.grid-c-6
+                    label.label(for='iProv') Provincia
+                    .form-ico
+                      input.input#iProv(type='text',placeholder='Seleccione o introduzca la provincia')
+                      svg.icon(viewBox='0 0 100 100')
+                        use(xlink:href='../static/img/common/svg/svg-symbols.svg#autocomplete')
+
+                .row
+                  .form-box.grid-a-12.grid-c-6
+                    label.label(for='iMun') Municipio
+                    .form-ico
+                      input.input#iMun(type='text',placeholder='Seleccione o introduzca municipio')
+                      svg.icon(viewBox='0 0 100 100')
+                        use(xlink:href='../static/img/common/svg/svg-symbols.svg#autocomplete')
+
+                .cb-option
+                  label.cb-label(for='cbIRPF')
+                    input#cbIRPF.invisible.checkbox(type='checkbox')
+                    span.cb-pick
+                    span.cb-text Practicar retención IRPF
+
+                h3.title-text Condiciones del servicio (Obligatorio)
+
+                .cb-option
+                  label.cb-label(for='cbCon')
+                    input#cbCon.invisible.checkbox(type='checkbox')
+                    span.cb-pick
+                    span.cb-text Acepto las
+                      a.link.link--primary.modal-open.link--terms(href="#legal-terms", data-content="legal-terms")  condiciones del servicio
+                      |  y la
+                      a.link.link--primary.modal-open.link--privacy(href="#legal-privacy", data-content="legal-privacy")  Política de privacidad.
+
+              .form-action
+                button.btn.btn--primary(type='submit') Continuar
+
+
+            .panel-col--right
+
+              .resume-box.resume-box--dark
+                .resume-box__header
+                  h2.resume-title Resumen
+                  span.resume-note Impuestos y retenciones no incluidos
+                .resume-box__content
+                  table.table.table--resume
+                    thead.table-head.invisible
+                      tr
+                        th
+                          span Concepto
+                        th
+                          span Cantidad/Coste
+                    tbody.table-body
+                      tr
+                        td
+                          strong Nota simple
+                          .resume__info
+                            p
+                              strong Titular:
+                              | A39024415, UNIÓN CREDITOS INMOBILIARIOS S.A
+                            p
+                              strong Buscar en:
+                            ul.list
+                              li.list__item Registro de Armilla. Ogijares. Granada
+                              li.list__item Registro de Ponferrada 2. Ogijares. Granada
+                        td
+                          strong
+                            span.price 9.02
+                            |€
+                      tr
+                        td Cantidad máxima
+                          a.link.link--primary Modificar
+                        td x10
+                      tr
+                        td.resume-add(colspan="2")
+                          .add.cb-english
+                            .add__concept Traducción en inglés
+                              a.link.add-remove(data-remove="cb-english") Quitar
+                            .add__amount
+                              strong
+                                span.price 30
+                                | €
+
+                              
+                      tr.resume-final
+                        td(colspan='2')
+                          .resume-final--wrap
+                            span.resume-final--line Coste máximo estimado
+                            span.price-total -- €
+
+
+
+
+      include includes/_tpl-footer.pug

@@ -1,0 +1,314 @@
+extends includes/_tpl-base.pug
+
+block title
+  title Encuentre la propiedad
+
+block body
+
+
+
+  - var headerMenu = false
+
+  - var menuLinks = false
+  - var user_item1 = 'active'
+
+  - var topbar = 'topbar--dark'
+  - var topbarTitle = 'Solicitud de nota localización'
+  - var topbarSteps = [{num: "1", state: "list__item--active"}, {num: "2", state: ""}, {num: "3", state: ""}]
+
+  - var footer = 'footer'
+
+  body
+
+    .main-global
+
+      include includes/_tpl-header.pug
+
+
+      main.main-content
+
+        include includes/_tpl-topbar.pug
+        //- include includes/_tpl-topbar.pug
+
+        .main-content__wrap
+
+          h1.title-page Encuentre la Propiedad
+
+          .panel-row
+
+            .panel--col.panel-col--left
+
+              .form-content
+                p.mb-32 Seleccione el tipo de búsqueda y complete la información para que le podamos encontrar la propiedad.
+                form(autocomplete="on")
+                  .rb-group.rb-group--horizontal.rb-group--line
+                    fieldset
+                      legend.invisible Seleccione búsqueda
+                      .rb-option
+                        label.rb-label(for='radio01')
+                          input#radio01.invisible.radiobutton.qa-radio-idufir(type='radio',name='radioh',data-content='radioh--0')
+                          span.rb-pick
+                          span.rb-text Buscar por IDUFIR
+                          span.rb-line
+
+                      .rb-option
+                        label.rb-label(for='radio02')
+                          input#radio02.invisible.radiobutton.qa-radio-titular(type='radio',name='radioh',data-content='radioh--1')
+                          span.rb-pick
+                          span.rb-text Buscar por Titular actual
+                            //- a.modal-lateral-open(data-content='modal01', href="#modal01", title="Mostrar ayuda")
+                            //-   svg.icon.rb-icon.primary
+                            //-     title Mostrar ayuda
+                            //-     use(xlink:href='../static/img/common/svg/svg-symbols.svg#help-circle')
+                          span.rb-line
+                        a.modal-lateral-open(data-content='modal01', href="#modal01", title="Mostrar ayuda")
+                          svg.icon.rb-icon.primary
+                            title Mostrar ayuda
+                            use(xlink:href='../static/img/common/svg/svg-symbols.svg#help-circle')
+
+                      .rb-option
+                        label.rb-label(for='radio03')
+                          input#radio03.invisible.radiobutton.qa-radio-datos(type='radio',name='radioh',data-content='radioh--2')
+                          span.rb-pick
+                          span.rb-text Buscar por Datos Registrales
+                          span.rb-line
+
+                      .rb-option
+                        label.rb-label(for='radio04')
+                          input#radio04.invisible.radiobutton.qa-radio-otros(type='radio',name='radioh',data-content='radioh--3',checked)
+                          span.rb-pick
+                          span.rb-text Buscar por otros datos
+                          span.rb-line
+
+                .form-panel.radioh.radioh--0
+                  form.form(autocomplete='off',action='preficha-propiedad.html')
+                    .form-options
+                      .row
+                        .form-box.grid-c-4
+                          label.label(for='idufir') IDUFIR
+                          //- input.input#idufir(type='text',placeholder='Introduzca el IDUFIR', data-validation='length alphanumeric', data-validation-length='min8', autofocus)
+                          input.input#idufir(type='text',placeholder='Introduzca el IDUFIR', autofocus)
+
+                    .form-action
+                      button.btn.btn--primary#radioh--0(type='submit') Continuar
+
+
+
+
+                .form-panel.radioh.radioh--1.hide
+                  form.form(autocomplete='off',action='busqueda-titular-ambito.html')
+
+                    .gen-msg.gen-msg--info.form-panel--msg
+                      p Con este tipo de búsqueda podrán aparecer múltiples titulares con igual nombre y apellidos por lo que no dispondremos de ningún criterio para diferenciarlos.
+                      svg.gen-msg__icon
+                        use(xlink:href='../static/img/common/svg/svg-symbols.svg#info-circle')
+
+                    .form-options
+
+                      .row
+                        .form-box.grid-c-4
+                          label.label(for='input01') NIF / CIF
+                          input.input#input01(type='text', placeholder='Introduzca el NIF/CIF', autofocus)
+
+                      .row
+                        .form-box.grid-c-4
+                          label.label(for='input02') Nombre
+                          input.input#input02(type='text', placeholder='Introduzca el nombre')
+
+                      .row
+                        .form-box.grid-c-4
+                          label.label(for='input03') Apellidos / Denominación social
+                          input.input#input03(type='text', placeholder='Introduzca los apellidos o denominación social')
+
+                    .form-action
+                      button.btn.btn--primary#radioh--1(type='submit') Continuar
+
+                    .hide
+                      .modal01
+                        h1.modal-title
+                          svg.icon.info
+                            title Mostrar ayuda
+                            use(xlink:href='../static/img/common/svg/svg-symbols.svg#help-circle')
+                          |  Búsqueda por titular
+                        .modal-text
+                          p Se advierte que la presente búsqueda comprende, no sólo el dominio, sino todos los derechos que pueden estar inscritos a favor de una persona, cualquiera que sea su naturaleza
+                          p Si a nombre del titular seleccionado no apareciere inscrita ninguna finca o derecho, se generará una nota de localización negativa circunscrita al ámbito territorial seleccionado.
+
+
+                .form-panel.radioh.radioh--2.hide
+                  form.form(autocomplete='off',action='preficha-propiedad.html')
+
+                    .form-options
+
+                      .row
+                        .form-box.grid-a-12.grid-c-4
+                          label.label(for='input04') Provincia
+                          .form-ico
+                            input.input.provincias#input04(type='text',placeholder='Seleccione o introduzca provincia')
+                            svg.icon
+                              use(xlink:href='../static/img/common/svg/svg-symbols.svg#autocomplete')
+
+                      .row
+                        .form-box.grid-a-12.grid-c-4
+                          label.label(for='input05') Municipio
+                            span.label--optional  (opcional)
+                          .form-ico
+                            //- input.input#input05(type='text',placeholder='Seleccione o introduzca el municipio', data-validation='length alphanumeric', data-validation-length='min4')
+                            input.input#input05(type='text',placeholder='Seleccione o introduzca el municipio')
+                            svg.icon
+                              use(xlink:href='../static/img/common/svg/svg-symbols.svg#autocomplete')
+
+                      .row
+                        .form-box.grid-a-12.grid-c-4
+                          label.label(for='select01') Registro donde se encuentra la propiedad
+                          .form-ico.form-ico--select
+                            select#select01.select(data-validation="required")
+                              option(value='',disabled,selected) Seleccione una propiedad
+                              option Registro 0001
+                              option Registro 0002
+                              option Registro 0003
+
+                            svg.icon(viewBox='0 0 48 48')
+                              use(xlink:href='../static/img/common/svg/svg-symbols.svg#arrow-down')
+
+                      .row.row--multi
+                        .form-box.grid-a-12.grid-c-2
+                          label.label(for='input06') Nº de finca
+                          input.input#input06(type='text',placeholder='Nº de finca')
+
+                        .form-box.grid-a-12.grid-c-2
+                          label.label(for='input07') Nº de subfinca
+                            span.label--optional  (opcional)
+                          input.input#input07(type='text',placeholder='Nº Subfinca')
+
+                      .row.row--multi
+                        .form-box.grid-a-12.grid-c-2
+                          label.label(for='input08') Sección
+                            span.label--optional  (opcional)
+                          input.input#input08(type='text',placeholder='Sección')
+
+                        .form-box.grid-a-12.grid-c-2
+                          label.label(for='input09') Duplicado
+                            span.label--optional  (opcional)
+                          input.input#input09(type='text',placeholder='Duplicado')
+
+                    .form-action
+                      button.btn.btn--primary#radioh--2(type='submit') Continuar
+
+
+                .form-panel.radioh.radioh--3.hide
+                  form.form(autocomplete='off',action='preficha-propiedad.html')
+
+                    .gen-msg.gen-msg--info.grid-a-12.form-panel--msg
+                      p Las solicitudes sin datos exactos podrán ser devieltas por lo que se debe completar la mayor información posible
+                      svg.gen-msg__icon
+                        use(xlink:href='../static/img/common/svg/svg-symbols.svg#info-circle')
+
+
+
+                    //- .rb-group
+                    //-   fieldset
+                    //-     legend Debe especificar un motivo por el que se solicita o la finalidad para la que se usará la información:
+                    //-
+                    //-     //- nota: solo visible para certificaciones
+                    //-     .rb-option
+                    //-       label.rb-label(for='radio0')
+                    //-         input#radio0.invisible.radiobutton(type='radio',name='msol')
+                    //-         span.rb-pick
+                    //-         span.rb-text Soy titular de la finca
+                    //-
+                    //-     .rb-option
+                    //-       label.rb-label(for='radio1')
+                    //-         input#radio1.invisible.radiobutton(type='radio',name='msol')
+                    //-         span.rb-pick
+                    //-         span.rb-text Investigación jurídico-económica sobre crédito, solvencia o responsabilidad.
+                    //-
+                    //-     .rb-option
+                    //-       label.rb-label(for='radio2')
+                    //-         input#radio2.invisible.radiobutton(type='radio',name='msol')
+                    //-         span.rb-pick
+                    //-         span.rb-text Investigación jurídica sobre el objeto, su titularidad o limitaciones.
+                    //-
+                    //-     .rb-option
+                    //-       label.rb-label(for='radio3')
+                    //-         input#radio3.invisible.radiobutton(type='radio',name='msol')
+                    //-         span.rb-pick
+                    //-         span.rb-text Investigación para contratación o interposición de acciones.
+                    //-
+                    //-     .rb-option
+                    //-       label.rb-label(for='radio4')
+                    //-         input#radio4.invisible.radiobutton(type='radio',name='msol')
+                    //-         span.rb-pick
+                    //-         span.rb-text El solicitante es titular de algún dereche sobre la finca.
+                    //-
+                    //-     .rb-option
+                    //-       label.rb-label(for='radio5')
+                    //-         input#radio5.invisible.radiobutton(type='radio',name='msol',data-content='msol--01')
+                    //-         span.rb-pick
+                    //-         span.rb-text Otros.
+                    //-
+                    //-       .form-panel.msol.msol--01.hide
+                    //-         .row
+                    //-           .form-box.grid-a-12.grid-c-8
+                    //-             label.label.invisible(for='in-otro') Especifique un interés
+                    //-             textarea.input#in-otro(placeholder='Interés ...', rows='3', cols='3', autofocus)
+
+
+                    .form-options.grid-a-12.grid-c-4
+
+
+                      .h2.title-submod Localiza el Registro
+
+                      .form-block
+
+                        .form-box
+                          label.label(for="lr-inp01") Provincia
+                          .form-ico
+                            select.select.comu#lr-inp01(type='text',value="",placeholder='Especifíque una provincia')
+                            svg.icon
+                              use(xlink:href='../static/img/common/svg/svg-symbols.svg#arrow-down')
+
+                        .form-box
+                          label.label(for="lr-inp02") Municipio
+                          .form-ico
+                            select.select.comu#lr-inp01(type='text',value="",placeholder='Especifíque una provincia')
+                            svg.icon
+                              use(xlink:href='../static/img/common/svg/svg-symbols.svg#arrow-down')
+
+                        .form-box
+                          label.label(for='name') Dirección
+                          .input-btn
+                            input.input#name(type='text',placeholder='Introduce nombre')
+                            a.btn.btn--primary Validar
+
+                        //- .form-box.grid-a-12
+                        //-   a.btn.btn--primary.btn--input Validar
+                        //-
+                        //- .form-box.grid-a-12
+                        //-   a.btn.btn--success.btn--input Validado
+                        
+
+                        .hlight-msg.grid-a-12
+                          p
+                            strong Registro donde se encuentra la propiedad
+                          p Registro de la Propiedad Gijón/Xixón Nº 05
+                          a.link.link--primary Quitar selección
+
+                          svg.icon.hlight-msg__icon.success
+                            use(xlink:href='../static/img/common/svg/svg-symbols.svg#check-filled-circle')
+
+                        .form-box
+                          label.label(for='input304') Otros posibles datos
+                          textarea.textarea#input304(type='text',placeholder='Nombre de la finca')
+
+
+
+
+
+                    .form-action
+                      button.btn.btn--primary#radioh--3(type='submit') Continuar
+
+
+
+
+      include includes/_tpl-footer.pug

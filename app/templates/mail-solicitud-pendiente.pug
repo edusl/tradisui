@@ -1,0 +1,63 @@
+doctype strict
+html(lang="es")
+
+  head
+
+    meta(charset='utf-8')
+    meta(name="viewport",content="width=device-width, initial-scale=1.0, user-scalable=no")
+    meta(http-equiv="X-UA-Compatible",content="ie=edge")
+
+    link(href="https://fonts.googleapis.com/css?family=Open+Sans:400,700",rel="stylesheet")
+
+
+    title Confirmación solicitud
+
+  body
+
+    table(style="font-family: 'Open Sans', Tahoma, Geneva, sans-serif; max-width: 600px; margin: 0 auto")
+      tr
+        td(style="border-bottom: 1px solid #e8e8e8; margin-bottom: 20px")
+          h1
+            img(src='../static/img/common/mail/logo-registradores.png', alt='Registradores de España')
+      tr
+        td
+          p(style="padding-top: 20px; padding-bottom: 20px; font-size: 15px; line-height: 24px") Hola Javier Gonzalez, <br /> Hemos recibido sus solicitudes correctamente y próximamente recibirá la información registral solicitada. <br/>Puede comprobar cada petición desde su
+            a(href="#", style='color: #B21D2D; text-decoration: none')
+              |  área de usuario.
+
+
+
+
+      <!-- tarjeta solicitud -->
+      tr
+        td
+          table(style="background-color: #f3f3f3; border-top: 2px solid #000000; width: 100%; padding: 20px; margin-bottom: 30px; font-size: 14px")
+            tr
+              td(style="max-width: 180px; display: block; padding-bottom: 15px") Nº de solicitud
+              td(style="padding-bottom: 15px; font-weight: bold").request-num H36FN45F6
+            tr
+              td(style="max-width: 180px; display: block; padding-bottom: 15px") Tipo:
+              td(style="padding-bottom: 15px").request-type Nota Simple
+            tr
+              td(style="max-width: 180px; display: block; padding-bottom: 15px") Fecha de creación:
+              td(style="padding-bottom: 15px").request-date 07/01/2016
+            tr
+              td(style="max-width: 180px; display: block; padding-bottom: 15px") Información de:
+              td(style="padding-bottom: 15px").request-info Registro de la Propiedad de Madrid 53. Propiedad 35805. Sec 5
+            tr
+              td(style="with: 20%") Estado:
+              td
+                span(style="background-color: #EBAF20; padding: 6px; border-radius: 3px; color: white; text-transform: uppercase; display: inline-block; font-size: 12px") En proceso
+      <!-- fin tarjeta solicitud -->
+
+
+
+      tr
+        td
+          table(style="border-top: 1px solid #e8e8e8; width: 100%; font-size: 13px")
+            tr
+              td(style="width: 50%; text-align: left")
+                img(src='../static/img/common/mail/logo-registradores-bn.png', alt='Registradores de España', style='margin-top: -3px; margin-left: -3px')
+
+              td(style="width: 50%; text-align: right; color: #6d6d6d; font-weight: bold") ¿Dudas? <br />
+                a(href="#", style='color: #6d6d6d; font-weight: normal') Contacte con nosotros

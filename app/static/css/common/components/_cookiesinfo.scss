@@ -1,0 +1,47 @@
+.cookie-bar {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: #f2f4f4;
+  transition: .8s;
+  animation: slideIn .7s;
+  padding: 15px 0 0 0;
+  text-align: center;
+  z-index: 999;
+  box-shadow: 0 -1px 37px rgba(0, 0, 0, 0.2);
+  &.close {
+    transform: translateY(300px);
+  }
+  .message {
+    max-width: 1000px;
+    display: inline-block;
+    font-size: 11px;
+    padding: 0 10px 0 10px;
+    line-height: 14px;
+    @include responsive(desktop) {
+      font-size: 14px;
+      padding: 0;
+      line-height: normal;
+    }
+  }
+  a {
+    margin-top: 15px;
+    width: 124px;
+    height: 38px;
+    min-width: unset;
+    font-size: 11px;
+    @include responsive(desktop) {
+      font-size: 13px;
+    }
+  }
+}
+@keyframes slideIn {
+  0% {
+    transform: translateY(250px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}

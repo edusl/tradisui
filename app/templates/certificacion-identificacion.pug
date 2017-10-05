@@ -1,0 +1,770 @@
+extends includes/_tpl-base.pug
+
+block title
+  title Alta de abonado
+
+block body
+
+  - var headerMenu = false
+
+
+  - var topbar = 'topbar--dark'
+  - var topbarTitle = 'Identificación'
+  - var topbarSteps = [{num: "1", state: "list__item--active"}, {num: "2", state: ""}]
+
+  - var footer = 'footer'
+
+  body
+
+    .main-global
+
+      include includes/_tpl-header.pug
+
+      main.main-content
+
+        include includes/_tpl-topbar.pug
+
+        .main-content__wrap
+
+          h1.title-page Identificación
+
+          .form-msg.form-msg--info
+            p Todos los campos son obligatorios excepto los que se marquen como opcionales.
+            .form-msg__border
+            a.close-msg(title='Cerrar mensaje')
+              svg.form-msg__icon
+                use(xlink:href='../static/img/common/svg/svg-symbols.svg#close')
+
+
+
+          form.form(action='')
+
+            .text-box.grid-a-12.grid-c-6
+
+              .rb-group.rb-group--horizontal.rb-group--line
+                fieldset
+                  legend ¿Es usted empresario o profesional actuando como tal?
+                  .rb-option.grid-a-12.grid-c-4
+                    label.rb-label(for='form-empresa')
+                      input#form-empresa.invisible.radiobutton(type='radio',name='radio-tipo',data-content='form-empresa')
+                      span.rb-pick
+                      span.rb-text Si, empresa
+                      span.rb-line
+
+                  .rb-option.grid-a-12.grid-c-4
+                    label.rb-label(for='form-profesional')
+                      input#form-profesional.invisible.radiobutton(type='radio',name='radio-tipo',data-content='form-profesional')
+                      span.rb-pick
+                      span.rb-text Si, profesional
+                      span.rb-line
+
+                  .rb-option.grid-a-12.grid-c-4
+                    label.rb-label(for='form-particular')
+                      input#form-particular.invisible.radiobutton(type='radio',name='radio-tipo',data-content='form-particular')
+                      span.rb-pick
+                      span.rb-text No
+                      span.rb-line
+
+
+              //- formulario particular
+
+              .form-panel.radio-tipo.form-particular.hide
+
+                h2.title-mod Datos de identificación
+
+                .form-box
+                  label.label(for="particular-pais") País de residencia
+                  .form-ico.form-ico--select
+
+                    select#particular-pais.select
+                       option(value='AT', data-content='particular-pais--01') Austria
+                       option(value='BE', data-content='particular-pais--01') Bélgica
+                       option(value='BG', data-content='particular-pais--01') Bulgaria
+                       option(value='CY', data-content='particular-pais--01') Chipre
+                       option(value='CZ', data-content='particular-pais--01') Chequia
+                       option(value='DE', data-content='particular-pais--01') Alemania
+                       option(value='DK', data-content='particular-pais--01') Dinamarca
+                       option(value='EE', data-content='particular-pais--01') Estonia
+                       option(value='EL', data-content='particular-pais--01') Grecia
+                       option(value='ES', data-content='particular-pais--00', selected) España
+                       option(value='FI', data-content='particular-pais--01') Finlandia
+                       option(value='FR', data-content='particular-pais--01') Francia
+                       option(value='GB', data-content='particular-pais--01') Reino Unido
+                       option(value='HR', data-content='particular-pais--01') Croacia
+                       option(value='HU', data-content='particular-pais--01') Hungría
+                       option(value='IE', data-content='particular-pais--01') Irlanda
+                       option(value='IT', data-content='particular-pais--01') Italia
+                       option(value='LT', data-content='particular-pais--01') Lituania
+                       option(value='LU', data-content='particular-pais--01') Luxemburgo
+                       option(value='LV', data-content='particular-pais--01') Letonia
+                       option(value='MT', data-content='particular-pais--01') Malta
+                       option(value='NL', data-content='particular-pais--01') Países Bajos
+                       option(value='PL', data-content='particular-pais--01') Polonia
+                       option(value='PT', data-content='particular-pais--01') Portugal
+                       option(value='RO', data-content='particular-pais--01') Rumania
+                       option(value='SE', data-content='particular-pais--01') Suecia
+                       option(value='SI', data-content='particular-pais--01') Eslovenia
+                       option(value='SK', data-content='particular-pais--01') Eslovaquia
+
+                    svg.icon
+                     use(xlink:href='../static/img/common/svg/svg-symbols.svg#arrow-down')
+
+
+
+                .form-box
+                  label.label(for='particular-nom') Nombre
+                  input.input#particular-nom(type='text',placeholder='Escriba su nombre',data-validation='length custom', data-validation-length='min2',data-validation-regexp='^([a-z]+)$')
+                  span.form-text Como aparece en el NIF
+
+
+                .form-box
+                  label.label(for='particular-pa') Primer apellido
+                  input.input#particular-pa(type='text',placeholder='Introduzca el primer apellido',data-validation='length custom', data-validation-length='min2',data-validation-regexp='^([a-z]+)$')
+
+                .form-box
+                  label.label(for='particular-sa') Segundo apellido
+                    span.label--optional  (opcional)
+                  input.input#particular-sa(type='text',placeholder='Introduzca el segundo apellido',data-validation='length custom', data-validation-length='min2',data-validation-regexp='^([a-z]+)$')
+
+
+
+                .form-panel.particular-pais.particular-pais--01.hide
+
+                  .form-box
+                    label.label(for="particular-extPass") Pasaporte/Tarjeta identificación
+                    input.input#particular-extPass(type='text',placeholder='Introduzca su pasaporte/tarjeta identificación')
+
+                  .form-box
+                    label.label(for="particular-extFech") Fecha de expedición
+                    input.input#particular-extFech(type='text',placeholder='Introduzca la fecha')
+
+                  .form-box
+                    label.label(for='particular-extDir') Dirección completa
+                    textarea.input#particular-extDir(type='text',rows='3',placeholder='Introduzca su dirección completa', data-validation='length', data-validation-length='min3')
+
+                  .form-box
+                    label.label(for="particular-extMun") Municipio
+                    input.input#particular-extMun(type='text',placeholder='Introduzca su zipcode')
+
+                  .form-box
+                    label.label(for="particular-extZip") Zipcode
+                    input.input#particular-extZip(type='text',placeholder='Introduzca su zipcode')
+
+                .form-panel.particular-pais.particular-pais--00.hide
+
+                  .form-box
+                    label.label(for='particular-dir') Dirección completa
+                    textarea.input#particular-dir(type='text',rows='3',placeholder='Introduzca la dirección completa', data-validation='length', data-validation-length='min3')
+
+                  .row
+                    .form-box.grid-a-12.grid-c-4
+                      label.label(for='particular-cp') CP
+                      input.input#particular-cp(type='text',placeholder='Código Postal', data-validation='length number', data-validation-length='min5')
+
+                  .form-box
+                    label.label(for='particular-pro') Provincia
+                    input.input#particular-pro(type='text',placeholder='Provincia')
+
+                  .form-box
+                    label.label(for='particular-mun') Municipio
+                    .form-ico
+                      input.input.provincias#particular-mun(type='text',placeholder='Municipio')
+                      svg.icon
+                        use(xlink:href='../static/img/common/svg/svg-symbols.svg#autocomplete')
+
+
+                .form-box
+                  label.label(for='particular-email') Email de contacto
+                  input.input#particular-email(type='text',placeholder='Introduzca el email de la cuenta',data-validation='email')
+                  span.form-text Debe ser un email activo
+
+                .form-box
+                  label.label(for='particular-emailConf') Confirmación de email
+                  input.input#particular-emailConf(type='text',placeholder='Repita su email',data-validation='email')
+
+
+                //- .rb-group.rb-group--horizontal.rb-group--line
+                //-   fieldset
+                //-     legend Teléfono
+                //-     .rb-option
+                //-       label.rb-label(for='particular-tel-fijo')
+                //-         input#particular-tel-fijo.invisible.radiobutton(type='radio',name='particular-tel',data-content='particular-tel-fijo')
+                //-         span.rb-pick
+                //-         span.rb-text Fijo
+                //-         span.rb-line
+                //-
+                //-     .rb-option
+                //-       label.rb-label(for='particular-tel-movil')
+                //-         input#particular-tel-movil.invisible.radiobutton(type='radio',name='particular-tel',data-content='particular-tel-movil')
+                //-         span.rb-pick
+                //-         span.rb-text Móvil
+                //-         span.rb-line
+                //-
+                //- .form-panel.particular-tel-fijo.hide
+                //-   .form-box
+                //-     input.input#particular-tel(type='text',placeholder='Introduzca un teléfono',data-validation='length number', data-validation-length='min9')
+                //-     //- span.form-text No se utilizará para fines comerciales
+                //-
+                //- .form-panel.particular-tel-movil.hide
+                //-   .form-box
+                //-     input.input#particular-tel(type='text',placeholder='Introduzca un teléfono',data-validation='length number', data-validation-length='min9')
+                //-     span.form-text No se utilizará para fines comerciales
+
+
+
+
+
+                .rb-group.rb-group--horizontal.rb-group--line
+                  fieldset
+                    legend ¿Está usted obligado a practicar retención del IRPF?
+                      a.modal-lateral-open(data-content='modal-par-01', href='#modal-par-01', title='Mostrar ayuda')
+                        svg.icon.primary
+                          use(xlink:href='../static/img/common/svg/svg-symbols.svg#help-circle')
+
+                    .rb-option.grid-a-12.grid-c-6
+                      label.rb-label(for='part-irfp-si')
+                        input#part-irfp-si.invisible.radiobutton(th:value='RetencionSi', type='radio', name='radio-part-irfp', data-validation='required')
+                        span.rb-pick
+                        span.rb-text Si
+                        span.rb-line
+                    .rb-option.grid-a-12.grid-c-6
+                      label.rb-label(for='part-irfp-no')
+                        input#part-irfp-no.invisible.radiobutton(th:value='RetencionNo', type='radio', name='radio-part-irfp')
+                        span.rb-pick
+                        span.rb-text No
+                        span.rb-line
+
+                .hide
+                  .modal-par-01
+                    h1.modal-title
+                      svg.icon
+                        use(xlink:href='../static/img/common/svg/svg-symbols.svg#help-circle')
+                      | Retención IRPF
+                    .modal-text
+                      p Se advierte que la presente búsqueda comprende, no sólo el dominio, sino todos los derechos que pueden estar inscritos a favor de una persona, cualquiera que sea su naturaleza
+                      p Si a nombre del titular seleccionado no apareciere inscrita ninguna finca o derecho, se generará una nota de localización negativa circunscrita al ámbito territorial seleccionado.
+
+
+                h2.title-mod Seleccione el certificado con el que va a firmar la petición.
+
+
+                .form-box
+                  label.label(for='particular-email') Email de contacto
+                  input.input#particular-email(type='text',placeholder='Introduzca el email de la cuenta',data-validation='email')
+                  span.form-text Debe ser un email activo
+
+
+
+                      //- fin formulario particular
+
+
+                      //- inicio formulario empresa
+
+              .form-panel.radioh.form-empresa.hide
+
+
+                .rb-group.rb-group--horizontal.rb-group--line
+                  fieldset
+                    legend ¿Es usted empresario domiciliado o con establecimiento permanente en España?
+                    .rb-option.grid-a-12.grid-c-6
+                      label.rb-label(for='empresa-esp')
+                        input#empresa-esp.invisible.radiobutton(type='radio',name='radiohc',data-content='empresa-esp')
+                        span.rb-pick
+                        span.rb-text Si
+                        span.rb-line
+
+                    .rb-option.grid-a-12.grid-c-6
+                      label.rb-label(for='empresa-ext')
+                        input#empresa-ext.invisible.radiobutton(type='radio',name='radiohc',data-content='empresa-ext')
+                        span.rb-pick
+                        span.rb-text No
+                        span.rb-line
+
+
+                .form-panel.radioh.empresa-ext.hide
+                  .rb-group.rb-group--horizontal.rb-group--line
+                    fieldset
+                      legend ¿Es usted operador intracomunitario con número de identificación individual a efectos del IVA (VIES)
+                      .rb-option.grid-a-12.grid-c-6
+                        label.rb-label(for='empresa-vies-si')
+                          input#empresa-vies-si.invisible.radiobutton(type='radio',name='radio-vies',data-content='empresa-vies-si')
+                          span.rb-pick
+                          span.rb-text Si
+                          span.rb-line
+
+                      .rb-option.grid-a-12.grid-c-6
+                        label.rb-label(for='empresa-vies-no')
+                          input#empresa-vies-no.invisible.radiobutton(type='radio',name='radio-vies',data-content='empresa-vies-no')
+                          span.rb-pick
+                          span.rb-text No
+                          span.rb-line
+
+                  .form-panel.radio-vies.empresa-vies-si.hide
+                    .row
+                      .form-box
+                        label.label.pull-left(for='facCP') Identificador fiscal (VIES)
+                        a.modal-lateral-open(data-content="modal01",href="#modal01" title="Mostrar ayuda")
+                          svg.icon.icon--label.primary
+                            use(xlink:href='../static/img/common/svg/svg-symbols.svg#help-circle')
+                        input.input#facCP(type='text',placeholder='Introduzca el código VIES')
+                        .form-text Si es Operador intracomunitario indíquenos el número de identificación fiscal a efectos del IVA .
+
+                      .form-msg.form-msg--error
+                        p No se ha completado la validación de VIES en el Web Service de la CE. Si pulsa Aceptar se le cargará el impuesto correspondiente. No obstante, si usted puede acreditar que tiene en su país el carácter de empresario o profesional, puede solicitar la devolución del impuesto cargado, mediante escrito en el que manifieste y acredite su condición de tal.
+                        .form-msg__border
+
+                  .form-panel.radio-vies.empresa-vies-no.hide
+                    .row
+                      .form-msg.form-msg--info
+                        p Si usted puede acreditar que tiene en su país el carácter de empresario o profesional, puede solicitar la devolución del impuesto cargado, mediante escrito en el que manifieste y acredite su condición de tal.
+                        .form-msg__border
+
+
+
+                .form-panel.empresa-vies-no.empresa-vies-si.empresa-esp.hide
+                  h2.title-mod Datos Sociedad
+
+                  .form-box
+
+                    .form-panel.empresa-esp.hide
+                      label.label(for="empresa-pais-esp") País
+                      input.input#empresa-pais-esp(type='text',value="España",placeholder="España",readonly)
+
+                    .form-panel.empresa-ext.hide
+                      label.label(for="empresa-pais") País
+
+                      .form-ico.form-ico--select
+
+                        select#empresa-pais.select
+                           option(value='AT', data-content='empresa-pais--01') Austria
+                           option(value='BE', data-content='empresa-pais--01') Bélgica
+                           option(value='BG', data-content='empresa-pais--01') Bulgaria
+                           option(value='CY', data-content='empresa-pais--01') Chipre
+                           option(value='CZ', data-content='empresa-pais--01') Chequia
+                           option(value='DE', data-content='empresa-pais--01') Alemania
+                           option(value='DK', data-content='empresa-pais--01') Dinamarca
+                           option(value='EE', data-content='empresa-pais--01') Estonia
+                           option(value='EL', data-content='empresa-pais--01') Grecia
+                           //-  option(value='ES', data-content='empresa-pais--00', selected) España
+                           option(value='ES', data-content='empresa-pais--02') Estados Unidos
+                           option(value='FI', data-content='empresa-pais--01') Finlandia
+                           option(value='FR', data-content='empresa-pais--01') Francia
+                           option(value='GB', data-content='empresa-pais--01') Reino Unido
+                           option(value='HR', data-content='empresa-pais--01') Croacia
+                           option(value='HU', data-content='empresa-pais--01') Hungría
+                           option(value='IE', data-content='empresa-pais--01') Irlanda
+                           option(value='IT', data-content='empresa-pais--01') Italia
+                           option(value='LT', data-content='empresa-pais--01') Lituania
+                           option(value='LU', data-content='empresa-pais--01') Luxemburgo
+                           option(value='LV', data-content='empresa-pais--01') Letonia
+                           option(value='MT', data-content='empresa-pais--01') Malta
+                           option(value='NL', data-content='empresa-pais--01') Países Bajos
+                           option(value='PL', data-content='empresa-pais--01') Polonia
+                           option(value='PT', data-content='empresa-pais--01') Portugal
+                           option(value='RO', data-content='empresa-pais--01') Rumania
+                           option(value='SE', data-content='empresa-pais--01') Suecia
+                           option(value='SI', data-content='empresa-pais--01') Eslovenia
+                           option(value='SK', data-content='empresa-pais--01') Eslovaquia
+
+                        svg.icon
+                         use(xlink:href='../static/img/common/svg/svg-symbols.svg#arrow-down')
+
+
+                  .form-panel.empresa-pais.empresa-pais--01.hide
+
+                    .form-box
+                      label.label.pull-left(for='facCP') Identificador fiscal (VIES)
+                      a.modal-lateral-open(data-content="modal-empresa-01",href="#modal-empresa-01" title="Mostrar ayuda")
+                        svg.icon.icon--label.primary
+                          use(xlink:href='../static/img/common/svg/svg-symbols.svg#help-circle')
+                      input.input#facCP(type='text',placeholder='Introduzca el código VIES')
+                      .form-text Si es Operador intracomunitario indíquenos el número de identificación fiscal a efectos del IVA .
+
+
+                    .hide
+                      .modal-empresa-01
+                        h1.modal-title
+                          svg.icon
+                            use(xlink:href='../static/img/common/svg/svg-symbols.svg#help-circle')
+                          | Identificador fiscal
+                        .modal-text
+                          p Se advierte que la presente búsqueda comprende, no sólo el dominio, sino todos los derechos que pueden estar inscritos a favor de una persona, cualquiera que sea su naturaleza
+                          p Si a nombre del titular seleccionado no apareciere inscrita ninguna finca o derecho, se generará una nota de localización negativa circunscrita al ámbito territorial seleccionado.
+
+
+
+                  .form-box
+                    label.label(for='empresa-ds') Denominación Social
+                    input.input#empresa-ds(type='text',placeholder='Introduzca la denominación social',data-validation='length', data-validation-length='min2')
+
+
+                  .form-panel.empresa-ext.hide
+
+                    .form-box
+                      label.label(for='empresa-vat') VAT
+                      input.input#empresa-vat(type='text',placeholder='Introduzca VAT',data-validation='length', data-validation-length='min2')
+
+                    .form-box
+                      label.label(for='empresa-dir') Dirección completa
+                      textarea.input#empresa-dir(type='text',rows='3',placeholder='Introduzca la dirección completa', data-validation='length', data-validation-length='min3')
+
+                    .form-box
+                      label.label(for='empresa-mun') Municipio
+                      input.input#empresa-mun(type='text',placeholder='Introduzca la dirección completa', data-validation='length', data-validation-length='min3')
+
+                    .form-box
+                      label.label(for='empresa-zip') Zipcode
+                      input.input#empresa-zip(type='text',placeholder='Zipcode')
+
+
+                  .form-panel.empresa-esp.hide
+
+                    .form-box
+                      label.label(for='empresa-nif') NIF
+                      input.input#empresa-nif(type='text',placeholder='Introduzca el nif',data-validation='length', data-validation-length='min2')
+
+                    .form-box
+                      label.label(for='empresa-dir') Dirección completa
+                      textarea.input#empresa-dir(type='text',rows='3',placeholder='Introduzca la dirección completa', data-validation='length', data-validation-length='min3')
+
+                    .row
+                      .form-box.grid-a-12.grid-c-4
+                        label.label(for='empresa-cp') CP
+                        input.input#empresa-cp(type='text',placeholder='Código Postal', data-validation='length number', data-validation-length='min5')
+
+                    .form-box
+                      label.label(for='empresa-pro') Provincia
+                      input.input#empresa-pro(type='text',placeholder='Provincia')
+
+                    .form-box
+                      label.label(for='empresa-mun') Municipio
+                      .form-ico
+                        input.input.provincias#empresa-mun(type='text',placeholder='Municipio')
+                        svg.icon
+                          use(xlink:href='../static/img/common/svg/svg-symbols.svg#autocomplete')
+
+
+                  .form-box
+                    label.label(for='empresa-email') Email de empresa
+                    input.input#empresa-email(type='text',placeholder='Email de empresa',data-validation='email')
+                    span.form-text Dirección donde le enviaremos notificaciones.
+
+                  .form-box
+                    label.label(for='empresa-tel') Télefono
+                      span.label--optional  (opcional)
+                    input.input#empresa-tel(type='text',placeholder='Introduzca un teléfono',data-validation='length number', data-validation-length='min9')
+                    span.form-text No se utilizará para fines comerciales
+
+
+                  .rb-group.rb-group--horizontal.rb-group--line
+                    fieldset
+                      legend ¿Está usted obligado a practicar retención del IRPF?
+                        a.modal-lateral-open(data-content='modal-empresa-irpf', href='#modal-empresa-irpf1', title='Mostrar ayuda')
+                          svg.icon.primary
+                            use(xlink:href='../static/img/common/svg/svg-symbols.svg#help-circle')
+
+                      .rb-option.grid-a-12.grid-c-6
+                        label.rb-label(for='empresa-irpf-0')
+                          input#empresa-irpf-0.invisible.radiobutton(th:value='empresa-irpfSi', type='radio', name='empresa-irpf', data-validation='required')
+                          span.rb-pick
+                          span.rb-text Si
+                          span.rb-line
+                      .rb-option.grid-a-12.grid-c-6
+                        label.rb-label(for='empresa-irpf-1')
+                          input#empresa-irpf-1.invisible.radiobutton(th:value='empresa-irpfNo', type='radio', name='empresa-irpf')
+                          span.rb-pick
+                          span.rb-text No
+                          span.rb-line
+
+                  .hide
+                    .modal-empresa-irpf
+                      h1.modal-title
+                        svg.icon
+                          use(xlink:href='../static/img/common/svg/svg-symbols.svg#help-circle')
+                        | Retención IRPF
+                      .modal-text
+                        p Se advierte que la presente búsqueda comprende, no sólo el dominio, sino todos los derechos que pueden estar inscritos a favor de una persona, cualquiera que sea su naturaleza
+                        p Si a nombre del titular seleccionado no apareciere inscrita ninguna finca o derecho, se generará una nota de localización negativa circunscrita al ámbito territorial seleccionado.
+
+
+
+                  h2.title-mod Datos del representante de la empresa
+
+                  .form-box
+                    label.label(for='empresa-re-nom') Nombre
+                    input.input#empresa-re-nom(type='text',placeholder='Introduzca el nombre',data-validation='length custom', data-validation-length='min2',data-validation-regexp='^([a-z]+)$')
+
+                  .form-box
+                    label.label(for='empresa-re-pa') Primer apellido
+                    input.input#empresa-re-pa(type='text',placeholder='Introduzca el primer apellido',data-validation='length custom', data-validation-length='min2',data-validation-regexp='^([a-z]+)$')
+
+                  .form-box
+                    label.label(for='empresa-re-sa') Segundo apellido
+                      span.label--optional  (opcional)
+                    input.input#empresa-re-sa(type='text',placeholder='Introduzca el segundo apellido',data-validation='length custom', data-validation-length='min2',data-validation-regexp='^([a-z]+)$')
+
+                  .form-box
+                    label.label(for='empresa-re-id') NIF/NIE/Pasaporte
+                    input.input#empresa-re-id(type='text',placeholder='Introduzca el NIF/NIE/Pasaporte', data-validation='length', data-validation-length='min5')
+
+                  .form-box
+                    label.label(for='empresa-re-email') Email de contacto
+                    input.input#empresa-re-email(type='text',placeholder='Introduzca el email de la cuenta',data-validation='email')
+                    span.form-text Debe ser un email activo
+
+                  .form-box
+                    label.label(for='empresa-re-emailconf') Confirmación de email
+                    input.input#empresa-re-emailconf(type='text',placeholder='Confirme el email',data-validation='email')
+
+                  .form-box
+                    label.label(for='empresa-re-tel') Télefono
+                    input.input#empresa-re-tel(type='text',placeholder='Introduzca un teléfono',data-validation='length number', data-validation-length='min9')
+                    span.form-text No lo usaremos para fines comerciales
+
+              //- fin formulario empresa
+
+              //- inicio formulario profesional
+
+              .form-panel.radioh.form-profesional.hide
+
+                .rb-group.rb-group--horizontal.rb-group--line
+                  fieldset
+                    legend ¿Es usted profesional domiciliado o con establecimiento permanente en España?
+                    .rb-option.grid-a-12.grid-c-6
+                      label.rb-label(for='profesional-esp')
+                        input#profesional-esp.invisible.radiobutton(type='radio',name='radio-prof-1',data-content='profesional-esp')
+                        span.rb-pick
+                        span.rb-text Si
+                        span.rb-line
+
+                    .rb-option.grid-a-12.grid-c-6
+                      label.rb-label(for='profesional-ext')
+                        input#profesional-ext.invisible.radiobutton(type='radio',name='radio-prof-1',data-content='profesional-ext')
+                        span.rb-pick
+                        span.rb-text No
+                        span.rb-line
+
+
+                .form-panel.radioh.profesional-ext.hide
+                  .rb-group.rb-group--horizontal.rb-group--line
+                    fieldset
+                      legend ¿Es usted operador intracomunitario con número de identificación individual a efectos del IVA (VIES)
+                      .rb-option.grid-a-12.grid-c-6
+                        label.rb-label(for='profesional-vies-si')
+                          input#profesional-vies-si.invisible.radiobutton(type='radio',name='radio-prof-2',data-content='profesional-vies-si')
+                          span.rb-pick
+                          span.rb-text Si
+                          span.rb-line
+
+                      .rb-option.grid-a-12.grid-c-6
+                        label.rb-label(for='profesional-vies-no')
+                          input#profesional-vies-no.invisible.radiobutton(type='radio',name='radio-prof-2',data-content='profesional-vies-no')
+                          span.rb-pick
+                          span.rb-text No
+                          span.rb-line
+
+                  .form-panel.radio-vies.profesional-vies-si.hide
+                    .row
+                      .form-box
+                        label.label.pull-left(for='facCP') Identificador fiscal (VIES)
+                        a.modal-lateral-open(data-content="modal01",href="#modal01" title="Mostrar ayuda")
+                          svg.icon.icon--label.primary
+                            use(xlink:href='../static/img/common/svg/svg-symbols.svg#help-circle')
+                        input.input#facCP(type='text',placeholder='Introduzca el código VIES')
+                        .form-text Si es Operador intracomunitario indíquenos el número de identificación fiscal a efectos del IVA .
+
+                      .form-msg.form-msg--error
+                        p No se ha completado la validación de VIES en el Web Service de la CE. Si pulsa Aceptar se le cargará el impuesto correspondiente. No obstante, si usted puede acreditar que tiene en su país el carácter de empresario o profesional, puede solicitar la devolución del impuesto cargado, mediante escrito en el que manifieste y acredite su condición de tal.
+                        .form-msg__border
+
+                  .form-panel.radio-vies.profesional-vies-no.hide
+                    .row
+                      .form-msg.form-msg--info
+                        p Si usted puede acreditar que tiene en su país el carácter de empresario o profesional, puede solicitar la devolución del impuesto cargado, mediante escrito en el que manifieste y acredite su condición de tal.
+                        .form-msg__border
+
+                .form-panel.profesional-vies-no.profesional-vies-si.profesional-esp.hide
+                  h2.title-mod Datos Sociedad
+
+
+                  .form-box
+
+                    .form-panel.profesional-esp.hide
+                      label.label(for="profesional-pais-esp") País de residencia
+                      input.input#profesional-pais-esp(type='text',value="España",placeholder="España",readonly)
+
+                    .form-panel.profesional-ext.hide
+                      label.label(for="profesional-pais") País de residencia
+
+                      .form-ico.form-ico--select
+
+                        select#sel-country.select
+                           option(value='AT', data-content='profesional-pais--01') Austria
+                           option(value='BE', data-content='profesional-pais--01') Bélgica
+                           option(value='BG', data-content='profesional-pais--01') Bulgaria
+                           option(value='CY', data-content='profesional-pais--01') Chipre
+                           option(value='CZ', data-content='profesional-pais--01') Chequia
+                           option(value='DE', data-content='profesional-pais--01') Alemania
+                           option(value='DK', data-content='profesional-pais--01') Dinamarca
+                           option(value='EE', data-content='profesional-pais--01') Estonia
+                           option(value='EL', data-content='profesional-pais--01') Grecia
+                           //-  option(value='ES', data-content='profesional-pais--00', selected) España
+                           option(value='SK', data-content='profesional-pais--02') Estados Unidos
+                           option(value='FI', data-content='profesional-pais--01') Finlandia
+                           option(value='FR', data-content='profesional-pais--01') Francia
+                           option(value='GB', data-content='profesional-pais--01') Reino Unido
+                           option(value='HR', data-content='profesional-pais--01') Croacia
+                           option(value='HU', data-content='profesional-pais--01') Hungría
+                           option(value='IE', data-content='profesional-pais--01') Irlanda
+                           option(value='IT', data-content='profesional-pais--01') Italia
+                           option(value='LT', data-content='profesional-pais--01') Lituania
+                           option(value='LU', data-content='profesional-pais--01') Luxemburgo
+                           option(value='LV', data-content='profesional-pais--01') Letonia
+                           option(value='MT', data-content='profesional-pais--01') Malta
+                           option(value='NL', data-content='profesional-pais--01') Países Bajos
+                           option(value='PL', data-content='profesional-pais--01') Polonia
+                           option(value='PT', data-content='profesional-pais--01') Portugal
+                           option(value='RO', data-content='profesional-pais--01') Rumania
+                           option(value='SE', data-content='profesional-pais--01') Suecia
+                           option(value='SI', data-content='profesional-pais--01') Eslovenia
+                           option(value='SK', data-content='profesional-pais--01') Eslovaquia
+
+                        svg.icon
+                         use(xlink:href='../static/img/common/svg/svg-symbols.svg#arrow-down')
+
+                  .form-box
+                    label.label(for='profesional-nom') Nombre
+                    input.input#profesional-nom(type='text',placeholder='Introduzca la denominación social',data-validation='length', data-validation-length='min2')
+
+                  .form-box
+                    label.label(for='profesional-pa') Primer apellido
+                    input.input#profesional-pa(type='text',placeholder='Introduzca la denominación social',data-validation='length', data-validation-length='min2')
+
+                  .form-box
+                    label.label(for='profesional-sa') Segundo apellido
+                    input.input#profesional-ds(type='text',placeholder='Introduzca la denominación social',data-validation='length', data-validation-length='min2')
+
+                  .form-panel.profesional-esp.hide
+
+                    .form-box
+                      label.label(for='profesional-nif') NIF
+                      input.input#profesional-nif(type='text',placeholder='Introduzca el nif',data-validation='length', data-validation-length='min2')
+
+                    .form-box
+                      label.label(for='profesional-dir') Dirección completa
+                      textarea.input#profesional-dir(type='text',rows='3',placeholder='Introduzca la dirección completa', data-validation='length', data-validation-length='min3')
+
+                    .row
+                      .form-box.grid-a-12.grid-c-4
+                        label.label(for='profesional-cp') CP
+                        input.input#profesional-cp(type='text',placeholder='Código Postal', data-validation='length number', data-validation-length='min5')
+
+                    .form-box
+                      label.label(for='profesional-pro') Provincia
+                      input.input#profesional-pro(type='text',placeholder='Provincia')
+
+                    .form-box
+                      label.label(for='profesional-mun') Municipio
+                      .form-ico
+                        input.input.provincias#profesional-mun(type='text',placeholder='Municipio')
+                        svg.icon
+                          use(xlink:href='../static/img/common/svg/svg-symbols.svg#autocomplete')
+
+
+                  .form-panel.profesional-ext.hide
+                    .form-box
+                      label.label(for='profesioanl-id') Pasaporte/ID card
+                      input.input#profesional-id(type='text',placeholder='Introduzca su Pasaporte / ID card', data-validation='length', data-validation-length='min5')
+
+                    .form-box
+                      label.label(for='profesional-dir') Dirección completa
+                      textarea.input#profesional-dir(type='text',rows='3',placeholder='Introduzca la dirección completa', data-validation='length', data-validation-length='min3')
+
+                    .form-box
+                      label.label(for='profesional-mun') Municipio
+                      input.input#profesional-mun(type='text',placeholder='Introduzca el Municipio', data-validation='length', data-validation-length='min3')
+
+                    .form-box
+                      label.label(for='profesional-zip') Zipcode
+                      input.input#profesional-zip(type='text',placeholder='Zipcode')
+
+
+                  .form-box
+                    label.label(for='profesional-email') Email de contacto
+                    input.input#profesional-email(type='text',placeholder='Email ',data-validation='email')
+                    span.form-text Dirección donde le enviaremos notificaciones.
+
+                  .form-box
+                    label.label(for='profesional-tel') Télefono
+                      span.label--optional  (opcional)
+                    input.input#profesional-tel(type='text',placeholder='Introduzca un teléfono',data-validation='length number', data-validation-length='min9')
+                    span.form-text No se utilizará para fines comerciales
+
+
+                  .rb-group.rb-group--horizontal.rb-group--line
+                    fieldset
+                      legend ¿Está usted obligado a practicar retención del IRPF?
+                        a.modal-lateral-open(data-content='modal-profesional-irpf', href='#modal-profesional-irpf', title='Mostrar ayuda')
+                          svg.icon.primary
+                            use(xlink:href='../static/img/common/svg/svg-symbols.svg#help-circle')
+
+                      .rb-option.grid-a-12.grid-c-6
+                        label.rb-label(for='profesional-irpf-0')
+                          input#profesional-irpf-0.invisible.radiobutton(th:value='profesional-irpfSi', type='radio', name='profesional-irpf', data-validation='required')
+                          span.rb-pick
+                          span.rb-text Si
+                          span.rb-line
+                      .rb-option.grid-a-12.grid-c-6
+                        label.rb-label(for='profesional-irpf-1')
+                          input#profesional-irpf-1.invisible.radiobutton(th:value='profesional-irpfNo', type='radio', name='profesional-irpf')
+                          span.rb-pick
+                          span.rb-text No
+                          span.rb-line
+
+                  .hide
+                    .modal-profesional-irpf
+                      h1.modal-title
+                        svg.icon
+                          use(xlink:href='../static/img/common/svg/svg-symbols.svg#help-circle')
+                        | Retención IRPF
+                      .modal-text
+                        p Se advierte que la presente búsqueda comprende, no sólo el dominio, sino todos los derechos que pueden estar inscritos a favor de una persona, cualquiera que sea su naturaleza
+                        p Si a nombre del titular seleccionado no apareciere inscrita ninguna finca o derecho, se generará una nota de localización negativa circunscrita al ámbito territorial seleccionado.
+
+
+
+            .grid-a-12.form-particular.form-empresa.form-profesional.hide
+
+              .form-action
+                p
+                  strong Condiciones del servicio
+                .row
+                  .cb-option
+                    label.cb-label(for='prof-term')
+                      input#prof-term.checkbox.invisible(type='checkbox',data-validation='required')
+                      span.cb-pick
+                      span.cb-text Debe leer y aceptar los
+                       a.link.link--primary.modal-open(href="#modal-prof-terms", data-content="modal-prof-terms")  Términos y Condiciones de uso
+                       |  del servicio.
+
+
+                .hide
+                 .modal-prof-terms
+                   h1.modal-title Términos y condiciones de uso
+                   .modal-text
+                     p Se advierte que la presente búsqueda comprende, no sólo el dominio, sino todos los derechos que pueden estar inscritos a favor de una persona, cualquiera que sea su naturaleza
+                     p Si a nombre del titular seleccionado no apareciere inscrita ninguna finca o derecho, se generará una nota de localización negativa circunscrita al ámbito territorial seleccionado.
+                     p Se advierte que la presente búsqueda comprende, no sólo el dominio, sino todos los derechos que pueden estar inscritos a favor de una persona, cualquiera que sea su naturaleza
+                     p Si a nombre del titular seleccionado no apareciere inscrita ninguna finca o derecho, se generará una nota de localización negativa circunscrita al ámbito territorial seleccionado.
+                     p Se advierte que la presente búsqueda comprende, no sólo el dominio, sino todos los derechos que pueden estar inscritos a favor de una persona, cualquiera que sea su naturaleza
+                     p Si a nombre del titular seleccionado no apareciere inscrita ninguna finca o derecho, se generará una nota de localización negativa circunscrita al ámbito territorial seleccionado.
+
+
+              .row
+                button(type='submit').btn.btn--primary Continuar
+
+
+
+
+
+      include includes/_tpl-footer.pug

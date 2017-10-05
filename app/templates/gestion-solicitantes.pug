@@ -1,0 +1,87 @@
+extends includes/_tpl-base.pug
+
+block title
+  title Solicitantes
+
+block body
+
+  - var headerMenu = true
+  - var menuLinks = true
+  - var userOnline = true
+  - var menuCol = true
+  - var user_item1 = 'active'
+  - var footer = 'footer'
+
+
+  body
+
+    .main-global
+
+      include includes/_tpl-header.pug
+
+      main.main-content
+
+        .main-content__wrap
+
+          .panel-row
+
+            h1.title-page.title-page--noline
+              a.link.link--titleback(href="#")
+                svg.icon.primary
+                  use(xlink:href='../static/img/common/svg/svg-symbols.svg#arrow-circle')
+
+              | Solicitantes
+
+            p Gestión de solicitantes a los que realiza solicitudes.
+
+            table.table.table--default.grid-a-12
+              thead.table-head
+                tr
+                  th
+                    span Solicitante
+                  th
+                    span
+                      abbr(title='Número de identficación fiscal') NIF
+                  th
+                    span.invisible Editar
+              tbody.table-body
+                tr
+                  td(data-label='Apellidos / Den. social')
+                    a.link.link--primary BANKIA S.A.
+                  td(data-label='NIF') 180056887Z
+                  td.align-right(data-label='Editar')
+                    a.link.link--primary Editar
+                tr
+                  td(data-label='Apellidos / Den. social')
+                    a.link.link--primary CAMPOFRIO S.A.
+                  td(data-label='NIF') 180056887Z
+                  td.align-right(data-label='Editar')
+                    a.link.link--primary Editar
+                tr
+                  td(data-label='Apellidos / Den. social')
+                    a.link.link--primary IKEA DISTRIBUCIONES S.A.
+                  td(data-label='NIF') 180056887Z
+                  td.align-right(data-label='Editar')
+                    a.link.link--primary Editar
+
+            button.btn.btn--secondary.btn--medium Crear nuevo solicitante
+
+          //- .panel-col.panel-col--right
+            .menu__user--col
+                nav
+                  ul.list
+                    li(class='list__item list__item--' + user_item1)
+                      a.link(href="login-estado.html") Solicitudes realizadas
+                    li(class='list__item list__item--' + user_item2)
+                      a.link(href="#") Notificaciones
+                    li(class='list__item list__item--' + user_item3)
+                      a.link(href="#") Pagos y facturas
+                    li(class='list__item list__item--' + user_item4)
+                      a.link(href="#") Configuración
+                    li(class='list__item capitalize list__item--' + user_item5)
+                      a.link(href="login-solicitud.html") Cerrar sesión
+                        svg.icon
+                          use(xlink:href='../static/img/common/svg/svg-symbols.svg#arrow-simple')
+
+
+      include includes/_tpl-footer.pug

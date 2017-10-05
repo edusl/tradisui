@@ -1,0 +1,69 @@
+extends includes/_tpl-base.pug
+
+block title
+  title Alta de abonado
+
+block body
+
+  - var headerMenu = false
+
+
+  - var topbar = 'topbar--dark'
+  - var topbarTitle = 'Creación de nueva cuenta'
+  - var topbarSteps = [{num: "1", state: ""}, {num: "2", state: "list__item--active"}]
+
+  - var footer = 'footer'
+
+  body
+
+    .main-global
+
+      include includes/_tpl-header.pug
+
+      main.main-content
+
+        include includes/_tpl-topbar.pug
+
+        .main-content__wrap
+
+          h1.title-page Crear nueva cuenta
+
+          .text-box
+            .grid-a-12.grid-c-4
+              h2.title-mod Datos de acceso
+
+              .row
+                .gen-msg.gen-msg--info
+                  .gen-msg__text
+                    p Podrá usar el NIF del solictante para acceder.
+                  svg.gen-msg__icon
+                    use(xlink:href='../static/img/common/svg/svg-symbols.svg#info-circle')
+
+
+              .form-box
+                label.label(for='da-inp01') Contraseña
+                input.input#da-inp01(type='password', placeholder='Introduzca una contraseña', data-validation='strength', data-validation-strength='2', autofocus)
+                .form-text Mínimo 4, máximo 12 (números, letras o símbolos)
+                .pw-bar.pw-bar--insecure
+                  .pw-bar__bar
+                    span.pw-bar__line
+                  .pw-bar__text Muy débil
+
+              .form-box
+                label.label(for='da-inp02') Confirmación contraseña
+                input.input#da-inp02(type='password',placeholder='Introduzca de nuevo la misma contraseña')
+
+
+          .form-action
+
+              button.btn.btn--primary Continuar
+
+
+
+
+
+
+
+
+
+      include includes/_tpl-footer.pug

@@ -1,0 +1,203 @@
+extends includes/_tpl-base.pug
+
+block title
+  title Encuentre la propiedad
+
+block body
+
+  - var headerMenu = false
+
+  - var topbar = 'topbar--dark'
+  - var topbarTitle = 'Solicitud de nota de localizacion'
+  - var topbarLink = '¿Qué incluye?'
+
+  - var footer = 'footer'
+
+
+
+  body.tpl-col42.tpl-resume
+
+    .main-global
+
+      include includes/_tpl-header.pug
+
+
+      main.main-content
+
+        include includes/_tpl-topbar.pug
+
+        .main-content__wrap.mercantil-seleccion
+
+          h1.title-page Datos de la solicitud
+
+
+          .panel-row
+            .panel-col.panel-col--left
+              form.form
+
+                div
+                  p.info-seleccion Selecciona la información que desee obtener de esta sociedad.
+
+
+                .hide
+                  .modal01
+                    h1#modal01.modal-title.modal-title--icon
+                      svg.icon.info
+                        use(xlink:href='../static/img/common/svg/svg-symbols.svg#help-circle')
+                      |  ¿Qué es el interes legítimo alegado?
+                    .modal-text
+                      h1  Titulo de la ventana modal
+
+                      p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+
+                .text-box
+
+
+                  .cb-group
+
+                    .infoHeader
+                      span.uppercase Datos
+                      span.uppercase.pull-right Coste
+
+                    .cb-option
+                      label.cb-label(for='cb-all')
+                        input#cb-all.invisible.checkbox(type='checkbox' ,data-concept='Traducción en inglés', data-value='30')
+                        span.cb-pick
+                        strong.cb-text Seleccionar todos los datos
+
+                    .cb-option
+                      label.cb-label(for='cb-a1')
+                        input#cb-a1.invisible.checkbox.case(type='checkbox',name='checkall' ,data-content='panel--cb1')
+                        span.cb-pick
+                        span.cb-text Datos básicos identificativos
+                          strong (Obligatorio)
+                          div.subText Denominación social / NIF /  C.N.A.E / Relación de dominios en la Red (si existen inscritos) / Domicilio / Objeto social /  Datos registrales de la inscripción /  Si existen o no asientos de presentación vigentes. / Si existen o no situaciones especiales/ Último depósito disponible.
+                        span.cb-value 8,99€
+
+                    .cb-option
+                      label.cb-label(for='cb-a2')
+                        input#cb-a2.invisible.checkbox.case(type='checkbox',name='checkall' ,data-content='panel--cb1')
+                        span.cb-pick
+                        span.cb-text Capital social
+                        span.cb-value 2,99€
+
+                    .cb-option
+                      label.cb-label(for='cb-a3')
+                        input#cb-a3.invisible.checkbox.case(type='checkbox',name='checkall' ,data-content='panel--cb1')
+                        span.cb-pick
+                        span.cb-text Asientos de presentación
+                        span.cb-value 2,99€
+
+                    .cb-option
+                      label.cb-label(for='cb-a4')
+                        input#cb-a4.invisible.checkbox.case(type='checkbox',name='checkall' ,data-content='panel--cb1',checked)
+                        span.cb-pick
+                        span.cb-text Situaciones especiales
+                        span.cb-value 2,99€
+
+                    .cb-option
+                      label.cb-label(for='cb-a5')
+                        input#cb-a5.invisible.checkbox.case(type='checkbox',name="checkall" ,data-content='panel--cb1',checked)
+                        span.cb-pick
+                        span.cb-text Administradores y cargos sociales
+                        span.cb-value 2,99€
+
+                    .cb-option.disabled
+                      label.cb-label(for='cb-a6')
+                        input#cb-a6.invisible.checkbox.case(type='checkbox',name='checkall',data-content='panel--cb1', disabled)
+                        span.cb-pick
+                        span.cb-text Apoderados
+                        a.modal-lateral-open(data-content='modal01', href="#modal01", title="Mostrar ayuda")
+                          svg.icon.primary.help
+                            title Mostrar ayuda
+                            use(xlink:href='../static/img/common/svg/svg-symbols.svg#help-circle')
+
+                    .cb-option
+                      label.cb-label(for='cb-a7')
+                        input#cb-a7.invisible.checkbox.case(type='checkbox',name='checkall',data-content='panel--cb1',checked)
+                        span.cb-pick
+                        span.cb-text Auditores
+                        span.cb-value 2,99€
+
+                    .cb-option
+                      label.cb-label(for='cb-a8')
+                        input#cb-a8.invisible.checkbox.case(type='checkbox',name='checkall',data-content='panel--cb1',checked)
+                        span.cb-pick
+                        span.cb-text Listado de actos inscritos (BORME)
+                        span.cb-value 2,99€
+
+                    .cb-option
+                      label.cb-label(for='cb-a9')
+                        input#cb-a9.invisible.checkbox.case(type='checkbox',name='checkall',data-content='panel--cb1',checked)
+                        span.cb-pick
+                        span.cb-text Listado de Cuentas Depositadas
+                        span.cb-value 2,99€
+
+                    .cb-option
+                      label.cb-label(for='cb-a10')
+                        input#cb-a10.invisible.checkbox.case(type='checkbox',name='checkall',data-content='panel--cb1',checked)
+                        span.cb-pick
+                        span.cb-text Listado de Libros legalizados
+                        span.cb-value 2,99€
+
+
+                .form-action
+                  button.btn.btn--primary(type='submit') Continuar
+
+
+            .panel-col.panel-col--right
+
+              .resume-box.resume-box--dark.resume-box--top
+                .resume-box__header
+                  h2.resume-title Resumen
+                  span.resume-note Impuestos y retenciones no incluidos
+                .resume-box__content
+                  table.table.table--resume
+                    thead.table-head.invisible
+                      tr
+                        th
+                          span Concepto
+                        th
+                          span Cantidad/Coste
+                    tbody.table-body
+                      tr.resume-concept
+                        td
+                          strong Nota simple
+                          .resume__info
+                            p Registro de la Propiedad de Madrid 52 <br/>
+                              | Propiedad 35805, Sección 5.
+
+                        td
+                          strong
+                            span.add__amount 9,02
+                            |€
+                      tr
+                        td.resume-add(colspan="2")
+                          .add.cb-english
+                            .add__concept Traducción en inglés
+                              a.link.add-remove(data-remove="cb-english") Quitar
+                            .add__amount
+                              strong
+                                span.price 30
+                                | €
+
+                      //- tr.hide.add.add-trans
+                        td.add__concept Traducción
+                          a.link.add-remove(data-remove='add-trans') Quitar
+                        td.add__amount
+                          strong 30€
+
+      .hide
+        .modal-inc
+          h1.modal-title
+            svg.icon.info
+              use(xlink:href='../static/img/common/svg/svg-symbols.svg#help-circle')
+            | ¿Qué incluye?
+          .modal-text
+            p Seleccione el número máximo de fincas sobre las que desea recibir información.
+            p Si a nombre del titular seleccionado aparecieren inscritas varias fincas o derechos, se generaran varias notas simples. Se le cobrará en base al número exacto de fincas encontradas.
+            p
+              a.link.link--primary Más información
+
+      include includes/_tpl-footer.pug

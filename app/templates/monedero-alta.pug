@@ -1,0 +1,247 @@
+extends includes/_tpl-base.pug
+
+block title
+  title Monedero
+
+block body
+
+  - var headerMenu = false
+
+  - var menuLinks = false
+  - var user_item1 = 'active'
+
+  - var topbar = 'topbar--dark'
+  - var topbarTitle = 'Solicitud de nota localización'
+  - var topbarSteps = [{num: "1", state: "list__item--active"}, {num: "2", state: ""}]
+
+  - var footer = 'footer'
+
+
+  body
+
+    .main-global
+
+      include includes/_tpl-header.pug
+
+      include includes/_tpl-topbar.pug
+
+
+      main.main-content
+
+        .main-content__wrap
+
+          h1.title-page Monedero
+
+          .panel-row
+            .panel--col
+
+
+              .row
+                .gen-msg.gen-msg--info.mt--30
+                  .gen-msg__text
+                    h1 ¿Cómo funciona el monedero?
+                    p Los pagos de sus solicitudes se realizarán a través de un depósito asociado a su cuenta, el monedero.<br>Solo tiene que recargar dinero en su monedero y realizar sus pedidos de información.
+                    p
+                     a.link Más información
+
+                  svg.gen-msg__icon
+                    use(xlink:href='../static/img/common/svg/svg-symbols.svg#info-circle')
+
+
+              h2.title-mod Cargar
+
+              p Para formalizar el alta debe realizar una carga mínima de 100€.
+
+              .row
+
+                .form.grid-a-12.form--inline
+                  form(autocomplete="off",action="portada-propiedad.html")
+                    .form-options                      
+                      .form-box
+                        label.label(for='imp-rec') Importe a cargar
+                        .form-box--right.quantity
+                          .quantity__field
+                            input.input.quantity__input#imp-rec(type='text',placeholder='Introduzca el importe', value="100")
+                            <span class="currency">€</span>
+                          .quantity__links
+                            a.link.link +100€
+                            a.link +200€
+                            a.link +500€
+                          .form-text El importe no utilizado puede ser reembolado.                      
+
+                      .form-box
+                        .rb-group
+                          fieldset
+                            legend Método de recarga
+
+                            //- nota: solo visible para certificaciones
+                            .form-box--right
+                              .rb-option
+                                label.rb-label(for='radio0')
+                                  input#radio0.invisible.radiobutton(type='radio',name='msol')
+                                  span.rb-pick
+                                  span.rb-text Tarjeta bancaria (Visa, Mastercard, American Express)
+
+                              .rb-option
+                                label.rb-label(for='radio1')
+                                  input#radio1.invisible.radiobutton(type='radio',name='msol')
+                                  span.rb-pick
+                                  span.rb-text Tarjeta Bancaria Maestro
+
+                              .rb-option
+                                label.rb-label(for='radio2')
+                                  input#radio2.invisible.radiobutton(type='radio',name='msol')
+                                  span.rb-pick
+                                  span.rb-text Paypal                      
+
+                    .form-action
+                      .form-box
+                        p
+                          strong Términos y Condiciones de uso del servicio
+                        .cb-option.terms-conditions
+                          label.cb-label(for='termsAndConditionsIdentify')
+                            input#termsAndConditionsIdentify.checkbox.invisible(type='checkbox',data-validation='required',name='termsAndConditions')
+                            span.cb-pick
+                            span.cb-text Debe leer y aceptar los                            
+                              a.link.link--primary.modal-open(data-content="modal-terms")  Términos y Condiciones de uso
+                              |  del servicio.
+
+                        .modal
+                          .modal-box
+                            .modal-content
+                              .modal-terms.hidden
+                                h1.modal-title Términos y Condiciones de uso del servicio
+                                .modal-text
+                                  .legal-container
+
+                                    h3 Condiciones de uso
+                                    p
+                                      | Las presentes condiciones tienen por finalidad establecer los requisitos de comunicación de los usuarios con el servidor WEB de los Registros de la Propiedad, Mercantiles y de Bienes Muebles de España y a las informaciones contenidas en las bases de datos de dichos Registros disponibles a través de los Servicios Interactivos Registrales por Internet.
+                                    p
+                                      | El usuario será responsable de que sus equipos tengan las características técnicas requeridas para el acceso a la información así como de mantener, en su caso, el secreto de su código y contraseña.
+                                    p El usuario solo tendrá acceso a la información después de su pago.
+                                    p
+                                      | En ningún caso se le confiere derecho de reproducción. La información puesta a disposición del usuario es para su uso exclusivo y tiene el carácter de intransferible
+                                    p
+                                      | Queda absolutamente prohibida la retransmisión o cesión, incluso gratuita, de la información por el usuario a cualquier otra persona.
+                                    p
+                                      | Queda totalmente prohibida la incorporación de los datos que se contienen en este documento a bases o ficheros informatizados que puedan ser susceptibles de consulta individualizada por personas físicas o jurídicas, y ello aunque se exprese la procedencia de la información (Instrucción DGRN de 17 de febrero de 1998).
+                                    p
+                                      | La aplicación de las normas sobre protección de datos de carácter personal y la necesidad de vigilancia de la integridad de los archivos informáticos, impidiendo la copia global o el televaciado de los mismos, puede hacer necesaria, en determinados casos, la limitación de solicitudes masivas de información procedentes de un mismo usuario.
+                                    p
+                                      | Además de ello, dada la concepción de los Servicios Interactivos Registrales para un uso generalizado y plural, el sistema debe evitar procedimientos automáticos de obtención de información, que podrían ralentizar las consultas que realicen los usuarios ordinarios. Por todo ello, en cualquier momento, se podrá limitar el número máximo de consultas realizadas por un mismo usuario o a un mismo Registrador.
+                                    p
+                                      | El usuario de los Servicios Registrales Interactivos, por el mero hecho de solicitar la información, acepta y se compromete a utilizar los datos registrales obtenidos conforme a las normas y con las limitaciones que establece la Ley Orgánica 15/1999, de 13 de diciembre, sobre el tratamiento automatizado de los datos de carácter personal.
+                                    p
+                                      | El usuario es el único responsable de las preguntas que formule y de la utilización que haga de los resultados obtenidos.
+                                    p
+                                      | La información podrá solicitarse durante las 24 horas del día, todos los días de la semana. Queda a salvo el derecho a interrumpir el servicio por necesidades de mantenimiento del sistema o por cualquier otra causa que obligue a ello, no siendo responsable el servidor de información de la falta de servicio que pudiera derivarse de causas fortuitas.
+                                    p
+                                      | Habiéndose adoptado las medidas de precaución en la elaboración de los programas o aplicaciones para minimizar el riesgo de daño en los equipos propiedad de los usuarios, son responsabilidad de éstos cualesquiera daños y perjuicios que puedan producirse en sus equipos informáticos como consecuencia de la utilización del servidor.
+                                    p
+                                      | La lentitud en la transferencia de datos, la falta de disposición total o parcial de la red Internet, así como los errores y fallos imputables a la red no serán responsabilidad en ningún caso del servidor de la información.
+                                    p
+                                      | La información es suministrada por el Registrador que la emite, no siendo en ningún caso el servidor de información responsable de su exactitud y veracidad.
+                                    p
+                                      | Las facturas correspondientes a las informaciones suministradas serán expedidas, con los requisitos contenidos en el Art. 3 del RD 2402/1985, por el servidor de la información, en nombre y por cuenta de los respectivos Registradores, remitiéndose a través de Internet al destinatario usuario, quien procederá por sus propios medios (impresora) a la confección material de la factura original.
+                                    p
+                                      | La falta de pago de cualquier factura dará lugar a que se deniegue el acceso a la información.
+                                    p
+                                      | En el supuesto de los usuarios abonados, la prestación del servicio tendrá una duración inicial de seis meses a partir de la primera petición de información y se entenderá prorrogada tácitamente por periodos de igual duración, siempre que no se comunique por escrito y con una antelación de un mes a su vencimiento la voluntad de darlo por terminado.
+                                    p
+                                      | Las relaciones derivadas de la prestación del servicio de información se someten expresamente a la legislación española.
+                                    p Identificación a través de Acceso con certificado.
+                                    p
+                                      | Para poder acceder a la Presentación telemática y a otros servicios del portal
+                                      a.link.link--primary(href='http://www.registradores.org')  www.registradores.org
+                                      |  el Colegio de Registradores colabora con distintas entidades prestadoras de servicios de certificación, por lo que actualmente los usuarios pueden acceder con los siguientes certificados, siempre que vayan emitidos a una persona física y su nif aparezca en el campo 'Asunto' o 'Serial Number' dentro de la pestaña Detalles, ya que es éste dato del certificado el que el sistema reconoce para su validación.
+                                    p Las entidades emisoras de certificados válidas son:
+                                    p Prestador del Servicio de Certificación del Colegio de Registradores
+                                    ul
+                                      li FNMT - Fábrica Nacional de Moneda y Timbre
+                                      li CATCERT - Agència Catalana de Certificació
+                                      li ACCV - GVA - Autoritat de Certificació de la Comunitat Valenciana
+                                      li ANCERT (Sólo los certificados de notario) Agencia Notarial Certificación
+                                      li AC CAMMERFIRMA - Entidad de las Cámaras de Comercio
+                                      li DNIe - Dirección General de la Policía
+                                      li ACA - Autoridad de Certificación de la Abogacía
+                                      li FIRMA PROFESIONAL - Operador global de servicios de certificación
+                                      li IZENPE - Empresa certificación Gobierno Vasco y Diputaciones Forales
+                                      li Ley de protección de datos
+                                    p
+                                      | De acuerdo con la Ley Orgánica de Protección de Datos de Carácter Personal 15/1999, de 13 de diciembre, el usuario y titular de los datos queda informado y presta su consentimiento inequívoco a la incorporación de sus datos a los siguientes ficheros automatizados: 
+                                      br
+                                      br
+                                      |  "Usuarios de Servicios Interactivos" al tratamiento automatizado del mismo, siendo responsable del fichero y del tratamiento el Colegio de Registradores. El uso y fin del tratamiento de estos datos es gestionar los usuarios abonados que solicitan servicios registrales a través de Internet. 
+                                      br
+                                      br
+                                      |  "Facturación de Servicios Registrales" y al tratamiento automatizado del mismo, siendo responsable del fichero y del tratamiento los Registros de la Propiedad, Mercantiles y Bienes Muebles y cuyo encargado del tratamiento y representante es el Colegio de Registradores. El uso y fin del tratamiento es facilitar la facturación de las peticiones registrales solicitada a través de Internet. 
+                                      br
+                                      br
+                                      |  "Registro de la Propiedad", "Registro Mercantil" o "Registro de Bienes Muebles" y al tratamiento automatizado de los mismos, siendo responsables de los ficheros y de su tratamiento los Registros de la Propiedad, Mercantiles y Bienes Muebles respectivamente y cuyo representante es el Colegio de Registradores. El uso y fin del tratamiento es facilitar la obtención de la información registral solicitada, así como dar cumplimiento a lo establecido por el artículo 15 LOPD, y por el apartado Sexto de la Instrucción de la DGRN de 17 de Febrero de 1998, conforme al cual "Las solicitudes de publicidad formal quedarán archivadas, de forma que siempre se pueda conocer la persona del solicitante, su domicilio y documento nacional de identidad o número de identificación fiscal durante un período de tres años". 
+                                      br
+                                      br
+                                      |  En los casos en los que el usuario proporciona su número de tarjeta con la finalidad de poder proceder a prestar los servicios solicitados, este dato se transmite directamente al proveedor de pasarela de pagos “Ingenico eCommerce Solutions” que es quien procede al almacenamiento seguro de dichos datos en sus servidores. Para el ejercicio de sus derechos de acceso, rectificación, cancelación u oposición, pueden dirigirse a este proveedor en los términos que se establezcan en sus políticas de privacidad. Se informa al usuario que el Colegio de Registradores no tiene acceso en ningún momento a los datos de tarjeta proporcionados, y que la transmisión de estos datos es necesaria para la prestación del servicio de pago por tarjeta. 
+                                      br
+                                      br
+                                      |  El usuario, como titular de los datos, podrá ejercer sus derechos de oposición, acceso, rectificación y cancelación utilizando para ello cualquiera de los canales de comunicación del Colegio de Registradores, dirigida a la Servicio de Sistemas de Información - Seguridad Informática, con dirección en calle Diego de León nº 21, código postal 28006, Madrid, utilizando el Servicio de Atención al Cliente 902 73 43 75 / 91 270 17 96, o a través de la dirección de correo electrónico 
+                                      a.link.link--primary(href='mailto:soporte.lopd@corpme.es') soporte.lopd@corpme.es
+                                      | . 
+                                      br
+                                      br
+                                      |  Para más información sobre la "Política de privacidad y Protección de Datos" del Colegio de Registradores pulse 
+                                      a.link.link--primary(href='https://web-integ.registradores.org/registroonline/estaticas/privacidad.seam') aquí
+                                      |  (Texto_7)
+                                    p Política de privacidad y Protección de Datos
+                                    p
+                                      | De acuerdo con la Ley Orgánica de Protección de Datos de Carácter Personal 15/1999, de 13 de diciembre, el usuario y titular de los datos queda informado y presta su consentimiento inequívoco a la incorporación de sus datos a los siguientes ficheros automatizados: 
+                                      br
+                                      br
+                                      |  "Usuarios de Servicios Interactivos" y al tratamiento automatizado y no automatizado del mismo, siendo responsable del fichero y del tratamiento el Colegio de Registradores. El uso y fin del tratamiento es gestionar los usuarios abonados que solicitan servicios registrales a través de Internet o servicios de certificación prestados por el Colegio de Registradores. 
+                                      br
+                                      br
+                                      |  "Facturación de Servicios" y al tratamiento automatizado y no automatizado del mismo, siendo responsable del fichero y del tratamiento el Colegio de Registradores. El uso y fin del tratamiento es la facturación relacionada con los servicios interactivos prestados por el Colegio de Registradores. 
+                                      br
+                                      br
+                                      |  "Facturación de Servicios Registrales" y al tratamiento automatizado y no automatizado del mismo, siendo responsable del fichero y del tratamiento los Registros de la Propiedad, Mercantiles y Bienes Muebles y cuyo encargado del tratamiento y representante es el Colegio de Registradores. 
+                                      br
+                                      br
+                                      |  "Registro de la Propiedad", "Registro Mercantil" o "Registro de Bienes Muebles" y al tratamiento automatizado y no automatizado de los mismos, siendo responsables de los ficheros y de su tratamiento los Registros de la Propiedad, Mercantiles y Bienes Muebles respectivamente y cuyo representante es el Colegio de Registradores. El uso y fin del tratamiento es facilitar la obtención de la información registral solicitada, así como dar cumplimiento a lo establecido por el artículo 15 LOPD, y por el apartado Sexto de la Instrucción de la DGRN de 17 de Febrero de 1998, conforme al cual "Las solicitudes de publicidad formal quedarán archivadas, de forma que siempre se pueda conocer la persona del solicitante, su domicilio y documento nacional de identidad o número de identificación fiscal durante un período de tres años". A estos efectos, se advierte que será objeto de tratamiento y archivo, entre otros, el dato de la dirección IP del usuario. 
+                                      br
+                                      br
+                                      |  En los casos en los que el usuario proporciona su número de tarjeta con la finalidad de poder proceder a prestar los servicios solicitados, este dato se transmite directamente al proveedor de pasarela de pagos “Ingenico eCommerce Solutions” que es quien procede al almacenamiento seguro de dichos datos en sus servidores. Para el ejercicio de sus derechos de acceso, rectificación, cancelación u oposición, pueden dirigirse a este proveedor en los términos que se establezcan en sus políticas de privacidad. Se informa al usuario que el Colegio de Registradores no tiene acceso en ningún momento a los datos de tarjeta proporcionados, y que la transmisión de estos datos es necesaria para la prestación del servicio de pago por tarjeta. 
+                                      br
+                                      br
+                                      |  La política de privacidad del Colegio de Registradores asegura el ejercicio de los derechos de acceso, rectificación, cancelación, información de valoraciones y oposición, en los términos establecidos en la legislación vigente, pudiendo utilizar para ello cualquiera de los canales de comunicación del Colegio de Registradores, con dirección en calle Diego de León nº 21, código postal 28006, Madrid, utilizando el servicio de Soporte LOPD (902 181 442 / 91 270 16 99), a través de la dirección de correo electrónico 
+                                      a.link.link--primary(href='mailto:soporte.lopd@corpme.es') soporte.lopd@corpme.es
+                                      |  o, en general, por el medio de comunicación que habitualmente utilice. 
+                                      br
+                                      br
+                                      |  El Colegio de Registradores, como Responsable del tratamiento de este fichero y representante de los Registradores, dispone de un departamento responsable del fichero automatizado: Servicio de Sistemas de Información, Diego de León nº 21, código postal 28006, Madrid, donde el usuario también se podrá dirigir por escrito en el caso de que lo encontrara necesario. 
+                                      br
+                                      br
+                                      |  El Colegio de Registradores ha adoptado los niveles de seguridad de protección de los datos Personales legalmente requeridos, y ha instalado todos los medios y medidas técnicas y organizativas a su alcance para evitar la pérdida, mal uso, alteración, acceso no autorizado y robo de los datos, cuyo secreto y confidencialidad garantiza. 
+                                      br
+                                      br
+                                      |  La aceptación del usuario para que puedan ser tratados sus datos en la forma indicada, es condición necesaria para la prestación de estos servicios, de forma que el uso de los mismos implica tal aceptación, que tiene siempre carácter revocable, sin efectos retroactivos, conforme a lo que disponen los artículos 6 y 11 de la Ley Orgánica de Protección de Datos de Carácter Personal 15/1999, de 13 de diciembre. El usuario responderá, en cualquier caso, de la veracidad de los datos facilitados. El Colegio de Registradores podrá excluir de los servicios prestados al usuario que haya facilitado datos falsos, sin perjuicio de las demás acciones que procedan en Derecho. 
+                                      br
+                                      br
+                                      |  El Colegio de Registradores se reserva el derecho a modificar la presente Política para adaptarla a novedades legislativas o jurisprudenciales. En dichos supuestos el Colegio de Registradores incluirá en el presente documento los cambios introducidos con razonable antelación a su puesta en práctica.
+
+                                  .info-legal
+                                    span Debe leer hasta el final
+                                    .arrow_icon
+                                      svg
+                                        use(xlink:href='../static/img/common/svg/svg-symbols.svg#arrow_popup')
+                                  .legal-buttons
+                                    button#acceptTerms(onclick=).btn.btn--flat.btn--medium.btn--disabled ACEPTAR Y CONTINUAR
+                                    a.link Descargar Términos y Condiciones de uso del servicio
+
+
+                            a.modal-close(href='#/',title='cerrar ventana')
+                              svg
+                                use(xlink:href='../static/img/common/svg/svg-symbols.svg#close')
+                                      
+                                        button.btn.btn--primary Continuar
+
+      include includes/_tpl-footer.pug

@@ -1,0 +1,115 @@
+extends includes/_tpl-base.pug
+
+block title
+  title Alta de abonado
+
+block body
+
+  - var headerMenu = false
+
+  - var topbar = 'topbar--dark'
+  - var topbarTitle = 'Creación de nueva cuenta'
+  - var topbarSteps = [1, 2, 3, 3]
+
+  - var footer = 'footer'
+
+  body
+
+    .main-global
+
+      include includes/_tpl-header.pug
+
+      main.main-content
+
+        include includes/_tpl-topbar.pug
+
+        .main-content__wrap
+
+          h1.title-page Datos personales
+
+          .panel-row.form
+
+              .text-box
+                h2.title-mod Datos del solicitante
+
+                .rb-group.rb-group--horizontal.rb-group--line.grid-a-12.grid-c-4
+                  fieldset
+
+                    legend.invisible Seleccione documento de identificación
+                    .rb-option.grid-a-6
+                      label.rb-label(for='rb01')
+                        input#rb01.invisible.radiobutton(type='radio',name='rb01',checked)
+                        span.rb-pick
+                        span.rb-text DNI
+                        span.rb-line
+
+                    .rb-option.grid-a-6
+                      label.rb-label(for='rb02')
+                        input#rb02.invisible.radiobutton(type='radio',name='rb01')
+                        span.rb-pick
+                        span.rb-text NIE
+                        span.rb-line
+
+                .row
+                  .form-box.grid-a-12.grid-c-4
+                    label.label(for='input01') Nombre
+                    input.input#input01(type='text',placeholder='Introduzca el nombre', autofocus)
+                .row
+                  .form-box.grid-a-12.grid-c-4
+                    label.label(for='input02') Primer apellido
+                    input.input#input02(type='text',placeholder='Introduzca el primer apellido')
+                .row
+                  .form-box.grid-a-12.grid-c-4
+                    label.label(for='input03') NIF
+                    input.input#input03(type='text',placeholder='Introduzca el NIF')
+
+                .row
+                  .form-box.grid-a-12.grid-c-4
+                    .form-help
+                      a.link.link--primary.tooltip-open(data-content='tooltip-01') ¿Dónde aparece el IDESP?
+
+                      .tooltip.tooltip-01
+                        p Código situado en la parte frontal de tu DNI, debajo de la fecha de nacimiento.
+                        .img.icon-dni
+
+
+                    label.label(for='input04') IDESP
+                    input.input#input04(type='text',placeholder='Introduzca el IDESP (AAA000000)')
+
+                .row
+                  .form-box.grid-a-12.grid-c-4
+                    label.label(for='input05') Email de la cuenta
+                    input.input#input05(type='text',placeholder='Introduzca el email')
+                    .form-text Debe ser un email activo. Te enviaremos las solicitudes
+                .row
+                  .form-box.grid-a-12.grid-c-4
+                    label.label(for='input06') Teléfono (Opcional)
+                    input.input#input06(type='text',placeholder='Introduzca un teléfono')
+                    .form-text No lo usaremos para fines comerciales
+
+                h2.title-mod Datos de acceso
+
+                .row
+                  .gen-msg.gen-msg--info.grid-a-12.grid-c-4
+                    .gen-msg__text
+                      p Podrás usar tu Email para acceder.
+                    svg.gen-msg__icon
+                      use(xlink:href='../static/img/common/svg/svg-symbols.svg#info-circle')
+
+                .row
+                  .form-box.grid-a-12.grid-c-4
+                    label.label(for='input07') Contraseña
+                    input.input.pass#input07(type='password',placeholder='Introduzca una contraseña', name="pass")
+                    .form-text Mínimo 4, máximo 12  numeros,  letras o símbolos.
+                .row
+                  .form-box.grid-a-12.grid-c-4
+                    label.label(for='input08') Repite la contraseña
+                    input.input#input08(type='password',placeholder='Introduzca la misma contraseña')
+
+                .form-action
+                  button.btn.btn--primary Continuar
+
+
+
+
+      include includes/_tpl-footer.pug

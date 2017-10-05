@@ -1,0 +1,63 @@
+extends includes/_tpl-base.pug
+
+block title
+  title Modificar email
+
+block body
+
+  - var headerMenu = true
+  - var userOnline = true
+  - var menuLinks = false
+  - var menuCol = true
+
+  - var user_item1 = 'active'
+
+  - var footer = 'footer-online'
+
+  body
+
+    .main-global
+
+      include includes/_tpl-header.pug
+
+      main.main-content
+
+        //- include includes/_tpl-topbar.pug
+
+        .main-content__wrap
+
+
+          h1.title-page.title-page--noline
+
+            a.link.link--titleback(href="#")
+              svg.icon.primary
+                use(xlink:href='../static/img/common/svg/svg-symbols.svg#arrow-circle')
+            | Modificar email
+
+          p Te enviaremos un correo de confirmación a la nueva dirección.
+
+          form(autocomplete="off",action="portada-propiedad.html")
+
+            .text-box.grid-a-12.grid-c-4
+
+              .form-box
+                label.label(for='inEmail') Email actual
+                input.input#inEmail(type='text',placeholder='Introduzca su email', autofocus)
+
+              .form-box
+                label.label(for='inNemail') Nuevo email
+                input.input#inNuevoEmail(type='text',placeholder='Introduzca su nuevo email')
+                .form-text Debe ser un email activo. Te enviaremos las solicitudes de información registral y facturas.
+
+              .form-box
+                label.label(for='inRepNemail') Repite el nuevo email
+                input.input#inRepNemail(type='text',placeholder='Reescriba el nuevo email')
+
+
+            .form-action.btn-group
+              button.btn.btn--primary.btn--medium Guardar
+              button.btn.btn--secondary.btn--medium Cancelar
+
+
+
+      include includes/_tpl-footer.pug

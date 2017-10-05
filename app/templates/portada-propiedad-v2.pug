@@ -1,0 +1,104 @@
+extends includes/_tpl-base.pug
+
+block title
+  title Registro de la propiedad
+
+block body
+  - var headerMenu = true
+  - var userOnline = false
+  - var menuLinks = true
+  - var menu = 'menu-useronline4'
+  - var menu_item1 = 'active'
+  - var footer = 'footer-online'
+
+  body.tpl-col33
+
+    .main-global
+
+      include includes/_tpl-header.pug
+
+      main.main-content
+
+        .main-content__wrap
+
+            h1.title-section Registro de la Propiedad
+
+            .panel-row
+                .panel-col.panel-col--left 
+
+                    h2.title-submod Solicitudes y trámites
+                    p   Podrá pedir notas simples, certificaciones y mucho más.
+                    
+
+                    h2.title-submod Nota simple
+                    p   Contiene la información inscrita sobre un bien inmueble: la descripción y características, los titulares, cargas y afecciones que pueda tener dicho inmueble. 
+
+                    .action-group.action
+                        a.btn.btn--secondary.btn--medium Solicitar
+                        a.link.link--primary(href='#') Más información
+
+                    h2.title-submod Certificaciones
+                    p   Es un documento que contiene información extendida de una propiedad con información de quien es el titular, si tiene o no cargas con el banco, etc. Tiene validez jurídica.
+
+                    .action-group.action
+                        a.btn.btn--secondary.btn--medium Solicitar
+                        a.link.link--primary(href='#') Más información
+
+                    h2.title-submod Nota de localización
+                    p   Tiene como objetivo facilitar la localización del registro, provincia y municipio donde una determinada persona tiene bienes o derechos inscritos. Para solicitarlo es necesario tener cuenta de usuario. 
+
+                    .action-group.action
+                        a.btn.btn--secondary.btn--medium Solicitar
+                        a.link.link--primary(href='#') Más información
+
+                .panel-col.panel-col--right
+
+
+                    h2.title.title-submod Encuentre una propiedad
+                    p   La búsqueda más directa es con los datos registrales o el CRU/IDUFIR de la finca. 
+                    
+                    
+                    .action-group.action
+                        a.btn.btn--secondary.btn--medium Búsqueda por otros datos
+                        a.btn.btn--secondary.btn--medium Búsqueda por titular
+
+                    h2.title.title-submod ¿Qué necesita?
+
+                    ul.list.list--primary
+
+                        li.list__item
+                            a.link(href='#') Quiero información de mi propiedad
+                        li.list__item
+                            a.link(href='#') Informarme de quien es el propietario al que voy a comprar una finca
+                        li.list__item
+                            a.link(href='#') Justificar que no tengo propiedades para optar a un inmueble de protección oficial
+                        li.list__item
+                            a.link(href='#') Cambiar de propietario por fallecimiento de un familiar
+                        li.list__item
+                            a.link(href='#') He terminado de pagar la hipoteca y quiero eliminar las cargas de mi propiedad
+                        
+                        p 
+                            a.link(href='#') Ver más preguntas frecuentes
+
+                
+                    h2.title.title-submod Dudas o incidencias
+
+                    p Si tiene alguna duda, consulte nuestra sección de Ayuda y Soporte, donde encontrará amplia información y guías de ayuda específicas:
+                    
+                    ul.list.list--primary
+                        li.list__item
+                            a.link(href='#') Guía de ayuda del Registro de la Propiedad
+                        li.list__item
+                            a.link(href='#') Guía de ayuda del Área de Usuario
+                        li.list__item
+                            a.link(href='#') Guía de ayuda de Facturación
+                        li.list__item
+                            a.link(href='#') Si necesita resolver una incidencia contacte con nosotros.
+
+                    p   Si necesita resolver una incidencia 
+                        | a contacte con nosotros                    
+
+             
+
+
+      include includes/_tpl-footer.pug

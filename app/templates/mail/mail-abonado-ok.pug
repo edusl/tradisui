@@ -1,0 +1,33 @@
+extends includes/_mail-base.pug
+
+block title
+  title  Confirmación solicitud
+
+block content  
+
+    include includes/_mail-header.pug
+    
+    tr
+      td(style="padding-top: 24px;")
+        p(style="padding-bottom: 10px;", class="text-content") <strong>Su alta como usuario abonado se ha realizado correctamente.</strong>
+        p(style="padding-bottom: 20px;", class="text-content") Desde su Área privada podrá acceder a:
+    tr
+      td
+        ul(class="list01")
+          li
+            span(style="color: #000000;") Comprobar el estado de sus solicitudes.
+          li
+            span(style="color: #000000;") Visualizar y descargar sus solicitudes registrales.
+          li
+            span(style="color: #000000;") Visualizar y descargar sus facturas.
+          li
+            span(style="color: #000000;") Gestionar su Monedero Virtual.
+
+    tr
+      td
+        table(style="margin-bottom: 10px;")
+          tr
+            td
+              a.btn-white(href='#') Acceder a su área privada
+
+    include includes/_mail-footer.pug

@@ -1,0 +1,96 @@
+extends includes/_tpl-base.pug
+
+block title
+  title Login
+
+block body
+
+  - var topbar = 'topbar--dark'
+  - var topbarTitle = 'Volver'
+
+  - var footer = 'footer'
+
+  body.tpl-col33.tpl-login
+
+    .main-global
+
+      include includes/_tpl-header.pug
+
+      include includes/_tpl-topbar.pug
+
+      main.main-content
+
+        //- include includes/_tpl-topbar.pug
+
+        .main-content__wrap
+
+          .panel-col.panel-col--left
+
+            .panel.panel--dark.panel--filled.panel--nogutter
+              h1.title.title-mod Acceda con su cuenta
+                svg.title__icon
+                  use(xlink:href='../static/img/common/svg/svg-symbols.svg#user')
+              //- p Si tiene cuenta, acceda con sus datos
+
+              .form
+                fieldset
+                  legend.title-text Introduzca sus datos
+                  form(autocomplete="off",action="portada-propiedad.html")
+
+                    .form-box
+                      label.label.invisible Nombre
+                      input.input.qa-login-username(type='text',placeholder='Usuario o email',maxlength=32, autofocus)
+
+                    .form-box
+                      label.label.invisible Contraseña
+                      input.input.qa-login-password(type='password',placeholder='Contraseña',maxlength=32)
+
+                    .form-remember
+                      .cb-option
+                        label.cb-label(for='option1')
+                          input#option1.invisible.checkbox.qa-login-remember(type='checkbox')
+                          span.cb-pick
+                          span.cb-text.small No cerrar sesión
+
+                      a.link.small ¿No recuerda la contraseña?
+
+                    button.btn.btn--primary.btn--fluid.qa-login-submit(type="submit") Entrar
+
+
+          .panel-col.panel-col--right
+            .panel.panel--filled
+              .panel-box
+                h1.title-mod Acceda con su certificado electronico
+
+                a.btn.btn--secondary.btn--icon.grid-a-12.grid-c-8 Acceder con mi certificado
+                  svg.icon
+                    use(xlink:href='../static/img/common/svg/svg-symbols.svg#shield')
+
+                p.small.row Si tiene problemas para acceder,
+                  a.link  contacte con nosotros.
+
+              .panel-box.panel--noaccount
+                h1.title-mod ¿No tiene cuenta?
+
+                .panel-box.grid-a-12.grid-c-6
+                  .panel-box
+                    h2.title-text Acceso sin cuenta
+                    p Para solicitar este trámite puede acceder sin necesidad de crear una cuenta.
+
+                    .captcha-box
+                      a.btn.btn--secondary.btn--icon(href='alta-abonado-facturacion-v2.html') Continuar sin cuenta
+                        svg.icon.rotate-180
+                          use(xlink:href='../static/img/common/svg/svg-symbols.svg#arrow-simple')
+
+                      .g-recaptcha(data-sitekey="6LcTmggUAAAAADlrTxUdhev4DstzDs0YY94pGZUG")
+
+
+                .panel-box.grid-a-12.grid-c-6
+                  h2.title-text Comprobar estado de tu solicitud
+                  p Si ha realizado una solicitud y no tiene cuenta de usuario,
+                    a.link.link--primary(href="#")  acceda con sus datos de solicitud.
+
+
+
+
+      include includes/_tpl-footer.pug

@@ -1,0 +1,167 @@
+extends includes/_tpl-base.pug
+
+block title
+  title Listado de plantillas
+
+block body
+
+  body
+
+
+
+  .uig-wrap
+
+    .ui-main-header
+      p
+        a.btn.btn--primary.btn--small(href='../index.html') Volver al índice
+
+    h1.title-page.title-page--noline Listado de plantillas
+
+    .uig-content
+
+      ul.uig-list
+        li.uig__item Login / Validación
+          ul
+            li.uig__item
+              a.link(target="_blank",href="login-generico.html") <span class="layout-num">[ro-id-02]</span> Login genérico
+            li.uig__item
+              a.link(target="_blank",href="login-solicitud.html") <span class="layout-num">[ro-id-01]</span> Login solicitud
+            li.uig__item
+              a.link(target="_blank",href="login-estado.html") <span class="layout-num">[ro-id-020]</span> Estado solicitud - invitado
+        li.uig__item Alta
+          ul
+            li.uig__item
+             a.link(target="_blank",href="alta-abonado.html") <span class="layout-num">[ro-id-004]</span> Alta abonado
+            li.uig__item
+             a.link(target="_blank",href="alta-abonado-facturacion.html") <span class="layout-num">[ro-id-005]</span> Alta abonado facturación
+            li.uig__item
+              a.link(target="_blank",href="alta-abonado-confirmacion.html") <span class="layout-num">[ro-id-016]</span> Alta abonado confirmacion
+            li.uig__item
+              a.link(target="_blank",href="alta-abonado-finalizada.html") <span class="layout-num">[ro-id-007]</span> Alta abonado finalizada
+
+        li.uig__item Propiedad - Nota simple
+          ul
+            li.uig__item
+              a.link(target="_blank",href="busqueda-titular-ambito.html") <span class="layout-num">[ro-s-002]</span> Búsqueda títular ámbito
+        li.uig__item Área de usuario
+          ul
+            li.uig__item
+              a.link(target="_blank",href="portada-propiedad.html") <span class="layout-num">[ro-p-001]</span> Portada propiedad
+            li.uig__item
+              a.link(target="_blank",href="buscar-propiedad.html")  <span class="layout-num">[ro-p-002]</span> Búsqueda de propiedad
+            li.uig__item
+              a.link(target="_blank",href="buscar-propiedad-exacto.html")  <span class="layout-num">[ro-p-002]</span> Búsqueda de propiedad exacto
+            li.uig__item
+              a.link(target="_blank",href="nota-simple-titular.html") <span class="layout-num">[ro-s-002]</span> Nota simple titular
+            li.uig__item
+              a.link(target="_blank",href="nota-propiedad.html") <span class="layout-num">[ro-ac-05]</span> Nota propiedad mixta
+            li.uig__item
+              a.link(target="_blank",href="nota-localizacion-busqueda.html") <span class="layout-num">[ro-s-003]</span> Nota localización - búsqueda
+            li.uig__item
+              a.link(target="_blank",href="preficha-propiedad.html") <span class="layout-num">[ro-p-003]</span> Preficha propiedad
+            li.uig__item
+              a.link(target="_blank",href="solicitud-identificacion.html") <span class="layout-num">[ro-s-005]</span> Solicitud identificación
+            li.uig__item
+              a.link(target="_blank",href="solicitud-datos.html") <span class="layout-num">[ro-s-006]</span> Solicitud Datos de Interés legítimo
+            li.uig__item
+              a.link(target="_blank",href="solicitud-datos-invitado.html") <span class="layout-num">[ro-s-007]</span> Solicitud Datos de Interés legítimo ( Invitado )
+            li.uig__item
+              a.link(target="_blank",href="solicitud-datos-multiple.html") <span class="layout-num">[ro-s-017]</span> Solicitud Nota simple multiple
+            li.uig__item
+              a.link(target="_blank",href="solicitud-pago.html") <span class="layout-num">[ro-s-017]</span> Solicitud pago
+            li.uig__item
+              a.link(target="_blank",href="solicitud-nota-conf.html") <span class="layout-num">[ro-s-004]</span> Solicitud nota configuración búsqueda
+            li.uig__item
+              a.link(target="_blank",href="resumenes.html") <span class="layout-num">[ro-s-008]</span> Plantillas resumenes
+            li.uig__item
+              a.link(target="_blank",href="listado-solicitudes.html") <span class="layout-num">[ro-ac-001]</span> Listado de Solicitudes
+            li.uig__item
+              a.link(target="_blank",href="configuracion-juridica.html") <span class="layout-num">[ro-ac-04.1]</span> Inicio Configuración. Vista Persona física
+            li.uig__item
+              a.link(target="_blank",href="datos-facturacion.html") <span class="layout-num">[ro-ac-04.4]</span> Datos de Facturación
+            li.uig__item
+              a.link(target="_blank",href="gestion-solicitantes.html") <span class="layout-num">[ro-ac-04.17]</span> Gestión solicitante
+            li.uig__item
+              a.link(target="_blank",href="listado-grupos.html") <span class="layout-num">[ro-ac-04.7]</span> Listado grupos
+            li.uig__item
+              a.link(target="_blank",href="detalle-grupos.html") <span class="layout-num">[ro-ac-04.8]</span> Detalle grupos
+            li.uig__item Configuracion de la cuenta
+              ul
+                li.uig__item
+                  a.link(target="_blank",href="gestion-editar-grupo.html") <span class="layout-num">[ro-ac-04.9]</span> Gestión de grupo
+                li.uig__item
+                  a.link(target="_blank",href="gestion-usuario.html") <span class="layout-num">[ro-ac-04.10]</span> Gestión de usuario administrado
+                li.uig__item
+                  a.link(target="_blank",href="gestion-editar-solicitante.html") <span class="layout-num">[ro-ac-04.16]</span> Solicitantes
+                li.uig__item
+                  a.link(target="_blank",href="gestion-solicitantes.html") <span class="layout-num">[ro-ac-04.17]</span> Gestión solicitante
+                li.uig__item
+                  a.link(target="_blank",href="gestion-editar-basicos.html") <span class="layout-num">[ro-ac-04.18]</span> Gestión datos de usuario
+                li.uig__item
+                  a.link(target="_blank",href="gestion-editar-email.html") <span class="layout-num">[ro-ac-04.19]</span> Modificar email
+                li.uig__item
+                  a.link(target="_blank",href="confirmacion-doble-opcion.html") <span class="layout-num">[ro-ac-04.19c]</span> Confirmación modificar email
+            li.uig__item Asociación de usuarios
+              ul
+                li.uig__item
+                  a.link(target="_blank",href="asociar-usuario-administrado.html") <span class="layout-num">[ro-ac-04.11]</span> Asociar usuario administrado
+                li.uig__item
+                  a.link(target="_blank",href="confirmacion-asociacion.html") <span class="layout-num">[ro-ac-04.12]</span> Confirmación envio asociación
+                li.uig__item
+                  a.link(target="_blank",href="confirmacion-asociacion-finalizada.html") <span class="layout-num">[ro-ac-04.15]</span> Confirmación asociación finalizada
+
+        li.uig__item Certificaciones
+          ul
+            li.uig__item
+              a.link(target="_blank",href="solicitud-pago-certificacion.html") <span class="layout-num">[ro-s-011]</span> Pendiente de pago
+            li.uig__item
+              a.link(target="_blank",href="confirmacion-solicitud-pendiente-pago.html") <span class="layout-num">[ro-s-014]</span> Confirmación "Pendiente de pago"
+
+        li.uig__item Confirmaciones & emails
+          ul
+            li.uig__item
+              a.link(target="_blank",href="confirmacion-solicitud.html") <span class="layout-num">[ro-s-013]</span> Confirmación de solicitud
+            li.uig__item
+              a.link(target="_blank",href="mail.html") <span class="layout-num">[ro-e-002]</span> <span class="layout-num">[ro-e-003]</span> <span class="layout-num">[ro-e-008]</span> Mensaje de email
+            li.uig__item
+              a.link(target="_blank",href="mail-verificar-abonado.html") <span class="layout-num">[ro-e-002]</span> Mail abonado link verificación
+            li.uig__item
+              a.link(target="_blank",href="mail-abonado-pendiente.html") <span class="layout-num">[ro-e-015]</span> Mail abonado pendiente activación
+            li.uig__item
+              a.link(target="_blank",href="mail-abonado-ok.html") <span class="layout-num">[ro-e-012]</span> Mail abonado activado
+            li.uig__item
+              a.link(target="_blank",href="mail-solicitud-aprobada.html") <span class="layout-num">[ro-e-002]</span> Mail solicitud aprobada
+            li.uig__item
+              a.link(target="_blank",href="mail-solicitud-pendiente.html") Mail solicitud pendiente
+            li.uig__item
+              a.link(target="_blank",href="mail-solicitud-pago-pendiente.html") Mail solicitud pago pendiente
+            li.uig__item
+              a.link(target="_blank",href="mail-asociacion.html")  Mail asociación cuenta
+            li.uig__item
+              a.link(target="_blank",href="mail-confirmacion.html") <span class="layout-num">[ro-e-001]</span> Mail confirmación
+            li.uig__item
+              a.link(target="_blank",href="mail-confirmacion-solicitud.html") Main confirmación nota simple
+            li.uig__item
+              a.link(target="_blank",href="mail-restablecer-clave.html") Mail restablecer clave
+            li.uig__item
+              a.link(target="_blank",href="mail-respuesta-positiva.html") Mail respuesta positiva
+            li.uig__item
+              a.link(target="_blank",href="mail-redireccion-solicitud.html") <span class="layout-num">[ro-e-007]</span> Mail redirección solicitud
+            li.uig__item
+              a.link(target="_blank",href="mail-denegacion-solicitud.html") <span class="layout-num">[ro-e-003]</span>Mail solicitud denegada
+
+        li.uig__item Textos estáticos
+          ul
+            li.uig__item
+              a.link(target="_blank",href="aviso-legal.html") <span class="layout-num">[ro-st-01]</span> Aviso legal - condiciones de uso
+            li.uig__item
+              a.link(target="_blank",href="nota-simple.html") Nota simple (nota-simple.html)
+            li.uig__item
+              a.link(target="_blank",href="guia-generica.html") Guía genérica (guia-generica.html)
+
+
+
+      include ../styleguide/includes/_footer.pug
+
+      script(src="../static/js/common/jquery.ns-autogrow.min.js")
+      script(src="../static/js/common/guide.js")

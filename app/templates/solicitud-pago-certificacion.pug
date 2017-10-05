@@ -1,0 +1,212 @@
+extends includes/_tpl-base.pug
+
+block title
+  title Pago seguro
+
+block body
+
+  - var headerMenu = false
+
+  - var topbar = 'topbar--dark'
+  - var topbarTitle = 'Solicitud de nota simple'
+  - var topbarLink = '¿Qué incluye?'
+  - var topbarSteps = [{num: "1", state: "list__item--active"}, {num: "2", state: ""}, {num: "3", state: ""}, {num: "4", state: ""}]
+
+  - var footer = 'footer'
+
+  body.tpl-col42.tpl-resume
+
+    .main-global
+
+      include includes/_tpl-header.pug
+
+
+      main.main-content
+
+        include includes/_tpl-topbar.pug
+
+        .main-content__wrap
+
+
+
+          h1.title-page.mb-0 Pago seguro
+
+
+          .panel-row
+
+            .gen-msg.gen-msg--info
+              .gen-msg__text
+                p El coste total dependerá de la cantida de información obtenida en el Registro
+              svg.gen-msg__icon
+                use(xlink:href='../static/img/common/svg/svg-symbols.svg#info-circle')
+
+            .panel-col.panel-col--left
+
+              .text-box
+                h2.title-mod Método de pago
+
+                .rb-group.rb-group--horizontal.rb-group--line
+                  fieldset
+                    legend Seleccione un método de pago
+                    .rb-option
+                      label.rb-label(for='radioh1')
+                        input#radioh1.invisible.radiobutton(type='radio',name='radioh',data-content='radioh--0',checked)
+                        span.rb-pick
+                        span.rb-text Tarjeta Bancaria
+                        span.rb-line
+
+                    .rb-option
+                      label.rb-label(for='radioh2')
+                        input#radioh2.invisible.radiobutton(type='radio',name='radioh',data-content='radioh--1')
+                        span.rb-pick
+                        span.rb-text
+                          svg.icon(style='width: 80px; height: 24px')
+                            use(xlink:href='../static/img/common/svg/svg-symbols.svg#logo-paypal')
+                        span.rb-line
+
+
+                form.form(autocomplete='off',action='preficha-propiedad.html')
+
+                  .form-panel.radioh.radioh--0
+
+                    .row
+                      .form-box.grid-a-12.grid-c-6
+                        label.label(for='idnombre') Número de tarjeta
+                        input.input#idnombre(type='text',placeholder='Introduzca un número de tarjeta', autofocus)
+
+                      .paycards.grid-c-6
+                        p Tarjetas aceptadas
+                        svg.icon
+                          use(xlink:href='../static/img/common/svg/svg-symbols.svg#logo-visa')
+                        svg.icon
+                          use(xlink:href='../static/img/common/svg/svg-symbols.svg#logo-mastercard')
+                        svg.icon
+                          use(xlink:href='../static/img/common/svg/svg-symbols.svg#logo-american-express')
+                        svg.icon
+                          use(xlink:href='../static/img/common/svg/svg-symbols.svg#logo-jcb')
+
+
+                    .row.row--multi
+                      .form-box.grid-a-12.grid-c-3
+                        label.label Caducidad - Mes
+                        .form-ico.form-ico--select
+                          select#select.select
+                            option 01
+                            option 02
+                            option 03
+                            option 04
+                            option 05
+                            option 06
+                            option 07
+                            option 08
+                            option 09
+                            option 10
+                            option 11
+                            option 12
+                          svg.icon(viewBox='0 0 48 48')
+                            use(xlink:href='../static/img/common/svg/svg-symbols.svg#arrow-down')
+
+                      .form-box.grid-a-12.grid-c-3
+                        label.label Año
+                        .form-ico.form-ico--select
+                          select#select.select
+                            option 2017
+                            option 2018
+                            option 2019
+                            option 2020
+                            option 2021
+                          svg.icon(viewBox='0 0 48 48')
+                            use(xlink:href='../static/img/common/svg/svg-symbols.svg#arrow-down')
+                    .row
+                      .form-box.grid-a-12.grid-c-3
+                        label.label(for='idemail') Código de seguridad
+                        input.input#idemail(type='text')
+                        .form-text
+                          a.underline.modal-lateral-open(data-content='modal01', href='#/') ¿Qué es esto?
+
+                        .hide
+                          .modal01
+                            h1.modal-title.modal-title--icon
+                              svg.icon.info
+                                use(xlink:href='../static/img/common/svg/svg-symbols.svg#help-circle')
+                              |  Código de seguridad
+                            .modal-text
+                              p Se utiliza para mejorar la seguridad de compras con tarjeta de crédito. Para tarjetas de crédito o débito MasterCard, Visa y Discover, se trata de un número de 3 dígitos impreso en el reverso de su tarjeta. Aparece a la derecha de su número de tarjeta.
+
+                  .form-panel.radioh.radioh--1.hide
+
+                    .gen-msg.gen-msg--info.col-a-4
+                      .gen-msg__text
+                        p Serás redirigido a la plataforma de Paypal donde podrás confirmar el pago.
+                      svg.gen-msg__icon
+                        use(xlink:href='../static/img/common/svg/svg-symbols.svg#info-circle')
+
+                  h2.title-mod Crear alerta
+
+                  .rb-group
+                    fieldset
+                      legend Si lo desea, puede crear una alerta si el coste supera una cantidad:
+
+                      //- nota: solo visible para certificaciones
+                      .rb-option
+                        label.rb-label(for='radio0')
+                          input#radio0.invisible.radiobutton(type='radio',name='radio')
+                          span.rb-pick
+                          span.rb-text Avisarme si el importe total supera los 70€
+
+                      .rb-option
+                        label.rb-label(for='radio1')
+                          input#radio1.invisible.radiobutton(type='radio',name='radio')
+                          span.rb-pick
+                          span.rb-text Avisarme si el importe total supera los 120€
+
+                      .rb-option
+                        label.rb-label(for='radio2')
+                          input#radio2.invisible.radiobutton(type='radio',name='radio')
+                          span.rb-pick
+                          span.rb-text No avisarme. Realizaremos el cargo sin necesidad de su confirmación
+
+
+                  .form-action
+                    button.btn.btn--primary(type='submit') Continuar
+
+
+            .panel-col.panel-col--right
+
+              .resume-box.resume-box--dark.resume-box--top
+                .resume-box__header
+                  h2.resume-title Resumen
+                  span.resume-note Impuestos y retenciones no incluidos
+                .resume-box__content
+                  table.table.table--resume
+                    thead.table-head.invisible
+                      tr
+                        th
+                          span Concepto
+                    tbody.table-body
+                      tr
+                        td.align-left
+                          strong Certificación de Dominio y Cargas
+                          .resume__info
+                            p Registro de la Propiedad de Madrid 53. <br /> Propiedad 35805. Sección 5.
+                            //- a.link.link--primary Modificar
+
+                .gen-msg.gen-msg--info.col-a-4
+                  .gen-msg__text
+                    p El coste total dependerá de la cantida de información obtenida en el Registro
+                  svg.gen-msg__icon
+                    use(xlink:href='../static/img/common/svg/svg-symbols.svg#info-circle')
+
+      .hide
+        .modal-inc
+          h1.modal-title
+            svg.icon.info
+              use(xlink:href='../static/img/common/svg/svg-symbols.svg#help-circle')
+            | ¿Qué incluye?
+          .modal-text
+            p Seleccione el número máximo de fincas sobre las que desea recibir información.
+            p Si a nombre del titular seleccionado aparecieren inscritas varias fincas o derechos, se generaran varias notas simples. Se le cobrará en base al número exacto de fincas encontradas.
+            p
+              a.link.link--primary Más información
+
+      include includes/_tpl-footer.pug

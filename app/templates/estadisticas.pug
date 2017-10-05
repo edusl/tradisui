@@ -1,0 +1,67 @@
+extends includes/_tpl-base.pug
+
+block title
+  title Solicitantes
+
+block body
+
+  - var headerMenu = true
+  - var menuLinks = true
+  - var userOnline = true
+  - var menuCol = true
+  - var user_item1 = 'active'
+  - var footer = 'footer'
+
+
+  body
+
+    .main-global
+
+      include includes/_tpl-header.pug
+
+      main.main-content
+
+        .main-content__wrap
+
+          h1.title-page.title-page--noline Configuración
+
+
+          ul.list.list--conf
+
+            li.list__item.grid-a-12
+              .conf-box
+                svg.icon
+                    use(xlink:href='../static/img/common/svg/svg-symbols.svg#user')
+                .list__text
+                  strong.title Titular de la cuenta
+                  strong.title Javier González González
+                  .paragraph-box
+                    p NIF: 10884425R
+                    p Teléfono: 985 33 44 00/637 412 345
+                    p Email: jgonzalez@hotmail.com
+                  a.link.link--primary Modificar datos de cuenta
+
+            li.list__item.list__item--m.grid-a-12.grid-b-6
+              .conf-box.conf-box--top
+                svg.icon
+                    use(xlink:href='../static/img/common/svg/svg-symbols.svg#sec-payment')
+                .list__text
+                  strong.title Datos de Facturación
+                  .paragraph-box
+                    p Calle Peña Santa nº6, 1B
+                    p 28034 Madrid, Madrid
+                  a.link.link--primary Modificar datos de facturación
+
+            li.list__item.list__item--m.grid-a-12.grid-b-6
+              .conf-box.conf-box--top
+                svg.icon
+                    use(xlink:href='../static/img/common/svg/svg-symbols.svg#sec-key')
+                .list__text
+                  strong.title Datos acceso
+                  .paragraph-box
+                    ul.list
+                      li.list__item
+                        a.link.link--primary Modificar contraseña
+
+
+      include includes/_tpl-footer.pug

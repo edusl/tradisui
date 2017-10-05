@@ -1,0 +1,49 @@
+doctype html
+<!--[if lte IE 8]><html lang="es" class="ie ie8"><![endif]-->
+<!--[if IE 9]><html lang="es" class="ie ie9"><![endif]-->
+<!--[if !IE]><!-->
+html(lang="es")
+  <!--<![endif]-->
+  head
+    meta(charset='utf-8')
+    meta(name="viewport",content="width=device-width, initial-scale=1.0, user-scalable=no")
+    meta(name="theme-color", content="#af1e2d")
+
+    link(href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700",rel="stylesheet")
+
+    link(href='../assets/css/pdf.css', rel='stylesheet')
+
+    - var title = "Información registral"
+
+    title= title
+
+
+  body
+
+    .pdf
+
+      //- include includes/_header.pug
+
+
+      .pdf-content
+
+        .pdf-box
+          p Referente a su petición con nuúmero Z8TU3, le informamos de que no se encuentra inscrita la finca con los siguientes datos registrales:
+
+        .pdf-box
+          ul.list
+            li.list__item
+              span.list__item--title Municipio:
+              spam Trujillo
+            li.list__item
+              span.list__item--title Otros datos posibles:
+              span Núm. Finca: 1
+
+        .pdf-warning
+          h3.warning-title Advertencias
+          ul.list
+            li.list__item Esta información registral tiene valor puramente indicativo, careciendo de garantía, pues la libertad o gravamen de los bienes o derechos inscritos, solo se acredita, en perjuicio de tercero, por certificación del Registro (artículo 225 de la Ley Hipotecaria).
+            li.list__item Queda prohibida la incorporación de los datos que constan en la presente información registral a ficheros o bases informáticas para la consulta individualizada de personas físicas o jurídicas, incluso expresando la fuente de procedencia (Instrucción de la D.G.R.N 17/02/98; B.O.E. 27/02/1998).
+            li.list__item Esta información registral no surte los efectos regulados en el art. 354-a del Reglamento Hipotecario. • El usuario receptor de esta información se acoge a las condiciones de la Política de privacidad expresadas en la web oficial del Colegio de Registradores de la Propiedad, Mercantiles y de Bienes Muebles de España publicadas a través de la url: http://www.registradores.org/politica-de-privacidad/
+
+      //- include includes/_footer.pug

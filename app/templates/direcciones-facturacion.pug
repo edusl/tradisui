@@ -1,0 +1,75 @@
+extends includes/_tpl-base.pug
+
+block title
+  title Direcciones de facturación
+
+block body
+
+  - var headerMenu = true
+  - var menuLinks = true
+  - var userOnline = true
+  - var menuCol = true
+
+  - var footer = 'footer-online'
+
+
+  body.tpl-colmenu
+
+    .main-global
+
+      include includes/_tpl-header.pug
+
+      main.main-content
+
+        .main-content__wrap
+
+          .panel-row
+
+            h1.title-page.title-page--noline
+              a.link.link--titleback(href="#")
+                svg.icon.primary
+                  use(xlink:href='../static/img/common/svg/svg-symbols.svg#arrow-circle')
+
+              | Direcciones de facturación
+
+
+            .row
+              .hlight-msg.grid-a-12.grid-c-7
+                h2.title Dirección #1
+
+                .paragraph-box
+                  p Javier Martin Bretón, 10885522Q. <br />c/ Fernando el Santo 16, 8º B. 33204, Gijón. Asturias
+
+                a.link.link--primary Modificar esta dirección
+
+            .row
+              .hlight-msg.grid-a-12.grid-c-7
+                h2.title Dirección #1
+
+                .paragraph-box
+                  p Javier Martin Bretón, 10885522Q. <br />c/ Fernando el Santo 16, 8º B. 33204, Gijón. Asturias
+
+                a.link.link--primary Modificar esta dirección
+
+            button.btn.btn--secondary.btn--medium Crear nueva Dirección de Facturación
+
+
+          //- .panel-col.panel-col--right
+          //-   .menu__user--col
+          //-       nav
+          //-         ul.list
+          //-           li(class='list__item list__item--' + user_item1)
+          //-             a.link(href="login-estado.html") Solicitudes realizadas
+          //-           li(class='list__item list__item--' + user_item2)
+          //-             a.link(href="#") Notificaciones
+          //-           li(class='list__item list__item--' + user_item3)
+          //-             a.link(href="#") Pagos y facturas
+          //-           li(class='list__item list__item--' + user_item4)
+          //-             a.link(href="#") Configuración
+          //-           li(class='list__item capitalize list__item--' + user_item5)
+          //-             a.link(href="login-solicitud.html") Cerrar sesión
+          //-               svg.icon
+          //-                 use(xlink:href='../static/img/common/svg/svg-symbols.svg#arrow-simple')
+
+
+      include includes/_tpl-footer.pug

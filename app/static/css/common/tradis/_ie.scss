@@ -1,0 +1,72 @@
+/* Internet explorer */
+
+.ie {
+
+  .old-browser {
+    display: block;
+    position: absolute;
+    top: 0px;
+    background-color: #feffc5;
+    padding: 20px 20px 10px 20px;
+    width: 100%;
+
+
+
+    .old-browser__logo {
+      float: left;
+      margin-right: 20px;
+    }
+
+    .old-browser__text {
+      float: left;
+    }
+
+    .old-browser__title {
+      color: $brand-primary;
+      font-size: 18px;
+      font-family: Arial, sans-serif;
+      margin-bottom: 0;
+    }
+
+    .old-browser__link {
+      color: $brand-primary;
+      font-weight: 700;
+    }
+
+  }
+
+  .main-global {
+    padding-top: 90px;
+  }
+
+  .btn {
+    padding: 2% 0;
+  }
+}
+
+
+/* IE 8 Version */
+
+.ie8 {
+  .old-browser {
+    left: 0;
+    right: 0;
+    top: 0px;
+    bottom: 0;
+    padding-top: 30px;
+    background: white;
+    position: fixed;
+    z-index: 1000;
+    width: 100%;
+    height: 100%;
+
+    .old-browser__wrap {
+      border: 1px solid $yellow;
+      padding: 15px;
+      margin: 0 auto;
+      max-width: $wrap;
+      background: lighten($yellow, 40);
+      overflow: hidden;
+    }
+  }
+}

@@ -1,0 +1,43 @@
+extends includes/_tpl-base.pug
+
+block title
+  title Error 500
+
+block body
+
+  - var headerMenu = false
+  - var footer = 'footer'
+
+
+  body
+
+    .main-global
+
+      include includes/_tpl-header.pug
+
+
+      main.main-content
+
+
+        .main-content__wrap
+
+          .confirm-head
+
+            h1.title-confirm.secondary <em>500</em> Ha habido un problema de conexión interna.
+
+            .confirm-head__text
+
+              p Estamos trabajando para solucionarlo, prueba a acceder pasados unos minutos.
+
+            a.btn.btn--secondary.btn--medium.reload-page Recargar
+
+            //- span.open-modal(data-content='sesion') Abrir modal
+
+
+
+      include includes/_tpl-footer.pug
+
+      script(type='text/javascript').
+        $(document).ready(function() {
+            openLateral('sesion');
+        });

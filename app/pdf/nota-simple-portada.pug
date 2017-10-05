@@ -1,0 +1,58 @@
+doctype html
+<!--[if lte IE 8]><html lang="es" class="ie ie8"><![endif]-->
+<!--[if IE 9]><html lang="es" class="ie ie9"><![endif]-->
+<!--[if !IE]><!-->
+html(lang="es")
+  <!--<![endif]-->
+  head
+    meta(charset='utf-8')
+    meta(name="viewport",content="width=device-width, initial-scale=1.0, user-scalable=no")
+    meta(name="theme-color", content="#af1e2d")
+
+    link(href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700",rel="stylesheet")
+
+    link(href='../assets/css/pdf.css', rel='stylesheet')
+
+    - var title = "Información registral"
+
+    title= title
+
+
+  body
+
+    .pdf.pdf--center
+
+      //- include includes/_header.pug
+
+
+      .pdf-content
+        //- p Referente a su petición con nuúmero Z8TU3, le informamos de que no se encuentra inscrita la finca con los siguientes datos registrales:
+
+        .pdf-box
+          h1.title Información registral expedida por:
+
+          p
+            strong Manuel Alvarez Gomez
+
+          p Registrador de la Propiedad de Trujillo
+          p Paseo de la Castellana, 44. 28046 - Madrid
+          p 927320079 / 915780566 (fax)
+          p madrid@registromercantil.org
+
+        .pdf-box
+
+          h1.title Solicitud formulada por:
+
+          p
+            strong Fernando Gomez Garcia
+          p NIF: 10885566R
+
+        .pdf-box
+          h1.title Interés legítimo alegado:
+
+          p Investigación para contratación o interposición de acciones.
+
+
+      //-  .request-code
+          p
+      //- include includes/_footer.pug

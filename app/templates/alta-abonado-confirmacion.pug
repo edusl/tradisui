@@ -1,0 +1,33 @@
+extends includes/_tpl-base.pug
+
+block title
+  title Confirmación alta
+
+block body
+
+  - var headerMenu = false
+  - var footer = 'footer'
+
+
+  body
+
+    .main-global
+
+      include includes/_tpl-header.pug
+
+
+      main.main-content
+
+
+        .main-content__wrap
+
+          .confirm-head
+
+            h1.title-confirm.primary Verifique su email y active su cuenta
+
+            .confirm-head__text
+              p Le hemos enviado un email a <strong>nombreemail@dominio.com</strong> con el enlace de activacicón.
+              p Acceda a su bandeja de entrada y pulse el enlace. <br/> No se le olvide comprobar la carpeta de spam.
+
+
+      include includes/_tpl-footer.pug

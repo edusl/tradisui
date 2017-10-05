@@ -1,0 +1,63 @@
+extends includes/_tpl-base.pug
+
+block title
+  title Datos del titular
+
+block body
+
+  - var headerMenu = false
+
+  - var menuLinks = false
+  - var user_item1 = 'active'
+
+  - var topbar = 'topbar--dark'
+  - var topbarTitle = 'Solicitud de nota localización'
+  - var topbarSteps = [{num: "1", state: "list__item--active"}, {num: "2", state: ""}]
+
+  - var footer = 'footer'
+
+
+  body
+
+    .main-global
+
+      include includes/_tpl-header.pug
+
+      include includes/_tpl-topbar.pug
+
+
+      main.main-content
+
+        .main-content__wrap
+
+          h1.title-page Datos del titular
+
+          .panel-row
+            .panel--col
+              p Completa la información para que podamos encontrar las propiedades de un titular.
+
+              .row
+                .form.grid-a-12.grid-c-4
+                  form(autocomplete="off",action="portada-propiedad.html")
+
+                    .form-box
+                      label.label(for='nif') NIF
+                      input.input#nif(type='text',placeholder='Introduzca el NIF asociado a la solicitud', autofocus)
+
+                    .form-box
+                      label.label(for='nombre') Nombre
+                      input.input#nombre(type='text',placeholder='Introduzca el Nombre')
+
+                    .form-box
+                      label.label(for='apellidos') Apellidos / Denominación Social
+                      input.input#apellidos(type='text',placeholder='Introduzca los Apellidos o Denominación Social')
+
+                    .form-box
+                      a.link.link--primary Añadir observaciones
+
+                .form-action
+                  button.btn.btn--primary Continuar
+
+
+
+      include includes/_tpl-footer.pug

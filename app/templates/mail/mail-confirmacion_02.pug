@@ -1,0 +1,46 @@
+extends includes/_mail-base.pug
+
+block title
+  title  Respuesta positiva
+
+block content  
+
+    include includes/_mail-header.pug
+    
+    tr
+      td(style="padding-top: 24px;")
+        p(style="padding-bottom: 10px;", class="text-content")
+          <strong class="text-content"> Ya se encuentra disponible</strong> la certificación con número de solicitud <strong>Z39QZ9</strong>.
+        p(class="text-content") Deberá <strong>acceder a su solicitud con un certificado electrónico</strong>, cuyo NIF sea el mismo que utilizó para hacer la solicitud.
+
+    tr
+      td(style="padding-top:20px; padding-bottom:20px;")
+        table(style="width:100%; border-top:2px solid #000000;")
+          tr
+            td(style="width: 100%;", class="detail-box")
+              table(style="width:100%;")
+                tr
+                  td.dt Nº de solicitud
+                  td.dd.request-num
+                    strong H36FN45F6                
+                tr
+                  td.dt Información de:
+                  td.dd.request-info Registro de Alhama de Granada, Monaleda de Zafayona. Finca 185
+                tr
+                  td.dt Estado:
+                  td.dd
+                    span.label-green Respondida
+
+    tr
+      td(style="padding-top:20px; padding-bottom:20px;")
+        p(style="padding-bottom:10px", class="text-content") <strong class="upper">Importante:</strong> Dispone del plazo de 11 días naturales para acceder a la información requerida y descargásela. Una vez transcurrido dicho plazo ya no tendrá acceso a dicha información y deberá solicitarla de nuevo.
+
+    tr
+      td
+        table.btn-group(style="margin-bottom: 10px;")
+          tr
+            td
+              a.btn.btn-red(href='#') Acceder con mi certificado               
+                img(src='../../static/img/common/mail/file.png', alt='', width='12', height='15', border='0',style='margin-left: 10px; vertical-align: middle')/
+
+    include includes/_mail-footer.pug

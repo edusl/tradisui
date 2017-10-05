@@ -1,0 +1,57 @@
+extends includes/_tpl-base.pug
+
+block title
+  title Modifica tu contraseña
+
+block body
+
+  - var headerMenu = false
+  - var footer = 'footer'
+
+  body
+
+    .main-global
+
+      include includes/_tpl-header.pug
+
+      main.main-content
+
+        //- include includes/_tpl-topbar.pug
+
+        .main-content__wrap
+
+
+          h1.title-page
+            a.link.link--titleback(href="#")
+              svg.icon.primary
+                use(xlink:href='../static/img/common/svg/svg-symbols.svg#arrow-circle')
+            | Recupere su contraseña
+
+          .panel-row
+            .panel--col
+              p Introduzca su nombre de usuario o Email asociado a la cuenta y le enviaremos los pasos para recuperar su contraseña.
+
+              .form-msg.form-msg--error.grid-d-6
+                p El Usuario o email asociado introducido no corresponde con ningún usuario. <br/>
+                  | Por favor revíselo. Si tiene algún problema de acceso,
+                  a.link contacte con nosotros
+                .form-msg__border
+                a.close-msg(title='Cerrar mensaje')
+                  svg.form-msg__icon
+                    title Cerrar contenido
+                    use(xlink:href='../static/img/common/svg/svg-symbols.svg#close')
+
+
+              .row
+                .form.grid-a-12.grid-c-4
+                  form(autocomplete="off",action="portada-propiedad.html")
+
+                    .form-box
+                      label.label(for="inp01") Nombre de usuario o email asociado a la cuenta
+                      input.input#inp01(type='text',placeholder='', autofocus)
+
+                    button.btn.btn--primary Enviar
+
+
+
+      include includes/_tpl-footer.pug

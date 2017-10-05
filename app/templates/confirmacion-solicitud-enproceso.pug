@@ -1,0 +1,53 @@
+extends includes/_tpl-base.pug
+
+block title
+  title Confirmación propiedad
+
+block body
+
+  - var headerMenu = false
+  - var footer = 'footer'
+
+
+  body
+
+    .main-global
+
+      include includes/_tpl-header.pug
+
+      main.main-content
+
+
+        .main-content__wrap
+
+          .confirm-head
+
+            h1.title-confirm Su petición ha sido procesada correctamente.
+
+            .confirm-head__text
+              p Próximamente recibirá un correo electrónico en el que se le indicará cómo acceder a la información solicitada.
+
+
+          .panel.panel--conf
+
+            .confirm-details.clearfix
+              .identifier-container.grid-a-12.grid-c-8
+                  p.nbm El identificador de su petición es:
+                  p.primary-link $Z93QZ9
+              .btn-container.grid-a-12.grid-c-4
+                  span.estado.en-proceso.pull-right En proceso
+
+
+            p.confirm-bottom.nbm Nuestro servicio de atención está a su disposición en el teléfono
+            p.nbm
+              strong 900 201 200
+            p.confirm-bottom.nbm y en la dirección de correo electrónico 
+              a.link.link--secondary(href="mailto:abonados.propiedad@registradores.org") abonados.propiedad@registradores.org
+
+          //- p
+          //-   a.link.link--primary.link--icon(href='#')
+          //-     span Continuar
+          //-     svg.icon.rotate-180
+          //-       use(xlink:href='../static/img/common/svg/svg-symbols.svg#arrow-circle')
+
+      include includes/_tpl-footer.pug

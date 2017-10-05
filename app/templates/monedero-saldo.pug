@@ -1,0 +1,164 @@
+extends includes/_tpl-base.pug
+
+block title
+  title Datos del titular
+
+block body
+
+  - var headerMenu = false
+
+  - var menuLinks = false
+  - var user_item1 = 'active'
+
+  - var topbar = 'topbar--dark'
+  - var topbarTitle = 'Solicitud de nota localización'
+  - var topbarSteps = [{num: "1", state: "list__item--active"}, {num: "2", state: ""}]
+
+  - var footer = 'footer'
+
+
+  body
+
+    .main-global
+
+      include includes/_tpl-header.pug
+
+      include includes/_tpl-topbar.pug
+
+
+      main.main-content
+
+        .main-content__wrap
+
+          h1.title-page Monedero virtual
+
+          .panel-row
+            .panel--col              
+
+              h2.title-mod Saldo actual
+
+              .box-grey.balance
+                .grid-a-12.grid-b-2
+                  .balance-current Saldo actual
+                    span 02,05€
+                .grid-a-12.grid-b-6
+                  .balance-options
+                    button.btn.btn--secondary.btn--medium.btn--icon
+                      svg.icon
+                        use(xlink:href='../static/img/common/svg/svg-symbols.svg#more')
+                      span Recargar
+
+                    button.btn.btn--secondary.btn--medium.btn--icon
+                      svg.icon
+                        use(xlink:href='../static/img/common/svg/svg-symbols.svg#less')
+                      span Reembolso
+
+                    a(href="#", data-content='modal-refund').balance-help.modal-lateral-open
+                      svg.icon
+                        use(xlink:href='../static/img/common/svg/svg-symbols.svg#help-circle')
+
+                .grid-a-12.grid-b-4
+                  
+                  //------------------------------------------------------------------
+                  //------------------- COMENTAR CON UX DÓNDE SE TRASLADA ESTO ------
+                  //------------------------------------------------------------------
+                  //- .balance-view
+                  //- .balance-text Saldo visible
+                  //- .balance-switch
+                  //-   a(href="#").link.link--active
+                  //-     svg.icon
+                  //-       use(xlink:href='../static/img/common/svg/svg-symbols.svg#check')
+                  //-   a(href="#").link
+                  //-     svg.icon
+                  //-       use(xlink:href='../static/img/common/svg/svg-symbols.svg#deactivate')
+                  
+                  .balance-notify
+                    a(href="#").notify.link.link--primary
+                      span.notify-bubble 1
+                      | Notificaciones
+              
+              .box-grey.balance
+                .grid-a-12.grid-b-2
+                  .balance-current Saldo actual
+                    span.negative -2,56€
+                .grid-a-12.grid-b-6
+                  .balance-options
+                    button.btn.btn--secondary.btn--medium.btn--icon
+                      svg.icon
+                        use(xlink:href='../static/img/common/svg/svg-symbols.svg#more')
+                      span Recargar
+
+                    button.btn.btn--secondary.btn--medium.btn--icon.btn--disabled
+                      svg.icon
+                        use(xlink:href='../static/img/common/svg/svg-symbols.svg#less')
+                      span Reembolso
+
+                    a(href="#", data-content='modal-refund').balance-help.modal-lateral-open
+                      svg.icon
+                        use(xlink:href='../static/img/common/svg/svg-symbols.svg#help-circle')
+
+                .grid-a-12.grid-b-4
+                  .balance-notify
+                    a(href="#").notify.link.link--primary
+                      span.notify-bubble 1
+                      | Notificaciones
+                                       
+                .grid-a-12
+                  .simple-msg.simple-msg--error
+                    .simple-msg__text
+                      p
+                        | Hemos comprobado que tienes saldo negativo. En tu próxima recarga te descontaremos el importe pendiente.
+                    svg.simple-msg__icon
+                      use(xlink:href='../static/img/common/svg/svg-symbols.svg#error-circle')
+
+              .box-grey.balance
+                .grid-a-12.grid-b-2
+                  .balance-current Saldo actual
+                    span 0€
+                .grid-a-12.grid-b-6
+                  .balance-options
+                    button.btn.btn--secondary.btn--medium.btn--icon
+                      svg.icon
+                        use(xlink:href='../static/img/common/svg/svg-symbols.svg#more')
+                      span Recargar
+
+                    button.btn.btn--secondary.btn--medium.btn--icon.btn--disabled
+                      svg.icon
+                        use(xlink:href='../static/img/common/svg/svg-symbols.svg#less')
+                      span Reembolso
+
+                    a(href="#", data-content='modal-refund').balance-help.modal-lateral-open
+                      svg.icon
+                        use(xlink:href='../static/img/common/svg/svg-symbols.svg#help-circle')
+
+                .grid-a-12.grid-b-4
+                  .balance-view
+                    .balance-text Saldo visible
+                    .balance-switch
+                      a(href="#").link.link--active
+                        svg.icon
+                          use(xlink:href='../static/img/common/svg/svg-symbols.svg#check')
+                      a(href="#").link
+                        svg.icon
+                          use(xlink:href='../static/img/common/svg/svg-symbols.svg#deactivate')                    
+
+      <!-- Modal lateral -->
+      .modal-lateral
+        .modal-lateral-box
+          .modal-lateral-content
+            .modal-refund.hidden
+              h1.modal-title
+                svg.icon
+                  use(xlink:href='../static/img/common/svg/svg-symbols.svg#help-circle')
+                | Reembolsar saldo
+              .modal-text
+                p Al reembolsar el saldo, éste se reintegrará a su medio de pago.
+                p Recuerde que necesita tener saldo para poder realizar nuevas solicitudes.
+
+          a.modal-lateral-close(href='#/',title='cerrar ventana')
+            svg
+              use(xlink:href='../static/img/common/svg/svg-symbols.svg#close')
+
+      .overlay 
+
+      include includes/_tpl-footer.pug

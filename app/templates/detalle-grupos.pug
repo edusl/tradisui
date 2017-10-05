@@ -1,0 +1,91 @@
+extends includes/_tpl-base.pug
+
+block title
+  title Detalle grupo
+
+block body
+
+  - var headerMenu = true
+  - var menuLinks = true
+  - var userOnline = true
+  - var menuCol = true
+  - var user_item1 = 'active'
+  - var footer = 'footer'
+
+
+  body
+
+    .main-global
+
+      include includes/_tpl-header.pug
+
+      main.main-content
+
+        .main-content__wrap
+
+          .panel-row
+
+
+            h1.title-page.title-page--noline
+              a.link.link--titleback(href="#")
+                svg.icon.primary
+                  use(xlink:href='../static/img/common/svg/svg-symbols.svg#arrow-circle')
+
+              | Oficina San Sebastián (nombreDepartamento)
+
+
+            h2.title-mod Dirección de facturación asociada
+
+            .row
+              .hlight-msg.grid-c-6
+                p Javier Martin Bretón, 10885522Q.
+                p C/ Fernando el Santo 16, 8º B. 33204. Gijón. ASTURIAS
+
+                a.link.link--primary Modificar esta dirección
+
+            h2.title-mod Usuarios en este Departamento
+
+            table.table.table--default.grid-a-12
+              thead.table-head
+                tr
+                  th
+                    span Usuario
+                  th
+                    span.invisible Opciones
+              tbody.table-body
+
+                - var n = 0;
+                - for (var n = 0; n < 10; n++)
+                  tr
+                    td(data-label='Departamento') Jose Carlos Apellido Apellido
+                      =  n
+                    td.table__options(data-label='Opciones')
+                      a.link.link--primary Editar
+
+                      //- a.btn.btn--flat.btn--small Ver detalles
+
+            .action-group
+              button.btn.btn--medium.btn--secondary Asociar nuevo usuario a este Departamento
+
+              a.link.link--primary Modificar Departamento
+
+
+          //- .panel-col.panel-col--right
+            .menu__user--col
+                nav
+                  ul.list
+                    li(class='list__item list__item--' + user_item1)
+                      a.link(href="login-estado.html") Solicitudes realizadas
+                    li(class='list__item list__item--' + user_item2)
+                      a.link(href="#") Notificaciones
+                    li(class='list__item list__item--' + user_item3)
+                      a.link(href="#") Pagos y facturas
+                    li(class='list__item list__item--' + user_item4)
+                      a.link(href="#") Configuración
+                    li(class='list__item capitalize list__item--' + user_item5)
+                      a.link(href="login-solicitud.html") Cerrar sesión
+                        svg.icon
+                          use(xlink:href='../static/img/common/svg/svg-symbols.svg#arrow-simple')
+
+
+      include includes/_tpl-footer.pug

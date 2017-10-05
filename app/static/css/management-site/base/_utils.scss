@@ -1,0 +1,129 @@
+@if $utils-classes == true {
+
+    /* Utils */
+
+    // Note: Helper classes
+
+
+    // Floats
+    .clearfix {
+        @include clearfix;
+    }
+
+    .center-block {
+        @include center-block;
+    }
+
+    .pull-right {
+        float: right !important;
+    }
+
+    .pull-left {
+        float: left !important;
+    }
+
+    .float-none {
+      float: none !important;
+    }
+
+
+    // Hide for screen readers and browsers
+    .hide {
+        display: none !important;
+    }
+
+    // Visible for screen readers and browsers
+    .show {
+        display: block !important;
+    }
+
+    // Hide for browserws while still making it readable by screen readers
+    .invisible {
+        border: 0;
+        clip: rect(0 0 0 0);
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        width: 1px;
+        opacity: 0;
+    }
+
+    // Aligments
+    .align-left {
+        text-align: left !important;
+    }
+
+    .align-right {
+        text-align: right !important;
+    }
+
+    .align-justify {
+        text-align: justify !important;
+    }
+
+    .align-center {
+        text-align: center !important;
+    }
+
+
+    // Rotate
+
+    .rotate-90 {
+      transform: rotate(90deg);
+      transition: rotate .3s;
+    }
+
+    .rotate-180 {
+      transform: rotate(180deg);
+      //transition: rotate .3s;
+    }
+
+    .rotate-270 {
+      transform: rotate(270deg);
+    //  transition: rotate .3s;
+    }
+
+    // Format
+    .bold {
+        font-weight: bold !important;
+    }
+
+    .normal {
+        font-weight: normal !important;
+    }
+
+    .cursive {
+        font-style: italic !important;
+    }
+
+    .underline {
+        text-decoration: underline !important;
+    }
+
+    .uppercase {
+        text-transform: uppercase;
+    }
+
+    .clear {
+      clear: both;
+    }
+
+    .capitalize {
+      text-transform: capitalize;
+    }
+
+    .word-break {
+      word-break: break-word;
+    }
+
+  //margins
+    .nbm{
+      margin-bottom: 0!important;
+    }
+    .smallbarginbottom{
+      margin-bottom: 1rem;
+    }
+
+}

@@ -1,0 +1,173 @@
+extends includes/_tpl-base.pug
+
+block title
+  title Preficha Propiedad
+
+block body
+
+  - var headerMenu = true
+  - var userOnline = true
+  - var menuLinks = true
+  - var menu = 'menu-useronline4'
+  - var menu_item1 = 'active'
+
+  - var footer = 'footer-online'
+
+
+  body
+
+    .main-global
+
+      include includes/_tpl-header.pug
+
+      include includes/_tpl-topbar.pug
+
+      main.main-content
+
+        .main-content__wrap.mercantil-preficha
+
+          h1.title-page.title-page--noline Encuentre la Propiedad
+
+          .panel-row
+            .panel--pro
+              ul.list.row
+                li.list__item.grid-a-12
+                  span.over-title Registro de la propiedad
+                  span.title.note-location Santa Cruz de Tenerife Nº 03
+                li.list__item.grid-a-12.grid-c-6
+                  span.over-title IDUFIR
+                  span.title.title--high.note-idufir ikea españa distribucion y almacenaje sa
+                li.list__item.grid-a-6.grid-c-6
+                  span.over-title NIF
+                  span.title.note-estate b84946656
+                li.list__item.grid-a-6.grid-c-6
+                  span.over-title Estado
+                  span.title.note-section Sociedad vigente
+
+
+          h2.title-mod ¿Qué deseas solicitar?
+
+          .slide-menu
+
+            .slide-menu__menu
+
+              ul.list
+                li.list__item
+                  a.link.link--primary.link--active(href="#",data-content="panel--00") Información Mercantil de la Sociedad
+                    svg.icon
+                      use(xlink:href='../static/img/common/svg/svg-symbols.svg#arrow-list')
+                li.list__item
+                  a.link.link--primary(href="#",data-content="panel--01") Información de un representante social
+                    svg.icon
+                      use(xlink:href='../static/img/common/svg/svg-symbols.svg#arrow-list')
+                li.list__item
+                  a.link.link--primary(href="#",data-content="panel--02") Depósito de cuentas
+                    svg.icon
+                      use(xlink:href='../static/img/common/svg/svg-symbols.svg#arrow-list')
+                li.list__item
+                  a.link.link--primary(href="#",data-content="panel--03") Seguimiento de esta sociedad
+                    svg.icon
+                      use(xlink:href='../static/img/common/svg/svg-symbols.svg#arrow-list')
+                li.list__item
+                  a.link.link--primary(href="#",data-content="panel--04") Certificación de Cargo
+                    svg.icon
+                      use(xlink:href='../static/img/common/svg/svg-symbols.svg#arrow-list')
+                li.list__item
+                  a.link.link--primary(href="#",data-content="panel--04") Certificación de vigencia y cargo
+                    svg.icon
+                      use(xlink:href='../static/img/common/svg/svg-symbols.svg#arrow-list')
+                li.list__item
+                  a.link.link--primary(href="#",data-content="panel--04") Certificación para la emisión de Certificado electrónico
+                    svg.icon
+                      use(xlink:href='../static/img/common/svg/svg-symbols.svg#arrow-list')
+                li.list__item
+                  a.link.link--primary(href="#",data-content="panel--04") Certificación Literal
+                    svg.icon
+                      use(xlink:href='../static/img/common/svg/svg-symbols.svg#arrow-list')
+                li.list__item
+                  a.link.link--primary(href="#",data-content="panel--04") Certificación de Historial de cargos y administradores
+                    svg.icon
+                      use(xlink:href='../static/img/common/svg/svg-symbols.svg#arrow-list')
+                li.list__item
+                  a.link.link--primary(href="#",data-content="panel--04") Certificación de Apoderado y cargos
+                    svg.icon
+                      use(xlink:href='../static/img/common/svg/svg-symbols.svg#arrow-list')
+
+
+            .slide-menu__options
+
+              .panel.panel--00
+                  //- h3.title-submod Nota simple
+
+                  p Documento con la identificación de la finca, identidad del titular o titulares de los derechos inscritos sobre
+
+                  ul.list.two-cols.bullet.clearfix
+                    li.list__item Datos identificativos
+                    li.list__item Asientos de presentación
+                    li.list__item Situaciones especiales
+                    li.list__item Representantes sociales
+                    li.list__item Capital social
+                    li.list__item Listado de inscripciones
+                    li.list__item Listado de Depósitos de cuentas
+                    li.list__item Listado de Libros legalizados
+
+                  
+                  .action-group.action-group--icon
+                      a.btn.btn--secondary.btn--small(href="#") Solicitar información mercantil
+                      a.link.link--primary(href="#") Más información
+
+              .panel.panel--01.hide
+                  //- h3.title-submod Alertas de Seguimiento
+
+                  p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit, alias numquam. Explicabo, reiciendis error. Magnam praesentium voluptatem sequi assumenda at.
+
+                  .panel__footer
+                      .action-group.action-group--icon
+                          a.btn.btn--secondary.btn--small(href="#") Solicitar alerta de seguimiento
+                          a.link.link--primary(href="#") Más información
+
+
+              .panel.panel--02.hide
+                  //- h3.title-submod Certificación de Dominio
+
+                  p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure sunt ex earum veritatis fugit incidunt praesentium maxime. Similique, dolorem unde.
+
+                  .panel__footer
+                      .action-group.action-group--icon
+                          a.btn.btn--secondary.btn--small(href="#") Solicitar certificación de Dominio
+                          a.link.link--primary(href="#") Más información
+
+
+              .panel.panel--03.hide
+                  //- h3.title-submod Certificación de Dominio y Cargas
+
+                  p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa laborum quod optio rem voluptas esse quam fugiat, doloremque, reprehenderit sint!
+
+                  .panel__footer
+                      .action-group.action-group--icon
+                          a.btn.btn--secondary.btn--small(href="#") Solicitar certificación de Dominio y Cargas
+                          a.link.link--primary(href="#") Más información
+
+
+              .panel.panel--04.hide
+                  //- h3.title-submod Alertas de Seguimiento de Certificación
+
+                  p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum illum fugit modi architecto nulla esse expedita dolor repudiandae, quia id.
+
+                  .panel__footer
+                      .action-group.action-group--icon
+                          a.btn.btn--secondary.btn--small(href="#") Solicitar alerta de seguimiento
+                          a.link.link--primary(href="#") Más información
+
+        .bg-grid
+          .bg-grid__cols
+            .bg-col
+            .bg-col
+            .bg-col
+            .bg-col
+            .bg-col
+            .bg-col
+
+
+
+      include includes/_tpl-footer.pug

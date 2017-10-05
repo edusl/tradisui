@@ -1,0 +1,34 @@
+extends includes/_mail-base.pug
+
+block title
+  title  Respuesta positiva
+
+block content  
+
+    include includes/_mail-header.pug
+    
+    tr
+      td(style="padding-top: 24px;")
+        p(style="padding-bottom: 10px;", class="text-content")
+          <strong class="text-content"> Ya se encuentra disponible</strong> la certificación con número de solicitud <strong>Z39QZ9</strong>.
+        p(class="text-content") Deberá <strong>acceder a su solicitud con un certificado electrónico</strong>, cuyo NIF sea el mismo que utilizó para hacer la solicitud.
+
+    tr
+      td(style="padding-top:20px; padding-bottom:20px;")
+        table(style="width:100%; border-top:2px solid #000000;")
+          tr
+            td(style="width: 100%;", class="detail-box")
+              table(style="width:100%;")
+                tr
+                  td.dt Nº de solicitud
+                  td.dd.request-num
+                    strong H36FN45F6                
+                tr
+                  td.dt Información de:
+                  td.dd.request-info Registro de Alhama de Granada, Monaleda de Zafayona. Finca 185
+                tr
+                  td.dt Estado:
+                  td.dd
+                    span.label-blue En proceso                
+
+    include includes/_mail-footer.pug

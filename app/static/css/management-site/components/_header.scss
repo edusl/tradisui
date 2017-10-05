@@ -1,0 +1,116 @@
+.title {
+    margin-bottom: 1em;
+}
+// título sección
+
+.title-section {
+    font-family: $family-secondary-light;
+    font-weight: 400;
+    padding: 30px 0 44px;
+    color: $brand-primary;
+    font-size: rem(40);
+    line-height: 120%;
+}
+// título página
+
+.title-page {
+    font-family: $family-secondary;
+    font-weight: 500;
+    font-size: rem(30);
+    line-height: 120%;
+    text-align: center;
+    padding-top: 20px;
+    margin-bottom: 30px;
+    border-bottom: 2px solid $grey-highest;
+    padding-bottom: 15px;
+
+    .icon {
+        height: rem($h2-size + 5px);
+        width: rem($h2-size + 5px);
+        vertical-align: middle;
+    }
+}
+
+.title-page--icon {
+    .icon {
+        margin-left: -38px;
+        margin-right: 5px;
+        width: 32px;
+        height: 32px;
+        fill: $brand-primary;
+        display: none;
+    }
+}
+
+.title-page--noline {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+@include responsive(desktop) {
+    .title-page {
+        text-align: left;
+    }
+
+    .title-page--icon {
+        .icon {
+            display: inline-block;
+        }
+    }
+}
+// titulo módulo
+
+.title-mod {
+    font-size: rem(20);
+    line-height: 120%;
+    margin-bottom: 15px;
+    font-family: $family-secondary;
+    font-weight: normal;
+
+    .icon {
+        height: rem($h3-size + 5px);
+        width: rem($h3-size + 5px);
+        vertical-align: middle;
+        margin: 0 5px;
+    }
+}
+
+
+// titulo apartado
+
+.title-submod {
+    font-size: rem(18);
+    font-family: $family-base-bold;
+    margin-bottom: 15px;
+
+    .icon {
+        width: rem(20);
+        height: rem(20);
+        vertical-align: middle;
+        margin: 0 5px;
+    }
+}
+// titulo párrafos
+
+.title-text {
+    font-family: $family-base-bold;
+    margin-bottom: 5px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+// titulo confirmación
+
+.title-confirm {
+    font-family: $family-secondary-light;
+    font-size: rem(40);
+    font-weight: normal;
+    line-height: rem(40);
+    margin-bottom: rem(18);
+    color: $success-color;
+    padding-top: 35px;
+
+    em {
+        display: block;
+        font-size: rem(16);
+        font-style: normal;
+    }
+}

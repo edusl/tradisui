@@ -1,0 +1,37 @@
+extends includes/_tpl-base.pug
+
+block title
+  title Recuperación de clave
+
+block body
+
+  - var headerMenu = false
+  - var footer = 'footer'
+
+
+  body
+
+    .main-global
+
+      include includes/_tpl-header.pug
+
+
+      main.main-content
+
+
+        .main-content__wrap
+
+          .confirm-head
+
+            h1.title-confirm.primary Le hemos enviado un email
+
+            .confirm-head__text
+              p Le hemos enviado un email a <strong>nombreemail@dominio.com</strong> para recuperar su contraseña. <br/> Acceda a su bandeja de entrada y siga los pasos.
+              p No se olvide comprobar la carpeta de spam.
+
+            a.link.link--primary.link--icon.space-between.grid-a-2(href='#')
+              span Continuar
+              svg.icon.rotate-180
+                use(xlink:href='../static/img/common/svg/svg-symbols.svg#arrow-circle')
+
+      include includes/_tpl-footer.pug

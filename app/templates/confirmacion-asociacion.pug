@@ -1,0 +1,34 @@
+extends includes/_tpl-base.pug
+
+block title
+  title Confirmación asociación
+
+block body
+
+  - var headerMenu = true
+  - var menuLinks = true
+  - var userOnline = true
+  - var menuCol = true
+  - var user_item1 = 'active'
+  - var footer = 'footer'
+
+
+  body
+
+    .main-global
+
+      include includes/_tpl-header.pug
+
+      main.main-content
+
+
+        .main-content__wrap
+
+          .confirm-head
+
+            h1.title-confirm La solicitud se ha enviado correctamente.
+
+            p Hemos enviado una solicitud de asociación a <strong>mrojo@gmail.com</strong>.
+
+
+      include includes/_tpl-footer.pug

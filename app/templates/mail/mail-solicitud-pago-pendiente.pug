@@ -1,0 +1,43 @@
+extends includes/_mail-base.pug
+
+block title
+  title  Alerta de pago
+
+block content  
+
+    include includes/_mail-header.pug
+    
+    tr
+      td(style="padding-top: 24px;")
+        p.text-content Los honorarios de la solicitud de certificación con número de solicitud Z39CC2 han superado el límite fijado por usted. El coste de la solicitud es de:        
+        p(style="padding-bottom: 20px;", class="text-content") <strong style="font-size: 20px;">200€</strong> (impuestos no incluidos)
+        p(style="padding-bottom: 20px;", class="text-content") Para aceptar el pago o anular la petición, deberá <strong> acceder a su solicitud con un certificado electrónico</strong>,  cuyo NIF sea el mismo que utilizó para hacer la solicitud.
+        p(style="padding-bottom: 20px;", class="text-content") <strong>Si no responde en el plazo de 10 días hábiles</strong>,  se entenderá que desiste de su solicitud y tendrá que formular una nueva.    
+
+    tr
+      td(style="padding-top:20px; padding-bottom:20px;")
+        table(style="width:100%; border-top:2px solid #000000;")
+          tr
+            td(style="width: 100%;", class="detail-box")
+              table(style="width:100%;")
+                tr
+                  td.dt Nº de solicitud
+                  td.dd.request-num
+                    strong H36FN45F6                
+                tr
+                  td.dt Información de:
+                  td.dd.request-info  Registro de la Propiedad de Madrid 53. Propiedad 35805. Sec 5                
+                tr
+                  td.dt Estado:
+                  td.dd
+                    span.label-blue En proceso 
+
+    tr
+      td
+        table(style="margin-bottom: 10px;")
+          tr
+            td              
+              a.btn-red(href='#') Acceder con mi certificado             
+                img(src='../../static/img/common/mail/file.png', alt='', width='12', height='15', border='0',style='margin-left: 10px; vertical-align: middle')/
+
+    include includes/_mail-footer.pug

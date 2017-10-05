@@ -1,0 +1,41 @@
+extends includes/_mail-base.pug
+
+block title
+  title  Registradores de España
+
+block content  
+
+    include includes/_mail-header.pug
+    
+    tr
+      td(style="padding-top: 24px;")
+        p(style="padding-bottom: 20px;", class="text-content") La siguiente solicitud está siendo tratada por un operador especializado para dirigirla al Registro competente.
+        p(style="padding-bottom: 10px;", class="text-content") Rogamos disculpe la demora que puede derivarse de esta circunstancia.
+
+    tr
+      td(style="padding-top:20px; padding-bottom:20px;")
+        table(style="width:100%; border-top:2px solid #000000;")
+          tr
+            td(style="width: 100%;", class="detail-box")
+              table(style="width:100%;")
+                tr
+                  td.dt Nº de solicitud
+                  td.dd.request-num
+                    strong H36FN45F6                
+                tr
+                  td.dt Información de:
+                  td.dd.request-info Registro de Alhama de Granada, Monaleda de Zafayona. Finca 185
+                tr
+                  td.dt Estado:
+                  td.dd
+                    span.label-blue En proceso
+
+    tr
+      td
+        table(style="margin-bottom: 10px;")
+          tr
+            td              
+              a.btn-red(href='#') Ver solicitud                
+                img(src='../../static/img/common/mail/file.png', alt='', width='12', height='15', border='0',style='margin-left: 10px; vertical-align: middle')/
+
+    include includes/_mail-footer.pug

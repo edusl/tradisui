@@ -1,0 +1,220 @@
+extends includes/_tpl-base.pug
+
+block title
+  title Preficha Propiedad
+
+block body
+
+  - var headerMenu = true
+
+  - var topbar = true
+  - var topbarTitle = 'Volver'
+
+  - var footer = 'footer'
+
+  body
+
+    .main-global
+
+      include includes/_tpl-header.pug
+
+      main.main-content
+
+        .main-content__wrap
+
+          .home-box
+
+            .home-box__header
+              h1.title-section Registro online
+              p Realice los trámites con los registros de manera más ágil.
+
+            .home-box__areas
+              ul.list
+                li.list__item.list__item--active.grid-a-4(data-content="section--01")
+                  a.link
+                    .area
+                      svg.icon
+                          use(xlink:href='../static/img/common/svg/svg-symbols.svg#home')
+                    strong Registro de la Propiedad
+                li.list__item.grid-a-4(data-content="section--02")
+                  a.link
+                    .area
+                      svg.icon
+                          use(xlink:href='../static/img/common/svg/svg-symbols.svg#suitcase')
+                    strong Registro Mercantil
+                li.list__item.grid-a-4(data-content="section--03")
+                  a.link
+                    .area
+                      svg.icon
+                          use(xlink:href='../static/img/common/svg/svg-symbols.svg#car')
+                    strong Registro de Bienes Muebles
+
+
+          .section.section--01
+            
+            p.align-center
+              a.link.link--primary Ver todos los trámites de Registro de la Propiedad
+
+            .section-box
+              .box
+                h2.title-submod Nota simple
+                  svg.icon
+                    use(xlink:href='../static/img/common/svg/svg-symbols.svg#arrow-list')
+                .box__content
+                  p Contiene la información inscrita sobre un bien inmueble: la descripción y características, los titulares, cargas y afecciones que pueda tener dicho inmueble.
+                  .box__links
+                    a.btn.btn--secondary.btn--small(href="#") Solicitar
+                    a.link.link--primary(href="#") Más información
+
+              .box
+                h2.title-submod Cetificación de dominio
+                  svg.icon
+                    use(xlink:href='../static/img/common/svg/svg-symbols.svg#arrow-list')                
+                .box__content
+                  p Es un documento que contiene información extendida de una propiedad con información de quien es el titular, si tiene o no cargas con el banco,etc. Tiene validez jurídica.
+                  .box__links
+                    a.btn.btn--secondary.btn--small(href="#") Solicitar
+                    a.link.link--primary(href="#") Más información
+
+              .box
+                h2.title-submod Certificación de dominio y cargas
+                  svg.icon
+                    use(xlink:href='../static/img/common/svg/svg-symbols.svg#arrow-list')                
+                .box__content
+                  p Contiene la información inscrita sobre un bien inmueble: la descripción y características, los titulares, cargas y afecciones que pueda tener dicho inmueble.
+                  .box__links
+                    a.btn.btn--secondary.btn--small(href="#") Solicitar
+                    a.link.link--primary(href="#") Más información
+                  
+
+
+          .section.section--02(style="display:none")
+            
+            p.align-center
+              a.link.link--primary Ver todos los trámites de Registro Mercantil
+
+            .section-box
+              .box
+                h2.title-submod Información mercantil
+                  svg.icon
+                    use(xlink:href='../static/img/common/svg/svg-symbols.svg#arrow-list')                
+                .box__content
+                  p Contiene la información inscrita sobre un bien inmueble: la descripción y características, los titulares, cargas y afecciones que pueda tener dicho inmueble.
+                  .box__links
+                    a.btn.btn--secondary.btn--small(href="#") Solicitar
+                    a.link.link--primary(href="#") Más información
+
+              .box
+                h2.title-submod Situaciones concursales
+                  svg.icon
+                    use(xlink:href='../static/img/common/svg/svg-symbols.svg#arrow-list')                
+                .box__content
+                  p Es un documento que contiene información extendida de una propiedad con información de quien es el titular, si tiene o no cargas con el banco,etc. Tiene validez jurídica.
+                  .box__links
+                    a.btn.btn--secondary.btn--small(href="#") Solicitar
+                    a.link.link--primary(href="#") Más información
+
+              .box
+                h2.title-submod Sociedades con cuentas depositadas
+                  svg.icon
+                    use(xlink:href='../static/img/common/svg/svg-symbols.svg#arrow-list')                
+                .box__content
+                  p Contiene la información inscrita sobre un bien inmueble: la descripción y características, los titulares, cargas y afecciones que pueda tener dicho inmueble.
+                  .box__links
+                    a.btn.btn--secondary.btn--small(href="#") Solicitar
+                    a.link.link--primary(href="#") Más información           
+                
+                
+          .section.section--03(style="display:none")
+            
+            p.align-center
+              a.link.link--primary Ver todos los trámites para Bienes Muebles
+
+            .section-box
+              .box
+                h2.title-submod Información de bienes inmuebles
+                  svg.icon
+                    use(xlink:href='../static/img/common/svg/svg-symbols.svg#arrow-list')                
+                .box__content
+                  p Contiene la información inscrita sobre un bien inmueble: la descripción y características, los titulares, cargas y afecciones que pueda tener dicho inmueble.
+                  .box__links
+                    a.btn.btn--secondary.btn--small(href="#") Solicitar
+                    a.link.link--primary(href="#") Más información
+
+              .box
+                h2.title-submod Consulta de documentos
+                  svg.icon
+                    use(xlink:href='../static/img/common/svg/svg-symbols.svg#arrow-list')                
+                .box__content
+                  p Es un documento que contiene información extendida de una propiedad con información de quien es el titular, si tiene o no cargas con el banco,etc. Tiene validez jurídica.
+                  .box__links
+                    a.btn.btn--secondary.btn--small(href="#") Solicitar
+                    a.link.link--primary(href="#") Más información
+
+              .box
+                h2.title-submod Comprovación CSV
+                  svg.icon
+                    use(xlink:href='../static/img/common/svg/svg-symbols.svg#arrow-list')                
+                .box__content
+                  p Contiene la información inscrita sobre un bien inmueble: la descripción y características, los titulares, cargas y afecciones que pueda tener dicho inmueble.
+                  .box__links
+                    a.btn.btn--secondary.btn--small(href="#") Solicitar
+                    a.link.link--primary(href="#") Más información                
+                       
+
+          .utils
+            .box
+              svg.icon
+                  use(xlink:href='../static/img/common/svg/svg-symbols.svg#downloads')
+              h3.title-submod Descargas
+              p Descargue manuales de ayuda, formularios o programas
+
+            .box
+              svg.icon
+                  use(xlink:href='../static/img/common/svg/svg-symbols.svg#screen')
+              h3.title-submod Presentación telemática
+              p Es posible realizar presentaciones de documentos de forma telemática a los distintos registros de la propiedad, mercantil y bienes muebles.
+
+          .central-links
+            ul.list
+              li.list__item
+                a.link.link--primary API manager
+              li.list__item
+                a.link.link--primary Consulta documentos
+
+
+
+          .help-box
+            .panel-box.grid-a-12.grid-c-7
+              h3.title-submod ¿Qué necesita?
+              ul.list.list--primary
+                li.list__item
+                  a.link.link--primary Quiero información de mi propiedad
+                li.list__item
+                  a.link.link--primary Informarme de quien es el propietario al que voy a comprar una finca
+                li.list__item
+                  a.link.link--primary Justificar que no tengo propiedades para optar a un inmueble de protección oficial
+                li.list__item
+                  a.link.link--primary Cambiar de propietario por fallecimiento de un familiar
+                li.list__item
+                  a.link.link--primary He terminado de pagar la hipoteca y quiero eliminar las cargas de mi propiedad
+
+              a.link.link--primary Ver más preguntas frecuentes
+
+            .panel-box.grid-a-12.grid-c-5
+              h3.title-submod Dudas o incidencias
+
+              p Si tiene alguna duda, consulte nuestra sección de <a href="#" class="link link--primary">ayuda y soporte</a>, donde encontrará amplia información y guías de ayuda específicas:
+
+              ul.list.list--primary
+                li.list__item
+                  a.link.link--primary Guía de ayuda del registro de la propiedad
+                li.list__item
+                  a.link.link--primary Guía de ayuda del área de usuario
+                li.list__item
+                  a.link.link--primary Guía de ayuda de facturación
+
+              p Si necesita resolver una incidencia <a href="#" class="link link--primary">contacte con nosotros.</a>
+
+
+      include includes/_tpl-footer.pug

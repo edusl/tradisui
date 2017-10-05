@@ -1,0 +1,20 @@
+.pagination.clearfix
+  ul.list
+    li.list__item.list__item--nav
+      svg.icon
+        use(xlink:href='../static/img/common/svg/svg-symbols.svg#arrow-simple')
+      span.list-text Anterior
+    li.list__item.list__item--num.list__item--active 1
+    li.list__item.list__item--num
+      a.link(href='#') 2
+    li.list__item.list__item--num
+      a.link(href='#') 3
+    li.list__item.list__item--nav
+      a.link ...
+    li.list__item.list__item--num
+      a.link(href='#') 10
+    li.list__item.list__item--nav
+      a.link.link--primary(href='#')
+        span.list-text Siguiente
+        svg.icon.rotate-180
+          use(xlink:href='../static/img/common/svg/svg-symbols.svg#arrow-simple')

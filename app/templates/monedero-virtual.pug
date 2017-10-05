@@ -1,0 +1,272 @@
+extends includes/_tpl-base.pug
+
+block title
+  title Datos del titular
+
+block body
+
+  - var headerMenu = false
+
+  - var menuLinks = false
+  - var user_item1 = 'active'
+
+  - var topbar = 'topbar--dark'
+  - var topbarTitle = 'Solicitud de nota localización'
+  - var topbarSteps = [{num: "1", state: "list__item--active"}, {num: "2", state: ""}]
+
+  - var footer = 'footer'
+
+
+  body
+
+    .main-global
+
+      include includes/_tpl-header.pug
+
+      include includes/_tpl-topbar.pug
+
+
+      main.main-content
+
+        .main-content__wrap
+
+          h1.title-page Método de pago: Monedero
+
+          .panel-row
+            .panel--col
+
+
+              .row
+                .gen-msg.gen-msg--info.mt--30
+                  .gen-msg__text
+                    h1 ¿Cómo funciona el monedero?
+                    p Los pagos de tus solicitudes se realizarán a través de un depósito asociado a tu cuenta, el monedero. Solo tienes que recargar dinero en tu monedero y realizar tus pedidos de información.
+                    p
+                     a.link Más información
+
+                  svg.gen-msg__icon
+                    use(xlink:href='../static/img/common/svg/svg-symbols.svg#info-circle')
+
+
+              h2.title-mod Saldo actual
+
+              .box-grey.balance
+                .grid-a-12.grid-b-2
+                  .balance-current Saldo actual
+                    span 02,05€
+                .grid-a-12.grid-b-6
+                  .balance-options
+                    button.btn.btn--secondary.btn--medium.btn--icon
+                      svg.icon
+                        use(xlink:href='../static/img/common/svg/svg-symbols.svg#more')
+                      span Recargar
+
+                    button.btn.btn--secondary.btn--medium.btn--icon
+                      svg.icon
+                        use(xlink:href='../static/img/common/svg/svg-symbols.svg#less')
+                      span Reembolso
+
+                    a(href="#", data-content='modal-refund').balance-help.modal-lateral-open
+                      svg.icon
+                        use(xlink:href='../static/img/common/svg/svg-symbols.svg#help-circle')
+
+                .grid-a-12.grid-b-4
+                  
+                  //------------------------------------------------------------------
+                  //------------------- COMENTAR CON UX DÓNDE SE TRASLADA ESTO ------
+                  //------------------------------------------------------------------
+                  //- .balance-view
+                  //- .balance-text Saldo visible
+                  //- .balance-switch
+                  //-   a(href="#").link.link--active
+                  //-     svg.icon
+                  //-       use(xlink:href='../static/img/common/svg/svg-symbols.svg#check')
+                  //-   a(href="#").link
+                  //-     svg.icon
+                  //-       use(xlink:href='../static/img/common/svg/svg-symbols.svg#deactivate')
+                  
+                  .balance-notify
+                    a(href="#").notify.link.link--primary
+                      span.notify-bubble 1
+                      | Notificaciones
+
+              
+              .text-box
+                h2.title-mod Actúo
+                .cb-group(data-qa='ds-quien')
+                  fieldset
+                    legend.invisible Seleccione una opción
+                    .cb-option
+                      label.cb-label(for='chk-01')
+                        input#chk-01.invisible.checkbox(type='checkbox')
+                        span.cb-pick
+                        span.cb-text Ocultar saldo a usuarios asociados.
+                    .cb-option
+                      label.cb-label(for='chk-02')
+                        input#chk-02.invisible.checkbox(type='checkbox')
+                        span.cb-pick
+                        span.cb-text
+                          | Avisar por email mediante un email si el saldo es inferior a una cantidad fijada.
+                    #who-dialog
+
+
+              .table-wrapper
+                h2.title-mod Últimos movimientos de saldo
+
+                .table-filter
+                  .table-filter__head
+                    .table-filter__text Se muestran 55 usuarios
+                      a.link.link--primary  Eliminar filtro
+                    .table-filter__show
+
+                      a.link.link--primary.link--icon.link--filter
+                        span Filtrar resultados
+                        svg.icon
+                          use(xlink:href='../static/img/common/svg/svg-symbols.svg#filter')
+
+                  .table-filter__options(style='display: none')
+                    .form-box.grid-a-12.grid-c-2
+                      label.label.hide Periodo
+                      .form-ico.form-ico--select
+                        select#select.select
+                          option Periodo
+                          option Lorem ipsum
+                          option Lorem
+                        svg.icon
+                          use(xlink:href='../static/img/common/svg/svg-symbols.svg#arrow-down')
+
+                    .form-box.grid-a-12.grid-c-3.p-gutter--left
+                      .grid-a-6
+                        label.label.hide(for='startDate') Fecha inicial
+                        .form-ico.form-ico--date
+                          input.input.input--calendar#startDate(type='text',placeholder='Incio',title="Formato 22/01/2017")
+                          svg.icon
+                            use(xlink:href='../static/img/common/svg/svg-symbols.svg#calendar')
+
+                      .grid-a-6
+                        label.label.hide(for='endDate') Fecha final
+                        .form-ico.form-ico--date
+                          input.input.input--calendar#endDate(type='text',placeholder='Final')
+                          svg.icon
+                            use(xlink:href='../static/img/common/svg/svg-symbols.svg#calendar')
+
+
+
+                    .form-box.grid-a-12.grid-c-offset-3.grid-c-4
+                      label.label.hide(for='searchTable') Búsqueda
+                      .form-ico
+                        input.input#searchTable(type='text',placeholder='Buscar por identificador, NIF, estado ...')
+                        svg.icon
+                          use(xlink:href='../static/img/common/svg/svg-symbols.svg#search')
+
+                table.table.table--default
+                  thead.table-head
+                    tr
+                      th.table-order
+                        a(href="#")
+                          span Fecha
+                            svg.icon
+                              use(xlink:href='../static/img/common/svg/svg-symbols.svg#arrow-down')
+
+                      th
+                        span Concepto
+                      th
+                        span Usuario
+                      th
+                        span.align-right Importe
+                      th
+                        span.align-right Saldo
+                  tbody.table-body
+
+                    - var n = 0;
+                    - for (var n = 0; n < 4; n++)
+                      tr
+                        td(data-label='Fecha') 28/01/2016
+                        td(data-label='Concepto') Cierre de facturación. Impuestos.
+                          | 
+                          a(href="#").link.link--primary F21000
+                        td(data-label='Usuario') Usuario XXXX XXX
+                        td.align-right.bold(data-label='Importe') -3.02€
+                        td.align-right.important(data-label='Saldo') 1.04€
+
+                    tr
+                      td(data-label='Fecha') 25/11/2016
+                      td(data-label='Concepto') Nota simple
+                        | 
+                        a(href="#").link.link--primary H43335
+                      td(data-label='Usuario') Usuario XXXX XXX
+                      td.align-right.bold(data-label='Importe') -180€
+                      td.align-right.important.negative(data-label='Saldo') -7.04€
+
+                    - for (var n = 0; n < 5; n++)
+                      tr
+                        td(data-label='Fecha') 07/04/2017
+                        td(data-label='Concepto') Recarga
+                        td(data-label='Usuario') Usuario XXXX
+                        td.align-right.bold.positive(data-label='Importe') 200€
+                        td.align-right.important(data-label='Saldo') 181.90€
+
+                .pagination.pull-right.clearfix
+                  ul.list
+                    li.list__item.list__item--nav
+                      svg.icon
+                        use(xlink:href='../static/img/common/svg/svg-symbols.svg#arrow-simple')
+                      span.list-text Anterior
+                    li.list__item.list__item--num.list__item--active 1
+                    li.list__item.list__item--num
+                      a.link(href='#') 2
+                    li.list__item.list__item--num
+                      a.link(href='#') 3
+                    li.list__item.list__item--nav
+                      a.link ...
+                    li.list__item.list__item--num
+                      a.link(href='#') 10
+                    li.list__item.list__item--nav
+                      a.link.link--primary(href='#')
+                        span.list-text Siguiente
+                        svg.icon.rotate-180
+                          use(xlink:href='../static/img/common/svg/svg-symbols.svg#arrow-simple')
+
+                p
+                  a.link.link--primary.link--icon.small(href="#") Exportar a Excel
+
+                .table-action
+                  button.btn.btn--secondary.btn--medium  Continuar
+
+              .table-wrapper
+                h2.title-mod Tus métodos de recarga
+
+                table.table.table--default
+                  thead.table-head
+                    tr
+                      th.table-order
+                        a(href="#")
+                          span Método
+                            svg.icon
+                              use(xlink:href='../static/img/common/svg/svg-symbols.svg#arrow-down')
+
+                      th
+                        span &nbsp;
+                      th
+                        span.align-right &nbsp;
+                      th
+                        span.align-right &nbsp;
+                  tbody.table-body
+                    tr
+                      td(data-label='Método') Tarjeta Mastercard
+                      td(data-label='') XXXX XXXX XXXX XXXX 0054                                          
+                      td.bold.positive(data-label='') Principal
+                      td.align-right(data-label='')
+                        a.link.link--primary Eliminar
+                    tr
+                      td(data-label='Método') Cuenta PayPal
+                      td(data-label='') &nbsp;
+                      td.disabled(data-label='') Principal
+                      td.align-right(data-label='')
+                        a.link.link--primary Eliminar
+
+                .table-action
+                  a.link.link--primary Añadir otra cuenta PayPal
+
+
+      include includes/_tpl-footer.pug

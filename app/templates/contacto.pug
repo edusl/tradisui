@@ -1,0 +1,67 @@
+extends includes/_tpl-base.pug
+
+block title
+  title Comprobar estado de la solicitud
+
+block body
+
+  - var headerMenu = true
+  - var userOnline = false
+  - var menuLinks = false
+  - var user_item1 = 'active'
+  - var footer = 'footer'
+
+  body
+
+    .main-global
+
+      include includes/_tpl-header.pug
+
+      main.main-content
+
+        //- include includes/_tpl-topbar.pug
+
+        .main-content__wrap
+
+          h1.title-page Contacto
+
+          .panel-row
+            .panel--col
+              p Si tienes algún problema o consulta contacte con nosotros y le responderemos lo antes posible.
+
+              .gen-msg.gen-msg--info
+                .gen-msg__text
+                  p Si tiene cuenta de abonado, identifíquese para poder gestionar su consulta con la máxima exactitud.
+                svg.gen-msg__icon
+                  use(xlink:href="../static/img/common/svg/svg-symbols.svg#info-circle")
+
+              .row
+                .form.grid-a-12.grid-c-4
+                  form(autocomplete="off",action="portada-propiedad.html")
+
+                    .form-box
+                      label.label(for="motivo") * Motivo de la consulta
+                      .form-ico.form-ico--select
+                        select#motivo.select(name="motivo")
+                          option Soporte técnico
+                          option Otras cuestiones
+
+                        svg.icon(viewBox='0 0 48 48')
+                          use(xlink:href='../static/img/common/svg/svg-symbols.svg#arrow-down')
+
+                    .form-box
+                      label.label(for="consulta") * Consulta
+                      textarea.textarea#consulta(name="", cols="30", rows="10")
+                      .form-text.cursive 5 caracteres
+
+                    .form-box
+                      label.label(for="email") Email
+                      input.input#email(type='text')
+                      .form-text Le enviaremos la respuesta a este email
+                    button.btn.btn--primary Enviar
+
+                    p
+                      a.link.link--primary.small(href="#") ¿Tienes problemas para acceder?
+
+
+      include includes/_tpl-footer.pug

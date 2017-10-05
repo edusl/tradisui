@@ -1,0 +1,94 @@
+extends includes/_tpl-base.pug
+
+block title
+  title Guía genérica
+
+block body
+
+  - var headerMenu = true
+  - var menuLinks = true
+
+  - var topbar = 'topbar--dark'
+  - var topbarTitle = 'Volver'
+
+  - var footer = 'footer'
+
+  body
+
+    .main-global
+
+      include includes/_tpl-header.pug
+
+      main.main-content
+
+        include includes/_tpl-topbar.pug
+
+        .main-content__wrap
+
+          h1.title-page.title-page--noline ¿Qué es el interés legítimo alegado?
+
+          .panel-row
+            .text-box
+              p Es el motivo por el que se solicita o la finalidad para la que se usará la información. En general deberá tratarse siempre de un interés que se integre en el tráfico jurídico mercantil de inmuebles o derechos. Pueden alegarse otros intereses, no directamente relacionados con el tráfico de inmuebles, pero, en ese caso, deberá consistir en el ejercicio de un derecho amparado en una Ley. El interés debe manifestarse expresamente y será calificado por el registrador.
+
+            .text-box
+              h2.title-mod Tipos de interes legítimo
+              h3.title-text 1 Investigación jurídico-económica sobre crédito, solvencia o responsabilidad.
+              p Deberá marcarse esta casilla cuando la petición tenga por objeto conocer la capacidad de atender a sus responsabilidades por parte de los titulares registrales de bienes o derechos concretas. Así sucede, por ejemplo:
+
+              ul.list
+                li.list__item Préstamos al titular registral.
+                li.list__item Contratar un arrendamiento con el titular registral como inquilino
+                li.list__item Contratar servicios a favor del titular registral.
+
+            //- p También podrá utilizarse este campo cuando quiera acreditarse la que no se es dueno de bienes inmuebles Por ejemplo:
+
+              ul.list
+                li.list__item Para obtención de viviendas de protección oficial.
+                li.list__item Para obtención de justicia gratuita.
+                li.list__item Para obtención de ayudas o subvenciones.
+
+            .text-box
+              h3.title-text 2 Investigación jurídica sobre el objeto, su titularidad o limitaciones.
+              p Deberá marcarse esta casilla cuando quiera conocerse el conjunto de derechos que recaen sobre un inmueble.: Propiedad, usufructo, servidumbres, limitaciones urbanísticas, cargas, etc. Por ejemplo:
+
+              ul.list
+                li.list__item Conocer si se tienen derechos de paso o acceso.
+                li.list__item Conocer si una finca es edificable.
+                li.list__item Conocer la descripción registral de la finca.
+                li.list__item Estudios para tasación de la finca.
+                li.list__item Aclaración o regulación ante el Catastro u otros Organismos.
+
+            .text-box
+              h3.title-text 3 Investigación para contratación o interposición de acciones.
+              p Deberá marcarse esta casilla cuando se pretenda la adquisición de la finca o de algún derecho sobre ella como por ejemplo:
+
+              ul.list
+                li.list__item Compra de la finca.
+                li.list__item Adquisición del usufructo sobre la finca.
+                li.list__item Alquiler de la finca.
+                li.list__item Préstamo con garantía hipotecaria.
+
+              p También deberá marcarse cuando se pretendan interponer acciones judiciales contra el titular registral o sobre la finca. Así por ejemplo:
+
+              ul.list
+                li.list__item Cuando se pretenda pedir el embargo de la finca.
+                li.list__item Cuando se pretenda ejercitar un retracto (de comuneros, de colindantes o de arrendatarios) sobre la finca.
+                li.list__item Cuando se pretenda reclamar judicialmente algún derecho sobre la finca.
+                li.list__item Para el ejercicio del deslinde de fincas.
+
+            .text-box
+              h3.title-text 4  El solicitante es titular de algún derecho sobre la finca.
+              p Deberá marcarse esta casilla cuando el solicitante de la información es ya titular en el Registro de la finca sobre la que se solicita la información o sobre algún derecho sobre la misma. Así, por ejemplo:
+
+              ul.list
+                li.list__item Cuando el titular necesite acreditar su titularidad ante el Catastro u otras instituciones.
+                li.list__item Para tramitar la cancelación de una hipoteca.
+                li.list__item Para tramitar la cancelación de otras cargas.
+
+            .text-box
+              h3.title-text 5. Otros.
+              p Deberá marcarse esta casilla cuando el motivo de la petición no quepa en los otros apartados. En el recuadro deberá especificarse de manera clara el motivo de la petición y el fundamento legal en que se apoya.
+
+
+      include includes/_tpl-footer.pug

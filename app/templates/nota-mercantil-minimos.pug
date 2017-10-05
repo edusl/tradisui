@@ -1,0 +1,220 @@
+extends includes/_tpl-base.pug
+
+block title
+  title Preficha Propiedad
+
+block body
+
+  - var headerMenu = false
+
+  - var topbar = 'topbar--dark'
+  - var topbarTitle = 'Volver'
+
+  - var footer = 'footer'
+
+  body.tpl-prewrap.tpl-note.tpl-col42
+
+    .main-global
+
+      include includes/_tpl-header.pug
+
+      main.main-content
+
+        .main-content__title
+          .main-content__wrap
+
+            h1.title-page
+              a.link.link--titleback(href="#")
+                svg.icon.primary
+                  use(xlink:href='../static/img/common/svg/svg-symbols.svg#arrow-circle')
+
+              | Nota de localización. H25439908
+
+        .main-content__prewrap
+
+          .main-content__wrap.mercantil
+
+            .panel-row
+
+              .panel.panel--note
+
+                h2.title Datos de la solicitud
+
+                ul.list.row
+                  li.list__item.grid-a-6.grid-c-2
+                    span.over-title TIPO:
+                    span.title.request-type Nota simple
+                  li.list__item.grid-a-6.grid-c-2
+                    span.over-title Fecha de creación
+                    span.title.request-date 07/01/2016
+                  li.list__item.grid-a-6.grid-c-3
+                    span.over-title Información solicitada
+                    span.title.request-info Registro de la Propiedad Sevilla 4. Propiedad 185, Sección 1
+                  li.list__item.grid-a-6.grid-c-3
+                    span.over-title Solicitante
+                    span.title.request-owner Javier Gonzalez de las Heras, 10884425Q
+                  li.list__item.grid-a-12.grid-c-2
+                    ul.sub-list
+                      li.list__item
+                        a.btn.btn--secondary.btn--medium.btn--icon
+                          | Descargar PDF
+                          svg.icon
+                            use(xlink:href='../static/img/common/svg/svg-symbols.svg#download-file')
+                      li.list__item
+                        a.btn.btn--secondary.btn--medium.btn--icon
+                          | Imprimir
+                          svg.icon
+                            use(xlink:href='../static/img/common/svg/svg-symbols.svg#print')
+
+            
+
+              .panel-tab.panel-tab--success.grid-c-8
+                .panel-tab__content.request-status
+                  svg.icon.icon--registradores
+                    use(xlink:href='../static/img/common/svg/svg-symbols.svg#check')
+                  | Enviada - 08 /07/2016 (18:00)
+
+              .panel--light.panel--detail.panel-col.panel-col--left
+                
+                h2.tit-section Datos identificativos
+                
+                .panel-row
+                  .panel--pro.no-top-border.nbm.clearfix
+                    ul.list.row
+                      li.list__item.grid-a-12
+                        span.over-title Registro de la propiedad
+                        span.title.note-location Santa Cruz de Tenerife Nº 03
+                      li.list__item.grid-a-12.grid-c-8
+                        span.over-title IDUFIR
+                        span.title.title--high.note-idufir ikea españa distribucion y almacenaje sa
+                      li.list__item.grid-a-6.grid-c-4
+                        span.over-title NIF
+                        span.title.note-estate b84946656
+                      li.list__item.grid-a-6.grid-c-4
+                        span.over-title Estado
+                        span.title.note-section Sociedad vigente
+                        
+                .panel-row
+                  .panel--pro.no-top-border.clearfix        
+                    dl.dl
+                      dt.dl__term Inicio operaciones:
+                      dd.dl__def 10/01/2007
+                      
+                      dt.dl__term Domicilio social:
+                      dd.dl__def Via de las dos castillas 33 - Ática 4, 2º Planta, Pozuelo de alarcón 28000 Madrid
+                      
+                      dt.dl__term Duración:
+                      dd.dl__def Indefinida
+                      
+                      dt.dl__term Datos registrales:
+                      dd.dl__def Hoja B-119207, Tomo 27574, Folio 142
+                      
+                      dt.dl__term Objeto social:
+                      dd.dl__def La programación y creación de programas informáticos. El diseño, creación y mantenimiento de páginas web. 
+                      
+                      dt.dl__term Estructura de órgano:
+                      dd.dl__def Consejo de administración
+                      
+                      dt.dl__term Unipersonalidad:
+                      dd.dl__def La sociedad de esta hoja es unipersonal, siendo su sócio único BNP Paribas Personal Finance SA, con NIF 54321214
+                      
+                      dt.dl__term Último depósito contable:
+                      dd.dl__def 2013
+                      
+                      dt.dl__term Dominios:
+                      dd.dl__def
+                        a.link.link--primary.d-block(href="#") www.bancocetelem.es
+                        a.link.link--primary.d-block(href="#") www.cetelem.es
+                        
+                      dt.dl__term Situaciones especiales:
+                      dd.dl__def Existen situaciones especiales
+                      
+                      dt.dl__term Código Lei:
+                      dd.dl__def 0032122221 1321228
+                      
+                      dt.dl__term C.N.A.E:
+                      dd.dl__def 00000, Texto descripción del código CNAE.
+                      
+          
+                  .panel--pro.no-border.nbm.no-padding-top.clearfix
+                    h2.tit-section.no-border Capital social
+                    dl.dl
+                      dt.dl__term Capital suscrito:
+                      dd.dl__def 130.605.650 €
+                      
+                      dt.dl__term Capital desembolsado:
+                      dd.dl__def 130.605.650 €
+                      
+                    
+              .panel--detail.panel-col.panel-col--right
+                h3.title-submod.fs-16.uppercase Apartados
+                p.small-text Seleccione una opción para ir directamente al contenido
+                p
+                  a(href="#") Datos identificativos
+                    svg.icon
+                      use( xlink:href="../static/img/common/svg/svg-symbols.svg#arrow-simple")
+                p
+                  a.link.link--primary(href="#") Capital social
+                    svg.icon.rotate-270
+                      use( xlink:href="../static/img/common/svg/svg-symbols.svg#arrow-simple")
+                   
+                    
+                      
+              .panel.panel--conf.grid-c-10
+                p.confirm-bottom Información General Mercantil Expedida el día: 29/03/2016 a las 18:57 horas.
+                  a.link.gutter--left.underline(href="#") Acerca de esta información
+                 
+                      
+              .panel.grid-c-10
+                h2.title-mod Más información mercantil de forum Filatélico S.A.
+                ul.list.list--check
+                    li.list__item.checked
+                      | Datos básicos identificativos
+                      svg.icon
+                        use(xlink:href="../static/img/common/svg/svg-symbols.svg#check")
+                    li.list__item
+                      | Asientos de presentación
+                      svg.icon
+                        use(xlink:href="../static/img/common/svg/svg-symbols.svg#check")
+                    li.list__item
+                      | Situaciones especiales
+                      svg.icon
+                        use(xlink:href="../static/img/common/svg/svg-symbols.svg#check")
+                    li.list__item
+                      | Representantes sociales
+                      svg.icon
+                        use(xlink:href="../static/img/common/svg/svg-symbols.svg#check")
+                    li.list__item.checked
+                      | Capital social
+                      svg.icon
+                        use(xlink:href="../static/img/common/svg/svg-symbols.svg#check")
+                    li.list__item
+                      | Actos inscritos
+                      svg.icon
+                        use(xlink:href="../static/img/common/svg/svg-symbols.svg#check")
+                    li.list__item
+                      | Depósitos de cuentas
+                      svg.icon
+                        use(xlink:href="../static/img/common/svg/svg-symbols.svg#check")
+                    li.list__item
+                      | Libros legalizados
+                      svg.icon
+                        use(xlink:href="../static/img/common/svg/svg-symbols.svg#check")
+                      
+                button.btn.btn--secondary.btn--medium Solicitar más información mercantil
+              
+              .panel.grid-c-10
+                h2.title-mod Más solicitudes de Forum Filatelico S.A.
+                ul.list.list--primary
+                    li.list__item
+                        a.link(href='#') Todos los servicios de esta sociedad
+                    li.list__item
+                        a.link(href='#') Información del Registro de la Propiedad de esta sociedad
+                    li.list__item
+                        a.link(href='#') Información del Registro de las Condiciones de esta sociedad
+                    li.list__item
+                        a.link(href='#') Información del Registro publico de la CNMV de esta sociedad
+
+
+
+      include includes/_tpl-footer.pug

@@ -1,0 +1,46 @@
+extends includes/_tpl-base.pug
+
+block title
+  title Confirmación asociación
+
+block body
+
+  - var headerMenu = true
+  - var menuLinks = true
+  - var userOnline = true
+  - var menuCol = true
+  - var user_item1 = 'active'
+  - var footer = 'footer'
+
+
+  body
+
+    .main-global
+
+      include includes/_tpl-header.pug
+
+      main.main-content
+
+
+        .main-content__wrap
+
+          .confirm-head
+
+            h1.title-confirm Su cuenta se ha asociado correctamente.
+
+            .hlight-msg
+              p Departamento: #Oficina San Sebastián
+              p Administrador: Javier Martín Bretón, 10885522Q.
+              p Permisos: Usuario
+
+            .support
+              h1.title-submod En el caso de tener cualquier duda
+
+              strong Servicio de Atención al usuario:
+              ul.list
+                li.list__item Teléfono:
+                  strong 902 201 200
+                li.list__item Dirección de correo:
+                  a.link.link--primary soporte.propiedad@registradores.org
+
+      include includes/_tpl-footer.pug

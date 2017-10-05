@@ -1,0 +1,83 @@
+extends includes/_tpl-base.pug
+
+block title
+  title Reembolsar saldo
+
+block body
+
+  - var headerMenu = false
+
+  - var menuLinks = false
+  - var user_item1 = 'active'
+
+  - var topbar = 'topbar--dark'
+  - var topbarTitle = 'Solicitud de nota localización'
+  - var topbarSteps = [{num: "1", state: "list__item--active"}, {num: "2", state: ""}]
+
+  - var footer = 'footer'
+
+
+  body
+
+    .main-global
+
+      include includes/_tpl-header.pug
+
+      include includes/_tpl-topbar.pug
+
+
+      main.main-content
+
+        .main-content__wrap
+
+          h1.title-page Reembolsar saldo
+
+          .panel-row
+            .panel--col
+              .row
+                .form.grid-a-12.form--inline
+                  form(autocomplete="off",action="portada-propiedad.html")
+                    .form-options
+                      .form-box
+                        label.label(for='saldo-act') Saldo actual
+                        .form-box--right
+                          input.input.input--flat.fs-16#saldo-act(type='text', value="2500,50€", readonly)
+
+                      .form-box
+                        label.label(for='imp-reem') Importe a reembolsar
+                        .form-box--right.quantity
+
+                          .quantity__field
+                            input.input.quantity__input#imp-reem(type='text')
+                            <span class="currency">€</span>
+
+                          .cb-option
+                            label.cb-label(for='todosaldo')
+                              input#todosaldo.invisible.checkbox(type='checkbox')
+                              span.cb-pick
+                              span.cb-text Reembolsar todo el saldo
+
+                      .form-box
+                        label.label(for='saldo-fin') Saldo final
+                        .form-box--right
+                          input.input.input--flat.fs-16#saldo-fin(type='text', value="2560€", readonly)
+
+                      .form-box                      
+                        //- nota: solo visible para certificaciones
+                        label.label(for='metodo-reembolso') Método de reembolso
+                        .form-box--right                                                  
+                          .form-ico.form-ico--select
+                            select#metodo-reembolso.select
+                              option Tarjeta bancaria (Visa, Mastercard, American Express)
+                              option Tarjeta Bancaria Maestro
+                              option Paypal
+                            svg.icon
+                              use(xlink:href='../static/img/common/svg/svg-symbols.svg#arrow-down')                    
+
+                    .form-action.btn-group
+                      button.btn.btn--primary.btn--medium Reembolsar
+                      button.btn.btn--secondary.btn--medium Cancelar
+
+
+
+      include includes/_tpl-footer.pug

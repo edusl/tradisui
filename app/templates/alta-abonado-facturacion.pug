@@ -1,0 +1,160 @@
+extends includes/_tpl-base.pug
+
+block title
+  title Alta de abonado - Datos de facturación
+
+block body
+
+  - var headerMenu = false
+
+  - var topbar = 'topbar--dark'
+  - var topbarTitle = 'Creación de nueva cuenta'
+  - var topbarSteps = [1, 2, 3, 3]
+
+  - var footer = 'footer'
+
+  body
+
+    .main-global
+
+      include includes/_tpl-header.pug
+
+      main.main-content
+
+        include includes/_tpl-topbar.pug
+
+        .main-content__wrap
+
+          h1.title-page Datos de facturación
+
+          .panel-row
+
+              .text-box
+                h2.title-mod Titular de facturación
+
+                .rb-group.rb-group--horizontal.rb-group--line.grid-a-12.grid-c-4
+                  fieldset
+
+                    legend.invisible Seleccione un titular
+                    .rb-option.grid-c-6
+                      label.rb-label(for='radioh01a')
+                        input#radioh01a.invisible.radiobutton(type='radio',name='radioh',checked)
+                        span.rb-pick
+                        span.rb-text Soy persona física
+                        span.rb-line
+
+                    .rb-option.grid-c-6
+                      label.rb-label(for='radioh01b')
+                        input#radioh01b.invisible.radiobutton(type='radio',name='radioh')
+                        span.rb-pick
+                        span.rb-text Soy persona jurídica
+                        span.rb-line
+
+
+                .form-panel.form-panel--0
+
+                .form-panel.form-panel--1
+                  label.cb-label(for='option1')
+                    input#option1.invisible.checkbox(type='checkbox',checked)
+                    span.cb-pick
+                    span.cb-text Mismo titular de facturación que solicitante
+
+                  h2.title-mod Datos de la entidad
+
+                  .row
+                    .form-box.grid-c-4
+                      label.label Tipo de entidad
+                      .form-ico.form-ico--select
+                        select#select.select
+                          option Persona jurídica pública
+                        svg.icon
+                          use(xlink:href='../static/img/common/svg/svg-symbols.svg#arrow-down')
+
+                  .row
+                    .form-box.grid-a-12.grid-c-4
+                      label.label(for='input01c') CIF / Cerficiado de situación censal
+                      input.input#input01c(type='text',placeholder='Código postal')
+
+
+                  .text-box
+                    h2.title-submod Datos de identificación del Representante
+                      a.modal-lateral-open(data-content='modal01', href="#modal01", title="Mostrar ayuda")
+                        svg.icon.info
+                          title Mostrar ayuda
+                          use(xlink:href='../static/img/common/svg/svg-symbols.svg#help-circle')
+
+                    p Adjunta la documentación que te identifique como representante de la sociedad.
+
+                    form.add-file
+                      input.add-file__input#fileupload(type='file', name='fileupload', value='fileupload')
+                      label.btn.btn--secondary.btn--medium(for='fileupload') Seleccionar un archivo
+                      span.add-file__file
+                      span.add-file__info Peso máximo permitido 2Mb.
+
+
+
+
+              .text-box
+                h2.title-mod Dirección de facturación
+
+                .rb-group.rb-group--horizontal.rb-group--line.grid-a-12.grid-c-4
+                  fieldset
+
+                    legend.invisible Seleccione una dirección
+                    .rb-option.grid-c-6
+                      label.rb-label(for='radioh02a')
+                        input#radioh02a.invisible.radiobutton(type='radio',name='radioh02',checked)
+                        span.rb-pick
+                        span.rb-text España
+                        span.rb-line
+
+                    .rb-option.grid-c-6
+                      label.rb-label(for='radioh02b')
+                        input#radioh02b.invisible.radiobutton(type='radio',name='radioh02')
+                        span.rb-pick
+                        span.rb-text Otro país
+                        span.rb-line
+
+                .row
+                  .form-box.grid-a-12.grid-c-4
+                    label.label(for='textarea01') Dirección completa
+                    textarea#textarea01.textarea(name='textarea',rows=3)
+
+                .row
+                  .form-box.grid-a-12.grid-c-2
+                    label.label(for='input01') C.P.
+                    input.input#input01(type='text',placeholder='Código postal')
+
+                .row
+                  .form-box.grid-a-12.grid-c-4
+                    label.label(for='input02') Provincia
+                    input.input#input02(type='text',placeholder='Seleccione o introduzca provincia', data-validation="length alphanumeric", data-validation-length='min4')
+
+                .row
+                  .form-box.grid-a-12.grid-c-4
+                    label.label(for='input03') Municipio
+                    input.input#input03(type='text',placeholder='Seleccione o introduzca el municipio', data-validation='length alphanumeric', data-validation-length='min4')
+
+
+                .cb-option
+                  label.cb-label(for='cb01')
+                    input#cb01.invisible.checkbox(type='checkbox', checked='checked')
+                    span.cb-pick
+                    span.cb-text Practicar retención IRPF
+
+
+                h3.title-text Condiciones del servicio (Obligatorio)
+
+                .cb-option
+                  label.cb-label(for='cb02')
+                    input#cb02.invisible.checkbox(type='checkbox')
+                    span.cb-pick
+                    span.cb-text Acepto las
+                      a.link.link--primary.modal-open.link--terms(href="#legal-terms", data-content="legal-terms")  condiciones del servicio
+                      |  y la
+                      a.link.link--primary.modal-open.link--privacy(href="#legal-privacy", data-content="legal-privacy")  Política de privacidad.
+
+                .form-action
+                  button.btn.btn--primary Continuar
+
+      include includes/_tpl-footer.pug

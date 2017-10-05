@@ -1,0 +1,37 @@
+extends includes/_mail-base.pug
+
+block title
+  title Confirmación solicitud
+
+block content  
+
+    include includes/_mail-header.pug
+    
+    tr
+      td(style="padding-top: 24px;")
+         p(style="padding-bottom: 10px;", class="text-content")
+          strong Su solicitud ha sido procesada correctamente.
+          <br />Próximamente recibirá la información registral solicitada en su dirección de correo electrónico.
+          <br />Puede comprobar
+          a.link-content2(href="#")
+              |  aquí el estado de su solicitud.            
+
+    tr
+      td(style="padding-top:20px; padding-bottom:20px;")
+        table(style="width:100%; border-top:2px solid #000000;")
+          tr
+            td(style="width: 100%;", class="detail-box")
+              table(style="width:100%;")
+                tr
+                  td.dt Nº de solicitud
+                  td.dd.request-num
+                    strong H36FN45F6                
+                tr
+                  td.dt Información de:
+                  td.dd.request-info  Registro de la Propiedad de Madrid 53. Propiedad 35805. Sec 5                
+                tr
+                  td.dt Estado:
+                  td.dd
+                    span.label-blue En proceso
+    
+    include includes/_mail-footer.pug

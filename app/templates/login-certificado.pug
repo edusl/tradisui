@@ -1,0 +1,48 @@
+extends includes/_tpl-base.pug
+
+block title
+  title Login certificado
+
+block body
+
+  - var topbar = 'topbar--dark'
+  - var topbarTitle = 'Volver'
+
+  - var footer = 'footer'
+
+  body.tpl-col33.tpl-login
+
+    .main-global
+
+      include includes/_tpl-header.pug
+
+      include includes/_tpl-topbar.pug
+
+      main.main-content
+
+        .main-content__wrap
+
+          .panel-box
+
+            .row
+              .gen-msg.gen-msg--info
+                .gen-msg__text
+                  p Para poder solicitar un certificado debe acceder con su certificado digital. 
+                    a.link Más información
+                svg.gen-msg__icon
+                  use(xlink:href='../static/img/common/svg/svg-symbols.svg#info-circle')
+
+            h1.title-mod Acceda con su certificado electronico
+
+            a.btn.btn--secondary.btn--icon.grid-a-12.grid-c-4 Acceder con mi certificado
+              svg.icon
+                use(xlink:href='../static/img/common/svg/svg-symbols.svg#shield')
+
+            p.small.row Si tiene problemas para acceder,
+              a.link  contacte con nosotros.
+
+
+
+
+
+      include includes/_tpl-footer.pug

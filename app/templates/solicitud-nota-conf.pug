@@ -1,0 +1,214 @@
+extends includes/_tpl-base.pug
+
+block title
+  title Encuentre la propiedad
+
+block body
+
+  - var headerMenu = false
+  - var userOnline = false
+  - var menuLinks = false
+  - var user_item1 = 'active'
+
+  - var topbar = 'topbar--dark'
+  - var topbarTitle = 'Solicitud de nota localización'
+  //- - var topbarSteps = [1, 2]
+
+  - var footer = 'footer'
+
+  body
+
+    .main-global
+
+      include includes/_tpl-header.pug
+
+      include includes/_tpl-topbar.pug
+
+
+      main.main-content
+
+        //- include includes/_tpl-topbar.pug
+
+        .main-content__wrap
+
+          h1.title-page Configure su búsqueda
+
+          .panel-row
+
+            .panel--col
+
+              .h2.title-mod ¿De donde quiere la información?
+              p Seleccione el ámbito geográfico al que quiere limitar su petición.
+
+              .form-content
+
+                .rb-group.rb-group--horizontal.rb-group--line
+                  fieldset
+                    legend.invisible Radio button horizontal
+                    .rb-option
+                      label.rb-label(for='radioh1')
+                        input#radioh1.invisible.radiobutton(type='radio',name='radioh',data-content='radioh--0',checked)
+                        span.rb-pick
+                        span.rb-text Toda España
+                        span.rb-line
+
+                    .rb-option
+                      label.rb-label(for='radioh2')
+                        input#radioh2.invisible.radiobutton(type='radio',name='radioh',data-content='radioh--1')
+                        span.rb-pick
+                        span.rb-text Comunidad Autónoma ...
+                        span.rb-line
+
+                    .rb-option
+                      label.rb-label(for='radioh3')
+                        input#radioh3.invisible.radiobutton(type='radio',name='radioh',data-content='radioh--2')
+                        span.rb-pick
+                        span.rb-text Provincia ...
+                        span.rb-line
+
+                    .rb-option
+                      label.rb-label(for='radioh4')
+                        input#radioh4.invisible.radiobutton(type='radio',name='radioh',data-content='radioh--3')
+                        span.rb-pick
+                        span.rb-text Municipio ...
+                        span.rb-line
+
+                    .rb-option
+                      label.rb-label(for='radioh5')
+                        input#radioh5.invisible.radiobutton(type='radio',name='radioh',data-content='radioh--4')
+                        span.rb-pick
+                        span.rb-text Registro ...
+                        span.rb-line
+
+                .form-panel.radioh.radioh--0
+                  form.form(autocomplete='off',action='preficha-propiedad.html')
+
+                    .form-options.row
+
+
+                    .form-action
+                      button.btn.btn--primary(type='submit') Continuar
+
+
+
+
+                .form-panel.radioh.radioh--1.hide
+                  form.form(autocomplete='off',action='preficha-propiedad.html')
+
+                    .form-options.row
+                      .form-box.grid-a-12.grid-c-4
+                        label.label(for='registro') Comunidad autónoma
+                        .form-ico.form-ico--select
+                          select#registro.select(data-validation="required")
+                            option(value='',disabled,selected) Seleccione una comunidad autónoma
+                            option(value='Castilla y León') Castilla y León
+                            option(value='Andalucía') Andalucía
+                            option(value='Castilla-La Mancha') Castilla-La Mancha
+                            option(value='Aragón') Aragón
+                            option(value='Extremadura') Extremadura
+                            option(value='Cataluña') Cataluña
+                            option(value='Galicia') Galicia
+                            option(value='Comunidad Valenciana') Comunidad Valenciana
+                            option(value='Región de Murcia') Región de Murcia
+                            option(value='Principado de Asturias') Principado de Asturias
+                            option(value='Comunidad Foral de Navarra') Comunidad Foral de Navarra
+                            option(value='Comunidad de Madrid') Comunidad de Madrid
+                            option(value='Canarias') Canarias
+                            option(value='País Vasco') País Vasco
+                            option(value='Cantabria') Cantabria
+                            option(value='La Rioja') La Rioja
+                            option(value='Islas Baleares') Islas Baleares
+                            option(value='Ceuta') Ceuta
+                            option(value='Melilla') Melilla
+                          svg.icon(viewBox='0 0 48 48')
+                            use(xlink:href='../static/img/common/svg/svg-symbols.svg#arrow-down')
+
+                    .form-action
+                      button.btn.btn--primary(type='submit') Continuar
+
+
+
+                .form-panel.radioh.radioh--2.hide
+                  form.form(autocomplete='off',action='preficha-propiedad.html')
+
+                    .form-options
+
+                      .row
+                        .form-box.grid-a-12.grid-c-4
+                          label.label Provincia
+                          .form-ico
+                            input.input#provincia(type='text',placeholder='Seleccione Provincia')
+                            svg.icon
+                              use(xlink:href='../static/img/common/svg/svg-symbols.svg#autocomplete')
+
+                    .form-action
+                      button.btn.btn--primary(type='submit') Continuar
+
+
+                .form-panel.radioh.radioh--3.hide
+                  form.form(autocomplete='off',action='preficha-propiedad.html')
+
+                    .form-options
+
+                      .row
+                        .form-box.grid-a-12.grid-c-4
+                          label.label Provincia
+                          .form-ico
+                            input.input#provincia(type='text',placeholder='Seleccione Provincia')
+                            svg.icon
+                              use(xlink:href='../static/img/common/svg/svg-symbols.svg#autocomplete')
+
+                      .row
+                        .form-box.grid-a-12.grid-c-4
+                          label.label Municipio
+                          .form-ico
+                            input.input#municipio(type='text',placeholder='Seleccione Municipio')
+                            svg.icon
+                              use(xlink:href='../static/img/common/svg/svg-symbols.svg#autocomplete')
+
+                    .form-action
+                      button.btn.btn--primary(type='submit') Continuar
+
+
+                form.form(autocomplete='off',action='preficha-propiedad.html')
+
+                  .form-panel.radioh.radioh--4.hide
+
+                    .form-options
+
+                      .row
+                        .form-box.grid-a-12.grid-c-4
+                          label.label Provincia
+                          .form-ico
+                            input.input#provincia(type='text',placeholder='Seleccione Provincia')
+                            svg.icon
+                              use(xlink:href='../static/img/common/svg/svg-symbols.svg#autocomplete')
+
+                      .row
+                        .form-box.grid-a-12.grid-c-4
+                          label.label Municipio
+                          .form-ico
+                            input.input#municipio(type='text',placeholder='Seleccione Municipio')
+                            svg.icon
+                              use(xlink:href='../static/img/common/svg/svg-symbols.svg#autocomplete')
+
+                      .row
+                        .form-box.grid-a-12.grid-c-4
+                          label.label(for='registro') Registro donde se encuentra la propiedad
+                          .form-ico.form-ico--select
+                            select#registro.select(data-validation="required")
+                              option(value='',disabled,selected) Seleccione un registro
+                              option(value='registro001') Registro 001
+                              option(value='registro002') Registro 002
+                              option(value='registro003') Registro 003
+
+                            svg.icon(viewBox='0 0 48 48')
+                              use(xlink:href='../static/img/common/svg/svg-symbols.svg#arrow-down')
+
+
+                    .form-action
+                      button.btn.btn--primary(type='submit') Continuar
+
+
+
+      include includes/_tpl-footer.pug

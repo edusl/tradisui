@@ -1,0 +1,461 @@
+extends includes/_tpl-base.pug
+
+block title
+  title Encuentre la propiedad
+
+block body
+
+
+
+  - var headerMenu = false
+
+  - var menuLinks = false
+  - var user_item1 = 'active'
+
+  - var topbar = 'topbar--dark'
+  - var topbarTitle = 'Solicitud de nota localización'
+  - var topbarSteps = [{num: "1", state: "list__item--active"}, {num: "2", state: ""}, {num: "3", state: ""}, {num: "4", state: ""}]
+
+  - var footer = 'footer'
+
+  body
+
+    .main-global
+
+      include includes/_tpl-header.pug
+
+
+      main.main-content
+
+        include includes/_tpl-topbar.pug
+        //- include includes/_tpl-topbar.pug
+
+        .main-content__wrap
+
+          h1.title-page Encuentre la Propiedad
+
+          .panel-row
+
+            .panel--col.panel-col--left
+
+              .form-content
+                p.mb-32 Seleccione el tipo de búsqueda y complete la información para que le podamos encontrar la propiedad.
+                form(autocomplete="on")
+                  .rb-group.rb-group--horizontal.rb-group--line
+                    fieldset
+                      legend.invisible Seleccione búsqueda
+                      .rb-option
+                        label.rb-label(for='radio01')
+                          input#radio01.invisible.radiobutton.qa-radio-idufir(type='radio',name='radioh',data-content='radioh--0')
+                          span.rb-pick
+                          span.rb-text Buscar por IDUFIR
+                          span.rb-line
+
+                      .rb-option
+                        label.rb-label(for='radio02')
+                          input#radio02.invisible.radiobutton.qa-radio-titular(type='radio',name='radioh',data-content='radioh--1')
+                          span.rb-pick
+                          span.rb-text Buscar por Titular actual
+                            //- a.modal-lateral-open(data-content='modal01', href="#modal01", title="Mostrar ayuda")
+                            //-   svg.icon.rb-icon.primary
+                            //-     title Mostrar ayuda
+                            //-     use(xlink:href='../static/img/common/svg/svg-symbols.svg#help-circle')
+                          span.rb-line
+                        a.modal-lateral-open(data-content='modal01', href="#modal01", title="Mostrar ayuda")
+                          svg.icon.rb-icon.primary
+                            title Mostrar ayuda
+                            use(xlink:href='../static/img/common/svg/svg-symbols.svg#help-circle')
+
+                      .rb-option
+                        label.rb-label(for='radio03')
+                          input#radio03.invisible.radiobutton.qa-radio-datos(type='radio',name='radioh',data-content='radioh--2',checked)
+                          span.rb-pick
+                          span.rb-text Buscar por Datos Registrales
+                          span.rb-line
+
+                      .rb-option
+                        label.rb-label(for='radio04')
+                          input#radio04.invisible.radiobutton.qa-radio-otros(type='radio',name='radioh',data-content='radioh--3')
+                          span.rb-pick
+                          span.rb-text Buscar por otros datos
+                          span.rb-line
+
+                .form-panel.radioh.radioh--0
+                  form.form(autocomplete='off',action='preficha-propiedad.html')
+                    .form-options
+                      .row
+                        .form-box.grid-a-12.grid-c-4
+                          label.label(for='idufir') IDUFIR
+                          //- input.input#idufir(type='text',placeholder='Introduzca el IDUFIR', data-validation='length alphanumeric', data-validation-length='min8', autofocus)
+                          input.input#idufir(type='text',placeholder='Introduzca el IDUFIR', autofocus)
+
+                    .form-action
+                      button.btn.btn--primary#radioh--0(type='submit') Continuar
+
+
+
+
+                .form-panel.radioh.radioh--1.hide
+                  form.form(autocomplete='off',action='busqueda-titular-ambito.html')
+
+                    .gen-msg.gen-msg--info.grid-a-12.grid-c-4.form-panel--msg
+                      p Con este tipo de búsqueda podrán aparecer múltiples titulares con igual nombre y apellidos por lo que no dispondremos de ningún criterio para diferenciarlos.
+                      svg.gen-msg__icon
+                        use(xlink:href='../static/img/common/svg/svg-symbols.svg#info-circle')
+
+                    .form-options
+
+                      .row
+                        .form-box.grid-a-12.grid-c-4
+                          label.label(for='input01') NIF
+                          input.input#input01(type='text', placeholder='Introduzca el NIF', autofocus)
+
+                      .row
+                        .form-box.grid-a-12.grid-c-4
+                          label.label(for='input02') Nombre
+                          input.input#input02(type='text', placeholder='Introduzca el nombre')
+
+                      .row
+                        .form-box.grid-a-12.grid-c-4
+                          label.label(for='input03') Apellidos / Denominación social
+                          input.input#input03(type='text', placeholder='Introduzca los apellidos o denominación social')
+
+                    .form-action
+                      button.btn.btn--primary#radioh--1(type='submit') Continuar
+
+                    .hide
+                      .modal01
+                        h1.modal-title
+                          svg.icon.info
+                            title Mostrar ayuda
+                            use(xlink:href='../static/img/common/svg/svg-symbols.svg#help-circle')
+                          |  Búsqueda por titular
+                        .modal-text
+                          p Se advierte que la presente búsqueda comprende, no sólo el dominio, sino todos los derechos que pueden estar inscritos a favor de una persona, cualquiera que sea su naturaleza
+                          p Si a nombre del titular seleccionado no apareciere inscrita ninguna finca o derecho, se generará una nota de localización negativa circunscrita al ámbito territorial seleccionado.
+
+
+                .form-panel.radioh.radioh--2.hide
+                  form.form(autocomplete='off',action='preficha-propiedad.html')
+
+                    .form-options
+
+                      .row
+                        .form-box.grid-a-12.grid-c-4
+                          label.label(for='input04') Provincia
+                          .form-ico
+                            input.input.provincias#input04(type='text',placeholder='Seleccione o introduzca provincia')
+                            svg.icon
+                              use(xlink:href='../static/img/common/svg/svg-symbols.svg#autocomplete')
+
+
+                    .form-action
+                      button.btn.btn--primary#radioh--2(type='submit') Continuar
+
+
+                .form-panel.radioh.radioh--3.hide
+                  form.form(autocomplete='off',action='preficha-propiedad.html')
+
+                    .gen-msg.gen-msg--info.grid-a-12.grid-c-4.form-panel--msg
+                      p Las solicitudes sin datos exactos podrán ser devieltas por lo que se debe completar la mayor información posible
+                      svg.gen-msg__icon
+                        use(xlink:href='../static/img/common/svg/svg-symbols.svg#info-circle')
+
+
+                    .form-options.grid-a-12.grid-c-6
+                      .cb-option
+                        label.cb-label(for='input301')
+                          input#input301.invisible.checkbox(type='checkbox',data-content='panel--od1')
+                          span.cb-pick
+                          span.cb-text Añadir otros datos de localización
+
+                      .form-panel.panel--od1.hide
+
+                        .row.row--multi
+                          .form-box.grid-a-12.grid-c-6
+                            label.label(for='input302') Calle de la finca
+                            input.input#input302(type='text',placeholder='Introduzca la calle')
+
+                          .form-box.grid-a-12.grid-c-3
+                            label.label(for='input303') Número
+                            input.input#input303(type='text',placeholder='Número')
+
+
+                      .cb-option
+                        label.cb-label(for='input305')
+                          input#input305.invisible.checkbox(type='checkbox',data-content='panel--od2')
+                          span.cb-pick
+                          span.cb-text Añadir titular/es anterior/es
+
+
+                      .form-panel.panel--od2.hide
+
+                        .row
+                          .form-box.grid-a-12.grid-c-8
+                            label.label(for='input306')
+                              abbr(title='Número de identificación fiscal') NIF
+                            input.input#input306(type='text',placeholder='Introduzca el NIF')
+
+
+                        .row
+                          .form-box.grid-a-12.grid-c-8
+                            label.label(for='input307') Nombre
+                            input.input#input307(type='text',placeholder='Introduzca el nombre')
+
+
+                        .row
+                          .form-box.grid-a-12.grid-c-8
+                            label.label(for='input308') Apellidos / Denominación social
+                            input.input#input308(type='text',placeholder='Introduzca apellidos o denominación social')
+
+
+                      .cb-option
+                        label.cb-label(for='input309')
+                          input#input309.invisible.checkbox(type='checkbox',data-content='panel--od3')
+                          span.cb-pick
+                          span.cb-text Añadir Datos Registrales anteriores
+
+                      .form-panel.panel--od3.hide
+
+                        .row
+                          .form-box.grid-a-12.grid-c-8
+                            label.label.invisible(for='input310') Añadir Datos Registrales anteriores
+                            textarea.textarea#input310(name='textarea',rows=3)
+
+
+                      .cb-option
+                        label.cb-label(for='input311')
+                          input#input311.invisible.checkbox(type='checkbox',data-content='panel--od4')
+                          span.cb-pick
+                          span.cb-text Añadir otros datos (Ej. Tomo, Libro, Folio)
+
+                      .form-panel.panel--od4.hide
+                        .row
+                          .form-box.grid-a-12.grid-c-8
+                            label.label.invisible(for='input312')
+                            textarea.textarea#input312(name='textarea',rows=3)
+
+
+
+
+                    .form-action
+                      button.btn.btn--primary#radioh--3(type='submit') Continuar
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+              .form-content
+                p.mb-32 Seleccione el tipo de búsqueda y complete la información para que le podamos encontrar la propiedad.
+                form(autocomplete="on")
+                  .rb-group.rb-group--horizontal.rb-group--line
+                    fieldset
+                      legend.invisible Seleccione búsqueda
+                      .rb-option
+                        label.rb-label(for='radio04b')
+                          input#radio04b.invisible.radiobutton.qa-radio-idufir(type='radio',name='radioh2',data-content='radioh--4')
+                          span.rb-pick
+                          span.rb-text Buscar por IDUFIR
+                          span.rb-line
+
+                      .rb-option
+                        label.rb-label(for='radio05')
+                          input#radio05.invisible.radiobutton.qa-radio-titular(type='radio',name='radioh2',data-content='radioh--5')
+                          span.rb-pick
+                          span.rb-text Buscar por Titular actual
+                            //- a.modal-lateral-open(data-content='modal01', href="#modal01", title="Mostrar ayuda")
+                            //-   svg.icon.rb-icon.primary
+                            //-     title Mostrar ayuda
+                            //-     use(xlink:href='../static/img/common/svg/svg-symbols.svg#help-circle')
+                          span.rb-line
+                        a.modal-lateral-open(data-content='modal01', href="#modal01", title="Mostrar ayuda")
+                          svg.icon.rb-icon.primary
+                            title Mostrar ayuda
+                            use(xlink:href='../static/img/common/svg/svg-symbols.svg#help-circle')
+
+                      .rb-option
+                        label.rb-label(for='radio06')
+                          input#radio06.invisible.radiobutton.qa-radio-datos(type='radio',name='radioh2',data-content='radioh--6')
+                          span.rb-pick
+                          span.rb-text Buscar por Datos Registrales
+                          span.rb-line
+
+                      .rb-option
+                        label.rb-label(for='radio07')
+                          input#radio07.invisible.radiobutton.qa-radio-otros(type='radio',name='radioh2',data-content='radioh--7')
+                          span.rb-pick
+                          span.rb-text Buscar por otros datos
+                          span.rb-line
+
+                .form-panel.radioh2.radioh--4
+                  form.form(autocomplete='off',action='preficha-propiedad.html')
+                    .form-options
+                      .row
+                        .form-box.grid-a-12.grid-c-4
+                          label.label(for='idufir') IDUFIR
+                          //- input.input#idufir(type='text',placeholder='Introduzca el IDUFIR', data-validation='length alphanumeric', data-validation-length='min8', autofocus)
+                          input.input#idufir(type='text',placeholder='Introduzca el IDUFIR', autofocus)
+
+                    .form-action
+                      button.btn.btn--primary#radioh--0(type='submit') Continuar
+
+
+
+
+                .form-panel.radioh2.radioh--5.hide
+                  form.form(autocomplete='off',action='busqueda-titular-ambito.html')
+
+                    .gen-msg.gen-msg--info.grid-a-12.grid-c-4.form-panel--msg
+                      p Con este tipo de búsqueda podrán aparecer múltiples titulares con igual nombre y apellidos por lo que no dispondremos de ningún criterio para diferenciarlos.
+                      svg.gen-msg__icon
+                        use(xlink:href='../static/img/common/svg/svg-symbols.svg#info-circle')
+
+                    .form-options
+
+                      .row
+                        .form-box.grid-a-12.grid-c-4
+                          label.label(for='input01') NIF
+                          input.input#input01(type='text', placeholder='Introduzca el NIF', autofocus)
+
+                      .row
+                        .form-box.grid-a-12.grid-c-4
+                          label.label(for='input02') Nombre
+                          input.input#input02(type='text', placeholder='Introduzca el nombre')
+
+                      .row
+                        .form-box.grid-a-12.grid-c-4
+                          label.label(for='input03') Apellidos / Denominación social
+                          input.input#input03(type='text', placeholder='Introduzca los apellidos o denominación social')
+
+                    .form-action
+                      button.btn.btn--primary#radioh--1(type='submit') Continuar
+
+                    .hide
+                      .modal01
+                        h1.modal-title
+                          svg.icon.info
+                            title Mostrar ayuda
+                            use(xlink:href='../static/img/common/svg/svg-symbols.svg#help-circle')
+                          |  Búsqueda por titular
+                        .modal-text
+                          p Se advierte que la presente búsqueda comprende, no sólo el dominio, sino todos los derechos que pueden estar inscritos a favor de una persona, cualquiera que sea su naturaleza
+                          p Si a nombre del titular seleccionado no apareciere inscrita ninguna finca o derecho, se generará una nota de localización negativa circunscrita al ámbito territorial seleccionado.
+
+
+                .form-panel.radioh2.radioh--6.hide
+                  form.form(autocomplete='off',action='preficha-propiedad.html')
+
+                    .form-options
+
+                      .row
+                        .form-box.grid-a-12.grid-c-4
+                          label.label(for='input04') Provincia
+                          .form-ico
+                            input.input.provincias#input04(type='text',placeholder='Seleccione o introduzca provincia')
+                            svg.icon
+                              use(xlink:href='../static/img/common/svg/svg-symbols.svg#autocomplete')
+
+
+                    .form-action
+                      button.btn.btn--primary#radioh--2(type='submit') Continuar
+
+
+                .form-panel.radioh2.radioh--7.hide
+                  form.form(autocomplete='off',action='preficha-propiedad.html')
+
+                    .gen-msg.gen-msg--info.grid-a-12.grid-c-4.form-panel--msg
+                      p Las solicitudes sin datos exactos podrán ser devieltas por lo que se debe completar la mayor información posible
+                      svg.gen-msg__icon
+                        use(xlink:href='../static/img/common/svg/svg-symbols.svg#info-circle')
+
+
+                    .form-options.grid-a-12.grid-c-6
+                      .cb-option
+                        label.cb-label(for='input301')
+                          input#input301.invisible.checkbox(type='checkbox',data-content='panel--od1')
+                          span.cb-pick
+                          span.cb-text Añadir otros datos de localización
+
+                      .form-panel.panel--od1.hide
+
+                        .row.row--multi
+                          .form-box.grid-a-12.grid-c-6
+                            label.label(for='input302') Calle de la finca
+                            input.input#input302(type='text',placeholder='Introduzca la calle')
+
+                          .form-box.grid-a-12.grid-c-3
+                            label.label(for='input303') Número
+                            input.input#input303(type='text',placeholder='Número')
+
+
+                      .cb-option
+                        label.cb-label(for='input305')
+                          input#input305.invisible.checkbox(type='checkbox',data-content='panel--od2')
+                          span.cb-pick
+                          span.cb-text Añadir titular/es anterior/es
+
+
+                      .form-panel.panel--od2.hide
+
+                        .row
+                          .form-box.grid-a-12.grid-c-8
+                            label.label(for='input306')
+                              abbr(title='Número de identificación fiscal') NIF
+                            input.input#input306(type='text',placeholder='Introduzca el NIF')
+
+
+                        .row
+                          .form-box.grid-a-12.grid-c-8
+                            label.label(for='input307') Nombre
+                            input.input#input307(type='text',placeholder='Introduzca el nombre')
+
+
+                        .row
+                          .form-box.grid-a-12.grid-c-8
+                            label.label(for='input308') Apellidos / Denominación social
+                            input.input#input308(type='text',placeholder='Introduzca apellidos o denominación social')
+
+
+                      .cb-option
+                        label.cb-label(for='input309')
+                          input#input309.invisible.checkbox(type='checkbox',data-content='panel--od3')
+                          span.cb-pick
+                          span.cb-text Añadir Datos Registrales anteriores
+
+                      .form-panel.panel--od3.hide
+
+                        .row
+                          .form-box.grid-a-12.grid-c-8
+                            label.label.invisible(for='input310') Añadir Datos Registrales anteriores
+                            textarea.textarea#input310(name='textarea',rows=3)
+
+
+                      .cb-option
+                        label.cb-label(for='input311')
+                          input#input311.invisible.checkbox(type='checkbox',data-content='panel--od4')
+                          span.cb-pick
+                          span.cb-text Añadir otros datos (Ej. Tomo, Libro, Folio)
+
+                      .form-panel.panel--od4.hide
+                        .row
+                          .form-box.grid-a-12.grid-c-8
+                            label.label.invisible(for='input312')
+                            textarea.textarea#input312(name='textarea',rows=3)
+
+
+
+
+                    .form-action
+                      button.btn.btn--primary#radioh--3(type='submit') Continuar
+
+
+      include includes/_tpl-footer.pug

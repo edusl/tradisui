@@ -1,0 +1,65 @@
+extends includes/_tpl-base.pug
+
+block title
+  title Confirmación propiedad
+
+block body
+
+  - var headerMenu = false
+  - var footer = 'footer'
+
+
+  body
+
+    .main-global
+
+      include includes/_tpl-header.pug
+
+      main.main-content
+
+        .main-content__wrap.solicitud-mercantil
+
+          .confirm-head
+
+            h1.title-confirm Aqui le enviamos la información solicitada
+
+
+          .panel.panel--conf
+
+            .confirm-details
+              ul.list
+                li.list__item
+                  span.grid-a-12.grid-c-2 Nº de Solicitud:
+                  span
+                    strong H25439900
+                li.list__item
+                  span.grid-a-12.grid-c-2 Fecha de creación:
+                  span 07/01/2016
+                li.list__item
+                  span.grid-a-12.grid-c-2 Tipo:
+                  span Información mercantil
+                li.list__item
+                  span.grid-a-12.grid-c-2 Solicitante:
+                  span Javier Gonzalez, 10884425R
+                li.list__item
+                  span.grid-a-12.grid-c-2 Información de:
+                  span Forum filatélico S.A
+                
+            p.confirm-buttons.clearfix
+              button.btn.btn--primary.btn--medium.btn--icon.uppercase Ver solicitud
+                svg.icon
+                  use(xlink:href="../static/img/common/svg/svg-symbols.svg#file-bold")
+              button.btn.btn--secondary.btn--medium.btn--icon.medium-icon.uppercase.gutter--left Descargar pdf
+                svg.icon.rotate-270
+                  use(xlink:href="../static/img/common/svg/svg-symbols.svg#arrow-simple")
+									
+
+            .confirm-bottom Hemos enviado esta información a su email jgonzalez@hotmail.com
+
+          //- p
+          //-   a.link.link--primary.link--icon(href='#')
+          //-     span Continuar
+          //-     svg.icon.rotate-180
+          //-       use(xlink:href='../static/img/common/svg/svg-symbols.svg#arrow-circle')
+
+      include includes/_tpl-footer.pug

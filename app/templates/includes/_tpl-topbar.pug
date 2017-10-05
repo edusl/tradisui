@@ -1,0 +1,29 @@
+if topbar != undefined
+  .topbar(class= topbar)
+
+    .topbar__wrap
+      .topbar-left
+        if !topbarBack
+
+          a.link.link--back.qa-link-back
+            svg.icon
+              use(xlink:href='../static/img/common/svg/svg-symbols.svg#arrow-circle')
+          span.topbar__title #{topbarTitle}
+          a.link.topbar__link.modal-lateral-open.qa-link-inc(data-content="modal-inc") #{topbarLink}
+
+        if topbarBack
+
+          a.link.link--back
+            svg.icon
+              use(xlink:href='../static/img/common/svg/svg-symbols.svg#arrow-circle')
+            | Volver
+
+      .topbar-right
+        if topbarSteps
+          .steps
+            ul.list
+              for item in topbarSteps
+                //- if index == 0
+                //-   li.list__item.list__item--active
+                //- else
+                li.list__item(class=item.state) #{item.num}

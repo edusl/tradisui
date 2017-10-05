@@ -1,0 +1,51 @@
+extends includes/_tpl-base.pug
+
+block title
+  title Comprobar estado de la solicitud
+
+block body
+
+  - var headerMenu = true
+  - var userOnline = false
+  - var menuLinks = false
+  - var user_item1 = 'active'
+  - var footer = 'footer'
+
+  body
+
+    .main-global
+
+      include includes/_tpl-header.pug
+
+      main.main-content
+
+        //- include includes/_tpl-topbar.pug
+
+        .main-content__wrap
+
+          h1.title-page Comprobar estado de solicitud
+
+          .panel-row
+            .panel--col
+              p Para comprobar el estado de una solicitud realizada anteriormente introduzca su Código de solicitud que le enviamos por email junto a su NIF
+
+              .row
+                .form.grid-a-12.grid-c-4
+                  form(autocomplete="off",action="portada-propiedad.html")
+
+                    .form-box
+                      label.label(for="request-id") NIF/NIE/Pasaporte
+                      input.input#request-id(type='text',placeholder='NIF/NIE/Pasaporte asociado a la solicitud', autofocus)
+
+                    .form-box
+                      label.label(for="request-code") Código de solicitud
+                      input.input#request-code(type='text',placeholder='Introduzca el código de solicitud',maxlength=5)
+                      .form-text.cursive 5 caracteres
+
+                    button.btn.btn--primary Entrar
+
+                    p
+                      a.link.link--primary.small(href="#") ¿Tienes problemas para acceder?
+
+
+      include includes/_tpl-footer.pug

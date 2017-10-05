@@ -1,0 +1,91 @@
+extends includes/_tpl-base.pug
+
+block title
+  title Gestión usuario
+
+block body
+
+  - var headerMenu = true
+  - var userOnline = true
+  - var menuLinks = false
+  - var menuCol = true
+
+  - var user_item1 = 'active'
+
+  - var footer = 'footer-online'
+
+  body
+
+    .main-global
+
+      include includes/_tpl-header.pug
+
+      main.main-content
+
+        //- include includes/_tpl-topbar.pug
+
+        .main-content__wrap
+
+
+          h1.title-page.title-page--noline
+
+            a.link.link--titleback(href="#")
+              svg.icon.primary
+                use(xlink:href='../static/img/common/svg/svg-symbols.svg#arrow-circle')
+            | Javier Gonzalez Fontás
+
+          .panel-row
+            .panel--col
+
+              form(autocomplete="off",action="portada-propiedad.html")
+
+                .text-box.grid-a-12.grid-c-4
+
+                  .form-box
+                    label.label(for='inDepAs') Departamento asociado
+                    .form-ico.form-ico--select
+                      select#inDepAs.select
+                        option Seleccione una dirección
+                      svg.icon
+                        use(xlink:href='../static/img/common/svg/svg-symbols.svg#arrow-down')
+
+                  .rb-group.rb-group--horizontal.rb-group--line
+                    fieldset
+                      legend Permisos
+                      .rb-option.grid-a-12.grid-b-6
+                        label.rb-label(for='radioh1')
+                          input#radioh1.invisible.radiobutton(type='radio',name='radioh',checked)
+                          span.rb-pick
+                          span.rb-text Usuario
+                          span.rb-line
+
+
+                      .rb-option.grid-a-12.grid-b-6
+                        label.rb-label(for='radioh2')
+                          input#radioh2.invisible.radiobutton(type='radio',name='radioh')
+                          span.rb-pick
+                          span.rb-text Administrador
+                          span.rb-line
+                        a.modal-lateral-open(data-content='modal01', href="#modal01", title="Mostrar ayuda")
+                          svg.icon.rb-icon.primary
+                            title Mostrar ayuda
+                            use(xlink:href='../static/img/common/svg/svg-symbols.svg#help-circle')
+
+                .form-action.btn-group
+                  button.btn.btn--primary.btn--medium Guardar
+                  button.btn.btn--secondary.btn--medium Cancelar
+
+
+                .hide
+                  .modal01
+                    h1.modal-title.modal-title--icon
+                      svg.icon.info
+                        use(xlink:href='../static/img/common/svg/svg-symbols.svg#help-circle')
+                      |  Aministrador
+                    .modal-text
+                      p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                      p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+
+
+      include includes/_tpl-footer.pug

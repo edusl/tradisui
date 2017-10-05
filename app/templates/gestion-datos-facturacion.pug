@@ -1,0 +1,103 @@
+extends includes/_tpl-base.pug
+
+block title
+  title Alta de abonado - Datos de facturación
+
+block body
+
+  - var headerMenu = false
+  - var userOnline = true
+  - var menuCol = true
+
+  - var footer = 'footer-online'
+
+  body
+
+    .main-global
+
+      include includes/_tpl-header.pug
+
+      main.main-content
+
+        include includes/_tpl-topbar.pug
+
+        .main-content__wrap
+
+          h1.title-page Datos de facturación
+
+          .panel-row
+
+              .text-box
+                h2.title-mod Titular de facturación
+
+                .row
+                  .form-box.grid-a-12.grid-c-4
+                    label.label(for='nombre') Nombre
+                    input.input#nombre(placeholder='Introduce el Nombre', autofocus)
+
+                .row
+                  .form-box.grid-a-12.grid-c-4
+                    label.label(for='apellido') Primer apellido
+                    input.input#apellido(placeholder='Introduce el primer apellido')
+
+                .row
+                  .form-box.grid-a-12.grid-c-4
+                    label.label(for='nif') NIF
+                    input.input#nif(placeholder='Introduce el NIF')
+
+
+              .text-box
+                h2.title-mod Dirección de facturación
+
+                .rb-group.rb-group--horizontal.rb-group--line.grid-a-12.grid-c-4
+                  fieldset
+
+                    legend.invisible Seleccione una dirección
+                    .rb-option.grid-c-6
+                      label.rb-label(for='radioh02a')
+                        input#radioh02a.invisible.radiobutton(type='radio',name='radioh02',checked)
+                        span.rb-pick
+                        span.rb-text España
+                        span.rb-line
+
+                    .rb-option.grid-c-6
+                      label.rb-label(for='radioh02b')
+                        input#radioh02b.invisible.radiobutton(type='radio',name='radioh02')
+                        span.rb-pick
+                        span.rb-text Otro país
+                        span.rb-line
+
+                .row
+                  .form-box.grid-a-12.grid-c-4
+                    label.label(for='textarea01') Dirección completa
+                    textarea#textarea01.textarea(name='textarea',rows=3)
+
+                .row
+                  .form-box.grid-a-12.grid-c-2
+                    label.label(for='input01') C.P.
+                    input.input#input01(type='text',placeholder='Código postal')
+
+                .row
+                  .form-box.grid-a-12.grid-c-4
+                    label.label(for='input02') Provincia
+                    input.input#input02(type='text',placeholder='Seleccione o introduzca provincia', data-validation="length alphanumeric", data-validation-length='min4')
+
+                .row
+                  .form-box.grid-a-12.grid-c-4
+                    label.label(for='input03') Municipio
+                    input.input#input03(type='text',placeholder='Seleccione o introduzca el municipio', data-validation='length alphanumeric', data-validation-length='min4')
+
+
+                .cb-option
+                  label.cb-label(for='cb01')
+                    input#cb01.invisible.checkbox(type='checkbox', checked='checked')
+                    span.cb-pick
+                    span.cb-text Practicar retención IRPF
+
+
+                .form-action
+
+                  button.btn.btn--medium.btn--primary Guardar
+                  button.btn.btn--medium.btn--secondary  Cancelar
+
+      include includes/_tpl-footer.pug

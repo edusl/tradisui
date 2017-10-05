@@ -1,0 +1,282 @@
+extends includes/_tpl-base.pug
+
+block title
+  title Backoffice base
+
+block body
+
+  - var headerMenu = false
+  - var footer = 'footer'
+
+  body.backoffice.collapse-rightbar
+
+    .main-container.clearfix
+
+        include includes/_tpl-header.pug
+        
+        nav.left-nav
+          ul
+            li.active
+              a(href="#")
+                svg.icon
+                  use(xlink:href="../../static/img/common/svg/svg-symbols.svg#user") 
+                span usuarios
+            li 
+              a(href="#")
+                svg.icon
+                  use(xlink:href="../../static/img/common/svg/svg-symbols.svg#facturas") 
+                span facturas
+            li 
+              a(href="#")
+                svg.icon
+                  use(xlink:href="../../static/img/common/svg/svg-symbols.svg#solicitudes") 
+                span solicitudes
+            li 
+              a(href="#")
+                svg.icon
+                  use(xlink:href="../../static/img/common/svg/svg-symbols.svg#registros") 
+                span registros
+            li 
+              a(href="#")
+                svg.icon
+                  use(xlink:href="../../static/img/common/svg/svg-symbols.svg#contenido") 
+                span contenido
+            li 
+              a(href="#")
+                svg.icon
+                  use(xlink:href="../../static/img/common/svg/svg-symbols.svg#ajustes") 
+                span ajustes
+
+        .container-wrap
+                
+          .leftbar 
+            
+            .capa-usuarios.hide
+              .form-box
+                label.label NIF/NIE/Pasaporte
+                input.input(type="text")
+                  
+              .form-box
+                label.label Código de Usuario
+                input.input(type="text")
+                      
+              .form-box
+                label.label Nombre
+                input.input(type="text")
+                          
+              .form-box
+                label.label Apellidos / Denominación social
+                input.input(type="text")
+                  
+              p
+                a.link.link--primary(href="#") Más opciones de búsqueda
+                
+              p
+                button.btn.btn--primary.btn--medium BUSCAR
+                
+              p.bottom-btn
+                button.btn.btn--secondary.btn--medium CREAR NUEVO USUARIO
+  						
+            .capa-solicitudes
+              .form-box
+                label.label ID/Código Solicitud
+                input.input(type="text")
+                  
+              .form-box
+                label.label Registro o ID-Registro
+                input.input(type="text", placeholder="Selecciona o escribe el Registro")
+              
+              script.
+                function updateDates() {
+                    var date_option = $('#selectDate').val();
+                    var date = new Date();
+                    var firstDay;
+                    var lastDay;
+                    if(date_option != "") {
+                        if(date_option == "current_month") {
+                            firstDay = new Date(date.getFullYear(), date.getMonth(), 1);
+                            lastDay = new Date(date.getFullYear(), date.getMonth() + 1, 0);
+                        } else if(date_option == "last_month") {
+                            firstDay = new Date(date.getFullYear(), date.getMonth() - 1, 1);
+                            lastDay = new Date(date.getFullYear(), date.getMonth(), 0);
+                        } else if(date_option == "current_year") {
+                            firstDay = new Date(date.getFullYear(), 0, 1);
+                            lastDay = new Date(date.getFullYear(), 11, 31);
+                        }
+                        $('.startDate').val([pad(firstDay.getDate()), pad(firstDay.getMonth()+1), firstDay.getFullYear()].join('/'));
+                        $('.endDate').val([pad(lastDay.getDate()), pad(lastDay.getMonth()+1), lastDay.getFullYear()].join('/'));
+                    } else {
+                        $('.startDate').val('');
+                        $('.endDate').val('');
+                    }
+                }
+                function pad(s) { return (10 > s) ? '0' + s : s; }
+                
+              .form-box.clearfix
+                label.label.full-width Fecha
+                .form-ico.form-ico--select
+                  select.select#selectDate(onchange="updateDates();")  
+                    option(value="") Rango
+                    option(value="current_month") Mes completo
+                    option(value="current_year") Año completo
+                  svg.icon
+                    use(xlink:href="../../static/img/common/svg/svg-symbols.svg#arrow-down")
+                .form-ico.form-ico--date.from
+                  input(type="text", class="startDate", id="from", name="from", placeholder="Desde")
+                  svg.icon
+                    use(xlink:href="../../static/img/common/svg/svg-symbols.svg#calendar")
+                .form-ico.form-ico--date.to
+                  input(type="text", class="endDate", id="to", name="to", placeholder="Hasta")
+                  svg.icon
+                    use(xlink:href="../../static/img/common/svg/svg-symbols.svg#calendar")
+                        
+                        
+              .rb-group.rb-group--horizontal.rb-group--line
+                fieldset
+                  legend Tipo de usuario
+                  .rb-option.disabled
+                    label.rb-label(for="radioh1")
+                      input.invisible.radiobutton(id="abonado", type="radio", name="radioh")
+                      span.rb-pick
+                      span.rb-text Abonado
+                      span.rb-line
+                  .rb-option
+                    label.rb-label(for="radioh2")
+                      input.invisible.radiobutton(id="esporadico", type="radio", name="radioh", checked="")
+                      span.rb-pick
+                      span.rb-text Esporádico
+                      span.rb-line
+										
+
+              .form-box
+                label.label NIF/Pasaporte
+                input.input(type="text")
+                      
+              .form-box
+                label.label Email
+                input.input(type="text")
+                  
+              p
+                button.btn.btn--secondary.btn--medium Más opciones de búsqueda
+                  
+              p
+                button.btn.btn--primary.btn--medium BUSCAR
+                
+
+          .wrap.wrap-width
+            
+            .login
+              
+              h2.tit-login Login
+              
+              .form-box
+                label.label Nombre de usuario
+                input.input(type="text", placeholder="Introduzca nombre de usuario")
+                  
+              .form-box
+                label.label Contraseña
+                input.input(type="password", placeholder="Introduzca contraseña")
+            
+              .cnt-button
+                button.btn.btn--primary.btn--medium Entrar
+            
+
+            
+            .table-hover.table-scroll.hide
+              table
+                thead
+                  tr
+                    th(scope="col") código
+                    th(scope="col") tipo
+                    th(scope="col") nombre y apellidos/denom. social
+                    th(scope="col") nif/pasaporte
+                    th(scope="col") usuario/email
+                    th(scope="col") gastos
+                    th(scope="col") irpf
+                    th(scope="col") 
+                tbody
+                  tr(scope="row")
+                    td u65421
+                    td 2
+                    td Escobosa y asociados auditores
+                    td B6667839
+                    td auditobosa@asociados.com
+                    td saldo: 253.56€
+                    td Si
+                    td 
+                     svg.icon
+                       use(xlink:href="../../static/img/common/svg/svg-symbols.svg#info-circle")
+                  tr(scope="row")
+                    td u65421
+                    td 2
+                    td Escobosa y asociados auditores
+                    td B6667839
+                    td auditobosa@asociados.com
+                    td saldo: 253.56€
+                    td Si
+                    td 
+                      svg.icon
+                        use(xlink:href="../../static/img/common/svg/svg-symbols.svg#info-circle")
+                  tr(scope="row")
+                    td u65421
+                    td 2
+                    td Escobosa y asociados auditores
+                    td B6667839
+                    td auditobosa@asociados.com
+                    td saldo: 253.56€
+                    td Si
+                    td 
+                      svg.icon
+                        use(xlink:href="../../static/img/common/svg/svg-symbols.svg#info-circle")
+                  tr(scope="row")
+                    td u65421
+                    td 2
+                    td Escobosa y asociados auditores
+                    td B6667839
+                    td auditobosa@asociados.com
+                    td saldo: 253.56€
+                    td Si
+                    td 
+                      svg.icon
+                        use(xlink:href="../../static/img/common/svg/svg-symbols.svg#info-circle")
+
+                
+
+            
+          
+          .rightbar
+            p.uppercase.smallestTxt.smallMarginBottom nombre y apellidos / denom. social
+            p.uppercase.smallTxt.bold.primary-color Maria del pilar gonzalez garcia
+            dl.clearfix
+              dt Código
+              dt Estado
+              
+              dd
+                span.destacado U51234
+              dd Activo
+                
+              dt nif/pasaporte
+              dd 10884455R
+                  
+              dt Tipo de acceso
+              dd Abonado
+                    
+              dt Tipo de usuario
+              dd 01. Particular
+                      
+              dt Fecha de alta
+              dd 05/06/2017
+              
+              dt.width100 email
+              dd.width100 ejemploemail@gmail.com
+              
+              dt teléfono/fax 
+              dd 985654654 / -
+              
+            p
+              button.btn.btn--secondary.btn--medium VER / EDITAR USUARIO
+            
+             
+          
+        
+      

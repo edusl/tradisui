@@ -1,0 +1,263 @@
+extends includes/_tpl-base.pug
+
+block title
+  title Solicitudes realizadas
+
+block body
+
+  - var headerMenu = true
+  - var menuLinks = true
+  - var userOnline = true
+  - var menuCol = true
+  - var user_item1 = 'active'
+  - var footer = 'footer-online'
+
+
+
+  body
+
+    .main-global
+
+      include includes/_tpl-header.pug
+
+      main.main-content
+
+        //- include includes/_tpl-topbar.pug
+
+        .main-content__wrap
+
+
+          .panel-row
+            .panel-col--left
+
+              h1.title-page.title-page--noline Facturas
+
+
+              .table-filter
+                .table-filter__head
+
+                  .table-filter__show
+                    a.link.link--primary.link--icon.link--filter
+                      span Filtrar
+                      svg.icon
+                        use(xlink:href='../static/img/common/svg/svg-symbols.svg#filter')
+
+
+                .table-filter__options(style="display:none")
+                  form.form(action="#")
+                    .form-box.grid-a-12.grid-c-2
+                      label.label(for="rango") Fecha
+                      .form-ico.form-ico--select
+                        select#rango.select
+                          option Seleccionar
+                          option(value="mes") Mes completo
+                          option(value="anno") Año completo
+                        svg.icon
+                          use(xlink:href='../static/img/common/svg/svg-symbols.svg#arrow-down')
+
+                    .form-box.grid-a-12.grid-c-3
+                      .grid-a-6.p-gutter--left
+                        label.label.hidden(for='startDate') Fecha inicia
+                        .form-ico.form-ico--date
+                          input.input.input--calendar#startDate(type='text',placeholder='23/06/2017')
+                          svg.icon
+                            use(xlink:href='../static/img/common/svg/svg-symbols.svg#calendar')
+
+                      .grid-a-6
+                        label.label.hidden(for='endDate') Fecha final
+                        .form-ico.form-ico--date
+                          input.input.input--calendar#endDate(type='text',placeholder='27/10/2017')
+                          svg.icon
+                            use(xlink:href='../static/img/common/svg/svg-symbols.svg#calendar')
+
+                    .form-box.grid-a-12.grid-c-5.grid-c-offset-2
+                      .grid-a-4.p-gutter--left
+                        label.label(for="tipo") Tipo de movimiento
+                        .form-ico.form-ico--select
+                          select#tipo.select
+                            option Seleccionar
+                            option(value="recarga") Recarga
+                            option(value="rembolso") Reembolso
+                            option(value="ajustes") Ajustes de gestión
+                            option(value="operaciones") Operaciones
+                          svg.icon
+                            use(xlink:href='../static/img/common/svg/svg-symbols.svg#arrow-down')
+                      .grid-a-8.p-gutter--left
+                        label.label(for='searchTable') Búsqueda
+                        .form-ico
+                          input.input#searchTable(type='text',placeholder='Buscar registro, factura')
+                          svg.icon
+                            use(xlink:href='../static/img/common/svg/svg-symbols.svg#search')
+
+                    .row
+                      .table-filter__buttons(style="display:none")
+                        btn.btn.btn--flat.btn--small.apply-filter(type="submit") Aplicar filtro
+                        a.link.link--primary.delete-filter Eliminar filtro
+
+              table.table.table--default
+                thead.table-head
+                  tr
+                    th(style='width: 30%')
+                      span.table-order.table-order--active.table-order--desc Registro
+                        svg.icon
+                          use(xlink:href='../static/img/common/svg/svg-symbols.svg#arrow-down')
+                    th(style='width: 20%')
+                      span.table-order Factura
+                        svg.icon.rotate-180
+                          use(xlink:href='../static/img/common/svg/svg-symbols.svg#arrow-down')
+                    th(style='width: 15%')
+                      span.table-order Fecha
+                        svg.icon.rotate-180
+                          use(xlink:href='../static/img/common/svg/svg-symbols.svg#arrow-down')
+                    th(style='width: 15%')
+                      span.table-order Importe
+                        svg.icon.rotate-180
+                          use(xlink:href='../static/img/common/svg/svg-symbols.svg#arrow-down')
+                    th(style='width: 10%')
+                      span.table-order PDF
+                        svg.icon.rotate-180
+                          use(xlink:href='../static/img/common/svg/svg-symbols.svg#arrow-down')
+                    th(style='width: 10%')
+                      span.table-order XML
+                        svg.icon.rotate-180
+                          use(xlink:href='../static/img/common/svg/svg-symbols.svg#arrow-down')
+
+
+
+                tbody.table-body
+                  tr
+                    td(data-label='Código')
+                      a.link.link--primary
+                        strong Albacete 1
+                    td(data-label='Tipo de solicitud') 254/TR2
+                    td(data-label='Creación') 07/01/2016
+                    td(data-label='Estado')
+                      strong 258,14€
+                    td(data-label='Respuesta')
+                      a.link.link--primary Ver
+                    td(data-label='XML')
+                      a.link.link--primary Descargar
+
+                  tr
+                    td(data-label='Código')
+                      a.link.link--primary
+                        strong Albacete 1
+                    td(data-label='Tipo de solicitud') 254/TR2
+                    td(data-label='Creación') 07/01/2016
+                    td(data-label='Estado')
+                      strong 258,14€
+                    td(data-label='Respuesta')
+                      a.link.link--primary Ver
+                    td(data-label='XML')
+                      a.link.link--primary Descargar
+
+                  tr
+                    td(data-label='Código')
+                      a.link.link--primary
+                        strong Albacete 1
+                    td(data-label='Tipo de solicitud') 254/TR2
+                    td(data-label='Creación') 07/01/2016
+                    td(data-label='Estado')
+                      strong 258,14€
+                    td(data-label='Respuesta')
+                      a.link.link--primary Ver
+                    td(data-label='XML')
+                      a.link.link--primary Descargar
+
+                  tr
+                    td(data-label='Código')
+                      a.link.link--primary
+                        strong Albacete 1
+                    td(data-label='Tipo de solicitud') 254/TR2
+                    td(data-label='Creación') 07/01/2016
+                    td(data-label='Estado')
+                      strong 258,14€
+                    td(data-label='Respuesta')
+                      a.link.link--primary Ver
+                    td(data-label='XML')
+                      a.link.link--primary Descargar
+
+
+
+              .pagination
+                ul.list.pull-right
+                  li.list__item.list__item--nav
+                    svg.icon
+                      use(xlink:href='../static/img/common/svg/svg-symbols.svg#arrow-simple')
+                    span.list-text Anterior
+                  li.list__item.list__item--num.list__item--active 1
+                  li.list__item.list__item--num
+                    a.link(href='#') 2
+                  li.list__item.list__item--num
+                    a.link(href='#') 3
+                  li.list__item.list__item--nav
+                    a.link ...
+                  li.list__item.list__item--num
+                    a.link(href='#') 10
+                  li.list__item.list__item--nav
+                    a.link.link--primary(href='#')
+                      span.list-text Siguiente
+                      svg.icon.rotate-180
+                        use(xlink:href='../static/img/common/svg/svg-symbols.svg#arrow-simple')
+
+              p
+                a.link.link--primary.link--icon.small(href="#") Exportar a excel
+                  svg.icon
+                    use(xlink:href='../static/img/common/svg/svg-symbols.svg#file-xls')
+
+                a.link.link--primary.link--icon.small(href="#", data-content='modal01') Descargar todas las facturas
+                  svg.icon
+                    use(xlink:href='../static/img/common/svg/svg-symbols.svg#file-zip')
+
+
+
+              .hide
+                .modal01
+                  h1.modal-title Exportar a excel
+
+                  .modal-text
+                    p
+                      em 3 solicitudes: "15/06/2016 - 25/08/2016"
+                    p Seleccione un formato para descargar los resultados
+
+                    ul.list.files
+                      li.list__item
+                        a.link.link--primary.file-excel
+                          svg.icon
+                            use(xlink:href='../static/img/common/svg/svg-symbols.svg#file-xls')
+                          | Archivo excel
+                      li.list__item
+                        a.link.link--primary.file-ods
+                          svg.icon
+                            use(xlink:href='../static/img/common/svg/svg-symbols.svg#file-ods')
+                          | Archivo open document
+                      li.list__item
+                        a.link.link--primary.file-csv
+                          svg.icon
+                            use(xlink:href='../static/img/common/svg/svg-symbols.svg#file-csv')
+                          | Archivo csv
+
+
+
+
+            //-.panel-col--right
+              .menu__user--col
+                  nav
+                    ul.list
+                      li(class='list__item list__item--' + user_item1)
+                        a.link(href="login-estado.html") Solicitudes realizadas
+                      li(class='list__item list__item--' + user_item2)
+                        a.link(href="#") Notificaciones
+                      li(class='list__item list__item--' + user_item3)
+                        a.link(href="#") Pagos y facturas
+                      li(class='list__item list__item--' + user_item4)
+                        a.link(href="#") Configuración
+                      li(class='list__item capitalize list__item--' + user_item5)
+                        a.link(href="login-solicitud.html") Cerrar sesión
+                          svg.icon
+                            use(xlink:href='../static/img/common/svg/svg-symbols.svg#arrow-simple')
+
+
+
+
+      include includes/_tpl-footer.pug

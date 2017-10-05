@@ -1,0 +1,57 @@
+extends includes/_mail-base.pug
+
+block title
+  title  Registradores de España
+
+block content  
+
+    include includes/_mail-header.pug
+    
+    tr
+      td(style="padding-top: 24px;")
+         p(style="padding-bottom: 10px;", class="text-content") Hola Javier Gonzalez, <br /> Hemos recibido sus solicitudes correctamente y próximamente recibirá la información registral solicitada. <br/>Puede comprobar cada petición desde su
+            a.link-content2(href="#")
+              |  área de usuario.
+
+    tr
+      td(style="padding-top:20px; padding-bottom:20px;")
+        table(style="width:100%; border-top:2px solid #000000;")
+          tr
+            td(style="width: 100%;", class="detail-box")
+              table(style="width:100%;")
+                tr
+                  td.dt Nº de solicitud
+                  td.dd.request-num
+                    strong H36FN45F6                                
+                tr
+                  td.dt Tipo:
+                  td.dd.request-type Nota Simple
+                tr
+                  td.dt Fecha de creación:
+                  td.dd.request-date 07/01/2016
+                tr
+                  td.dt Información de:
+                  td.dd.request-info Registro de la Propiedad de Madrid 53. Propiedad 35805. Sec 5
+                tr
+                  td(colspan='2', style="padding-top: 30px;")
+                    table(style='width: 100%;')
+                      tr
+                        td.request-status-denied
+                          span.request-status Denegada - 08/07/2016
+                      tr
+                        td(style='background-color: white; padding: 15px; font-size: 15px;')
+                          span(style='font-weight: bold; padding-bottom: 10px; display: block') Motivos
+                          span(style='display: block; line-height: 24px').request-reason Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+    tr
+      td
+        table.btn-group(style="margin-bottom: 10px;")
+          tr
+            td(width="50%", style="width: 50%; text-align: left", class="fullWidth btn-wrap")
+              a.btn.btn-red(href='#') Ver solicitud                
+                img(src='../../static/img/common/mail/file.png', alt='', width='12', height='15', border='0',style='margin-left: 10px; vertical-align: middle')/
+            td(width="50%", style="width: 50%; text-align: left", class="fullWidth btn-wrap")
+              a.btn.btn-white(href='#') Descargar pdf                
+                img(src='../../static/img/common/mail/arrow-down.png', alt='', width='12', height='12', border='0',style='margin-left: 10px; vertical-align: middle')/
+
+    include includes/_mail-footer.pug

@@ -1,0 +1,265 @@
+extends includes/_tpl-base.pug
+
+block title
+  title Encuentre la propiedad
+
+block body
+
+  - var headerMenu = false
+
+  - var topbar = 'topbar--dark'
+  - var topbarTitle = 'Solicitud de nota de localizacion'
+  - var topbarLink = '¿Qué incluye?'
+  - var topbarSteps = [{num: "1", state: "list__item--active"}, {num: "2", state: ""}, {num: "3", state: ""}, {num: "4", state: ""}]
+
+  - var footer = 'footer'
+
+
+
+  body.tpl-col42.tpl-resume
+
+    .main-global
+
+      include includes/_tpl-header.pug
+
+
+      main.main-content
+
+        include includes/_tpl-topbar.pug
+
+        .main-content__wrap
+
+          h1.title-page Datos de la solicitud
+
+
+          .panel-row
+            .panel-col.panel-col--left
+              form.form
+
+                h2.title-mod ¿Quién la solicita?
+
+                .row
+                  .form-box.grid-a-12.grid-c-6
+                    label.label.hide(for="select-tit") Selecione un titular
+                    .form-ico.form-ico--select
+                      select#select-tit.select(name="select-tit")
+                        option Javier Gonzalez, 10884425 (En nombre propio)
+                        option Javier Gonzalez, 10884425 (En nombre propio)
+                        option(data-content='select-tit--00') Otros
+
+                      svg.icon(viewBox='0 0 48 48')
+                        use(xlink:href='../static/img/common/svg/svg-symbols.svg#arrow-down')
+
+                .form-panel.select-tit.select-tit--00.hide
+                  .row
+                    .form-box.grid-c-6
+                      label.label(for="inp-sd01") NIF
+                      input.input#inp-sd01(type='text',placeholder='Introduzca el NIF asociado a la solicitud')
+                  .row
+                    .form-box.grid-c-6
+                      label.label(for="inp-sd02") Nombre
+                      input.input#inp-sd02(type='text',placeholder='Introduzca el Nombre')
+                  .row
+                    .form-box.grid-c-6
+                      label.label(for="inp-sd03") Apellidos / Denominación Social
+                      input.input#inp-sd03(type='text',placeholder='Introduzca los Apellidos o Denominación Social')
+
+                  .cb-group
+
+                    .cb-option
+                      label.cb-label(for='cb-a0')
+                        input#cb-a0.invisible.checkbox(type='checkbox',data-content='panel--cb0')
+                        span.cb-pick
+                        span.cb-text Observaciones
+
+                      .form-panel.panel--cb0.hide
+                        .row
+                          .form-box.grid-a-12.grid-c-8
+                            label.label.invisible(for='ta-sd0') Observaciones
+                            textarea.textarea#ta-sd0(name='textarea',rows=3)
+
+                    .cb-option
+                      label.cb-label(for='cb-a1')
+                        input#cb-a1.invisible.checkbox(type='checkbox')
+                        span.cb-pick
+                        span.cb-text Guardar datos del solicitante
+
+                .text-box
+                  h2.title-mod Seleccione un interés legítimo
+                    a.modal-lateral-open(data-content='modal01', href="#modal01", title="Mostrar ayuda")
+                      svg.icon.primary
+                        title Mostrar ayuda
+                        use(xlink:href='../static/img/common/svg/svg-symbols.svg#help-circle')
+
+                  .hide
+                    .modal01
+                      h1.modal-title.modal-title--icon
+                        svg.icon.info
+                          use(xlink:href='../static/img/common/svg/svg-symbols.svg#help-circle')
+                        |  Interés legítimo
+                      .modal-text
+                        p En general deberá tratarse siempre de un interés que se integre en el tráfico jurídico mercantil de inmuebles o derechos. Pueden alegarse otros intereses, no directamente relacionados con el tráfico de inmuebles, pero, en ese caso, deberá consistir en el ejercicio de un derecho amparado en una Ley. El interés debe manifestarse expresamente y será calificado por el registrador.
+                        p
+                          a.link.link--primary Más información
+
+
+                  .rb-group
+                    fieldset
+                      legend Debe especificar un motivo por el que se solicita o la finalidad para la que se usará la información:
+
+                      //- nota: solo visible para certificaciones
+                      .rb-option
+                        label.rb-label(for='radio0')
+                          input#radio0.invisible.radiobutton(type='radio',name='msol')
+                          span.rb-pick
+                          span.rb-text Soy titular de la finca
+
+                      .rb-option
+                        label.rb-label(for='radio1')
+                          input#radio1.invisible.radiobutton(type='radio',name='msol')
+                          span.rb-pick
+                          span.rb-text Investigación jurídico-económica sobre crédito, solvencia o responsabilidad.
+
+                      .rb-option
+                        label.rb-label(for='radio2')
+                          input#radio2.invisible.radiobutton(type='radio',name='msol')
+                          span.rb-pick
+                          span.rb-text Investigación jurídica sobre el objeto, su titularidad o limitaciones.
+
+                      .rb-option
+                        label.rb-label(for='radio3')
+                          input#radio3.invisible.radiobutton(type='radio',name='msol')
+                          span.rb-pick
+                          span.rb-text Investigación para contratación o interposición de acciones.
+
+                      .rb-option
+                        label.rb-label(for='radio4')
+                          input#radio4.invisible.radiobutton(type='radio',name='msol', data-content='msol--00')
+                          span.rb-pick
+                          span.rb-text El solicitante es titular de algún dereche sobre la finca.
+
+                      .rb-option
+                        label.rb-label(for='radio5')
+                          input#radio5.invisible.radiobutton(type='radio',name='msol',data-content='msol--01')
+                          span.rb-pick
+                          span.rb-text Otros.
+
+                        .form-panel.msol.msol--01.hide
+                          .row
+                            .form-box.grid-a-12.grid-c-8
+                              label.label.invisible(for='in-otro') Especifique un interés
+                              input.input#in-otro(type='text',placeholder='', data-validation='length', data-validation-length='min5')
+
+
+
+                .text-box
+
+                  .cb-group
+                    .cb-option
+                      label.cb-label(for='cb-english')
+                        input#cb-english.invisible.checkbox(type='checkbox',data-concept='Traducción en inglés', data-value='30', checked="checked")
+                        span.cb-pick
+                        span.cb-text Deseo traducir la información registral al inglés
+                          span.cb-legal Acepto las condiciones de uso del servicio
+                        span.cb-value +30€
+
+
+                    //- .cb-option
+                      label.cb-label(for='cb-a4b')
+                        input#cb-a4b.invisible.checkbox(type='checkbox', data-concept='Traducción en francés', data-value='20')
+                        span.cb-pick
+                        span.cb-text Deseo traducir la información registral al francés
+                          span.cb-legal Acepto las condiciones de uso del servicio
+                        span.cb-value +69€
+
+
+                    .cb-option
+                      label.cb-label(for='cb-a5')
+                        input#cb-a5.invisible.checkbox(type='checkbox',data-content='panel--cb1')
+                        span.cb-pick
+                        span.cb-text Añadir una referencia
+
+                      .form-panel.panel--cb1.hide
+                        .row
+                          .form-box.grid-a-12.grid-c-8
+                            label.label.invisible(for='ta-sd1') Referencia
+                            textarea.textarea#ta-sd1(name='textarea',rows=3)
+
+                    .cb-option
+                      label.cb-label(for='cb-a6')
+                        input#cb-a6.invisible.checkbox(type='checkbox',data-content='panel--cb2')
+                        span.cb-pick
+                        span.cb-text Modificar el email de envio
+                          em  jgonzalez@hotmail.com
+
+                      .form-panel.panel--cb2.hide
+                        .row
+                          .form-box.grid-a-12.grid-c-8
+                            label.label.invisible(for='in-sd1') Email envio
+                            input.input#in-sd1(type='text',placeholder='', value='jgonzalez@hotmail.com', data-validation='email')
+
+                .form-action
+                  button.btn.btn--primary(type='submit') Continuar
+
+
+            .panel-col.panel-col--right
+
+              .resume-box.resume-box--dark.resume-box--top
+                .resume-box__header
+                  h2.resume-title Resumen
+
+
+                  span.resume-note Impuestos y retenciones no incluidos
+                .resume-box__content
+                  table.table.table--resume
+                    thead.table-head.invisible
+                      tr
+                        th
+                          span Concepto
+                        th
+                          span Cantidad/Coste
+                    tbody.table-body
+                      tr.resume-concept
+                        td
+                          strong Nota simple
+                          .resume__info
+                            p Registro de la Propiedad de Madrid 52 <br/>
+                              | Propiedad 35805, Sección 5.
+                              a.link.link--primary Modificar
+
+                        td.resume__amount
+                          strong
+                            span.price 9.02
+                            |€
+
+                      tr
+                        td.resume-add(colspan="2")
+                          .add.cb-english
+                            .add__concept Traducción en inglés
+                              a.link.add-remove(data-remove="cb-english") Quitar
+                            .add__amount
+                              strong
+                                span.price 30
+                                | €
+
+                      tr.resume-final
+                        td(colspan='2')
+                          .resume-final--wrap
+                            span Coste máximo estimado
+                            span.resume-final--line
+                              span.price-total --€
+
+
+      .hide
+        .modal-inc
+          h1.modal-title
+            svg.icon.info
+              use(xlink:href='../static/img/common/svg/svg-symbols.svg#help-circle')
+            | ¿Qué incluye?
+          .modal-text
+            p Seleccione el número máximo de fincas sobre las que desea recibir información.
+            p Si a nombre del titular seleccionado aparecieren inscritas varias fincas o derechos, se generaran varias notas simples. Se le cobrará en base al número exacto de fincas encontradas.
+            p
+              a.link.link--primary Más información
+
+      include includes/_tpl-footer.pug

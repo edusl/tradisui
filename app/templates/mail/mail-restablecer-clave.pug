@@ -1,0 +1,24 @@
+extends includes/_mail-base.pug
+
+block title
+  title  Restablecer clave
+
+block content  
+
+    include includes/_mail-header.pug
+    
+    tr
+      td(style="padding-top: 24px;")        
+        p(style="padding-bottom: 10px;", class="text-content") Hemos recibido una solicitud en su nombre para restablecer la contraseña de acceso a su cuenta de usuario. Para restablecerla sigue este enlace:       
+    tr
+      td
+        table(style="margin-bottom: 10px;")
+          tr
+            td
+              a.btn-white(href='#') Restrablecer contraseña
+    
+    tr
+      td(style="padding-top: 10px;padding-bottom: 20px;")
+        p.text-content Si no desea cambiar su contraseña, omita este email.
+
+    include includes/_mail-footer.pug

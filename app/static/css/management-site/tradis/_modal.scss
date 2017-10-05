@@ -1,0 +1,264 @@
+// modal
+.no-scrolling {
+    overflow: hidden;
+    @include responsive(mobile) {
+        position: fixed;
+    }
+}
+
+.modal-text {
+    overflow-y: auto;
+    margin-bottom: 20px;
+    padding: 0 7px 150px 0;
+    max-height: 90vh;
+
+    ul {
+      margin-bottom: 15px;
+    }
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.1s;
+    z-index: 11;
+    display: none;
+    .modal-terms {
+        h2 {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        .modal-text {
+            overflow-y: hidden;
+            margin-bottom: 0;
+            padding: 0 7px 0 0;
+            .legal-container {
+                max-height: 38vh;
+                overflow: auto;
+                -webkit-overflow-scrolling: touch;
+                @include responsive(mobile) {
+                    overflow-y: scroll;
+                    overflow-x: hidden;
+                }
+            }
+            .info-legal {
+                height: 45px;
+                padding-top: 20px;
+                position: relative;
+                @include responsive(mobile) {
+                    height: 60px;
+                    padding-top: 4px;
+                    position: relative;
+                }
+                span {
+                    font-size: 12px;
+                    color: $grey-medium;
+                    position: absolute;
+                    right: 34px;
+                    top: 33px;
+                }
+                svg {
+                    width: 32px;
+                    height: 32px;
+                    fill: $grey-medium;
+                }
+                .arrow_icon {
+                    position: relative;
+                    svg {
+                        position: absolute;
+                        right: -4px;
+                        top: -9px;
+                    }
+                }
+            }
+            .legal-buttons {
+                height: 43px;
+                display: -webkit-flex;
+                display: -ms-flexbox;
+                display: flex;
+                -ms-flex-align: center;
+                -webkit-align-items: flex-end;
+                align-items: flex-end;
+                justify-content: space-between;
+                @include responsive(mobile) {
+                    height: 97px;
+                    display: initial;
+                    -ms-flex-align: center;
+                    -webkit-align-items: initial;
+                    align-items: initial;
+                    -webkit-justify-content: initial;
+                    -ms-flex-pack: justify;
+                    justify-content: initial;
+                    width: 100%;
+                    margin-top: 14px;
+                }
+                button {
+                    margin-bottom: 0;
+                    @include responsive(mobile) {
+                        width: 100%;
+                        margin-bottom: 12px;
+                    }
+                }
+                a.link {
+                    padding-right: 20px;
+                }
+            }
+        }
+    }
+}
+
+.modal-title {
+    font-size: rem(20);
+    margin-bottom: 15px;
+    font-family: $family-secondary;
+    position: relative;
+    display: inline-block;
+    @include responsive(mobile) {
+        padding-right: 30px;
+    }
+
+    .icon {
+        width: rem(24);
+        height: rem(24);
+        vertical-align: middle;
+        margin-right: 5px;
+    }
+}
+
+.modal-title--icon {
+    // padding: 4px 0 0 30px;
+}
+
+.modal-box {
+    transform: translateY(20%);
+    opacity: 0;
+    transition: all $transition-duration;
+    z-index: 15;
+    padding: 20px 15px 25px 30px;
+    background: white;
+    max-width: 50rem;
+    min-width: 20rem;
+    max-height: 90vh;
+    overflow: hidden;
+    margin: 1rem;
+    position: relative;
+    box-shadow: 0.6px 0.8px 6px rgba(0, 0, 0, 0.28);
+    &.lateral {
+        opacity: 1;
+        border: none;
+        box-shadow: none;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        height: 100%;
+        transform: translateY(-20px);
+    }
+}
+
+  .modal-embed {
+    max-height: 80vh;
+
+  }
+
+.modal-box.modal--move {
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.modal-close {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+
+    svg {
+        width: 1.5rem;
+        height: 1.5rem;
+        &:hover {
+            fill: $brand-primary;
+        }
+    }
+}
+// modal lateral
+//
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, .7);
+    height: 100vh;
+    width: 100%;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+.overlayOn {
+    opacity: 1;
+}
+
+.modal-lateral {
+    position: fixed;
+    top: 0;
+    width: 75%;
+    background: white;
+    left: -80%;
+    padding: 20px 18px 20px 25px;
+    z-index: 10;
+    transition: all $transition-duration ease-in;
+    border-top: 6px solid $blue;
+    overflow: hidden;
+    height: 100%;
+    display: flex;
+}
+
+.modal-lateral-open,
+.modal-open {
+    cursor: pointer;
+
+    &:focus {
+      .icon {
+        fill: $blue;
+      }
+
+    }
+}
+@include responsive(desktop) {
+    .modal-lateral {
+        width: 26rem;
+        left: -26rem;
+    }
+}
+
+.modal-lateral--move {
+    left: 0;
+}
+
+.ui-dialog-titlebar {
+    display: none;
+}
+
+.modal-lateral-close {
+    position: absolute;
+    right: 14px;
+    top: 14px;
+    svg {
+        width: 1.5rem;
+        height: 1.5rem;
+        &:hover {
+            fill: $brand-primary;
+        }
+    }
+}
+

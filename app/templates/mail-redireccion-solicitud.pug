@@ -1,0 +1,82 @@
+doctype strict
+html(lang="es")
+
+  head
+
+    meta(charset='utf-8')
+    meta(name="viewport",content="width=device-width, initial-scale=1.0, user-scalable=no")
+
+    link(href="https://fonts.googleapis.com/css?family=Open+Sans:400,700",rel="stylesheet")
+
+    title Registradores de España
+
+    style.
+
+      @media(max-width:480px){
+        .btn-group {
+          text-align: center;
+          width: 100%;
+        }
+
+        .btn {
+          display: inline-block;
+          margin-bottom: 30px;
+        }
+      }
+
+  body
+
+    table.table(style="font-family: 'Open Sans', Tahoma, Geneva, sans-serif; max-width: 600px; margin: 0 auto")
+      tr
+        td(style="border-bottom: 1px solid #e8e8e8; margin-bottom: 20px")
+          h1
+            img(src='../static/img/common/mail/logo-registradores.png', alt='Registradores de España')
+      tr
+        td
+          p(style="padding-top: 20px; padding-bottom: 20px; font-size: 15px; line-height: 24px") Hola Javier Gonzalez, <br /> La siguiente solicitud está siendo tratada por un operador especializado para dirigirla al Registro competente.
+
+      tr
+        td
+          table(style="background-color: #f3f3f3; border-top: 2px solid #000000; width: 100%; padding: 20px; margin-bottom: 30px; font-size: 14px")
+            tr
+              td(style="max-width: 180px; display: block; padding-bottom: 15px") Nº de solicitud
+              td(style="padding-bottom: 15px; font-weight: bold").request-num H36FN45F6
+            tr
+              td(style="max-width: 180px; display: block; padding-bottom: 15px") Fecha de creación:
+              td(style="padding-bottom: 15px").request-date 07/01/2016
+            tr
+              td(style="max-width: 180px; display: block; padding-bottom: 15px") Tipo:
+              td(style="padding-bottom: 15px").request-type Nota de localización
+            tr
+              td(style="max-width: 180px; display: block; padding-bottom: 15px") Ubicación:
+              td(style="padding-bottom: 15px").request-location Registro de la Propiedad de Trujillo.
+            tr
+              td(style="max-width: 180px; display: block; padding-bottom: 15px") Titular:
+              td(style="padding-bottom: 15px").request-holder Gonzalez
+            tr
+              td(style="with: 20%") Estado:
+              td
+                span(style="font-size: 12px; background-color: #EBAF20; padding: 6px; border-radius: 3px; color: white; text-transform: uppercase; display: inline-block").request-status En proceso
+      tr
+        td.btn-group(style="width: 100%")
+          table(style="margin-bottom: 60px")
+            tr
+              td
+                a.btn(href='#',style="background: #B21D2D; color: white; border: 2px solid #B21D2D; padding: 15px 10px; text-transform: uppercase; text-decoration: none; border-radius: 5px; margin-right: 10px; font-size: 13px; font-weight: bold; letter-spacing: 1px") Ver solicitud
+                  img(src='../static/img/common/mail/file.png', alt='', style='margin-left: 10px; vertical-align: middle')
+                //- a.btn(href='#',style="background: white; color: #B21D2D; border: 2px solid #B21D2D; padding: 15px 10px; text-transform: uppercase; text-decoration: none; border-radius: 5px; font-size: 13px; font-weight: bold; letter-spacing: 1px") Descargar pdf
+                //-   img(src='../static/img/common/mail/arrow-down.png', alt='', style='margin-left: 10px; vertical-align: middle')
+      tr(style="font-size: 14px")
+        td
+          table
+            tr
+              td(style="padding-bottom: 20px")  Rogamos disculpe la demora que puede derivarse de esta circunstancia.
+      tr
+        td
+          table(style="border-top: 1px solid #e8e8e8; width: 100%; font-size: 13px")
+            tr
+              td(style="width: 50%; text-align: left")
+                img(src='../static/img/common/mail/logo-registradores-bn.png', alt='Registradores de España', style='margin-top: -3px; margin-left: -3px')
+
+              td(style="width: 50%; text-align: right; color: #6d6d6d; font-weight: bold") ¿Dudas? <br />
+                a(href="#", style='color: #6d6d6d; font-weight: normal') Contacte con nosotros

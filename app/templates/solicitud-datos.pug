@@ -1,0 +1,284 @@
+extends includes/_tpl-base.pug
+
+block title
+  title Encuentre la propiedad
+
+block body
+
+  - var headerMenu = false
+
+  - var topbar = 'topbar--dark'
+  - var topbarTitle = 'Solicitud de nota de localizacion'
+  - var topbarLink = '¿Qué incluye?'
+
+  - var footer = 'footer'
+
+
+
+  body.tpl-col42.tpl-resume
+
+    .main-global
+
+      include includes/_tpl-header.pug
+
+
+      main.main-content
+
+        include includes/_tpl-topbar.pug
+
+        .main-content__wrap
+
+          h1.title-page Datos de la solicitud
+
+
+          .panel-row
+            .panel-col.panel-col--left
+              form.form
+
+
+                .text-box
+                  h2.title-mod ¿Quién la solicita?
+
+                  .form-box.grid-a-12.grid-c-6
+                    label.label.hide Selecione un titular
+                    .form-ico.form-ico--select
+                      select#sel-tit.select(name="sel-tit")
+                        option Javier Gonzalez, 10884425 (En nombre propio)
+                        option Javier Gonzalez, 10884425 (En nombre propio)
+                        option(data-content='sel-tit--00') Otros
+
+                      svg.icon(viewBox='0 0 48 48')
+                        use(xlink:href='../static/img/common/svg/svg-symbols.svg#arrow-down')
+
+                  .form-panel.sel-tit.sel-tit--00.hide
+                    .row
+                      .form-box.grid-c-6
+                        label.label(for="inp-sd01") NIF
+                        input.input#inp-sd01(type='text',placeholder='Introduzca el NIF asociado a la solicitud')
+                    .row
+                      .form-box.grid-c-6
+                        label.label(for="inp-sd02") Nombre
+                        input.input#inp-sd02(type='text',placeholder='Introduzca el Nombre')
+                    .row
+                      .form-box.grid-c-6
+                        label.label(for="inp-sd03") Apellidos / Denominación Social
+                        input.input#inp-sd03(type='text',placeholder='Introduzca los Apellidos o Denominación Social')
+
+                .text-box
+                  h2.title-mod Seleccione un interés legítimo
+                    a.modal-lateral-open(data-content='modal01', href="#modal01", title="Mostrar ayuda")
+                      svg.icon.primary
+                        title Mostrar ayuda
+                        use(xlink:href='../static/img/common/svg/svg-symbols.svg#help-circle')
+
+                  .hide
+                    .modal01
+                      h1#modal01.modal-title.modal-title--icon
+                        svg.icon.info
+                          use(xlink:href='../static/img/common/svg/svg-symbols.svg#help-circle')
+                        |  ¿Qué es el interes legítimo alegado?
+                      .modal-text
+                        h1  Tipos de interes legítimo
+
+                        p
+                          strong 1. Investigación jurídico-económica sobre crédito, solvencia o responsabilidad.
+                        p  Deberá marcarse esta casilla cuando la petición tenga por objeto conocer la capacidad de atender a sus responsabilidades por parte de los titulares registrales de bienes o derechos concretas. Así sucede, por ejemplo:
+                        ul
+                          li - Préstamos al titular registral.
+                          li - Contratar un arrendamiento con el titular registral como inquilino.
+                          li - Contratar servicios a favor del titular registral,
+                          li - etc
+                        p
+                          strong  También podrá utilizarse este campo cuando quiera acreditarse la que no se es dueño de bienes inmuebles. Por ejemplo:
+                        ul
+                          li - para obtención de viviendas de protección oficial.
+                          li - para obtención de justicia gratuita.
+                          li - para obtención de ayudas o subvenciones.
+                          li - etc.
+
+                        p
+                          strong 2. Investigación jurídica sobre el objeto, su titularidad o limitaciones.
+                        p Deberá marcarse esta casilla cuando quiera conocerse el conjunto de derechos que recaen sobre un inmueble.: Propiedad, usufructo, servidumbres, limitaciones urbanísticas, cargas, etc. Por ejemplo:
+                        ul
+                          li - conocer si se tienen derechos de paso o acceso.
+                          li - conocer si una finca es edificable.
+                          li - conocer la descripción registral de la finca.
+                          li - estudios para tasación de la finca.
+                          li - aclaración o regulación ante el Catastro u otros Organismos.
+                          li - etc.
+
+                        p
+                          strong 3. Investigación para contratación o interposición de acciones.
+                        p Deberá marcarse esta casilla cuando se pretenda la adquisición de la finca o de algún derecho sobre ella como por ejemplo:
+                        ul
+                          li - compra de la finca.
+                          li - adquisición del usufructo sobre la finca.
+                          li - alquiler de la finca.
+                          li - préstamo con garantía hipotecaria.
+                        p También deberá marcarse cuando se pretendan interponer acciones judiciales contra el titular registral o sobre la finca. Así por ejemplo:
+                        ul
+                          li - cuando se pretenda pedir el embargo de la finca.
+                          li - cuando se pretenda ejercitar un retracto (de comuneros, de colindantes o de arrendatarios) sobre la finca.
+                          li - cuando se pretenda reclamar judicialmente algún derecho sobre la finca.
+                          li - para el ejercicio del deslinde de fincas.
+                          li - etc.
+                        p
+                          strong 4.  El solicitante es titular de algún derecho sobre la finca.
+                        p Deberá marcarse esta casilla cuando el solicitante de la información es ya titular en el Registro de la finca sobre la que se solicita la información o sobre algún derecho sobre la misma. Así, por ejemplo:
+                        ul
+                          li - cuando el titular necesite acreditar su titularidad ante el Catastro u otras instituciones.
+                          li - para tramitar la cancelación de una hipoteca.
+                          li - para tramitar la cancelación de otras cargas.
+
+                        p
+                          strong 5. Otros.
+                        p Deberá marcarse esta casilla cuando el motivo de la petición no quepa en los otros apartados. En el recuadro deberá especificarse de manera clara el motivo de la petición y el fundamento legal en que se apoya.
+
+                        p
+                          a.link.link--primary Más información
+
+                  .rb-group
+                    fieldset
+                      legend Debe especificar un motivo por el que se solicita o la finalidad para la que se usará la información:
+
+                      //- nota: solo visible para certificaciones
+                      .rb-option
+                        label.rb-label(for='radio0')
+                          input#radio0.invisible.radiobutton(type='radio',name='msol')
+                          span.rb-pick
+                          span.rb-text Soy titular de la finca
+
+                      .rb-option
+                        label.rb-label(for='radio1')
+                          input#radio1.invisible.radiobutton(type='radio',name='msol')
+                          span.rb-pick
+                          span.rb-text Investigación jurídico-económica sobre crédito, solvencia o responsabilidad.
+
+                      .rb-option
+                        label.rb-label(for='radio2')
+                          input#radio2.invisible.radiobutton(type='radio',name='msol')
+                          span.rb-pick
+                          span.rb-text Investigación jurídica sobre el objeto, su titularidad o limitaciones.
+
+                      .rb-option
+                        label.rb-label(for='radio3')
+                          input#radio3.invisible.radiobutton(type='radio',name='msol')
+                          span.rb-pick
+                          span.rb-text Investigación para contratación o interposición de acciones.
+
+                      .rb-option
+                        label.rb-label(for='radio4')
+                          input#radio4.invisible.radiobutton(type='radio',name='msol')
+                          span.rb-pick
+                          span.rb-text El solicitante es titular de algún dereche sobre la finca.
+
+                      .rb-option
+                        label.rb-label(for='radio5')
+                          input#radio5.invisible.radiobutton(type='radio',name='msol',data-content='msol--01')
+                          span.rb-pick
+                          span.rb-text Otros.
+
+                        .form-panel.msol.msol--01.hide
+                          .row
+                            .form-box.grid-a-12.grid-c-8
+                              label.label.invisible(for='in-otro') Especifique un interés
+                              input.input#in-otro(type='text',placeholder='', data-validation='length', data-validation-length='min5')
+
+
+
+                .text-box
+
+                  .cb-group
+                    .cb-option
+                      label.cb-label(for='cb-english')
+                        input#cb-english.invisible.checkbox(type='checkbox',data-concept='Traducción en inglés', data-value='30', checked="checked")
+                        span.cb-pick
+                        span.cb-text Deseo traducir la información registral al inglés
+                          span.cb-legal Acepto las condiciones de uso del servicio
+                        span.cb-value +30€
+
+
+                    .cb-option
+                      label.cb-label(for='cb-a5')
+                        input#cb-a5.invisible.checkbox(type='checkbox',data-content='panel--cb1',checked)
+                        span.cb-pick
+                        span.cb-text Añadir una referencia
+
+                      .form-panel.panel--cb1.hide
+                        .row
+                          .form-box.grid-a-12.grid-c-8
+                            label.label.invisible(for='ta-sd1') Referencia
+                            textarea.textarea#ta-sd1(name='textarea',rows=3)
+
+                    .cb-option
+                      label.cb-label(for='cb-a6')
+                        input#cb-a6.invisible.checkbox(type='checkbox',data-content='panel--cb2',checked)
+                        span.cb-pick
+                        span.cb-text Modificar el email de envio
+                          em  jgonzalez@hotmail.com
+
+                      .form-panel.panel--cb2.hide
+                        .row
+                          .form-box.grid-a-12.grid-c-8
+                            label.label.invisible(for='in-sd1') Email envio
+                            input.input#in-sd1(type='text',placeholder='', value='jgonzalez@hotmail.com', data-validation='email')
+
+                .form-action
+                  button.btn.btn--primary(type='submit') Continuar
+
+
+            .panel-col.panel-col--right
+
+              .resume-box.resume-box--dark.resume-box--top
+                .resume-box__header
+                  h2.resume-title Resumen
+                  span.resume-note Impuestos y retenciones no incluidos
+                .resume-box__content
+                  table.table.table--resume
+                    thead.table-head.invisible
+                      tr
+                        th
+                          span Concepto
+                        th
+                          span Cantidad/Coste
+                    tbody.table-body
+                      tr.resume-concept
+                        td
+                          strong Nota simple
+                          .resume__info
+                            p Registro de la Propiedad de Madrid 52 <br/>
+                              | Propiedad 35805, Sección 5.
+
+                        td
+                          strong
+                            span.add__amount 9,02
+                            |€
+                      tr
+                        td.resume-add(colspan="2")
+                          .add.cb-english
+                            .add__concept Traducción en inglés
+                              a.link.add-remove(data-remove="cb-english") Quitar
+                            .add__amount
+                              strong
+                                span.price 30
+                                | €
+
+                      //- tr.hide.add.add-trans
+                        td.add__concept Traducción
+                          a.link.add-remove(data-remove='add-trans') Quitar
+                        td.add__amount
+                          strong 30€
+
+      .hide
+        .modal-inc
+          h1.modal-title
+            svg.icon.info
+              use(xlink:href='../static/img/common/svg/svg-symbols.svg#help-circle')
+            | ¿Qué incluye?
+          .modal-text
+            p Seleccione el número máximo de fincas sobre las que desea recibir información.
+            p Si a nombre del titular seleccionado aparecieren inscritas varias fincas o derechos, se generaran varias notas simples. Se le cobrará en base al número exacto de fincas encontradas.
+            p
+              a.link.link--primary Más información
+
+      include includes/_tpl-footer.pug

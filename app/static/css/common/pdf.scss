@@ -1,0 +1,180 @@
+/* Global values */
+/* Mixins */
+/* Reset */
+/**
+ * Based on [Eric Meyer's reset 2.0](http://meyerweb.com/eric/tools/css/reset/index.html)
+ * Global reset rules.
+ * For more specific resets, use the reset mixins provided below
+ */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend, input, select, textarea, button,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit; }
+
+/**
+ * Unlike Eric's original reset, we reset the html element to be compatible
+ * with the vertical rhythm mixins.
+ */
+html {
+  line-height: 1;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+ol, ul {
+  list-style: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle; }
+
+q, blockquote {
+  quotes: none; }
+  q:before, q:after, blockquote:before, blockquote:after {
+    content: "";
+    content: none; }
+
+a, button {
+  -webkit-tap-highlight-color: transparent; }
+
+a img {
+  border: none; }
+
+
+
+
+
+
+
+
+
+
+
+.pdf {
+  font-family: Helvetica, Arial;
+  font-size: 16px;
+  max-width: 780px;
+  margin: 0 auto;
+  height: 1000px;
+  position: relative;
+
+  &.pdf--center {
+    text-align: center;
+  }
+}
+
+  .pdf-header {
+    overflow: hidden;
+    padding: 10px 0;
+    margin-bottom: 10px;
+
+    .title {
+      color: #ff0000;
+      font-size: 18px;
+      font-weight: bold;
+      margin: 30px 0 20px 0;
+      float: left;
+    }
+
+    .img {
+      float: right;
+    }
+  }
+
+
+  .pdf-content {
+
+    strong {
+      color: #af1e2d;
+      font-size: 18px;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+    }
+
+    p {
+      margin-bottom: 12px;
+      color: #666666;
+      line-height: 24px;
+    }
+
+    .title {
+      font-size: 24px;
+      margin-bottom: 24px;
+      color: #444444;
+    }
+
+
+    .pdf-warning {
+
+      font-size: 12px;
+      color: #777777;
+
+      .warning-title {
+        margin-bottom: 8px;
+      }
+
+      .list {
+        list-style: circle;
+        margin-left: 24px;
+
+        .list__item {
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+
+
+  .list {
+    .list__item {
+      margin-bottom: 12px;
+    }
+
+    .list__item--title {
+      width: 350px;
+      text-transform: uppercase;
+      display: inline-block;
+      color: #666666;
+    }
+  }
+
+  .pdf-box {
+    margin-bottom: 48px;
+  }
+
+
+  .pdf-footer {
+    border-top: 1px solid #000;
+    padding-top: 10px;
+    font-size: 14px;
+    position: absolute;
+    bottom: 0px;
+
+    .link {
+      margin-bottom: 10px;
+      display: block;
+      font-weight: bold;
+    }
+
+  }

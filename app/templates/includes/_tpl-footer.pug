@@ -1,0 +1,201 @@
+footer.main-footer
+
+  .feedback
+
+    a.link.link--toggle#help-feedback(href="#") ¿Hay algo incorrecto en esta página?
+      svg.icon
+        use(xlink:href='../static/img/common/svg/svg-symbols.svg#arrow-list')
+
+    .feedback__wrap
+
+      .feedback__info.grid-a-12.grid-c-4
+
+        h4.title-submod Ayúdenos a mejorar
+        p.text Su feedback es muy importnate para mejorar la gestión de los Regístros y poder ofrecer un mejor servicio.
+
+      .feedback__form.grid-a-12.grid-c-8
+
+        form.form(action="")
+          .form-box
+            label.label(for="feedback-input") ¿Qué estaba haciendo?
+            input.input#feedback-input(type="text",data-validation="length",data-validation-length="min10")
+
+          .form-box
+            label.label(for="feedback-textarea") ¿Qué ha fallado o está incorrecto?
+            textarea.textarea#feedback-textarea(type="text",rows=4,data-validation="length",data-validation-length="min10")
+
+          button.btn.btn--flat.btn--medium(type="submit") Enviar
+
+
+  if footer == 'footer-online'
+    .footer-links.footer-links--online
+      .footer-links__wrap
+
+        .footer-col.footer-col--main
+          svg.icon
+            use(xlink:href='../static/img/common/svg/svg-symbols.svg#logo-registradores')
+
+          ul.list
+            li.list__item
+              a.link(href="aviso-legal.html") Aviso legal
+            li.list__item
+              a.link(href="#") Política de privacidad
+            //- li.list__item
+              a.link.hc-mode Activar alto contraste
+
+
+        .footer-col
+          h2.footer-col__title Registros
+          ul.list
+            li.list__item
+              a.link(href="portada-propiedad.html") Registro de la Propiedad
+            li.list__item
+              a.link(href="#") Registro Mercantil
+            li.list__item
+              a.link(href="#") Registro de Bienes Muebles
+
+        .footer-col
+          h2.footer-col__title Otros servicios
+          ul.list
+            li.list__item
+              a.link(href="#") Búsqueda por CSV
+            li.list__item
+              a.link(href="#") Estadística & Data
+            li.list__item
+              a.link(href="#") Consulta de documentos
+
+        .footer-col
+          h2.footer-col__title Ayuda y soporte
+          ul.list
+            li.list__item
+              a.link(href="#") Contacto
+            li.list__item
+              a.link(href="#") Guías prácticas
+            li.list__item
+              a.link(href="#") Preguntas frecuentes
+
+        .footer-col
+          h2.footer-col__title Cuenta de usuario
+          ul.list
+            li.list__item
+              a.link(href="#") Acceda a su cuenta
+            li.list__item
+              a.link(href="#") Crear una cuenta
+            li.list__item
+              a.link(href="#") Comprobar estado de trámite
+
+  if footer == 'footer'
+    .footer-links
+      .footer-links__wrap
+
+        .footer-logo
+          .footer-logo__line
+          svg.icon
+            use(xlink:href='../static/img/common/svg/svg-symbols.svg#logo-registradores-line')
+
+          //- span.icon-logo-registradores-line
+
+        .legal
+          ul.list
+            li.list__item
+              a.link(href="aviso-legal.html") Aviso Legal
+            li.list__item
+              a.link(href="#") Política de privacidad
+            li.list__item
+              a.link(href="#") Ayuda y soporte
+
+  -var tplDate = (new Date()).toLocaleDateString();
+  //-
+    p.ui-updated Última actualización:
+      span= ' '+tplDate
+
+
+
+
+.main-outside
+
+  //.pace
+    .pace-progress
+
+  .modal
+    .modal-box
+      .modal-content.modal-embed
+      a#modal.modal-close.notUp(href='#',title='cerrar popup')
+        svg
+          title Cerrar contenido
+          use(xlink:href='../static/img/common/svg/svg-symbols.svg#close')
+
+
+  .modal-lateral
+    .modal-lateral-box
+      .modal-lateral-content.modal-embed
+      a#modal-lateral.modal-lateral-close(href='#modal',title='Ocultar')
+        svg
+          title Ocultar contenido
+          use(xlink:href='../static/img/common/svg/svg-symbols.svg#close')
+
+
+  .hide
+    .sesion
+      h1.modal-title Lo sentimos, la sesión ha caducado
+      .modal-text
+        p Por su seguridad, se ha expirado la sesión.
+        p Identifiquese de nuevo para volver a acceder a su área de usuario.
+
+        p
+          a.btn.btn--primary Volver a identificarme
+
+
+        a.link.link--primary Página principal
+
+  .hide
+    .legal-terms
+      h1.modal-title Terminos y condiciones
+      .modal-text
+        p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+  .hide
+    .legal-privacy
+      h1.modal-title Política de privacidad
+      .modal-text
+        p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+
+  .overlay
+
+
+  .old-browser
+    .old-browser__wrap
+      .old-browser__text
+        h1.old-browser__title Su navegador está desactualizado
+        p Está utilizando una versión obsoleta que impide ver correctamente este sitio, haga
+          a(href="http://windows.microsoft.com/ie").old-browser__link  clic aquí para actualizar
+
+
+
+  .bg
+    .bg__cols
+      .bg-col
+      .bg-col
+      .bg-col
+      .bg-col
+      .bg-col
+      .bg-col
+
+  script(src='../static/js/common/main.js')

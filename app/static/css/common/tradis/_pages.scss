@@ -1,0 +1,521 @@
+/* Pages */
+
+.tpl-note {
+    .panel-tab {
+        border-bottom: 0;
+    }
+    .req-info {
+        span.title {
+            display: inline-block;
+            margin-bottom: 0;
+        }
+        span.over-title {
+            display:block;
+        }
+    }
+}
+
+// login
+
+.tpl-login {
+    .title-mod {
+        font-size: rem(25);
+        margin-bottom: 30px;
+    }
+
+    .form-remember {
+        .link {
+            margin-bottom: 15px;
+            display: block;
+            text-align: right;
+        }
+    }
+
+    .panel--dark {
+        padding: 40px 25px 40px;
+        margin-bottom: 30px;
+
+        .btn--fluid {
+            font-size: rem(15);
+        }
+    }
+
+    .panel--flatdark {
+        padding: 20px 35px;
+
+        .btn {
+            justify-content: center;
+
+            .icon {
+                margin-left: 10px;
+            }
+        }
+    }
+
+    .cb-option {
+        float: left;
+    }
+
+    .cb-label {
+        margin-bottom: 22px;
+    }
+}
+@include responsive(tablet) {
+    .tpl-login {
+
+        .main-content {
+          padding: 20px 0;
+        }
+
+        .panel--noaccount {
+          .panel-box {
+            &:first-child {
+            padding-right: 15px;
+            }
+          }
+        }
+        .panel--dark {
+            padding: 50px 45px 50px;
+        }
+
+        .panel--flatdark {
+            padding: 20px 45px;
+        }
+    }
+}
+@include responsive(desktop) {
+    .tpl-login {
+        .panel--dark,
+        .panel--flatdark {
+            margin-right: 8rem;
+        }
+
+        .panel-col--right {
+            .panel--filled {
+                padding-left: 0;
+                // width: 60%;
+            }
+        }
+
+        .form-remember {
+            fieldset {
+                float: left;
+                width: 50%;
+                margin-bottom: 0;
+            }
+
+            .link {
+                float: right;
+                width: 50%;
+                text-align: right;
+            }
+        }
+
+        .title-text {
+            font-size: rem(16);
+        }
+    }
+}
+// busqueda propiedad
+
+.tpl-bp {
+    .form-content {}
+}
+// grey background
+
+.tpl-prewrap {
+
+    .main-content__prewrap {
+        background: $grey-lowest;
+        + .main-content__wrap{
+            padding-top: 30px;
+        }
+    }
+
+    .main-content {
+        // padding-bottom: 10rem;
+        margin-bottom: 10px;
+    }
+
+    &.tpl-note .title-page {
+        margin-bottom: 0;
+    }
+}
+// template two column
+@include responsive(desktop) {
+    .panel-col {
+        float: left;
+    }
+
+    .tpl-col42 {
+        .panel-col--left {
+            width: 66.666666%;
+            float: left;
+            padding-right: $gutter;
+        }
+
+        &.tpl-p0 {
+          .panel-col--left {
+            padding-right: 0;
+          }
+        }
+
+        .panel-col--right {
+            width: 33.333333%;
+            float: right;
+        }
+
+        &.tpl-resume {
+            .panel-col--right {
+                // http://demo.paradigmadigital.com/registradores/diseno/ro-s-017_solicitud_notasimple_multiple-localizacio.png
+                // margin-top: - rem(22);
+            }
+        }
+
+        .panel-group--2col {
+            .panel {
+                &:nth-child(even) {
+                    //  width: 50% - 7px;
+                }
+
+                &:nth-child(odd) {
+                    //  width: 50% + 7px;
+                }
+            }
+        }
+    }
+}
+// template two column
+@include responsive(desktop) {
+    .tpl-col33 {
+        .panel-col {
+            width: 50%;
+            float: left;
+        }
+    }
+}
+@include responsive(largedesktop) {
+    .mini-icon {
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+}
+@include responsive(desktop) {
+    .action-group--icon {
+        display: block;
+    }
+}
+
+.panel--dropdown {
+    .title {
+        .link {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 1.466666rem;
+            cursor: default;
+            text-decoration: none;
+
+            .icon {
+                width: rem(32);
+                height: rem(32);
+                transition: all $transition-duration ease-in-out;
+            }
+        }
+
+        .list__item {
+            margin-bottom: 1rem;
+        }
+    }
+}
+// menu right
+
+.tpl-colmenu {
+    .panel-col--right {}
+
+    .panel-col--left {}
+
+    .main-content {
+        margin-top: -15px;
+    }
+
+    .menu__userlist {
+        margin-top: 0;
+    }
+}
+@include responsive(desktop) {
+    .tpl-colmenu {
+        .panel-col--right {
+            float: left;
+            width: 16.6%;
+            //margin-top: -15px;
+        }
+
+        .panel-col--left {
+            float: left;
+            width: 83.4%;
+            padding-right: 15px;
+        }
+    }
+}
+// page menu right
+@include responsive(desktop) {
+    .pg-menu-r {
+        .sec-left {
+            float: left;
+            width: 66%;
+            padding-right: 1rem;
+        }
+
+        .sec-right {
+            float: right;
+            width: 33%;
+        }
+    }
+}
+// detalle nota
+
+.tpl-note {
+    .title-page {
+        margin-bottom: 25px;
+    }
+
+    .col-detail {
+        width: 83.333333%;
+        padding-right: 15px;
+        float: left;
+    }
+
+    .col-menu {
+        width: 16.666666%;
+        float: left;
+    }
+}
+
+//Datos de solicitud
+    //Translation
+.no-block .rb-text {
+  display: inline;
+}
+.translation {
+    .cb-legal {
+        padding-left:30px;
+        color: $brand-primary;
+        margin-top: -10px;
+        cursor: pointer;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+    label {
+        .cb-text  {
+            display: inline;
+        }
+        .cb-value {
+            position: relative;
+            padding-left: 3px;
+            top: 2px;
+        }
+        .cb-pick {
+            top: 3px;
+        }
+    }
+}
+
+body.no-scape {
+  pointer-events: none;
+  user-select: none;
+}
+
+// Pagina de pago seguro
+body[data-content="secure-checkout"] {
+    .only-credit {
+        legend, .paypal-check {
+            display: none;
+        }
+        .card-check {
+            .rb-pick, .rb-text:before, .rb-line {
+                display: none;
+            }
+            .rb-label .rb-text {
+                padding-left: 0;
+            }
+        }
+    }
+}
+
+
+// Pagina de identificacion
+body[data-content="signon"] {
+  .errormsg { 
+    color: $alert-color;
+  }
+  #validNIF {
+    height: 40px;
+  }
+  .input.error {
+    border-color: $alert-color !important;
+    border-bottom: 1px solid $alert-color;
+  }
+  .secsurname {
+    margin-bottom: 5px;
+  }
+  [data-validation="aeat"], [data-validation="aeat-emp"], [data-validation="continue-identify"] {
+    display: none;
+  }
+  .juridic-man {
+    color: $alert-color;
+    line-height: 15px;
+    display: block;
+    margin-top: 4px;
+  }
+  // Password Strength
+  #pwindicator1, #pwindicator2 {
+    height: auto;
+    margin: 0;
+  }
+  .pw.error {
+      color: $alert-color;
+      line-height: 15px;
+      display: block;
+      margin-top: 4px;
+  }
+  .repeat-pwd {
+    margin-bottom: 0;
+  }
+  .login.register {
+    .form-box {
+      margin-bottom: 0;
+    }
+  }
+  // Password Validations
+  .form-text.correcto {
+    color: $green;
+  }
+  .form-text.formato, .form-text.letra {
+    color: $red;
+  }
+  .icon.error {
+    fill: $red;
+  }
+  .icon.correcto {
+    fill: $green;
+  }
+  .captcha-txt {
+      margin-bottom: 25px;
+      margin-top: -15px;
+    }
+    .masked {
+        width: 27px;
+        height: 27px;
+        position: absolute;
+        z-index: 99;
+        top: 83px;
+        cursor: pointer;
+    }
+    .cb-text.outside {
+        cursor: pointer;
+        text-decoration: underline;
+    }
+    .terms {
+        margin-left: 30px;
+    }
+}
+//Página de búsqueda
+a[data-content="modal-registros"] {
+  font-weight: bold;
+  color: $brand-primary;
+  text-decoration: underline;
+  display: block;
+  margin-bottom: 4px;
+  @include responsive(desktop) {
+    display: inline;
+    margin-bottom: inherit;
+  }
+}
+.cru-modal-icon {
+  display: inline;
+  width: 25px;
+  height: 25px;
+  margin-left: 5px;
+  margin-bottom: -5px;
+}
+// Pagina de pago
+body[data-content="secure-checkout"] {
+    .masked-payment {
+        width: 27px;
+        height: 27px;
+        position: absolute;
+        z-index: 99;
+        margin-top: 13px;
+        cursor: pointer;
+    }
+    .cb-text.outside {
+        cursor: pointer;
+        text-decoration: underline;
+    }
+    .terms {
+        margin-left: 30px;
+    }
+}
+// Tabla de honorarios
+@include responsive(desktop) {
+    table.fees {
+        th, td {
+            width: 33%;
+            height: 40px;
+            padding-left: 14px;
+        }
+        th {
+            font-weight: bold;
+        }
+    }
+}
+// Legal terms
+.cb-option.terms-conditions {
+  position: relative;
+  .masked {
+    top: 10px; 
+  }
+}
+
+// Detalle solicitud invitado
+body[data-content="detalle-solicitud-invitado"] {
+  .panel.panel--note {
+    border-top: 2px solid $grey-highest;;
+  }
+  .main-content__prewrap {
+    clear: both;
+  }
+  .main-content__wrap.ficha {
+    .title-page {
+      border-bottom: none;
+      padding-bottom: 0;
+      @include responsive(desktop) {
+        float: left;
+        border: none;
+        padding-bottom: 15px; 
+      }
+    }
+    .panel-tab{
+      float: right;
+      margin-top: 28px;
+      &.panel-tab--answered {
+        float: none;
+        text-align: right;
+        @include responsive(desktop) {
+          float: right;
+          border: none;
+        }
+      }
+    }
+  } 
+}
+
+.rb-group .rb-label .no-block {
+  display: block;
+}
+

@@ -1,0 +1,60 @@
+extends includes/_tpl-base.pug
+
+block title
+  title Encuentre la propiedad
+
+block body
+
+  - var headerMenu = true
+  - var menuLinks = true
+  - var footer = 'footer-online'
+
+  body.tpl-col42
+
+    .main-global
+
+      include includes/_tpl-header.pug
+
+      main.main-content
+
+        include includes/_tpl-breadcrumb.pug
+
+        .main-content__wrap
+
+          h1.title-page Nota simple
+
+
+          .panel-row
+            .panel-col--right
+              .panel-menu
+                h2.panel-menu__title Índice de apartados
+
+                ul.list.list--primary
+                  li.list__item.list__item--active Nota simple
+                  li.list__item
+                    a.link.link--primary(href="#") Nota de localización
+                  li.list__item
+                    a.link(href="#") Alertas de seguimiento
+
+            .panel-col--left
+
+              .text-box
+                h2.title-text ¿Qué información incluye?
+                p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam vulputate vestibulum velit, nec dapibus justo fringilla quis. Integer nisl urna, interdum a porta eget, semper eget lectus. Vestibulum vulputate lorem a velit ullamcorper ornare.
+                p
+                  a.link.link--primary(href='#') Ver ejemplo
+
+              .text-box
+                h2.title-text ¿Qué necesito?
+                p Vivamus eu neque interdum arcu scelerisque facilisis. In suscipit, risus a rhoncus rutrum, enim leo placerat ipsum, ultricies convallis metus nunc pellentesque ante.
+
+              .text-box
+                h2.title-text ¿Qué precio tiene?
+                p 9.02€ impuestos no incluidos.
+
+              .text-box
+                h2.title-text ¿Cómo recibirla?
+                p Sed faucibus libero risus, vitae vulputate velit venenatis vitae. Aenean quis ultricies sapien, eget porttitor metus.
+
+
+      include includes/_tpl-footer.pug

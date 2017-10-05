@@ -1,0 +1,273 @@
+extends includes/_tpl-base.pug
+
+block title
+  title Encuentre la propiedad
+
+block body
+
+  - var headerMenu = false
+  - var footer = 'footer'
+
+  - var topbar = 'topbar--dark'
+  - var topbarTitle = 'Solicitud de nota localización'
+  - var topbarLink = '¿Qué incluye?'
+
+  //- - var topbarSteps = [1, 2]
+
+  body.tpl-col42
+    .main-global
+
+      include includes/_tpl-header.pug
+
+      include includes/_tpl-topbar.pug
+
+      main.main-content
+
+
+        .main-content__wrap
+
+          h1.title-page Configure su búsqueda
+
+          .panel-row
+
+            .panel-col.panel-col--left
+              form.form(autocomplete='off',action='solicitud-datos-invitado.html')
+
+                .text-box
+                  h2.title-mod ¿De quién desea conocer la información?
+
+
+                  p Seleccione uno o varios titulares
+
+                  table.table.table--default
+                    thead.table-head
+                      tr
+                        th
+                          span Apellidos / Denominación social
+                        th
+                          span
+                            abbr(title='Número de identficación fiscal') NIF
+                    tbody.table-body
+                      tr
+                        td(data-label='Den. Social')
+                          .rb-option
+                            label.rb-label(for='nif0')
+                              input#nif0.invisible.radiobutton(type='radio',name="owners")
+                              span.rb-pick
+                              span.rb-text Banco Crédito Ahorro
+
+
+
+                        td(data-label='NIF') 18056887Z
+                      tr
+                        td(data-label='Den. Social')
+                          .rb-option
+                            label.rb-label(for='nif1')
+                              input#nif1.invisible.radiobutton(type='radio',name="owners")
+                              span.rb-pick
+                              span.rb-text Bankia S.A.U
+                        td(data-label='NIF') 5888972T
+                      tr
+                        td(data-label='Den. Social')
+                          .rb-option
+                            label.rb-label(for='nif2')
+                              input#nif2.invisible.radiobutton(type='radio',name="owners")
+                              span.rb-pick
+                              span.rb-text Banco Lorem Ipsum
+                        td(data-label='NIF') 5888972T
+
+                  span.small ¿No encuentras lo que buscas?
+                    a.link.link--primary  Modifica la búsqueda
+
+
+                .text-box
+                  h2.title-mod ¿De cuantas fincas quiere información?
+                    a.modal-lateral-open(data-content='modal01', href="#modal01", title="Mostrar ayuda")
+                      svg.icon.primary
+                        title Mostrar ayuda
+                        use(xlink:href='../static/img/common/svg/svg-symbols.svg#help-circle')
+
+                  .hide
+                    .modal01
+                      h1.modal-title
+                        svg.icon.info
+                          title Mostrar ayuda
+                          use(xlink:href='../static/img/common/svg/svg-symbols.svg#help-circle')
+                        |  Número de fincas
+                      .modal-text
+                        p Seleccione el número máximo de fincas sobre las que desea recibir información.
+                        p Si a nombre del titular seleccionado aparecieren inscritas varias fincas o derechos, se generaran varias notas simples. Se le cobrará en base al número exacto de fincas encontradas.
+                        p
+                          a.link.link--primary Más información
+
+
+                  p Seleccione el número máximo de fincas sobre las que desea recibir notas simples
+
+
+                  .form-box.grid-a-12.grid-c-4
+                    label.label(for='nsimple') Máximo de notas simples
+                    input.input#nsimple(type='text',placeholder='')
+
+
+                .text-box
+                  h2.title-mod ¿De donde quiere la información?
+
+                  p Seleccione el ámbito geográfico al que quiere limitar su petición
+
+                  .rb-group.rb-group--horizontal.rb-group--line
+                    fieldset
+                      legend.invisible Toda España
+                      .rb-option
+                        label.rb-label(for='radioh1')
+                          input#radioh1.invisible.radiobutton(type='radio',name='radioh',data-content='radioh--0')
+                          span.rb-pick
+                          span.rb-text Toda España
+                          span.rb-line
+
+                      .rb-option
+                        label.rb-label(for='radioh2')
+                          input#radioh2.invisible.radiobutton(type='radio',name='radioh',data-content='radioh--1')
+                          span.rb-pick
+                          span.rb-text Comunidad Autónoma
+                          span.rb-line
+
+                      .rb-option
+                        label.rb-label(for='radioh3')
+                          input#radioh3.invisible.radiobutton(type='radio',name='radioh',data-content='radioh--2')
+                          span.rb-pick
+                          span.rb-text Provincia
+                          span.rb-line
+
+                      .rb-option
+                        label.rb-label(for='radioh4')
+                          input#radioh4.invisible.radiobutton(type='radio',name='radioh',data-content='radioh--3')
+                          span.rb-pick
+                          span.rb-text Municipio
+                          span.rb-line
+
+                      .rb-option
+                        label.rb-label(for='radioh5')
+                          input#radioh5.invisible.radiobutton(type='radio',name='radioh',data-content='radioh--4',checked)
+                          span.rb-pick
+                          span.rb-text Registro
+                          span.rb-line
+
+
+                  .form-panel.radioh.radioh--0.hide
+
+                  .form-panel.radioh.radioh--1.hide
+
+                      .row
+                        .form-box
+                          //- Comunidad autonoma
+                          label.label(for='inf1') Comunidad autónoma
+                          .form-ico
+                            input.input.comu#inf1(type='text',placeholder='Comunidad autónoma')
+                            input.input.comu-id
+                            svg.icon(viewBox='0 0 100 100')
+                              use(xlink:href='../static/img/common/svg/svg-symbols.svg#autocomplete')
+
+
+                  .form-panel.radioh.radioh--2.hide
+
+                      .row
+                        .form-box
+                          label.label(for='inf0') Provincia
+                          .form-ico
+                            input.input.prov(type='text',placeholder='Provincia')
+                            svg.icon(viewBox='0 0 100 100')
+                              use(xlink:href='../static/img/common/svg/svg-symbols.svg#autocomplete')
+
+                  .form-panel.radioh.radioh--3.hide
+
+                      .row
+                        .form-box
+                          label.label(for='inf1b') Provincia
+                          .form-ico
+                            input.input.prov(type='text',placeholder='Provincia')
+                            svg.icon(viewBox='0 0 100 100')
+                              use(xlink:href='../static/img/common/svg/svg-symbols.svg#autocomplete')
+                      .row
+                        .form-box
+                          label.label(for='inf2b') Municipio
+                          .form-ico
+                            input.input.muni(type='text',placeholder='Municipio')
+                            svg.icon(viewBox='0 0 100 100')
+                              use(xlink:href='../static/img/common/svg/svg-symbols.svg#autocomplete')
+
+
+                  .form-panel.radioh.radioh--4.hide
+                      .row
+                        .form-box
+                          //- Comunidad autonoma
+                          label.label(for='inf1') Comunidad autónoma
+                          .form-ico
+                            input.input.input-1.comu#inf0a(type='text',placeholder='Selecciona una comunidad')
+                            input.input.input-depend.invisible#comu-id
+                            svg.icon(viewBox='0 0 100 100')
+                              use(xlink:href='../static/img/common/svg/svg-symbols.svg#autocomplete')
+
+
+                      .row
+                        .form-box
+                          label.label(for='inf1a') Provincia
+                          .form-ico
+                            input.input.input-2.prov#inf1a(type='text',placeholder='Selecciona una provincia',disabled="disabled")
+                            input.input.prov-id.invisible
+                            svg.icon(viewBox='0 0 100 100')
+                              use(xlink:href='../static/img/common/svg/svg-symbols.svg#autocomplete')
+
+                      .row
+                        .form-box
+                          label.label(for='inf2a') Municipio
+                          .form-ico
+                            input.input.input-3.muni#inf2a(type='text',placeholder='Seleccionar un municipio',disabled="disabled")
+                            input.input.muni-id.invisible
+                            svg.icon(viewBox='0 0 100 100')
+                              use(xlink:href='../static/img/common/svg/svg-symbols.svg#autocomplete')
+
+                      .row
+                        .form-box
+                          label.label(for='inf2a') Registro
+                          .form-ico
+                            input.input.input-4.regi#inf2a(type='text',placeholder='Registro')
+                            input.input.regi-id.invisible
+                            svg.icon(viewBox='0 0 100 100')
+                              use(xlink:href='../static/img/common/svg/svg-symbols.svg#autocomplete')
+
+                      //- script(type='text/javascript').
+                      //-   function myFunction() {
+                      //-     $('.prov').prop( "disabled", true );
+                      //-     $('.muni').prop( "disabled", true );
+                      //-   }
+
+
+                .form-action
+                  button.btn.btn--primary(type='submit') Continuar
+
+            .panel-col.panel-col--right
+              .gen-msg.gen-msg--info
+                .gen-msg__text
+                  p El sistema de publicidad ha cambiado, si el titular seleccionado tiene al menos un derecho inscrito recibirá la/s nota/s simple/s correspondiente/s a su/s titularidad/es con el máximo número de fincas que haya introducido en la pantalla de confirmación y su consecuente facturación. En caso de que el titular introducido no tenga ningún derecho recibirá nota de localización negativa, que le será facturada igualmente.
+                svg.gen-msg__icon
+                  use(xlink:href='../static/img/common/svg/svg-symbols.svg#info-circle')
+
+
+
+
+      .hide
+        .modal-inc
+          h1.modal-title
+            svg.icon.info
+              use(xlink:href='../static/img/common/svg/svg-symbols.svg#help-circle')
+            | ¿Qué incluye?
+          .modal-text
+            p Seleccione el número máximo de fincas sobre las que desea recibir información.
+            p Si a nombre del titular seleccionado aparecieren inscritas varias fincas o derechos, se generaran varias notas simples. Se le cobrará en base al número exacto de fincas encontradas.
+            p
+              a.link.link--primary Más información
+
+      include includes/_tpl-footer.pug
+
+                          input.input.comu-id
+                          input.input.comu#inf1(type='text',placeholder='Comunidad autónoma')

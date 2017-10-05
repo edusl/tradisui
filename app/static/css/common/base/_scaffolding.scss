@@ -1,0 +1,102 @@
+/* Scaffolding */
+// Reset the box-sizing
+*,
+*:after,
+*:before {
+    @include box-sizing(border-box);
+}
+// Font face
+// @font-face {
+//   font-family: 'OpenSans-Regular';
+//   src: url("../../fonts/common/opensans/OpenSans-Regular.eot?v=1.1.0");
+//   src: url("../../fonts/common/opensans/OpenSans-Regular.eot?#iefix&v=1.1.0") format("embedded-opentype"), url("../../fonts/common/opensans/OpenSans-Regular.woff2?v=1.1.0") format("woff2"), url("./fonts/common/Regular/OpenSans-Regular.woff?v=1.1.0") format("woff"), url("../../fonts/common/opensans/OpenSans-Regular.ttf?v=1.1.0") format("truetype"), url("../../fonts/common/opensans/OpenSans-Regular.svg?v=1.1.0#Regular") format("svg");
+//   font-weight: normal;
+//   font-style: normal; }
+
+
+// @font-face {
+//   font-family: 'OpenSans-Bold';
+//   src: url("../../fonts/common/opensans/OpenSans-Regular.eot?v=1.1.0");
+//   src: url("../../fonts/common/opensans/OpenSans-Regular.eot?#iefix&v=1.1.0") format("embedded-opentype"), url("../../fonts/common/opensans/OpenSans-Regular.woff2?v=1.1.0") format("woff2"), url("./fonts/common/Regular/OpenSans-Regular.woff?v=1.1.0") format("woff"), url("../../fonts/common/opensans/OpenSans-Regular.ttf?v=1.1.0") format("truetype"), url("../../fonts/common/opensans/OpenSans-Regular.svg?v=1.1.0#Regular") format("svg");
+//   font-weight: normal;
+//   font-style: normal; }
+@font-face {
+    font-family: 'NeoSans-Regular';
+    src: url('../../fonts/common/neosans/NeoSansStd-Regular.eot');
+    src: url('../../fonts/common/neosans/NeoSansStd-Regular.woff') format('woff'), url('../../fonts/common/neosans/NeoSansStd-Regular.ttf') format('truetype'), url('../../fonts/common/neosans/NeoSansStd-Regular.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'NeoSans-Light';
+    src: url('../../fonts/common/neosans/NeoSansStd-Light.eot');
+    src: url('../../fonts/common/neosans/NeoSansStd-Light.woff') format('woff'), url('../../fonts/common/neosans/NeoSansStd-Light.ttf') format('truetype'), url('../../fonts/common/neosans/NeoSansStd-Light.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'NeoSans-Bold';
+    src: url('../../fonts/common/neosans/NeoSansStd-Bold.eot');
+    src: url('../../fonts/common/neosans/NeoSansStd-Bold.woff') format('woff'), url('../../fonts/common/neosans/NeoSansStd-Bold.ttf') format('truetype'), url('../../fonts/common/neosans/NeoSansStd-Bold.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+// Typography
+.font-base {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.font-base-bold {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+}
+
+.font-secondary {
+    font-family: 'NeoSans-Regular';
+}
+
+.font-secondary-light {
+    font-family: 'NeoSans-Light';
+}
+
+.font-seconary-bold {
+    font-family: 'NeoSans-Bold';
+}
+// Selection text
+@include selection-text($selection-text-color-bg, $selection-text-color);
+// Body reset
+html {
+    min-height: 100%;
+    font-size: 15px;
+}
+
+body {
+    font-family: $family-base;
+    font-size: 15px;
+    line-height: em($line-height-base, $size-base);
+    color: $brand-primary-text;
+    background-color: $body-bg;
+    height: 100%;
+}
+// Images
+img {
+    @include img-responsive;
+}
+// Links
+a {
+    cursor: pointer;
+    outline: none;
+    text-decoration: none;
+    transition: all ease $transition-duration;
+    @include link-colors($link-color, $link-hover-color, $link-active-color, $link-visited-color, $link-focus-color);
+    //user-select: none;
+}
+// Images
+.icon {
+    display: inline-block;
+}
+// Paragraph
+p {
+    margin-bottom: 16px;
+    line-height: rem(23);
+}

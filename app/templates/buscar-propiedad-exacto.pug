@@ -1,0 +1,132 @@
+extends includes/_tpl-base.pug
+
+block title
+  title Encuentre la propiedad
+
+block body
+
+  - var headerMenu = true
+  - var userOnline = false
+  - var menuLinks = true
+  - var user_item1 = 'active'
+  - var footer = 'footer'
+
+  body
+
+    .main-global
+
+      include includes/_tpl-header.pug
+
+      main.main-content
+
+        //- include includes/_tpl-topbar.pug
+
+        .main-content__wrap
+
+          h1.title-page Encuentre la Propiedad
+
+          .panel-row
+
+            .panel--col.panel-col--left
+
+              .form-content
+                p.mb-32 Seleccione el tipo de búsqueda y complete la información para que podamos encontrar la propiedad.
+
+                .rb-group.rb-group--horizontal.rb-group--line.rb-group--auto.grid-c-8
+                  fieldset
+                    legend.invisible Radio button horizontal
+                    .rb-option
+                      label.rb-label(for='radio01')
+                        input#radio01.invisible.radiobutton(type='radio',name='radioh',checked,data-content='radioh--0')
+                        span.rb-pick
+                        span.rb-text Buscar por IDUFIR
+                        span.rb-line
+
+                    .rb-option
+                      label.rb-label(for='radio02')
+                        input#radio02.invisible.radiobutton(type='radio',name='radioh',data-content='radioh--1')
+                        span.rb-pick
+                        span.rb-text Buscar por Datos Registrales
+                        span.rb-line
+                .grid-c-4.align-right
+                  a.link.link--primary No conozco los Datos Registrales ni IDUFIR
+
+                .form-panel.radioh.radioh--0
+                  form.form(autocomplete='off',action='preficha-propiedad.html')
+                    .form-options
+                      .row
+                        .form-box.grid-a-12.grid-c-4
+                          label.label IDUFIR
+                          //- input.input(type='text',placeholder='Introduzca el IDUFIR', data-validation='length alphanumeric', data-validation-length='min8', autofocus)
+                          input.input(type='text',placeholder='Introduzca el IDUFIR', autofocus)
+
+                    .form-action
+                      button.btn.btn--primary#button-h0(type='submit') Continuar
+
+
+
+
+                .form-panel.radioh.radioh--1.hide
+                  form.form(autocomplete='off',action='preficha-propiedad.html')
+
+                    .form-options
+
+                      .row
+                        .form-box.grid-a-12.grid-c-4
+                          label.label(for='input01') Provincia
+                          .form-ico
+                            input.input.provincias#input01(type='text',placeholder='Seleccione o introduzca provincia')
+                            svg.icon
+                              use(xlink:href='../static/img/common/svg/svg-symbols.svg#autocomplete')
+                      .row
+                        .form-box.grid-a-12.grid-c-4
+                          label.label(for='input02') Municipio
+                          .form-ico
+                            input.input#input02(type='text',placeholder='Seleccione o introduzca municipio')
+                            svg.icon
+                              use(xlink:href='../static/img/common/svg/svg-symbols.svg#autocomplete')
+                      .row
+                        .form-box.grid-a-12.grid-c-4
+                          label.label(for='select01') Registro donde se encuentra la propiedad
+                          .form-ico.form-ico--select
+                            select#select01.select(data-validation="required")
+                              option(value='',disabled,selected) Seleccione una propiedad
+                              option Registro 0001
+                              option Registro 0002
+                              option Registro 0003
+
+                            svg.icon(viewBox='0 0 48 48')
+                              use(xlink:href='../static/img/common/svg/svg-symbols.svg#arrow-down')
+
+                      .row.row--multi
+                        .form-box.grid-a-12.grid-c-2
+                          label.label(for='input03') Nº de finca
+                          //- input.input#input03(type='text',placeholder='Nº de finca', data-validation='length alphanumeric', data-validation-length='min8')
+                          input.input#input03(type='text',placeholder='Nº de finca')
+
+                        .form-box.grid-a-12.grid-c-2
+                          label.label(for='input04') Nº de subfina
+                            span.label--optional  (opcional)
+                          input.input#input04(type='text',placeholder='Nº Subfinca')
+
+                      .row.row--multi
+                        .form-box.grid-a-12.grid-c-2
+                          label.label(for='input05') Sección
+                            span.label--optional  (opcional)
+                          input.input#input05(type='text',placeholder='Sección')
+
+                        .form-box.grid-a-12.grid-c-2
+                          label.label(for='input06') Duplicado
+                            span.label--optional  (opcional)
+                          input.input#input06(type='text',placeholder='Duplicado')
+
+                    .form-action
+                      button.btn.btn--primary#button-h1(type='submit') Continuar
+
+
+
+
+
+
+
+      include includes/_tpl-footer.pug

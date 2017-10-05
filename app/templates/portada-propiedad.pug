@@ -1,0 +1,160 @@
+extends includes/_tpl-base.pug
+
+block title
+  title Registro de la propiedad
+
+block body
+  - var headerMenu = true
+  - var userOnline = false
+  - var menuLinks = true
+  - var menu = 'menu-useronline4'
+  - var menu_item1 = 'active'
+  - var footer = 'footer-online'
+
+  body.tpl-col42
+
+    .main-global
+
+      include includes/_tpl-header.pug
+
+      main.main-content
+
+        .main-content__wrap
+
+              h1.title-section Registro de la Propiedad
+
+              .panel-row
+                  .panel-col.panel-col--right
+                      .panel.panel--dark.panel--dropdown.no-gutter
+                          p.over-title Profesionales
+                          h2.title-mod.title
+                            span.link.link--primary
+                              span Solicitudes y trámites
+                              svg.icon.rotate-270
+                                use(xlink:href='../static/img/common/svg/svg-symbols.svg#arrow-circle')
+
+                          .form
+                              a.btn.btn--primary.btn--fluid.btn--icon(href='buscar-propiedad.html')
+                                span Nota simple
+                                svg.icon.rotate-180
+                                  use(xlink:href='../static/img/common/svg/svg-symbols.svg#arrow-circle')
+
+                          ul.list.list--secondary
+                            li.list__item
+                              a.link(href='#') Nota de localización
+                            li.list__item
+                              a.link(href='#') Alertas de seguimiento
+                            li.list__item
+                              a.link(href='#') Certificación de dominio
+                            li.list__item
+                              a.link(href='#') Certificación de dominio y cargas
+                            li.list__item
+                              a.link(href='#') Alertas de seguimiento y certificación
+                            li.list__item
+                              a.link(href='#') Presentación Online
+
+                      .panel
+                        .span.panel-line.panel-line--min
+                        h3.h6 Compruebe el estado de su Solicitudes
+                        p Si ha realizado una solicitud y no tiene cuenta de usuario,
+                            a.link.link--primary(href='#') acceda con sus datos de solicitud.
+
+                  .panel-col.panel-col--left
+                      .panel.panel--top
+
+                          h2.title-submod Encuentre una propiedad
+                          p Podrá pedir notas simples, certificaciones y mucho más.
+
+                          .action-group.action-group--top
+                              a.btn.btn--primary.btn--medium.qa-btn-buspropiedad(href="buscar-propiedad.html") Buscar propiedad por Datos Registrales o IDUFIR
+                              a.link.link--primary(href='#') No conzco los Datos Registrales ni IDUFIR.
+
+                      .panel-group.panel-group--2col
+                          .panel
+                              h2.title-submod Localice propiedades de un titular
+
+                              p Obtenga un listado de los registros donde un titular tiene propiedades. También puede obtener una Nota que informe de la “no posesión” de propiedades.
+
+                              .panel__footer
+                                  .action-group.action-group--icon
+                                      a.btn.btn--secondary.btn--small(href='#') Solicitar
+                                      a.link.link--primary(href='#') Más información
+
+                          .panel
+                              h2.title-submod Notas de propiedades de un titular
+
+                              p Podrá obtener una nota simple por cada una de las propiedades de un titular. Es necesario tener cuenta o certificado.
+
+                              .panel__footer
+                                  .action-group.action-group--icon
+                                      a.btn.btn--secondary.btn--small(href='#') Solicitar
+                                      a.link.link--primary(href='#') Más información
+
+                                  //-.mini-icon
+                                    svg.icon
+                                      use(xlink:href='../static/img/common/svg/svg-symbols.svg#shield')
+                                    svg.icon
+                                      use(xlink:href='../static/img/common/svg/svg-symbols.svg#user')
+
+                          .panel
+                              h2.title-submod Certificación de Dominio
+
+                              p Suspendisse potenti. Donec metus nibh, pretium sed ornare in, pharetra eu urna.
+
+                              .panel__footer
+                                  .action-group.action-group--icon
+                                      a.btn.btn--secondary.btn--small(href='#') Solicitar
+                                      a.link.link--primary(href='#') Más información
+
+
+
+              .panel-row
+                  .panel-col.panel-col--left
+                      .panel.panel--top
+                          h2.title-mod ¿Qué necesita?
+                          ul.list.list--primary
+                              li.list__item
+                                  a.link(href='#') Quiero información de mi propiedad.
+                              li.list__item
+                                  a.link(href='#') Informarme de quién es el Propietario al que voy a Comprar una finca.
+                              li.list__item
+                                  a.link(href='#') Justificar que no tengo propiedades para optar a un inmueble de protección oficial.
+                              li.list__item
+                                  a.link(href='#') Cambiar de propietario por fallecimiento de un familiar.
+                              li.list__item
+                                  a.link(href='#') He terminado de pagar la hipoteca y quiero eliminar las cargas de mi propiedad.
+                              li.list__item
+                                  a.link(href='#') Otro...
+
+                  .panel-col.panel-col--right
+                      .panel.panel--top
+                          h2.title-mod El registro de la propiedad
+                          ul.list.list--primary
+                              li.list__item
+                                  a.link(href='#') Localice un Registro de la Propiedad cerca de usted
+                              li.list__item
+                                  a.link(href='#') Conozca más sobre este Registro
+                              li.list__item
+                                  a.link(href='#') Tablón del Registro
+
+                      .panel
+                          span.panel-line
+
+                          h3.title-mod ¿Dudas?
+
+                          span.fs-16
+                              strong 91 270 16 99
+
+                          ul.list.small
+                              li.list__item
+                                  a.link.link--primary(href='#') Contacte con nosotros
+                              li.list__item
+                                  a.link.link--primary(href='#') Guía de ayuda
+                              li.list__item
+                                  a.link.link--primary(href='#') Preguntas frecuentes
+
+
+
+
+
+      include includes/_tpl-footer.pug

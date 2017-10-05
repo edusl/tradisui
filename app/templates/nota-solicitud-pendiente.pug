@@ -1,0 +1,97 @@
+extends includes/_tpl-base.pug
+
+block title
+  title Certficación de dominio y cargas
+
+block body
+
+  - var headerMenu = false
+
+  - var topbar = 'topbar--dark'
+  - var topbarTitle = 'Volver'
+
+  - var footer = 'footer'
+
+  body.tpl-prewrap.tpl-note
+
+    .main-global
+
+      include includes/_tpl-header.pug
+
+      main.main-content
+
+        .main-content__title
+          .main-content__wrap
+
+            h1.title-page
+              a.link.link--titleback(href="#")
+                svg.icon.primary
+                  use(xlink:href='../static/img/common/svg/svg-symbols.svg#arrow-circle')
+
+              | Certificación de dominio y cargas. H25439900
+
+        .main-content__prewrap
+
+          .main-content__wrap
+
+            .panel-row
+
+              .panel.panel--note
+
+                h2.title Datos de la solicitud
+
+                ul.list.row
+                  li.list__item.grid-a-6.grid-c-2
+                    span.over-title TIPO:
+                    span.title.request-type Nota simple
+                  li.list__item.grid-a-6.grid-c-2
+                    span.over-title Fecha de creación
+                    span.title.request-date 07/01/2016
+                  li.list__item.grid-a-6.grid-c-3
+                    span.over-title Información solicitada
+                    span.title.request-info Registro de la Propiedad Sevilla 4. Propiedad 185, Sección 1
+                  li.list__item.grid-a-6.grid-c-3
+                    span.over-title Solicitante
+                    span.title.request-owner Javier Gonzalez de las Heras, 10884425Q
+                  li.list__item.grid-a-12.grid-c-2
+                    ul.sub-list
+                      li.list__item
+                        a.btn.btn--secondary.btn--medium.btn--icon
+                          | Descargar PDF
+                          svg.icon
+                            use(xlink:href='../static/img/common/svg/svg-symbols.svg#download-file')
+                      li.list__item
+                        a.btn.btn--secondary.btn--medium.btn--icon
+                          | Imprimir
+                          svg.icon
+                            use(xlink:href='../static/img/common/svg/svg-symbols.svg#print')
+
+
+              .panel-tab.panel-tab--pending
+                .panel-tab__content.request-status
+                  svg.icon.icon--registradores
+                    use(xlink:href='../static/img/common/svg/svg-symbols.svg#clock')
+                  | Pendiente
+
+              .panel.panel--light.panel--detail
+                p
+                  strong Respuesta del Registro
+
+                p Ya hemos estimado el coste de su solicitud y está pendiente de pago.
+
+                p Honorarios: <strong>270€</strong> (impuestos no incluidos)
+
+
+                .action-group
+                  button.btn.btn--flat.btn--medium Confirmar pago
+
+                  a.link.link--primary Anular solicitud
+
+            .add
+              a.link.link--primary
+                svg.icon.icon--registradores
+                  use(xlink:href='../static/img/common/svg/svg-symbols.svg#add')
+                | Más solicitudes de esta propiedad.
+
+
+      include includes/_tpl-footer.pug

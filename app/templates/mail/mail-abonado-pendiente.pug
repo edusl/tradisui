@@ -1,0 +1,15 @@
+extends includes/_mail-base.pug
+
+block title
+  title  Solicitud pendiente
+
+block content  
+
+    include includes/_mail-header.pug
+    
+    tr
+      td(style="padding-top: 24px;")
+        p(style="padding-bottom: 10px;", class="text-content") Hola Javier Gonzalez, <br /> <strong>Estamos tramitando los datos de su cuenta.</strong>
+        p(style="padding-bottom: 10px;", class="text-content") Hemos recibido la información correctamente y en breve le comunicaremos el estado de su cuenta. En el caso de necesitar más información, se lo comunicaremos a este email.        
+
+    include includes/_mail-footer.pug

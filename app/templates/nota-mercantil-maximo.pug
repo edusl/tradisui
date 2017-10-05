@@ -1,0 +1,175 @@
+extends includes/_tpl-base.pug
+
+block title
+  title Información mercantil
+
+block body
+
+  - var headerMenu = false
+
+  - var topbar = 'topbar--dark'
+  - var topbarTitle = 'Volver'
+
+  - var footer = 'footer'
+
+  body.tpl-prewrap.tpl-note
+
+    .main-global
+
+      include includes/_tpl-header.pug
+
+      main.main-content
+
+        .main-content__title
+          .main-content__wrap
+
+            h1.title-page
+              a.link.link--titleback(href="#")
+                svg.icon.primary
+                  use(xlink:href='../static/img/common/svg/svg-symbols.svg#arrow-circle')
+
+              | Información mercantinl. H25439908
+
+        .main-content__prewrap
+
+          .main-content__wrap
+
+            .panel-row
+
+              .panel.panel--note
+
+                h2.title Datos de la solicitud
+
+                ul.list.row
+                  li.list__item.grid-a-6.grid-c-2
+                    span.over-title TIPO:
+                    span.title.request-type Nota simple
+                  li.list__item.grid-a-6.grid-c-2
+                    span.over-title Fecha de creación
+                    span.title.request-date 07/01/2016
+                  li.list__item.grid-a-6.grid-c-3
+                    span.over-title Información solicitada
+                    span.title.request-info Registro de la Propiedad Sevilla 4. Propiedad 185, Sección 1
+                  li.list__item.grid-a-6.grid-c-3
+                    span.over-title Solicitante
+                    span.title.request-owner Javier Gonzalez de las Heras, 10884425Q
+                  li.list__item.grid-a-12.grid-c-2
+                    ul.sub-list
+                      li.list__item
+                        a.btn.btn--secondary.btn--medium.btn--icon
+                          | Descargar PDF
+                          svg.icon
+                            use(xlink:href='../static/img/common/svg/svg-symbols.svg#download-file')
+                      li.list__item
+                        a.btn.btn--secondary.btn--medium.btn--icon
+                          | Imprimir
+                          svg.icon
+                            use(xlink:href='../static/img/common/svg/svg-symbols.svg#print')
+
+              .col-detail
+                .panel-tab.panel-tab--success
+                  .panel-tab__content.request-status
+                    svg.icon.icon--registradores
+                      use(xlink:href='../static/img/common/svg/svg-symbols.svg#check')
+                    | Enviada - 08/07/2016 (18:00)
+
+                .panel.panel--light.panel--detail
+                  ul.list.row.grid-c-12
+                    li.list__item.grid-c-12
+                      span.over-title Registro mercantil
+                      span.title Santa Cruz de Tenerife nº 03
+                    li.list__item.grid-c-8
+                      span.over-title Denominación
+                      span.title Ikea España distribución y almacenaje
+                    li.list__item.grid-c-4
+                      ul.list
+                        li.list__item.grid-c-12
+                          span.over-title NIF
+                          span.title b84946656
+                        li.list__item.grid-c-12
+                          span.over-title Estado
+                          span.title Sociedad vigente
+
+
+                  hr
+
+                  ul.list.row.grid-c-10
+                    li.list__item.grid-c-6
+                      span.over-title Apellido / Razón social
+                      span.title Ikea España distribución y almacenaje SA
+                    li.list__item.grid-c-3
+                      span.over-title NIF
+                      span.title A14010342
+                    li.list__item.grid-a-12
+                      span.text Consultando el índice Central, <strong>No aparecen</strong> titularidades vigentes a su favor en <strong> Todo el territorio nacional</strong>
+                  .grid-c-2
+                    .square Si
+
+                  table.table.table--default
+                    thead.table-head
+                      tr
+                        th
+                          span Registro
+                        th
+                          span Municipio
+                        th
+                          span Provincia
+
+                    tbody.table-body
+                      tr
+                        td(data-label='Registro') Armilla
+                        td(data-label='Municipio') Ogijares
+                        td(data-label='Provincia') Granada
+                      tr
+                        td(data-label='Registro') Armilla
+                        td(data-label='Municipio') Ogijares
+                        td(data-label='Provincia') Granada
+                      tr
+                        td(data-label='Registro') Armilla
+                        td(data-label='Municipio') Ogijares
+                        td(data-label='Provincia') Granada
+
+                  span.small
+                    a.link.link--primary  Solicitar nota simple de este titular
+
+              .col-menu
+                .menu-anchor
+                  h2.title Apartados
+                  span.subtitle Seleccione una opción para ir directamente al contenido
+
+                  ul.list
+
+                    li.list__item
+                      a.link.link--primary Datos identificativos
+                        svg.icon.rotate-270
+                          use(xlink:href='../static/img/common/svg/svg-symbols.svg#arrow-simple')
+                    li.list__item
+                      a.link.link--primary Asientos de presentación
+                        svg.icon.rotate-270
+                          use(xlink:href='../static/img/common/svg/svg-symbols.svg#arrow-simple')
+                    li.list__item
+                      a.link.link--primary Situaciones especiales
+                        svg.icon.rotate-270
+                          use(xlink:href='../static/img/common/svg/svg-symbols.svg#arrow-simple')
+                    li.list__item
+                      a.link.link--primary Representantes sociales
+                        svg.icon.rotate-270
+                          use(xlink:href='../static/img/common/svg/svg-symbols.svg#arrow-simple')
+                    li.list__item
+                      a.link.link--primary Capital social
+                        svg.icon.rotate-270
+                          use(xlink:href='../static/img/common/svg/svg-symbols.svg#arrow-simple')
+                    li.list__item
+                      a.link.link--primary Inscripciones
+                        svg.icon.rotate-270
+                          use(xlink:href='../static/img/common/svg/svg-symbols.svg#arrow-simple')
+                    li.list__item
+                      a.link.link--primary Depósitos de cuentas
+                        svg.icon.rotate-270
+                          use(xlink:href='../static/img/common/svg/svg-symbols.svg#arrow-simple')
+                    li.list__item
+                      a.link.link--primary Libros legalizados
+                        svg.icon.rotate-270
+                          use(xlink:href='../static/img/common/svg/svg-symbols.svg#arrow-simple')
+
+      include includes/_tpl-footer.pug

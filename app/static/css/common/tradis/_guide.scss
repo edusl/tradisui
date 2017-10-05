@@ -1,0 +1,284 @@
+/* UI Guide */
+
+
+// ui areas
+
+.uig-wrap {
+  margin-left: 140px;
+  padding: 2rem;
+  max-width: 980px;
+}
+
+  .uig-header {
+      background: $grey-lowest;
+      background-color: transparent;
+      background-image:       -webkit-linear-gradient(bottom, transparent 24%, rgba(0, 0, 0, .07) 25%, rgba(0, 0, 0, .07) 26%, transparent 27%, transparent 74%, rgba(0, 0, 0, .07) 75%, rgba(0, 0, 0, .07) 76%, transparent 77%, transparent), -webkit-linear-gradient(left, transparent 24%, rgba(0, 0, 0, .07) 25%, rgba(0, 0, 0, .07) 26%, transparent 27%, transparent 74%, rgba(0, 0, 0, .07) 75%, rgba(0, 0, 0, .07) 76%, transparent 77%, transparent);
+      background-image:       -o-linear-gradient(bottom, transparent 24%, rgba(0, 0, 0, .07) 25%, rgba(0, 0, 0, .07) 26%, transparent 27%, transparent 74%, rgba(0, 0, 0, .07) 75%, rgba(0, 0, 0, .07) 76%, transparent 77%, transparent), -o-linear-gradient(left, transparent 24%, rgba(0, 0, 0, .07) 25%, rgba(0, 0, 0, .07) 26%, transparent 27%, transparent 74%, rgba(0, 0, 0, .07) 75%, rgba(0, 0, 0, .07) 76%, transparent 77%, transparent);
+      background-image:       linear-gradient(to top, transparent 24%, rgba(0, 0, 0, .07) 25%, rgba(0, 0, 0, .07) 26%, transparent 27%, transparent 74%, rgba(0, 0, 0, .07) 75%, rgba(0, 0, 0, .07) 76%, transparent 77%, transparent), linear-gradient(to right, transparent 24%, rgba(0, 0, 0, .07) 25%, rgba(0, 0, 0, .07) 26%, transparent 27%, transparent 74%, rgba(0, 0, 0, .07) 75%, rgba(0, 0, 0, .07) 76%, transparent 77%, transparent);
+      height:100%;
+      background-size:10px 10px;
+      margin-bottom: 20px;
+    }
+
+  .uig-menu {
+    background: $grey-highest;
+    position: fixed;
+    top: 0;
+    left: 0;
+    box-shadow: 5px 5px 12px #ccc;
+    width: 150px;
+
+    .uig-menu__header {
+      background: white;
+      text-align: center;
+      padding: 10px;
+    }
+
+    .uig-menu__links {
+
+      .list {
+        margin-bottom: 0;
+      }
+
+      .link {
+        color: white;
+        display: block;
+        padding: 10px;
+
+
+        &:hover {
+          background: $brand-primary;
+          text-decoration: none;
+        }
+      }
+
+    }
+
+
+
+    .logo {
+      fill: $brand-primary;
+      height: 64px;
+      width: 64px;
+
+    }
+  }
+
+
+    @include responsive(toTablet) {
+      .uig-wrap {
+        margin: 0;
+      }
+      .uig-menu {
+        position: static;
+      }
+    }
+
+  .uig-content {
+
+  }
+
+  .uig-footer {
+    padding: 1rem 0;
+  }
+
+  .uig-box {
+    margin-bottom: 2rem;
+    overflow: hidden;
+  }
+
+
+// ui list
+
+.uig-list {
+  margin: 0 0 1rem 2rem;
+  list-style: disc;
+
+}
+
+  .uig__item {
+    margin-bottom: 1rem;
+
+    ul {
+      padding: 1rem 0 0 1rem;
+    }
+  }
+
+    .layout-num {
+      font-weight: bold;
+      color: $brand-primary;
+    }
+
+
+/* ui titles */
+
+.uig-title {
+  line-height: 2rem;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  border-bottom: 3px solid $brand-primary;
+  padding-top: 20px;
+}
+
+.uig-updated {
+  font-size: .8rem;
+  background: $grey-lowest;
+  padding: 1rem;
+  text-align: right;
+  margin-bottom: 0;
+}
+
+
+
+// guide color
+
+.guide-color {
+  padding: 1rem;
+  color: #fff;
+  font-size: 1rem;
+}
+
+  .brand-primary {
+    background: $brand-primary;
+  }
+
+  .grey-medium {
+    background: $grey-medium;
+  }
+
+  .grey-high {
+    background: $grey-high;
+  }
+
+  .grey-highest {
+    background: $grey-highest;
+  }
+
+  .grey-lowest {
+    background: $grey-lowest;
+    color: $grey-medium;
+  }
+
+  .guide-info {
+    background: $info-color;
+  }
+
+  .guide-success {
+    background: $success-color;
+  }
+
+  .guide-alert {
+    background: $alert-bg;
+    color: $alert-color;
+  }
+
+
+.guide-code {
+  display: none;
+  resize: vertical;
+  width: 100%;
+  background: lighten($yellow, 40);
+  padding: 1rem;
+  border: 1px solid #000;
+  font-size: .75rem;
+}
+
+.guide-margin {
+  background: lighten($brand-primary, 50);
+  padding: .2rem;
+}
+
+.guide-font {
+  margin-bottom: 2rem;
+
+  .guide-font__title {
+
+    border-left: 5px solid $brand-primary;
+    color: $grey-medium;
+    margin-bottom: .5rem;
+    line-height: 2rem;
+    font-size: 2rem;
+    padding: .5rem;
+    display: inline-block;
+  }
+}
+
+.show-code {
+  padding: 2px 6px;
+  cursor: pointer;
+  background: $grey-lowest;
+  border: 1px solid $grey-medium;
+  font-weight: bold;
+  font-size: rem(12);
+  display: inline-block;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  margin-left: 15px;
+}
+
+
+pre {
+  border: 1px solid #ccc;
+  margin-bottom: 20px;
+  font-size: rem(12);
+
+}
+
+code {
+}
+
+.guide-link {
+
+}
+
+
+.guide-icons {
+
+  .icon {
+    margin-bottom: 1rem;
+
+
+  }
+
+  .list {
+    margin-bottom: 45px;
+  }
+
+  .list__item {
+    display: inline-block;
+    text-align: center;
+    margin: 0 15px 15px 0;
+    padding: 5px;
+    border: 1px solid white;
+
+    span {
+      display: block;
+      text-align: center;
+    }
+
+    &:hover {
+      border: 1px dotted $grey-medium;
+      background: $grey-lowest;
+      fill: $brand-primary;
+
+    }
+  }
+
+
+  .small {
+    .icon {
+      width: 32px;
+      height: 32px;
+    }
+  }
+
+  .big {
+    .icon {
+      width: 128px;
+      height: 64px;
+    }
+  }
+
+
+
+}

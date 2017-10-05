@@ -1,0 +1,95 @@
+extends includes/_mail-base.pug
+
+block title
+  title  Solicitud enviada
+
+block content  
+
+    include includes/_mail-header.pug
+    
+    tr
+      td(style="padding-top: 24px;")
+         p(style="padding-bottom: 10px;", class="text-content") Hola Javier Gonzalez, <br /> Le comunicamos que ya tiene a su disposición la siguiente solictud:
+
+    tr
+      td(style="padding-top:20px; padding-bottom:20px;")
+        table(style="width:100%; border-top:2px solid #000000;")
+          tr
+            td.detail-box(style="width: 100%;")
+              table(style="width:100%;")
+                tr
+                  td.dt Nº de solicitud
+                  td.dd.request-num
+                    strong H36FN45F6                               
+                tr
+                  td.dt Tipo:
+                  td.dd.request-type Nota Simple
+                tr
+                  td.dt Fecha de creación:
+                  td.dd.request-date 07/01/2016
+                tr
+                  td.dt Información de:
+                  td.dd.request-info  Registro de la Propiedad de Madrid 53. <br/>Propiedad 35805. Sección 5
+                tr
+                  td(colspan='2', style="padding-top: 30px;")
+                    table(style='width: 100%;')
+                      tr
+                        td.request-status-ok
+                          span.request-status
+                            img(src='../../static/img/common/mail/check-w.png', alt='', style='margin-right: 10px; vertical-align: middle')
+                            | Enviada - 08/07/2016
+                      tr
+                        td.content-box
+                          span.label Apellido / Razón social
+                          span.detail Unión de créditos inmobiliarios -uci-sa Establecimiento financiero de crédito
+                      tr
+                        td.content-box
+                          span.label Nif
+                          span.detail A14010342
+                      tr
+                        td.content-box.content-last
+                          p.text-content Consultado el índice Central, <strong>No aparecen</strong> titularidades vigentes a su favor en <strong>Todo el territorio nacional</strong>
+                      tr
+                        td.content-box
+                          span.label Apellido / Razón social
+                          span.detail Unión de créditos inmobiliarios -uci-sa Establecimiento financiero de crédito
+                      tr
+                        td.content-box
+                          span.label Nif
+                          span.detail A14010342
+                      tr
+                        td.content-box
+                          p.text-content Consultado el índice Central, <strong>SÍ aparecen</strong> titularidades vigentes a su favor en los siguientes registros:
+                      tr
+                        td.content-table
+                          table.reg-table
+                            thead
+                              tr
+                                th Registro
+                                th Municipio
+                                th Provincia
+                            tbody
+                              tr
+                                td Armilla
+                                td Ogijares
+                                td Granada
+                              tr
+                                td Ponferrada
+                                td Toreno
+                                td León
+                              tr
+                                td(colspan='3')
+                                  a.link-content(href='#') Solicitar nota simple de este titular
+
+    tr
+      td
+        table.btn-group(style="margin-bottom: 10px;")
+          tr
+            td(width="50%", style="width: 50%; text-align: left", class="fullWidth btn-wrap")
+              a.btn.btn-red(href='#') Ver solicitud                
+                img(src='../../static/img/common/mail/file.png', alt='', width='12', height='15', border='0',style='margin-left: 10px; vertical-align: middle')/
+            td(width="50%", style="width: 50%; text-align: left", class="fullWidth btn-wrap")
+              a.btn.btn-white(href='#') Descargar pdf                
+                img(src='../../static/img/common/mail/arrow-down.png', alt='', width='12', height='12', border='0',style='margin-left: 10px; vertical-align: middle')/
+
+    include includes/_mail-footer.pug

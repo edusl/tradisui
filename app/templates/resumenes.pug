@@ -1,0 +1,137 @@
+extends includes/_tpl-base.pug
+
+block title
+  title Aviso legal
+
+block body
+
+  - var headerMenu = true
+  - var footer = 'footer-online'
+
+  body.tpl-col33
+
+    .main-global
+
+      include includes/_tpl-header.pug
+
+      main.main-content
+
+        //- include includes/_tpl-topbar.pug
+
+        .main-content__wrap
+
+          h1.title-page.title-page--noline Resúmenes
+
+          .panel-row
+            .panel-col
+
+
+              .resume-box
+                .resume-box__header
+                  h2.resume-title Resumen
+                  span.resume-note Impuestos y retenciones no incluidos
+                .resume-box__content
+                  table.table.table--resume
+                    thead.table-head.invisible
+                      tr
+                        th
+                          span Concepto
+                        th
+                          span Cantidad/Coste
+                    tbody.table-body
+                      tr
+                        td
+                          strong Nota simple
+                          .resume__info
+                            p
+                              strong Titular:
+                              | A39024415, UNIÓN CREDITOS INMOBILIARIOS S.A
+                            p
+                              strong Buscar en:
+                            ul.list
+                              li.list__item Registro de Armilla. Ogijares. Granada
+                              li.list__item Registro de Ponferrada 2. Ogijares. Granada
+                        td
+                          strong
+                            span.price 9,02
+                            |€
+                      tr
+                        td Cantidad máxima
+                          a.link.link--primary Modificar
+                        td x10
+                      tr
+                        td.resume-add(colspan="2")
+                          .add.cb-a4
+                            .add__concept Traducción
+                              a.link.add-remove(data-remove="cb-a4") Quitar
+
+                            .add__amount
+                              strong
+                                span.price 30
+                                 | €
+                      tr.resume-final
+                        td(colspan='2')
+                          .resume-final--wrap
+                            span Horarios
+                            span.success Dispensado
+                              svg.icon
+                                use(xlink:href='../static/img/common/svg/svg-symbols.svg#check-circle')
+
+              .gen-msg.gen-msg--info.col-a-4
+                p Las solicitudes sin datos exactos podrán ser devueltas por lo que se debe completar la mayor información posible.
+                svg.gen-msg__icon
+                  use(xlink:href='../static/img/common/svg/svg-symbols.svg#info-circle')
+
+
+              .resume-box.resume-box--dark
+                .resume-box__header
+                  h2.resume-title Resumen
+                  span.resume-note Impuestos y retenciones no incluidos
+                .resume-box__content
+                  table.table.table--resume
+                    thead.table-head.invisible
+                      tr
+                        th
+                          span Concepto
+                        th
+                          span Cantidad/Coste
+                    tbody.table-body
+                      tr
+                        td
+                          strong Nota simple
+                          .resume__info
+                            p
+                              strong Titular:
+                              | A39024415, UNIÓN CREDITOS INMOBILIARIOS S.A
+                            p
+                              strong Buscar en:
+                            ul.list
+                              li.list__item Registro de Armilla. Ogijares. Granada
+                              li.list__item Registro de Ponferrada 2. Ogijares. Granada
+                        td
+                          strong
+                            span.price 9,02
+                            | €
+                      tr
+                        td Cantidad máxima
+                          a.link.link--primary Modificar
+                        td x10
+                      tr
+                        td.resume-add(colspan="2")
+                          .add.cb-a4
+                            .add__concept Traducción
+                              a.link.add-remove(data-remove="cb-a4") Quitar
+
+                            .add__amount
+                              strong
+                                span.price 30
+                                 | €
+                      tr.resume-final
+                        td(colspan='2')
+                          .resume-final--wrap
+                            spanre.sume-final--line Coste máximo estimado
+                            span.price-total 195,1€
+
+
+
+      include includes/_tpl-footer.pug

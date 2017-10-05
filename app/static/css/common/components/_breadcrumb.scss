@@ -1,0 +1,40 @@
+/*
+Breadcrumbs
+Indicate the current page's location within a navigational hierarchy.
+Markup:
+<ol class="breadcrumb">
+  <li><a href="#">Home</a></li>
+  <li><a href="#">Library</a></li>
+  <li class="active">Data</li>
+</ol>
+Weight: 8
+Styleguide components.breadcrumb
+*/
+
+
+.breadcrumb {}
+
+    .breadcrumb__menu__item {
+        display: inline;
+
+        &:first-child {
+            margin-left: 0;
+        }
+
+        &:last-child {
+            margin-right: 0;
+
+            &:after {
+                content: '';
+            }
+
+        }
+    }
+
+        .breadcrumb__menu__link {
+            display: inline-block;
+        }
+
+        .breadcrumb__icon {
+            display: inline-block;
+        }

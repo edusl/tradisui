@@ -1,0 +1,300 @@
+extends includes/_tpl-base.pug
+
+block title
+  title Encuentre la propiedad
+
+block body
+
+  - var headerMenu = false
+
+  - var topbar = 'topbar--dark'
+  - var topbarTitle = 'Solicitud de nota simple'
+  - var topbarLink = '¿Qué incluye?'
+  - var topbarSteps = [{num: "1", state: "list__item--active"}, {num: "2", state: ""}, {num: "3", state: ""}]
+
+  - var footer = 'footer'
+
+  body.tpl-col42.tpl-resume
+
+    .main-global
+
+      include includes/_tpl-header.pug
+
+
+      main.main-content
+
+        include includes/_tpl-topbar.pug
+
+        .main-content__wrap
+
+          h1.title-page Identificación
+
+
+          .panel-row
+            .panel-col.panel-col--left
+
+              .text-box
+                h2.title-mod Datos de identificación
+
+                .rb-group.rb-group--horizontal.rb-group--line
+                  fieldset
+                    legend ¿Es usted empresario o profesional actuando como tal?
+                    .rb-option.grid-a-12.grid-c-6
+                      label.rb-label(for='radioh1a')
+                        input#radioh1a.invisible.radiobutton(type='radio',name='radioha',data-content='radioha--1')
+                        span.rb-pick
+                        span.rb-text Si
+                        span.rb-line
+
+                    .rb-option.grid-a-12.grid-c-6
+                      label.rb-label(for='radioh2a')
+                        input#radioh2a.invisible.radiobutton(type='radio',name='radioha')
+                        span.rb-pick
+                        span.rb-text No
+                        span.rb-line
+
+                .form-panel.radioh.radioha--1.hide
+                  .rb-group.rb-group--horizontal.rb-group--line
+                    fieldset
+                      legend Seleccione
+                      .rb-option.grid-a-12.grid-c-6
+                        label.rb-label(for='radioh1b')
+                          input#radioh1b.invisible.radiobutton(type='radio',name='radiohb',data-content='radiohb--1')
+                          span.rb-pick
+                          span.rb-text Empresa
+                          span.rb-line
+
+                      .rb-option.grid-a-12.grid-c-6
+                        label.rb-label(for='radioh2b')
+                          input#radioh2b.invisible.radiobutton(type='radio',name='radiohb',data-content='radiohb--1')
+                          span.rb-pick
+                          span.rb-text Profesional
+                          span.rb-line
+
+                  .form-panel.radioh.radiohb--1.hide
+
+                    .rb-group.rb-group--horizontal.rb-group--line
+                      fieldset
+                        legend ¿Es usted empresario o profesional domiciliado o con establecimiento permanente en España?
+                        .rb-option.grid-a-12.grid-c-6
+                          label.rb-label(for='radioh1c')
+                            input#radioh1c.invisible.radiobutton(type='radio',name='radiohc')
+                            span.rb-pick
+                            span.rb-text Si
+                            span.rb-line
+
+                        .rb-option.grid-a-12.grid-c-6
+                          label.rb-label(for='radioh2c')
+                            input#radioh2c.invisible.radiobutton(type='radio',name='radiohc',data-content='radiohc--1')
+                            span.rb-pick
+                            span.rb-text No
+                            span.rb-line
+
+                    .form-panel.radioh.radiohc--1.hide
+                      .rb-group.rb-group--horizontal.rb-group--line
+                        fieldset
+                          legend ¿Es usted operador intracomunitario con número de identificación individual a efectos del IVA (VIES)
+                          .rb-option.grid-a-12.grid-c-6
+                            label.rb-label(for='radioh1d')
+                              input#radioh1d.invisible.radiobutton(type='radio',name='radiohd',data-content='radiohd--1')
+                              span.rb-pick
+                              span.rb-text Empresa
+                              span.rb-line
+
+                          .rb-option.grid-a-12.grid-c-6
+                            label.rb-label(for='radioh2d')
+                              input#radioh2d.invisible.radiobutton(type='radio',name='radiohd',data-content='radiohd--2')
+                              span.rb-pick
+                              span.rb-text Profesional
+                              span.rb-line
+
+                      .form-panel.radioh.radiohd--1.hide
+                        .row
+                          .form-box
+                            label.label.pull-left(for='facCP') Identificador fiscal (VIES)
+                            a.modal-lateral-open(data-content="modal01",href="#modal01" title="Mostrar ayuda")
+                              svg.icon.icon--label.primary
+                                use(xlink:href='../static/img/common/svg/svg-symbols.svg#help-circle')
+                            input.input#facCP(type='text',placeholder='Introduzca el código VIES')
+                            .form-text Si es Operador intracomunitario indíquenos el número de identificación fiscal a efectos del IVA .
+
+                          .form-msg.form-msg--error
+                            p No se ha completado la validación de VIES en el Web Service de la CE. Si pulsa Aceptar se le cargará el impuesto correspondiente. No obstante, si usted puede acreditar que tiene en su país el carácter de empresario o profesional, puede solicitar la devolución del impuesto cargado, mediante escrito en el que manifieste y acredite su condición de tal.
+                            .form-msg__border
+
+                      .form-panel.radioh.radiohd--2.hide
+                        .row
+                          .form-msg.form-msg--info
+                            p Si usted puede acreditar que tiene en su país el carácter de empresario o profesional, puede solicitar la devolución del impuesto cargado, mediante escrito en el que manifieste y acredite su condición de tal.
+                            .form-msg__border
+
+
+
+              .text-box
+                h2.title-mod Datos de titular
+
+                .row
+                  .form-box.grid-a-12.grid-c-6
+                    label.label(for='dt-inp01') Nombre
+                    input.input#dt-inp01(type='text',placeholder='Introduzca el nombre', autofocus)
+                .row
+                  .form-box.grid-a-12.grid-c-6
+                    label.label(for='dt-inp02') Primer apellido
+                    input.input#dt-inp02(type='text',placeholder='Introduzca el primer apellido')
+                .row
+                  .form-box.grid-a-12.grid-c-6
+                    label.label(for='dt-inp03') Segundo apellido
+                      span.label--optional (opcional)
+                    input.input#dt-inp03(type='text',placeholder='Introduzca el segundo apellido')
+                .row
+                  .form-box.grid-a-12.grid-c-6
+                    label.label(for='dt-inp04') NIF/NIE/Pasaporte
+                    input.input#dt-inp04(type='text',placeholder='Introduzca el NIF/NIE/Pasaporte')
+                .row
+                  .form-box.grid-a-12.grid-c-6
+                    label.label(for='dt-inp05') Email de la cuenta
+                    input.input#dt-inp05(type='text',placeholder='Introduzca el email de la cuenta')
+                    span.form-text Debe ser un email activo
+                .row
+                  .form-box.grid-a-12.grid-c-6
+                    label.label(for='dt-inp06') Confirmación de email
+                    input.input#dt-inp06(type='text',placeholder='Confirme el email')
+                .row
+                  .form-box.grid-a-12.grid-c-6
+                    label.label(for='dt-inp07') Télefono
+                      span.label--optional (opcional)
+                    input.input#dt-inp07(type='text',placeholder='Introduzca un teléfono')
+                    span.form-text No lo usaremos para fines comerciales
+
+
+              .text-box
+                h2.title-mod Dirección de facturación
+
+
+                .cb-group
+                  .cb-option
+                    label.cb-label(for='cbMTit')
+                      input#cbMTit.invisible.checkbox(type='checkbox', data-content='panel--cb1', checked='checked')
+                      span.cb-pick
+                      span.cb-text Mismo titular de facturación que solicitaste
+
+                  .form-panel.panel--cb1.hide
+
+                    .row
+                      .form-box.grid-a-12.grid-c-6
+                        label.label(for='facNombre') Nombre
+                        input.input#facNombre(type='text',placeholder='Introduzca el nombre', autofocus)
+                    .row
+                      .form-box.grid-a-12.grid-c-6
+                        label.label(for='facApellido') Primer apellido
+                        input.input#facApellido(type='text',placeholder='Introduzca el primer apellido')
+                    .row
+                      .form-box.grid-a-12.grid-c-6
+                        label.label(for='facNifNie') NIF/NIE/Pasaporte
+                        input.input#facNifNie(type='text',placeholder='Introduzca el NIF/NIE/Pasaporte')
+
+                .row
+                  .form-box.grid-a-12.grid-c-6
+                    label.label País de residencia
+                    .form-ico.form-ico--select
+                      select#select.select
+                        option España
+                        option Francia
+                        option Alemania
+                      svg.icon
+                        use(xlink:href='../static/img/common/svg/svg-symbols.svg#arrow-down')
+
+                .row
+                  .form-box.grid-a-12.grid-c-6
+                    label.label(for='facDir') Dirección completa
+                    textarea.textarea#facDir(name='textarea',rows=3, placeholder='Introduzca la dirección completa y número')
+
+                .row
+                  .form-box.grid-a-12.grid-c-3
+                    label.label(for='facCP') CP
+                    input.input#facCP(type='text',placeholder='Código postal')
+                    .form-text 5 números
+
+                .row
+                  .form-box.grid-a-12.grid-c-6
+                    label.label(for='facProv') Provincia
+                    .form-ico
+                      input.input.comu#facProv(type='text',placeholder='Seleccione o introduzca la provincia')
+                      svg.icon(viewBox='0 0 100 100')
+                        use(xlink:href='../static/img/common/svg/svg-symbols.svg#autocomplete')
+                      input.invisible#prov-id(type='text')
+
+                .row
+                  .form-box.grid-a-12.grid-c-6
+                    label.label(for='facMun') Municipio
+                    .form-ico
+                      input.input#facMun(type='text',placeholder='Seleccione o introduzca municipio')
+                      svg.icon(viewBox='0 0 100 100')
+                        use(xlink:href='../static/img/common/svg/svg-symbols.svg#autocomplete')
+                      input.invisible#muni-id(type='text')
+
+                .cb-option
+                  label.cb-label(for='cbIRPF')
+                    input#cbIRPF.invisible.checkbox(type='checkbox')
+                    span.cb-pick
+                    span.cb-text Practicar retención IRPF
+
+                h3.title-text Condiciones del servicio
+                 span.label--optional  (Obligatorio)
+
+                .cb-option
+                  label.cb-label(for='cbCon')
+                    input#cbCon.invisible.checkbox(type='checkbox')
+                    span.cb-pick
+                    span.cb-text Acepto las
+                      a.link.link--primary.modal-open.link--terms(href="#legal-terms", data-content="legal-terms")  condiciones del servicio
+                      |  y la
+                      a.link.link--primary.modal-open.link--privacy(href="#legal-privacy", data-content="legal-privacy")  Política de privacidad.
+
+
+              .form-action
+                button.btn.btn--primary(type='submit') Continuar
+
+
+            .panel-col.panel-col--right
+
+              .resume-box.resume-box--dark.resume-box--top
+                .resume-box__header
+                  h2.resume-title Resumen
+                  span.resume-note Impuestos y retenciones no incluidos
+                .resume-box__content
+                  table.table.table--resume
+                    thead.table-head.invisible
+                      tr
+                        th
+                          span Concepto
+                        th
+                          span Cantidad/Coste
+                    tbody.table-body
+                      tr
+                        td
+                          strong Nota simple
+                          .resume__info
+                            p Registro de la Propiedad de Madrid 52 <br/>
+                              | Propiedad 35805, Sección 5.
+                              a.link.link--primary Modificar
+
+                        td
+                          strong
+                            span.resume__amount 9,02
+                            | €
+
+      .hide
+        .modal-inc
+          h1.modal-title
+            svg.icon.info
+              use(xlink:href='../static/img/common/svg/svg-symbols.svg#help-circle')
+            | ¿Qué incluye?
+          .modal-text
+            p Seleccione el número máximo de fincas sobre las que desea recibir información.
+            p Si a nombre del titular seleccionado aparecieren inscritas varias fincas o derechos, se generaran varias notas simples. Se le cobrará en base al número exacto de fincas encontradas.
+            p
+              a.link.link--primary Más información
+
+
+      include includes/_tpl-footer.pug

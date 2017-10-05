@@ -1,0 +1,99 @@
+
+
+header.main-header
+
+  .main-header__wrap
+
+        .menu
+          .menu__sec.menu__menu
+
+            if headerMenu
+
+              // menu movil
+              a.link.link--mobile.link--menu-web(href="#")
+                .menu-action.menu-action--menu
+                  span
+                  span
+                  span
+                  span
+
+              .menu__menu--nav
+                nav
+                  ul.list
+                    li.list__item.list__item--active
+                      a.link(href="portada-propiedad.html") Registro de la propiedad
+                    li.list__item
+                      a.link(href="#") Registro mercantil
+                    li.list__item
+                      a.link(href="#") Registro de bienes muebles
+                    li.list__item
+                      a.link(href="#") Servicios & Aplicaciones
+                    li.list__item
+                      a.link(href="aviso-legal.html") Ayuda y soporte
+
+          .menu__sec.menu__logo
+
+            //- logo movil
+            a.link.link--mobile(href="portada-propiedad.html")
+              svg.icon.icon--registradores
+                use(xlink:href='../static/img/common/svg/svg-symbols.svg#logo-registradores-center')
+
+            //- logo dt
+            a.link.link--desktop(href="portada-propiedad.html")
+              //- img(xlink:href='../static/img/common/svg/svg-symbols.svg#logo-registradores')
+              svg.icon.icon--registradores
+                use(xlink:href='../static/img/common/svg/svg-symbols.svg#logo-registradores')
+
+
+
+          if userOnline == undefined
+
+          else if userOnline != undefined
+            .menu__sec.menu__user
+
+
+              if !userOnline
+                //- mobile user logout
+                a.link.link--mobile(href="#")
+                  svg.icon
+                    use(xlink:href='../static/img/common/svg/svg-symbols.svg#user')
+
+                //- desktop user logout
+                a.link.link--desktop(href="login-generico.html")
+                  span ÁREA <span>DE USUARIO</span>
+                  svg.icon.icon--login.rotate-180
+                      use(xlink:href='../static/img/common/svg/svg-symbols.svg#arrow-filled')
+              else
+                //- mobile user logged
+                a.link.link--mobile.link--user-web(href="#")
+                  svg.icon
+                    use(xlink:href='../static/img/common/svg/svg-symbols.svg#user-menu')
+                //-  desktop user logged
+                span.link.link--desktop
+                  span
+                    a.link.link--name Javier Martin
+                    a.link.link--logout(href="portada-propiedad.html") Cerrar sesión
+  if menuCol
+    .menu-user__wrap
+      .menu-user__cont
+        .menu__user--nav
+
+          .menu-user__head
+            h2.username Javier González González de Miranda
+            //- span.local #Oficina de San Sebastián
+
+          nav
+            ul.list
+
+              li(class='list__item list__item--active list__item--' + user_item1)
+                a.link(href="login-estado.html") Solicitudes realizadas
+              li(class='list__item list__item--' + user_item2)
+                a.link(href="#") Notificaciones
+              li(class='list__item list__item--' + user_item3)
+                a.link(href="#") Pagos y facturas
+              li(class='list__item list__item--' + user_item4)
+                a.link(href="#") Configuración
+              li.link--mobile(class='list__item capitalize list__item--' + user_item6)
+                a.link(href="login-generico.html") Cerrar sesión
+                  svg.icon
+                    use(xlink:href='../static/img/common/svg/svg-symbols.svg#arrow-simple')

@@ -1,0 +1,277 @@
+/* Pages */
+// login
+
+.tpl-login {
+    .title-mod {
+        font-size: rem(25);
+        margin-bottom: 30px;
+    }
+
+    .form-remember {
+        .link {
+            margin-bottom: 15px;
+            display: block;
+            text-align: right;
+        }
+    }
+
+    .panel--dark {
+        padding: 40px 25px 40px;
+        margin-bottom: 30px;
+
+        .btn--fluid {
+            font-size: rem(15);
+        }
+    }
+
+    .panel--flatdark {
+        padding: 20px 35px;
+
+        .btn {
+            justify-content: center;
+
+            .icon {
+                margin-left: 10px;
+            }
+        }
+    }
+
+    .cb-option {
+        float: left;
+    }
+
+    .cb-label {
+        margin-bottom: 22px;
+    }
+}
+@include responsive(tablet) {
+    .tpl-login {
+
+        .main-content {
+          padding: 20px 0;
+        }
+
+        .panel--noaccount {
+          .panel-box {
+            &:first-child {
+            padding-right: 15px;
+            }
+          }
+        }
+        .panel--dark {
+            padding: 50px 45px 50px;
+        }
+
+        .panel--flatdark {
+            padding: 20px 45px;
+        }
+    }
+}
+@include responsive(desktop) {
+    .tpl-login {
+        .panel--dark,
+        .panel--flatdark {
+            margin-right: 8rem;
+        }
+
+        .panel-col--right {
+            .panel--filled {
+                padding-left: 0;
+                // width: 60%;
+            }
+        }
+
+        .form-remember {
+            fieldset {
+                float: left;
+                width: 50%;
+                margin-bottom: 0;
+            }
+
+            .link {
+                float: right;
+                width: 50%;
+                text-align: right;
+            }
+        }
+
+        .title-text {
+            font-size: rem(16);
+        }
+    }
+}
+// busqueda propiedad
+
+.tpl-bp {
+    .form-content {}
+}
+// grey background
+
+.tpl-prewrap {
+
+    .main-content__prewrap {
+        background: $grey-lowest;
+    }
+
+    .main-content {
+        // padding-bottom: 10rem;
+        margin-bottom: 10px;
+    }
+
+    &.tpl-note .title-page {
+        margin-bottom: 0;
+    }
+}
+// template two column
+@include responsive(desktop) {
+    .panel-col {
+        float: left;
+    }
+
+    .tpl-col42 {
+        .panel-col--left {
+            width: 66.666666%;
+            float: left;
+            padding-right: $gutter;
+        }
+
+        &.tpl-p0 {
+          .panel-col--left {
+            padding-right: 0;
+          }
+        }
+
+        .panel-col--right {
+            width: 33.333333%;
+            float: right;
+        }
+
+        &.tpl-resume {
+            .panel-col--right {
+                // http://demo.paradigmadigital.com/registradores/diseno/ro-s-017_solicitud_notasimple_multiple-localizacio.png
+                // margin-top: - rem(22);
+            }
+        }
+
+        .panel-group--2col {
+            .panel {
+                &:nth-child(even) {
+                    //  width: 50% - 7px;
+                }
+
+                &:nth-child(odd) {
+                    //  width: 50% + 7px;
+                }
+            }
+        }
+    }
+}
+// template two column
+@include responsive(desktop) {
+    .tpl-col33 {
+        .panel-col {
+            width: 50%;
+            float: left;
+        }
+    }
+}
+@include responsive(largedesktop) {
+    .mini-icon {
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+}
+@include responsive(desktop) {
+    .action-group--icon {
+        display: block;
+    }
+}
+
+.panel--dropdown {
+    .title {
+        .link {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 1.466666rem;
+            cursor: default;
+            text-decoration: none;
+
+            .icon {
+                width: rem(32);
+                height: rem(32);
+                transition: all $transition-duration ease-in-out;
+            }
+        }
+
+        .list__item {
+            margin-bottom: 1rem;
+        }
+    }
+}
+// menu right
+
+.tpl-colmenu {
+    .panel-col--right {}
+
+    .panel-col--left {}
+
+    .main-content {
+        margin-top: -15px;
+    }
+
+    .menu__userlist {
+        margin-top: 0;
+    }
+}
+@include responsive(desktop) {
+    .tpl-colmenu {
+        .panel-col--right {
+            float: left;
+            width: 16.6%;
+            //margin-top: -15px;
+        }
+
+        .panel-col--left {
+            float: left;
+            width: 83.4%;
+            padding-right: 15px;
+        }
+    }
+}
+// page menu right
+@include responsive(desktop) {
+    .pg-menu-r {
+        .sec-left {
+            float: left;
+            width: 66%;
+            padding-right: 1rem;
+        }
+
+        .sec-right {
+            float: right;
+            width: 33%;
+        }
+    }
+}
+// detalle nota
+
+.tpl-note {
+    .title-page {
+        margin-bottom: 25px;
+    }
+
+    .col-detail {
+        width: 83.333333%;
+        padding-right: 15px;
+        float: left;
+    }
+
+    .col-menu {
+        width: 16.666666%;
+        float: left;
+    }
+}

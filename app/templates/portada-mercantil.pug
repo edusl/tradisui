@@ -1,0 +1,184 @@
+extends includes/_tpl-base.pug
+
+block title
+  title Registro de la propiedad
+
+block body
+  - var headerMenu = true
+  - var userOnline = false
+  - var menuLinks = true
+  - var menu = 'menu-useronline4'
+  - var menu_item1 = 'active'
+  - var footer = 'footer-online'
+
+  body.tpl-col42
+
+    .main-global
+
+      include includes/_tpl-header.pug
+
+      main.main-content
+
+        .main-content__wrap.mercantil
+
+              h1.title-section Registro Mercantil
+
+              .panel-row
+                  .panel-col.panel-col--right
+                      .panel.panel--dark.panel--dropdown.no-gutter
+                          p.over-title Profesionales
+                          h2.title-mod.title
+                            span.link.link--primary
+                              span Solicitudes y trámites
+                              svg.icon.rotate-270
+                                use(xlink:href='../static/img/common/svg/svg-symbols.svg#arrow-circle')
+
+                          p.subTit Información registral
+
+                          ul.list.list--secondary
+                            li.list__item
+                              a.link(href='#') Información mercantil de una sociedad
+                            li.list__item
+                              a.link(href='#') Depositos de cuentas
+                            li.list__item
+                              a.link(href='#') Estatutos sociales
+                            li.list__item
+                              a.link(href='#') Localizar sociedades de un Representante
+                            li.list__item
+                              a.link(href='#') Busqueda institucional.
+                            li.list__item
+                              a.link(href='#') Alertas de seguimiento
+
+                          p.subTit Certificaciones
+
+                          ul.list.list--secondary
+                            li.list__item
+                              a.link(href='#') Certificación de vigencia y cargo
+                            li.list__item
+                              a.link(href='#') Certificación de cargo
+                            li.list__item
+                              a.link(href='#') Certificación para la emisión de Certificado
+
+                      .panel
+                        .span.panel-line.panel-line--min
+                        h3.h6 Comprueba el estado de tu Solicitud
+                        p Si ha realizado una solicitud y no tiene cuenta de usuario,
+                            a.link.link--primary(href='#') acceda con sus datos de solicitud.
+
+                  .panel-col.panel-col--left
+                      .panel.panel--top
+
+                          h2.title-submod Encuentra información de una sociedad
+                          p Podrás pedir información mercantil y certificaciones.
+
+                          .form-box
+                            .input-btn
+                              input.input(type="text", placeholder="¿Que desea buscar?")
+                              a.btn.btn--primary.btn--input.btn-search Buscar
+                                svg.icon
+                                  use(xlink:href='../static/img/common/svg/svg-symbols.svg#search') 
+
+
+                          a.link.link--primary.gutter--right(href='#') Búsqueda internacional
+                          a.link.link--primary(href='#') Sociedades en situación concursal
+
+
+                      .panel-group.panel-group--2col
+                          .panel
+                              h2.title-submod Buscar sociedades de un representante
+
+                              p Encuentra todas las sociedades en las que una persona figura como administrador, apoderado o con un determinado cargo.
+
+                              .panel__footer
+                                  .action-group.action-group--icon
+                                      a.btn.btn--secondary.btn--small(href='#') Encontrar sus sociedades
+                                      a.link.link--primary(href='#') Más información
+
+                          .panel
+                              h2.title-submod Todos los representantes de una sociedad
+
+                              p Encuentre todos los representantes de una misma sociedad
+
+                              .panel__footer
+                                  .action-group.action-group--icon
+                                      a.btn.btn--secondary.btn--small(href='#') Solicitar Representantes
+                                      a.link.link--primary(href='#') Más información
+
+                                  //-.mini-icon
+                                    svg.icon
+                                      use(xlink:href='../static/img/common/svg/svg-symbols.svg#shield')
+                                    svg.icon
+                                      use(xlink:href='../static/img/common/svg/svg-symbols.svg#user')
+
+                          .panel
+                              h2.title-submod Presentar Cuentas
+
+                              p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.
+
+                              .panel__footer
+                                  .action-group.action-group--icon
+                                      a.btn.btn--secondary.btn--small(href='#') Presentar cuentas
+                                      a.link.link--primary(href='#') Más información
+
+
+                          .panel
+                              h2.title-submod Presentar Libros
+
+                              p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.
+
+                              .panel__footer
+                                  .action-group.action-group--icon
+                                      a.btn.btn--secondary.btn--small(href='#') Presentar libros
+                                      a.link.link--primary(href='#') Más información
+
+
+
+              .panel-row
+                  .panel-col.panel-col--left
+                      .panel.panel--top
+                          h2.title-mod ¿Qué necesita?
+                          ul.list.list--primary
+                              li.list__item
+                                  a.link(href='#') ¿Cómo puedo conocer todos los representantes sociales de una sociedad?
+                              li.list__item
+                                  a.link(href='#') ¿Puedo verificar si una persona está como representante en una sociedad o en varias?
+                              li.list__item
+                                  a.link(href='#') Justificar que no tengo propiedades para optar a un inmueble de protección oficial.
+                              li.list__item
+                                  a.link(href='#') Cambiar de propietario por fallecimiento de un familiar.
+                              li.list__item
+                                  a.link(href='#') He terminado de pagar la hipoteca y quiero eliminar las cargas de mi propiedad.
+
+
+                  .panel-col.panel-col--right
+                      .panel.panel--top
+                          h2.title-mod El Registro Mercantil
+                          ul.list.list--primary
+                              li.list__item
+                                  a.link(href='#') Localice un Registro Mercantil
+                              li.list__item
+                                  a.link(href='#') Conozca más sobre este Registro
+                              li.list__item
+                                  a.link(href='#') Tablón del Registro
+
+                      .panel
+                          span.panel-line
+
+                          h3.title-mod ¿Dudas?
+
+                          span.fs-16
+                              strong 91 270 16 99
+
+                          ul.list.small
+                              li.list__item
+                                  a.link.link--primary(href='#') Contacte con nosotros
+                              li.list__item
+                                  a.link.link--primary(href='#') Guía de ayuda
+                              li.list__item
+                                  a.link.link--primary(href='#') Preguntas frecuentes
+
+
+
+
+
+      include includes/_tpl-footer.pug

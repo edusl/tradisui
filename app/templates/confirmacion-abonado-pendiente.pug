@@ -1,0 +1,37 @@
+extends includes/_tpl-base.pug
+
+block title
+  title Verificación de email
+
+block body
+
+  - var headerMenu = false
+  - var footer = 'footer'
+
+
+  body
+
+    .main-global
+
+      include includes/_tpl-header.pug
+
+
+      main.main-content
+
+
+        .main-content__wrap
+
+          .confirm-head
+
+            h1.title-confirm.primary Estamos tramitando los datos de su cuenta
+
+            .confirm-head__text
+              p Hemos recibido la información correctamente. En breve le comunicaremos el estado de su cuenta.
+
+            p
+              a.link.link--primary.link--icon(href='#')
+                span Continuar
+                svg.icon.rotate-180
+                  use(xlink:href='../static/img/common/svg/svg-symbols.svg#arrow-circle')
+
+      include includes/_tpl-footer.pug

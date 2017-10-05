@@ -1,0 +1,93 @@
+extends includes/_tpl-base.pug
+
+block title
+  title Solicitantes
+
+block body
+
+  - var headerMenu = true
+  - var menuLinks = true
+  - var userOnline = true
+  - var menuCol = true
+  - var user_item1 = 'active'
+  - var footer = 'footer'
+
+
+  body
+
+    .main-global
+
+      include includes/_tpl-header.pug
+
+      main.main-content
+
+        .main-content__wrap
+
+          h1.title-page.title-page--noline Configuración
+
+
+          ul.list.list--areas
+
+            li.list__item.list__item--area
+              svg.icon
+                  use(xlink:href='../static/img/common/svg/svg-symbols.svg#user')
+              .list__text
+                strong.title Datos del Titular
+                strong.title Javier González González
+                .paragraph-box
+                  p 10884425R
+                  p 985 33 44 00
+                a.link.link--primary Gestionar Datos básicos
+
+            li.list__item.list__item--area
+              svg.icon
+                  use(xlink:href='../static/img/common/svg/svg-symbols.svg#sec-company')
+              .list__text
+                strong.title Datos de la entidad
+                strong.title Gaudium Asesores
+                .paragraph-box
+                  p A1401032
+                a.link.link--primary Gestionar Datos básicos
+
+            li.list__item.list__item--area
+              svg.icon
+                  use(xlink:href='../static/img/common/svg/svg-symbols.svg#sec-payment')
+              .list__text
+                strong.title Datos del facturación
+                .paragraph-box
+                  ul.list
+                    li.list__item
+                      a.link.link--primary Gestionar direcciones de facturación
+                    li.list__item
+                      a.link.link--primary Gestionar departamentos
+
+            li.list__item.list__item--area
+              svg.icon
+                  use(xlink:href='../static/img/common/svg/svg-symbols.svg#sec-key')
+              .list__text
+                strong.title Datos de Acceso
+                a.link.link--primary Modificar contraseña
+
+            li.list__item.list__item--area
+              svg.icon
+                  use(xlink:href='../static/img/common/svg/svg-symbols.svg#sec-card')
+              .list__text
+                strong.title Datos de Pago
+                a.link.link--primary Gestionar datos de pago
+
+            li.list__item.list__item--area
+              svg.icon
+                  use(xlink:href='../static/img/common/svg/svg-symbols.svg#user')
+              .list__text
+                strong.title Administración de Usuarios
+                a.link.link--primary Gestionar usuarios
+
+            li.list__item.list__item--area
+              svg.icon
+                  use(xlink:href='../static/img/common/svg/svg-symbols.svg#sec-apply')
+              .list__text
+                strong.title Solicitantes
+                a.link.link--primary Gestionar solicitantes
+
+
+      include includes/_tpl-footer.pug

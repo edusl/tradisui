@@ -1,0 +1,75 @@
+extends includes/_tpl-base.pug
+
+block title
+  title Preficha Propiedad
+
+block body
+
+  - var headerMenu = true
+
+  - var topbar = true
+  - var topbarTitle = 'Volver'
+
+  - var footer = 'footer'
+
+  body
+
+    .main-global
+
+      include includes/_tpl-header.pug
+
+      main.main-content
+
+        include includes/_tpl-topbar.pug
+
+        .main-content__wrap
+
+          h1.title-page Ayuda
+
+
+          .panel-row
+            .panel--col
+              h2.title-mod Contacta con el colegio de registradores
+
+              .panel-group.panel-group--3col.panel-group--sub
+                .panel
+                    h3.title-submod ¿Dudas o incidencias?
+
+                    p Si tienes alguna duda, consulta o incidencia contacta con nosotros y te responderemos lo antes posible.
+
+                    .panel__footer
+                        a.btn.btn--secondary.btn--medium Contactar con nosotros
+
+
+                .panel
+                    h3.title-submod ¿Necesitas soporte urgente?
+
+                    p Para incidencias con el servicio o cuestiones urgentes nos puedes llamar al siguiente teléfono:
+
+                    .panel__footer
+
+                      .phone-support
+                        svg.icon(viewBox='0 0 48 48')
+                          use(xlink:href='../static/img/common/svg/svg-symbols.svg#sec-phone')
+                        span.phone-support__text
+                          strong 91 270 16 99
+                          p De Lunes a Viernes <br />De 9:00 a 20:00
+
+
+
+                .panel
+                    h3.title-submod Nos puedes encontrar en:
+
+                    p Calle Diego de León, 21. <br />28006 Madrid (MADRID)
+
+                    .panel__footer
+                        a.btn.btn--secondary.btn--medium Localizar en el mapa
+
+
+          .panel-row
+            .panel--col
+              h2.title-mod Contacta con un registro
+
+
+
+      include includes/_tpl-footer.pug

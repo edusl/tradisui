@@ -1,0 +1,198 @@
+extends includes/_tpl-base.pug
+
+block title
+  title Encuentre la propiedad
+
+block body
+
+  - var headerMenu = false
+
+  - var topbar = 'topbar--dark'
+  - var topbarTitle = 'Solicitud de nota de localizacion'
+  - var topbarLink = '¿Qué incluye?'
+  - var topbarSteps = [{num: "1", state: "list__item--active"}, {num: "2", state: ""}, {num: "3", state: ""}, {num: "4", state: ""}]
+
+  - var footer = 'footer'
+
+
+  body.tpl-col42.tpl-resume
+
+    .main-global
+
+      include includes/_tpl-header.pug
+
+      main.main-content
+
+        include includes/_tpl-topbar.pug
+
+        .main-content__wrap
+
+          h1.title-page Configure su búsqueda
+
+          .gen-msg.gen-msg--btn.gen-msg--info.mt--15
+            .gen-msg__text
+              p Está solicitando varias notas simples de fincas de un mismo titular. <br> Por privacidad no podemos ofrecerle la cantidad total de fincas que tiene, solamente los registros donde se encuentran.
+            .gen-msg__btn.close-msg
+              a.btn.btn--msg(href='#') Entendido
+            svg.gen-msg__icon
+              use(xlink:href='../static/img/common/svg/svg-symbols.svg#info-circle')
+
+
+
+          .panel-row
+            .panel-col--left
+
+              .text-box
+                h2.title-mod ¿De donde quiere la información?
+
+                p Seleccione uno o varios registros en los que solicitar las notas simples del titular elegido
+
+
+                .panel--white.panel--detail
+                  ul.list
+                    li.list__item.grid-a-12.grid-c-5
+                      span.over-title Apellido / Razón social
+                      span.title.reg-name Ikea España distribución y almacenaje SA
+                    li.list__item.grid-a-12.grid-c-offset-1.grid-c-5
+                      span.over-title NIF
+                      span.title.reg-nif A14010342
+
+                table.table.table--default.grid-a-12
+                  thead.table-head
+                    tr
+                      th
+                        span Registro
+                      th
+                        span Municipio
+                      th
+                        span Provincia
+                  tbody.table-body
+                    tr
+                      td(data-label='Registro')
+                        .cb-option
+                          label.cb-label(for='nif0')
+                            input#nif0.invisible.checkbox(type='checkbox')
+                            span.cb-pick
+                            span.cb-text ARMILLA
+
+                      td(data-label='Municipio') Ogijares
+                      td(data-label='Provincia') Granada
+                    tr
+                      td(data-label='Registro')
+                        .cb-option
+                          label.cb-label(for='nif1')
+                            input#nif1.invisible.checkbox(type='checkbox')
+                            span.cb-pick
+                            span.cb-text PONFERRADA 2
+                      td(data-label='Municipio') Toreno
+                      td(data-label='Provincia') León
+
+                    tr
+                      td(data-label='Registro')
+                        .cb-option
+                          label.cb-label(for='nif2')
+                            input#nif2.invisible.checkbox(type='checkbox')
+                            span.cb-pick
+                            span.cb-text MADRID 53
+                      td(data-label='Municipio') Madrid
+                      td(data-label='Provincia') Madrid
+
+
+              .text-box
+
+                h2.title-mod ¿De cuantas fincas quiere información?
+                  a.modal-lateral-open(data-content='modal01', href="#modal01", title="Mostrar ayuda")
+                    svg.icon.primary
+                      title Mostrar ayuda
+                      use(xlink:href='../static/img/common/svg/svg-symbols.svg#help-circle')
+
+                .hide
+                  .modal01
+                    h1.modal-title.modal-title--icon
+                      svg.icon.info
+                        use(xlink:href='../static/img/common/svg/svg-symbols.svg#help-circle')
+                      |  Número de fincas
+                    .modal-text
+                      p Seleccione el número máximo de fincas sobre las que desea recibir información.
+                      p Si a nombre del titular seleccionado aparecieren inscritas varias fincas o derechos, se generaran varias notas simples. Se le cobrará en base al número exacto de fincas encontradas.
+                      p
+                        a.link.link--primary Más información
+
+
+
+
+                p Seleccione el número máximo de fincas sobre las que desea recibir notas simples.
+
+                .form-box.grid-a-12.grid-c-3
+                  label.label(for='inNs') Máximo de notas simples
+                  input.input#inNs(type='text',placeholder='Nº notas simples')
+
+
+              .form-action
+                button.btn.btn--primary(type='submit') Continuar
+
+
+            .panel-col--right
+
+              .resume-box.resume-box--dark.mt--15
+                .resume-box__header
+                  h2.resume-title Resumen
+                  span.resume-note Impuestos y retenciones no incluidos
+                .resume-box__content
+                  table.table.table--resume
+                    thead.table-head.invisible
+                      tr
+                        th
+                          span Concepto
+                        th
+                          span Cantidad/Coste
+
+                    tbody.table-body
+                      tr
+                        td
+                          strong Nota simple
+                          .resume__info
+                            p
+                              strong Titular:
+                              | A39024415, UNIÓN CREDITOS INMOBILIARIOS S.A
+                            p
+                              strong Buscar en:
+                            ul.list
+                              li.list__item Registro de Armilla. Ogijares. Granada
+                              li.list__item Registro de Ponferrada 2. Ogijares. Granada
+                        td
+                      tr
+                        td Cantidad máxima <br>
+                         a.link.link--primary Modificar
+                        td x10
+
+                      tr
+                        td.resume-add(colspan="2")
+                          .add.cb-english
+                            .add__concept Traducción en inglés
+                              a.link.add-remove(data-remove="cb-english") Quitar
+                            .add__amount
+                              strong
+                                span.price 30
+                                | €
+
+                      tr.resume-final
+                        td(colspan='2')
+                          .resume-final--wrap
+                            span Coste máximo estimado
+                            span.resume-final--line 195,1€
+
+
+      .hide
+        .modal-inc
+          h1.modal-title
+            svg.icon.info
+              use(xlink:href='../static/img/common/svg/svg-symbols.svg#help-circle')
+            | ¿Qué incluye?
+          .modal-text
+            p Seleccione el número máximo de fincas sobre las que desea recibir información.
+            p Si a nombre del titular seleccionado aparecieren inscritas varias fincas o derechos, se generaran varias notas simples. Se le cobrará en base al número exacto de fincas encontradas.
+            p
+              a.link.link--primary Más información
+
+      include includes/_tpl-footer.pug

@@ -1,0 +1,126 @@
+extends includes/_tpl-base.pug
+
+block title
+  title Departamentos
+
+block body
+
+  - var headerMenu = true
+  - var menuLinks = true
+  - var userOnline = true
+  - var menuCol = true
+  - var user_item1 = 'active'
+  - var footer = 'footer'
+
+
+  body
+
+    .main-global
+
+      include includes/_tpl-header.pug
+
+      main.main-content
+
+        .main-content__wrap
+
+          .panel-row
+
+
+            h1.title-page.title-page--noline
+              a.link.link--titleback(href="#")
+                svg.icon.primary
+                  use(xlink:href='../static/img/common/svg/svg-symbols.svg#arrow-circle')
+
+              | Departamentos
+
+            .table-filter
+              .table-filter__head
+                .table-filter__text Se muestran 55 departamentos
+                  a.link.link--primary  Eliminar filtro
+                .table-filter__show
+
+                  a.link.link--primary.link--icon.link--filter
+                    span Filtrar resultados
+                    svg.icon
+                      use(xlink:href='../static/img/common/svg/svg-symbols.svg#filter')
+
+              .table-filter__options(style='display: none')
+                .form-box.grid-a-12.grid-c-2
+                  label.label.hide Periodo
+                  .form-ico.form-ico--select
+                    select#select.select
+                      option Periodo
+                      option Lorem ipsum
+                      option Lorem
+                    svg.icon
+                      use(xlink:href='../static/img/common/svg/svg-symbols.svg#arrow-down')
+
+                .form-box.grid-a-12.grid-c-3.p-gutter--left
+                  .grid-a-6
+                    label.label.hide(for='startDate') Fecha inicial
+                    .form-ico.form-ico--date
+                      input.input.input--calendar#startDate(type='text',placeholder='Incio')
+                      svg.icon
+                        use(xlink:href='../static/img/common/svg/svg-symbols.svg#calendar')
+
+                  .grid-a-6
+                    label.label.hide(for='endDate') Fecha final
+                    .form-ico.form-ico--date
+                      input.input.input--calendar#endDate(type='text',placeholder='Final')
+                      svg.icon
+                        use(xlink:href='../static/img/common/svg/svg-symbols.svg#calendar')
+
+
+
+                .form-box.grid-a-12.grid-c-offset-3.grid-c-4
+                  label.label.hide(for='searchTable') Búsqueda
+                  .form-ico
+                    input.input#searchTable(type='text',placeholder='Buscar por identificador, NIF, estado ...')
+                    svg.icon
+                      use(xlink:href='../static/img/common/svg/svg-symbols.svg#search')
+
+
+            table.table.table--default.grid-a-12
+              thead.table-head
+                tr
+                  th
+                    span Departamento
+                  th
+                    span Usuarios
+                  th
+                    span.invisible Opciones
+              tbody.table-body
+
+                - var n = 0;
+                - for (var n = 0; n < 10; n++)
+                  tr
+                    td(data-label='Departamento') Nombre Departamento
+                      = n
+                    td(data-label='Usuarios')
+                      = n
+                    td.table__options(data-label='Opciones')
+                      a.link.link--primary(href="#") Editar
+                      a.btn.btn--flat.btn--small(href="#") Ver detalles
+
+            button.btn.btn--medium.btn--secondary Crear nuevo departamento
+
+
+          //- .panel-col.panel-col--right
+            .menu__user--col
+                nav
+                  ul.list
+                    li(class='list__item list__item--' + user_item1)
+                      a.link(href="login-estado.html") Solicitudes realizadas
+                    li(class='list__item list__item--' + user_item2)
+                      a.link(href="#") Notificaciones
+                    li(class='list__item list__item--' + user_item3)
+                      a.link(href="#") Pagos y facturas
+                    li(class='list__item list__item--' + user_item4)
+                      a.link(href="#") Configuración
+                    li(class='list__item capitalize list__item--' + user_item5)
+                      a.link(href="login-solicitud.html") Cerrar sesión
+                        svg.icon
+                          use(xlink:href='../static/img/common/svg/svg-symbols.svg#arrow-simple')
+
+
+      include includes/_tpl-footer.pug

@@ -1,0 +1,60 @@
+extends includes/_tpl-base.pug
+
+block title
+  title Editar Departamento
+
+block body
+
+  - var headerMenu = true
+  - var userOnline = true
+  - var menuLinks = false
+  - var menuCol = true
+  - var user_item1 = 'active'
+
+  - var footer = 'footer-online'
+
+  body
+
+    .main-global
+
+      include includes/_tpl-header.pug
+
+      main.main-content
+
+        //- include includes/_tpl-topbar.pug
+
+        .main-content__wrap
+
+
+          h1.title-page.title-page--noline
+
+            a.link.link--titleback(href="#")
+              svg.icon.primary
+                use(xlink:href='../static/img/common/svg/svg-symbols.svg#arrow-circle')
+            | Nuevo/Editar Departamento
+
+
+          form(autocomplete="off",action="portada-propiedad.html")
+
+            .text-box.grid-a-12.grid-c-4
+
+              .form-box
+                label.label(for='inDep') Nombre del Departamento
+                input.input#inDep(type='text',placeholder='Introduzca el NIF asociado a la solicitud', autofocus)
+
+              .form-box
+                label.label(for='inDirDep') Dirección de facturación del Departamento
+                .form-ico.form-ico--select
+                  select#inDirDep.select
+                    option Seleccione una dirección
+                  svg.icon
+                    use(xlink:href='../static/img/common/svg/svg-symbols.svg#arrow-down')
+
+            .form-action.btn-group
+              button.btn.btn--primary.btn--medium Guardar
+              button.btn.btn--secondary.btn--medium Cancelar
+
+              a.link.link--primary.pull-right.small Eliminar Departamento
+
+
+      include includes/_tpl-footer.pug

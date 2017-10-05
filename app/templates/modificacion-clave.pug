@@ -1,0 +1,52 @@
+extends includes/_tpl-base.pug
+
+block title
+  title Recuperación de clave
+
+block body
+
+  - var headerMenu = true
+  - var userOnline = true
+  - var menuLinks = false
+  - var menuCol = true
+
+  - var footer = 'footer-online'
+
+  body
+
+    .main-global
+
+      include includes/_tpl-header.pug
+
+      main.main-content
+
+        //- include includes/_tpl-topbar.pug
+
+        .main-content__wrap
+
+          h1.title-page Modifica tu contraseña
+
+          .panel-row
+            .panel--col
+              p Introduce una nueva contraseña que recuerdes con facilidad
+
+              .row
+                .form.grid-a-12.grid-c-4
+                  form(autocomplete="off",action="portada-propiedad.html")
+
+                    .form-box
+                      label.label(for="inp01") Contraseña
+                      input.input#inp01(type='password',placeholder='Introduce una contraseña', autofocus)
+                      .form-text Mínimo 4, máximo 12 (números, letras o símbolos)
+
+                    .form-box
+                      label.label(for="inp02") Repite la contraseña
+                      input.input#inp02(type='password',placeholder='Repite la contraseña')
+
+
+
+                    button.btn.btn--primary Enviar
+
+
+
+      include includes/_tpl-footer.pug

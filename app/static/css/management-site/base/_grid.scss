@@ -1,0 +1,160 @@
+/* Grid system */
+
+@mixin ui-grid($slicer-values: $slicer-breakpoints, $slicer-names: $slicer-breakpoint-names) {
+    @each $slice in $slicer-values {
+        $index: index($slicer-values, $slice);
+
+        @if $index > 1 {
+            @media (min-width: rem($slice)) {
+                @include ui-cols($slicer-names, $index);
+            }
+        } @else {
+            @include ui-cols($slicer-names, $index);
+        }
+    }
+}
+
+@mixin ui-cols($breakpoint-names, $slice) {
+    @for $i from 1 through $grid-columns {
+        .grid-#{nth($breakpoint-names, $slice)}-#{$i} {
+            width: percentage($i / $grid-columns);
+        }
+        .grid-#{nth($breakpoint-names, $slice)}-push-#{$i} {
+            left: percentage($i / $grid-columns);
+        }
+        .grid-#{nth($breakpoint-names, $slice)}-pull-#{$i} {
+            right: percentage($i / $grid-columns);
+        }
+        .grid-#{nth($breakpoint-names, $slice)}-offset-#{$i} {
+            margin-left: percentage($i / $grid-columns);
+        }
+    }
+
+    .grid-#{nth($breakpoint-names, $slice)}-push-0 {
+        left: auto;
+    }
+    .grid-#{nth($breakpoint-names, $slice)}-pull-0 {
+        right: auto;
+    }
+}
+
+@mixin ui-container-responsive($slicer-values: $slicer-breakpoints) {
+    $length: length($slicer-values);
+
+    @if ($length > 1) {
+
+        @for $index from 2 through $length {
+            @if $index < $length {
+                @media (min-width: rem(nth($slicer-values, $index))) and (max-width: rem(nth($slicer-values, $index + 1) - 1)) {
+                    width: rem(nth($slicer-values, $index));
+                }
+            } @else {
+                @media (min-width: rem(nth($slicer-values, $index))) {
+                    width: rem(nth($slicer-values, $index));
+                }
+            }
+        }
+    }
+}
+
+@mixin ui-grid-gutter($gutter: $grid-gutter) {
+    padding-left: rem($gutter / 2);
+    padding-right: rem($gutter / 2);
+}
+
+@mixin ui-grid-collapse($gutter: $grid-gutter) {
+    margin-left: -(rem($gutter / 2));
+    margin-right: -(rem($gutter / 2));
+}
+
+@if $grid-system == true {
+
+    // Default style columns
+    *[class*="grid-"] {
+        position: relative;
+        min-height: 1px;
+        // @include ui-grid-gutter($grid-gutter);
+        float: left;
+    }
+
+    // Grid system
+    @include ui-grid;
+
+    // Container
+    .container {
+        margin-right: auto;
+        margin-left: auto;
+        @include ui-grid-gutter($grid-gutter);
+        @include clearfix;
+    }
+
+    // Container responsive
+    .container--responsive {
+        @include ui-container-responsive;
+    }
+
+    // Rows
+    .row {
+        @include clearfix;
+        // display: flex;
+        // align-items: flex-end;
+
+
+
+
+        .row,
+        &.row--collapse {
+            @include ui-grid-collapse($grid-gutter);
+        }
+
+        &.row--collapse-cols {
+            > [class^="grid-"] {
+                padding-left: 0;
+                padding-right: 0;
+            }
+        }
+
+        &.row--inline {
+            word-spacing: -(rem(4.5));
+            > * {
+                word-spacing: normal;
+            }
+            > *[class*="grid-"] {
+                float: none !important;
+                display: inline-block;
+            }
+        }
+
+        &.row--table {
+            display: table;
+            height: 100%;
+            width: 100%;
+            > [class^="grid-"] {
+                float: none !important;
+                display: table-cell;
+                height: 100%;
+            }
+        }
+    }
+}
+
+
+
+// multi form-box
+
+
+@include responsive(desktop) {
+  .row--multi {
+    .form-box {
+      padding-left: 1rem;
+
+      &:first-child {
+        padding-left: 0;
+        padding-right: 1rem;
+      }
+    }
+  }
+
+
+  
+}

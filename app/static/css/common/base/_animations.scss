@@ -1,0 +1,102 @@
+/* Animation effects */
+
+@if $animation-effects == true {
+
+    .animated {
+        @include transition-duration($transition-duration);
+        transition-timing-function: $transition-timing;
+        @include transition-delay($transition-delay);
+    }
+
+    .animated--fade {
+        @include transition-property(opacity);
+        display: block !important;
+        opacity: 1 !important;
+    }
+
+    .animated--fade--hidden {
+        opacity: 0 !important;
+    }
+
+    .animated--slide {
+        @include transition-property(max-height);
+        display: block !important;
+        overflow-y: hidden;
+        max-height: 400% !important;
+    }
+
+    .animated--slide--hidden {
+        max-height: 0 !important;
+    }
+
+
+
+    @keyframes swingX
+    {
+        15%
+        {
+            -webkit-transform: translateX(5px);
+            transform: translateX(5px);
+        }
+        30%
+        {
+            -webkit-transform: translateX(-5px);
+            transform: translateX(-5px);
+        }
+        50%
+        {
+            -webkit-transform: translateX(3px);
+            transform: translateX(3px);
+        }
+        65%
+        {
+            -webkit-transform: translateX(-3px);
+            transform: translateX(-3px);
+        }
+        80%
+        {
+            -webkit-transform: translateX(2px);
+            transform: translateX(2px);
+        }
+        100%
+        {
+            -webkit-transform: translateX(0);
+            transform: translateX(0);
+        }
+    }
+
+
+    @keyframes swingY
+    {
+        1%
+        {
+            -webkit-transform: translateY(5px);
+            transform: translateY(5px);
+        }
+        5%
+        {
+            -webkit-transform: translateY(-5px);
+            transform: translateY(-5px);
+        }
+        10%
+        {
+            -webkit-transform: translateY(3px);
+            transform: translateY(3px);
+        }
+        15%
+        {
+            -webkit-transform: translateY(-3px);
+            transform: translateY(-3px);
+        }
+        20%
+        {
+            -webkit-transform: translateY(2px);
+            transform: translateY(2px);
+        }
+        25%
+        {
+            -webkit-transform: translateY(0);
+            transform: translateY(0);
+        }
+    }
+}

@@ -1,0 +1,129 @@
+/* Global values */
+
+
+// Brand colors
+
+$brand-primary            : #af1e2d;
+$brand-primary-text       : #292929;
+$brand-secondary          : #ffffff;
+$brand-secondary-text     : #707372;
+
+// Basic Colors
+
+$grey-lowest              : #f2f3f3;
+$grey-low              		 : #E2E2E2;
+$grey-medium              : #707372;
+$grey-high                : #444;
+$grey-highest             : #292929;
+
+$red                      : #af1e2d;
+$blue                     : #009fbe;
+$yellow                   : #ebaf20;
+$green                    : #41b559;
+
+$info-bg                  : #f2f3f3;
+$info-color               : #009fbe;
+$info2-bg                 : #ffffff;
+$info2-color              : #009fbe;
+$success-bg               : #f2f3f3;
+$success-color            : #58af6a;
+$alert-bg                 : #feffc5;
+$alert-color              : #e57100;
+
+// Responsive - max width
+
+$res-mobile               : 480px;
+$res-tablet               : 1024px;
+
+// Wrap
+
+$wrap                     : 1200px;
+
+// Gutter
+
+$gutter                  : 15px;
+
+
+
+// Margin bottom
+
+$mb-8                     : .533333rem;
+$mb-16                    : 1.066667rem;
+$mb-24                    : 1.6rem;
+$mb-32                    : 2.133334rem;
+$mb-40                    : 2.666667rem;
+$mb-48                    : 3.2rem;
+$mb-56                    : 3.733333rem;
+$mb-64                    : 4.266667rem;
+
+
+// Links
+
+$link-color               : $brand-primary-text;
+$link-hover-color         : false !default;
+$link-active-color        : false !default;
+$link-visited-color       : false !default;
+$link-focus-color         : false !default;
+
+
+// Text
+
+$selection-text-color-bg  : $brand-primary !default;
+$selection-text-color     : lighten($brand-primary, 50) !default;
+
+
+// Typography
+
+$family-base              : "Open Sans", Helvetica, Sans-serif;
+$family-base-bold         : "Open Sans", Helvetica, Sans-serif;
+$family-secondary         : "NeoSans-Regular", Helvetica, Sans-serif;
+$family-secondary-light   : "NeoSans-Light", Helvetica, Sans-serif;
+$family-secondary-bold    : "NeoSans-Bold", Helvetica, Sans-serif;
+
+$size-base                : 15;
+$line-height-base         : 22;
+
+// Scaffolding
+
+$body-font-size           : $size-base !default;
+$body-bg                  : white !default;
+$body-color               : #8F908A !default;
+
+
+// Print
+
+$print-text-color         : $brand-primary-text !default;
+$print-link-visited-color : $brand-primary  !default;
+$print-border-color       : $brand-secondary !default;
+$print-page-margin        : 0.5cm !default;
+
+
+// Breakpoints
+
+$slicer-breakpoints       : 0		480px		768px	 	1024px	 	1280px !default;
+$slicer-breakpoint-names  : 'a' 	'b' 		'c' 		'd' 		'e' !default;
+
+
+// Grid
+
+$grid-system              : true;
+$grid-columns             : 12;
+$grid-gutter              : 30;
+
+
+// Responsive
+
+$responsive-visibility    : true !default;
+
+
+// Utils
+
+$utils-classes            : true !default;
+
+
+// Animations
+
+$animation-effects        : true !default;
+$transition-duration      : 0.3s;
+$transition-timing        : linear !default;
+$transition-delay         : 0 !default;

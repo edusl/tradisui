@@ -1,0 +1,64 @@
+extends includes/_tpl-base.pug
+
+block title
+  title Confirmación propiedad
+
+block body
+
+  - var headerMenu = false
+  - var footer = 'footer'
+
+
+  body
+
+    .main-global
+
+      include includes/_tpl-header.pug
+
+      main.main-content
+
+
+        .main-content__wrap
+
+          .confirm-head
+
+            h1.title-confirm Hemos recibido su solicitud correctamente
+
+            .confirm-head__text
+              p En breve le enviaremos la información solicitada. Puedes ver el estado desde su
+                a.link.link--primary  Área de usuario.
+                <br> Si el importe total supera los 50€ le enviaremos un mensaje a <strong>jgonzalez@hotmail.com</strong> para solicitar su confirmación.
+
+          .panel.panel--conf
+
+            .confirm-details
+              ul.list
+                li.list__item
+                  span.grid-a-12.grid-c-2 Nº de Solicitud:
+                  span
+                    strong H25439900
+                li.list__item
+                  span.grid-a-12.grid-c-2 Fecha de creación:
+                  span 07/01/2016
+                li.list__item
+                  span.grid-a-12.grid-c-2 Tipo:
+                  span Nota simple
+                li.list__item
+                  span.grid-a-12.grid-c-2 Solicitante:
+                  span Javier Gonzalez, 10884425R
+                li.list__item
+                  span.grid-a-12.grid-c-2 Información de:
+                  span Registro de la Propiedad de Madrid 53.
+                    | Propiedad 35805. Sección 5
+                li.list__item
+                  span.grid-a-12.grid-c-2 Estado:
+                  span.state.state--process
+                    svg.icon
+                      use(xlink:href='../static/img/common/svg/svg-symbols.svg#clock')
+                    | En proceso
+
+
+            .confirm-bottom Hemos enviado esta información a su email jgonzalez@hotmail.com
+
+
+      include includes/_tpl-footer.pug

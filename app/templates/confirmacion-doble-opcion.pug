@@ -1,0 +1,36 @@
+extends includes/_tpl-base.pug
+
+block title
+  title Verificación de email
+
+block body
+
+  - var headerMenu = false
+  - var footer = 'footer'
+
+
+  body
+
+    .main-global
+
+      include includes/_tpl-header.pug
+
+
+      main.main-content
+
+
+        .main-content__wrap
+
+          .confirm-head
+
+            h1.title-confirm.primary Verifique su nueva dirección
+
+            .confirm-head__text
+
+              p Le hemos enviado un email a <strong>nombreemail@dominio.com</strong> con un enlace para verificar su nueva dirección.<br /> Acceda a su bandeja de entrada y pulse el enlace.
+
+              p No se le olvide comprobar la carpeta de spam
+
+            a.btn.btn--secondary.btn--medium(href='#') Volver
+
+      include includes/_tpl-footer.pug

@@ -1,0 +1,79 @@
+extends includes/_tpl-base.pug
+
+block title
+  title Aviso legal
+
+block body
+
+  - var headerMenu = true
+  - var menuLinks = true
+
+  - var topbar = true
+  
+  - var topbarTitle = 'Volver'
+
+  - var footer = 'footer'
+
+  body.tpl-col42
+
+    .main-global
+
+      include includes/_tpl-header.pug
+
+      main.main-content
+
+        include includes/_tpl-topbar.pug
+
+        .main-content__wrap
+
+          h1.title-page Aviso legal
+
+          .panel-row
+            .panel-col--right
+
+              .panel-menu
+                h2.panel-menu__title Índice de apartados
+
+                ul.list.list--primary
+                  li.list__item.list__item--active Aviso legal
+                  li.list__item
+                    a.link(href="#") Política de Privacidad
+                  li.list__item
+                    a.link(href="#") Condiciones de traducción al inglés
+
+            .panel-col--left
+              .text-box
+                h2.title-text Datos identificativos
+                p El presente aviso legal recoge las condiciones generales que rigen el acceso y el uso del sitio web http://www.registradores.org, en adelante "el Sitio Web". "Registradores.org" es un dominio en Internet cuya titularidad pertenece al Colegio de Registradores de la Propiedad y Mercantiles de España, con Sede Colegial en la calle Diego de León nº 21, 28006 Madrid y N.I.F Q-2863012-G.
+                p El uso del Sitio Web implica la expresa y plena aceptación de estas condiciones generales, sin perjuicio de las condiciones particulares que pudieran aplicarse a los servicios concretos del Sitio Web.
+                p El Colegio de Registradores de la Propiedad y Mercantiles de España es una Corporación de Derecho Público amparada por la ley y reconocida por el Estado, adscrita a la Dirección General de los Registros y del Notariado del Ministerio de Justicia, y cuyos Estatutos fueron aprobados por el Real Decreto de 14 de Abril de 1997.
+                p El Colegio de Registradores de la Propiedad y Mercantiles de España se encuentra dirigido por:
+                strong D. Gonzalo Aguilera Anegón
+                p Decano-Presidente del Colegio de Registradores de la Propiedad y Mercantiles de España.
+                address
+                 | Teléfono: 91 272 18 09 <br/>
+                 | Fax: 91 563 30 63 <br/>
+                 .e-mail
+                   a.link.link--primary decano@registradores.org
+
+              .text-box
+                h2.title-text Privacidad y protección de datos
+                p El tratamiento de los datos de carácter personal que se realice a través de este Sitio Web se ajustará a lo establecido por la Ley Orgánica 15/1999, de Protección de Datos de Carácter Personal y demás normativa de aplicación.
+                p Los criterios seguidos por el Colegio de Registradores de la Propiedad y Mercantiles de España respecto a la utilización de los datos personales que usted facilite libre y voluntariamente a través de los servicios ofertados en este Sitio Web son los que se recogen en el documento sobre Política de Privacidad y Protección de Datos.
+
+              .text-box
+                h2.title-text Propiedad industrial e intelectual
+                p La información, contenidos y elementos suministrados a través de este Sitio Web se encuentra protegida por la legislación sobre propiedad industrial e intelectual.
+                p El usuario reconoce y acepta que todos los derechos de propiedad industrial e intelectual sobre la información, los contenidos, elementos y cualesquiera otros componentes incluidos en el Sitio Web, o suministrados a través del mismo, pertenecen al Colegio de Registradores de la Propiedad y Mercantiles de España.
+                p Colegio de Registradores de la Propiedad y Mercantiles de España es titular de los elementos que integran el diseño gráfico de su Sitio Web, código fuente y software, logotipos, los textos, texturas, menús, iconos de botones, gráficos, imágenes, fotografías, logotipos, archivos de audio y video, animaciones y cualquier otro contenido o componente del Sitio Web o, en cualquier caso dispone de la correspondiente autorización o licencia para la utilización de dichos elementos.
+                p El contenido del Sitio Web, y la información obtenida a través del mismo, no podrá ser reproducido ni en todo ni en parte, ni modificado, ni transmitido, ni difundido, en ninguna forma ni en ningún medio, a menos que se cuente con la autorización previa, por escrito del Colegio de Registradores de la Propiedad y Mercantiles de España.
+                p Así mismo queda prohibido suprimir, eludir o manipular el "copyright" y demás datos que identifican los derechos del Colegio de Registradores de la Propiedad y Mercantiles de España, así como los dispositivos técnicos de protección, o cualquier mecanismo de información que pudieren incluir los contenidos.
+                p El Colegio de Registradores de la Propiedad y Mercantiles de España podrá efectuar, en cualquier momento y sin necesidad de previo aviso, modificaciones y actualizaciones sobre la información y contenidos en este Sitio Web o en su configuración o presentación.
+                p Los enlaces contenidos en este Sitio Web pueden dirigir a páginas Web de terceros. El Colegio de Registradores de la Propiedad y Mercantiles de España no asume ninguna responsabilidad derivada de la conexión, contenidos, informaciones o servicios que pudieran aparecer en dichos sitios, que tendrán exclusivamente carácter informativo y que en ningún caso implican relación alguna entre el Colegio de Registradores de la Propiedad y Mercantiles de España y las personas o entidades titulares de tales contenidos o titulares de los sitios donde se encuentren.
+
+              .text-box
+                h2.title-text Dirección de contacto
+                p Para cualquier aclaración sobre las presentes condiciones generales o cualesquiera otros aspectos, tiene a su disposición las siguientes direcciones:
+                p Colegio de Registradores de la Propiedad y Mercantiles de España. Calle Diego de León nº 21, 28006 Madrid. Soporte Telefónico: 902 18 14 42 | 91 270 16 99 e-mail: contacto@corpme.es
+
+      include includes/_tpl-footer.pug

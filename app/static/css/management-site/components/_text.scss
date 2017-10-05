@@ -1,0 +1,29 @@
+.small {
+  font-size: 0.867rem;
+
+  &.link--primary {
+    .icon {
+      width: 16px;
+      height: 16px;
+    }
+
+  }
+}
+
+
+// Text
+
+.text-box {
+  margin-bottom: 2rem;
+  overflow: hidden;
+}
+
+
+.paragraph-box {
+
+  margin-bottom: 15px;
+  
+  p {
+    margin-bottom: 0;
+  }
+}

@@ -1,0 +1,83 @@
+doctype strict
+html(lang="es")
+
+  head
+
+    meta(charset='utf-8')
+    meta(name="viewport",content="width=device-width, initial-scale=1.0, user-scalable=no")
+
+    link(href="https://fonts.googleapis.com/css?family=Open+Sans:400,700",rel="stylesheet")
+
+    title Registradores de España
+
+    style.
+
+      @media(max-width:480px){
+        .btn-group {
+          text-align: center;
+          width: 100%;
+        }
+
+        .btn {
+          display: inline-block;
+          margin-bottom: 30px;
+        }
+      }
+
+  body
+
+    table.table(style="font-family: 'Open Sans', Tahoma, Geneva, sans-serif; max-width: 600px; margin: 0 auto")
+      tr
+        td(style="border-bottom: 1px solid #e8e8e8; margin-bottom: 20px")
+          h1
+            img(src='../static/img/common/mail/logo-registradores.png', alt='Registradores de España')
+      tr
+        td
+          p(style="padding-top: 20px; padding-bottom: 20px; font-size: 15px; line-height: 24px") Hola Javier Gonzalez, <br /> Hemos recibido sus solicitudes correctamente y próximamente recibirá la información registral solicitada. <br/>Puede comprobar cada petición desde su
+            a(href="#", style='color: #B21D2D; text-decoration: none')
+              |  área de usuario.
+
+
+      tr
+        td
+          table(style="background-color: #f3f3f3; border-top: 2px solid #000000; width: 100%; padding: 20px; margin-bottom: 30px; font-size: 14px")
+            tr
+              td(style="max-width: 180px; display: block; padding-bottom: 15px") Nº de solicitud
+              td(style="padding-bottom: 15px; font-weight: bold").request-num H36FN45F6
+            tr
+              td(style="max-width: 180px; display: block; padding-bottom: 15px") Tipo:
+              td(style="padding-bottom: 15px").request-type Nota Simple
+            tr
+              td(style="max-width: 180px; display: block; padding-bottom: 15px") Fecha de creación:
+              td(style="padding-bottom: 15px").request-date 07/01/2016
+            tr
+              td(style="max-width: 180px; display: block; padding-bottom: 15px") Información de:
+              td(style="padding-bottom: 15px").request-info Registro de la Propiedad de Madrid 53. Propiedad 35805. Sec 5
+            tr
+              td(colspan='2')
+                table(style='width: 100%; padding-top: 30px')
+                  tr
+                    td(style='border-bottom: 2px solid #575757')
+                      span(style='font-size: 12px; background-color: #575757; color: white; text-transform: uppercase; display: inline-block; padding-top: 10px; padding-bottom: 10px; padding-left: 15px; padding-right: 15px; margin-bottom: -2px; margin-left: -1px').request-status Denegada - 08/07/2016
+                  tr
+                    td(style='background-color: white; padding: 15px; font-size: 15px')
+                      span(style='font-weight: bold; padding-bottom: 10px; display: block') Motivos
+                      span(style='display: block; line-height: 24px').request-reason Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      tr
+        td.btn-group(style="width: 100%")
+          table(style="margin-bottom: 100px")
+            tr
+              td
+                a.btn(href='#',style="background: #B21D2D; color: white; border: 2px solid #B21D2D; padding: 15px 10px; text-transform: uppercase; text-decoration: none; border-radius: 5px; margin-right: 10px; font-size: 13px; font-weight: bold; letter-spacing: 1px") Ver solicitud
+                  img(src='../static/img/common/mail/file.png', alt='', style='margin-left: 10px; vertical-align: middle')
+                a.btn(href='#',style="background: white; color: #B21D2D; border: 2px solid #B21D2D; padding: 15px 10px; text-transform: uppercase; text-decoration: none; border-radius: 5px; font-size: 13px; font-weight: bold; letter-spacing: 1px") Descargar pdf
+                  img(src='../static/img/common/mail/arrow-down.png', alt='', style='margin-left: 10px; vertical-align: middle')
+      tr
+        td
+          table(style="border-top: 1px solid #e8e8e8; width: 100%; font-size: 13px")
+            tr
+              td(style="width: 50%; text-align: left")
+                img(src='../static/img/common/mail/logo-registradores-bn.png', alt='Registradores de España', style='margin-top: -3px; margin-left: -3px')
+
+              td(style="width: 50%; text-align: right; color: #6d6d6d; font-weight: bold") ¿Dudas? <br />
+                a(href="#", style='color: #6d6d6d; font-weight: normal') Contacte con nosotros

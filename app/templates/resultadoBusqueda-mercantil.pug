@@ -1,0 +1,149 @@
+extends includes/_tpl-base.pug
+
+block title
+  title Registro de la propiedad
+
+block body
+  - var headerMenu = true
+  - var userOnline = false
+  - var menuLinks = true
+  - var menu = 'menu-useronline4'
+  - var menu_item1 = 'active'
+  - var footer = 'footer-online'
+
+  body.tpl-col42
+
+    .main-global
+
+      include includes/_tpl-header.pug
+
+      main.main-content
+
+        .main-content__wrap.resultadoBusqueda
+
+          h1.title-page.title-page--noline Encuentre la Sociedad
+
+          .row
+              .grid-c-12
+                  .panel.panel--top
+
+                      p Podrás pedir información mercantil y certificaciones.
+
+                      .form-box.clearfix.nbm
+                        .input-btn.grid-c-6.grid-b-12.grid-a-12
+                          input.input(type="text", placeholder="¿Que desea buscar?")
+                        .grid-c-4.grid-c-offset-2
+                          div 
+                            a.link.link--primary(href='#') Búsqueda internacional
+                          div 
+                            a.link.link--primary(href='#') Buscar información de un Representante
+                          
+                      p 
+                        a.link.link--primary.gutter--right(href='#') Buscar solo en los Registros de una Provincia.
+                      p
+                        a.btn.btn--primary.btn--input Buscar    
+                      p Hemos encontrado 25 sociedades:
+                      
+
+          .row
+            .grid-c-8
+              ul
+                li
+                  h2.tit-listadoBusqueda Forum Filatélico
+                  span.list-info REGISTRO MERCANTIL DE PONTEVEDRA - 
+                  span.estado.noVigente Sociedad no vigente        
+                  p
+                    a.link.link--primary.link--icon(href="#")
+                      span Seleccionar
+                        svg.icon.rotate-180
+                          use(xlink:href='../static/img/common/svg/svg-symbols.svg#arrow-simple')
+                li
+                  h2.tit-listadoBusqueda SANTILLANA EDUCACION SL INDRA SISTEMAS SA UNION TEMPORAL DE EMPRESAS LEY 18/1982 DE 26 DE MAYO.
+                  span.list-info REGISTRO MERCANTIL DE VALLADOLID - 
+                  span.estado.vigente Sociedad vigente        
+                  p
+                    a.link.link--primary.link--icon(href="#")
+                      span Seleccionar
+                        svg.icon.rotate-180
+                          use(xlink:href='../static/img/common/svg/svg-symbols.svg#arrow-simple')
+                li
+                  h2.tit-listadoBusqueda FORUM DECORACIONES Y MUEBLES SOCIEDAD LIMITADA
+                  span.list-info REGISTRO MERCANTIL DE PALENCIA - 
+                  span.estado.vigente Sociedad vigente
+                  p
+                    a.link.link--primary.link--icon(href="#")
+                      span Seleccionar
+                        svg.icon.rotate-180
+                          use(xlink:href='../static/img/common/svg/svg-symbols.svg#arrow-simple')
+                li
+                  h2.tit-listadoBusqueda FORUM DECORACIONES Y MUEBLES SOCIEDAD LIMITADA
+                  span.list-info REGISTRO MERCANTIL DE PALENCIA - 
+                  span.estado.vigente Sociedad vigente
+                  p
+                    a.link.link--primary.link--icon(href="#")
+                      span Seleccionar
+                        svg.icon.rotate-180
+                          use(xlink:href='../static/img/common/svg/svg-symbols.svg#arrow-simple')
+                li
+                  h2.tit-listadoBusqueda FORUM DECORACIONES Y MUEBLES SOCIEDAD LIMITADA
+                  span.list-info REGISTRO MERCANTIL DE PALENCIA - 
+                  span.estado.vigente Sociedad vigente
+                  p
+                    a.link.link--primary.link--icon(href="#")
+                      span Seleccionar
+                        svg.icon.rotate-180
+                          use(xlink:href='../static/img/common/svg/svg-symbols.svg#arrow-simple')
+                li
+                  h2.tit-listadoBusqueda FORUM DECORACIONES Y MUEBLES SOCIEDAD LIMITADA
+                  span.list-info REGISTRO MERCANTIL DE PALENCIA - 
+                  span.estado.vigente Sociedad vigente
+                  p
+                    a.link.link--primary.link--icon(href="#")
+                      span Seleccionar
+                        svg.icon.rotate-180
+                          use(xlink:href='../static/img/common/svg/svg-symbols.svg#arrow-simple')
+                li
+                  h2.tit-listadoBusqueda FORUM DECORACIONES Y MUEBLES SOCIEDAD LIMITADA
+                  span.list-info REGISTRO MERCANTIL DE PALENCIA - 
+                  span.estado.vigente Sociedad vigente
+                  p
+                    a.link.link--primary.link--icon(href="#")
+                      span Seleccionar
+                        svg.icon.rotate-180
+                          use(xlink:href='../static/img/common/svg/svg-symbols.svg#arrow-simple')
+                li
+                  h2.tit-listadoBusqueda FORUM DECORACIONES Y MUEBLES SOCIEDAD LIMITADA
+                  span.list-info REGISTRO MERCANTIL DE PALENCIA - 
+                  span.estado.vigente Sociedad vigente
+                  p
+                    a.link.link--primary.link--icon(href="#")
+                      span Seleccionar
+                        svg.icon.rotate-180
+                          use(xlink:href='../static/img/common/svg/svg-symbols.svg#arrow-simple')
+                li
+                  h2.tit-listadoBusqueda FORUM DECORACIONES Y MUEBLES SOCIEDAD LIMITADA
+                  span.list-info REGISTRO MERCANTIL DE PALENCIA - 
+                  span.estado.vigente Sociedad vigente
+                  p
+                    a.link.link--primary.link--icon(href="#")
+                      span Seleccionar
+                        svg.icon.rotate-180
+                          use(xlink:href='../static/img/common/svg/svg-symbols.svg#arrow-simple')
+                li
+                  h2.tit-listadoBusqueda FORUM DECORACIONES Y MUEBLES SOCIEDAD LIMITADA
+                  span.list-info REGISTRO MERCANTIL DE PALENCIA - 
+                  span.estado.vigente Sociedad vigente
+                  p
+                    a.link.link--primary.link--icon(href="#")
+                      span Seleccionar
+                        svg.icon.rotate-180
+                          use(xlink:href='../static/img/common/svg/svg-symbols.svg#arrow-simple')
+                
+      								
+
+
+
+          include includes/_tpl-paginator-multiple.pug
+
+
+      include includes/_tpl-footer.pug

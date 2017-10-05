@@ -1,0 +1,33 @@
+extends includes/_mail-base.pug
+
+block title
+  title  Confirmación solicitud
+
+block content  
+
+    include includes/_mail-header.pug
+    
+    tr
+      td(style="padding-top: 24px;")
+        p(style="padding-bottom: 10px;", class="text-content") <strong>Ha recibido una solicitud para asociar tu cuenta con los siguientes datos:</strong>
+
+    tr
+      td(style="padding-top:20px; padding-bottom:20px;")
+        table(style="width:100%; border-top:2px solid #000000;")
+          tr
+            td(style="width: 100%;", class="detail-box")
+              p(style="padding-bottom: 5px;", class="text-content") <strong>Administrador:</strong> Javier Martin Bretón, 10885522Q.
+              p(style="padding-bottom: 0;", class="text-content") <strong>#Oficina San Sebastian</strong>              
+
+    tr
+      td
+        p(style="padding-bottom:10px", class="text-content") Una vez cree la cuenta, estará asociado con este usuario.
+
+    tr
+      td
+        table(style="margin-bottom: 10px;")
+          tr
+            td             
+              a.btn-red(href='#') Asociar y crear cuenta    
+
+    include includes/_mail-footer.pug

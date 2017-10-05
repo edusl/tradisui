@@ -1,0 +1,67 @@
+extends includes/_tpl-base.pug
+
+block title
+  title Editar datos básicos
+
+block body
+
+  - var headerMenu = true
+  - var userOnline = true
+  - var menuLinks = false
+  - var menuCol = true
+  - var user_item1 = 'active'
+
+  - var footer = 'footer-online'
+
+  body
+
+    .main-global
+
+      include includes/_tpl-header.pug
+
+      main.main-content
+
+        //- include includes/_tpl-topbar.pug
+
+        .main-content__wrap
+
+
+          h1.title-page.title-page--noline
+
+            a.link.link--titleback(href="#")
+              svg.icon.primary
+                use(xlink:href='../static/img/common/svg/svg-symbols.svg#arrow-circle')
+            | Datos básicos
+
+
+          .hlight-msg
+
+            p Titular de la cuenta
+            strong.uppercase.fs-16 Javier Gonzalez Gonzalez
+            p 10884425R
+
+          form(autocomplete="off",action="portada-propiedad.html")
+
+            .text-box.grid-a-12.grid-c-4
+
+              .form-box
+                label.label(for='inTel') Teléfono (opcional)
+                input.input#inTel(type='text',placeholder='Introduzca su teléfono', autofocus)
+                .form-text No lo usaremos con fines comerciales
+
+              .form-box
+                label.label(for='inNom') Nombre de usuario (opcional)
+                input.input#inNom(type='text',placeholder='Introduzca un nombre de usuario')
+
+
+            .form-action.btn-group
+              button.btn.btn--primary.btn--medium Guardar
+              button.btn.btn--secondary.btn--medium Cancelar
+
+              a.link.link--primary.pull-right.small Eliminar cuenta
+
+
+
+
+
+      include includes/_tpl-footer.pug

@@ -1,0 +1,105 @@
+extends includes/_tpl-base.pug
+
+block title
+  title Nota Propiedad
+
+block body
+
+  - var headerMenu = true
+  - var userOnline = true
+
+  - var topbar = 'topbar--dark'
+  - var topbarTitle = 'Volver'
+
+  - var footer = 'footer'
+
+  body.tpl-prewrap.tpl-note
+
+    .main-global
+
+      include includes/_tpl-header.pug
+
+      main.main-content
+
+        .main-content__title
+          .main-content__wrap
+
+            h1.title-page
+              a.link.link--titleback(href="#")
+                svg.icon.primary
+                  use(xlink:href='../static/img/common/svg/svg-symbols.svg#arrow-circle')
+
+              | Nota simple. H25439900
+
+        .main-content__prewrap
+
+          .main-content__wrap
+
+            .panel-row
+
+              .panel.panel--note
+
+                h2.title Datos de la solicitud
+
+                ul.list.row
+                  li.list__item.grid-a-6.grid-c-2
+                    span.over-title TIPO:
+                    span.title.request-type Nota simple
+                  li.list__item.grid-a-6.grid-c-2
+                    span.over-title Fecha de creación
+                    span.title.request-date 07/01/2016
+                  li.list__item.grid-a-6.grid-c-3
+                    span.over-title Información solicitada
+                    span.title.request-info Registro de la Propiedad Sevilla 4. Propiedad 185, Sección 1
+                  li.list__item.grid-a-6.grid-c-3
+                    span.over-title Solicitante
+                    span.title.request-owner Javier Gonzalez de las Heras, 10884425Q
+                  li.list__item.grid-a-12.grid-c-2
+                    ul.sub-list
+                      li.list__item
+                        a.btn.btn--secondary.btn--medium.btn--icon(href="#")
+                          | Descargar PDF
+                          svg.icon
+                            use(xlink:href='../static/img/common/svg/svg-symbols.svg#download-file')
+                      li.list__item
+                        a.btn.btn--secondary.btn--medium.btn--icon(href="#")
+                          | Imprimir
+                          svg.icon
+                            use(xlink:href='../static/img/common/svg/svg-symbols.svg#print')
+
+
+              .panel-tab.panel-tab--success
+                .panel-tab__content.request-status
+                  svg.icon.icon--registradores
+                    use(xlink:href='../static/img/common/svg/svg-symbols.svg#check')
+                  | Enviada - 08/07/2016 (18:00)
+
+              .panel.panel--light.panel--detail
+                ul.list.row
+                  li.list__item.grid-a-12
+                    span.over-title Registro de la propiedad
+                    span.title.note-location Santa Cruz de Tenerife Nº 03
+                  li.list__item.grid-a-12.grid-c-3
+                    span.over-title IDUFIR
+                    span.title.note-idufir 28053000556721
+                  li.list__item.grid-a-6.grid-c-2
+                    span.over-title Propiedad
+                    span.title.note-estate 36900
+                  li.list__item.grid-a-6.grid-c-2
+                    span.over-title Sección
+                    span.title.note-section -
+                  li.list__item.grid-a-6.grid-c-2
+                    span.over-title Subfinca
+                    span.title.note-subestate 78
+                  li.list__item.grid-a-6.grid-c-2
+                    span.over-title Duplicado
+                    span.title.note-duplicate BIS
+
+            .add
+              a.link.link--primary
+                svg.icon.icon--registradores
+                  use(xlink:href='../static/img/common/svg/svg-symbols.svg#add')
+                | Más solicitudes de esta propiedad.
+
+
+      include includes/_tpl-footer.pug

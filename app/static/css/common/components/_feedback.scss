@@ -1,0 +1,66 @@
+// feedback
+
+.feedback {
+  margin: 0 auto;
+  max-width: $wrap;
+  padding: 0 15px;
+
+  .link--toggle {
+    display: inline-block;
+    text-decoration: underline;
+    padding: 3px 6px 3px 2px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    font-size: rem(13);
+
+    &:focus {
+      color: $brand-primary;
+    }
+
+    &.opened-feedback {
+      .icon {
+        transform: rotate(-90deg);
+      }
+    }
+
+    .icon {
+      width: 16px;
+      height: 16px;
+      transform: rotate(90deg);
+      transition: all .3s linear;
+      fill: $brand-primary;
+    }
+  }
+
+}
+
+
+
+  .feedback__wrap {
+    background: $info-bg;
+    overflow: hidden;
+    padding: 25px 25px 10px 25px;
+    display: none;
+  }
+
+    .feedback__info {
+      padding-right: 30px;
+    }
+
+    .feedback__form {
+      textarea{
+        resize: none;
+      }
+
+      .btn{
+        text-transform: uppercase;
+      }
+    }
+
+
+
+    @include responsive(desktop) {
+      .feedback {
+        padding: 0 40px;
+      }
+    }

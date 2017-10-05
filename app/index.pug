@@ -1,0 +1,47 @@
+doctype html
+html(lang="es")
+  head
+    meta(charset='utf-8')
+    meta(name="viewport",content="width=device-width, initial-scale=1.0, user-scalable=no")
+    meta(name="theme-color", content="#af1e2d")
+
+    link(rel="apple-touch-icon", sizes="180x180", href="static/img/common/favicon/apple-touch-icon.png")
+    link(rel="icon", type="image/png", href="static/img/common/favicon/favicon-32x32.png", sizes="32x32")
+    link(rel="icon", type="image/png", href="static/img/common/favicon/favicon-16x16.png", sizes="16x16")
+    link(rel="manifest", href="static/img/common/favicon/manifest.json")
+    link(rel="mask-icon", href="static/img/common/favicon/safari-pinned-tab.svg", color="#af1e2d")
+
+
+    link(href='static/css/common/main.css', rel='stylesheet')
+    //-script(src="static/js/jquery-3.1.0.min.js")
+    //-script(src="static/js/guide.js")
+
+    - var title = "Tradis UI"
+
+    title= title
+
+
+  body
+
+  .uig-wrap
+
+    .uig-header
+
+      h1.title-page.title-page--noline Tradis UI
+
+
+    .uig-content
+
+      ul.uig-list
+        li.uig__item
+          a(href="styleguide/index.html") Guía de estilo
+        li.uig__item
+          a(href="templates/index.html") Plantillas
+        li.uig__item
+          a(href="http://demo.paradigmadigital.com/registradores/") Wireframes & diseño
+
+    .uig-footer
+
+      -var nuevo = (new Date()).toLocaleDateString();
+      p.uig-updated Última actualización:
+        span= nuevo

@@ -1,0 +1,11 @@
+
+@media print {
+
+  .breadcrumb,
+  header,
+  footer,
+  .link--back {
+    display: none;
+  }
+
+}
